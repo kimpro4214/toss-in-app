@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.ait
+.env
+.env.local
+playwright-report/
+test-results/
+coverage/
+/idea.md
