@@ -1,0 +1,1412 @@
+[
+  {
+    "id": "database-001",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "테이블",
+    "prompt": "관계형 데이터베이스의 테이블이 표현하는 기본 구성은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "행과 열",
+        "explanation": "행은 레코드, 열은 속성을 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "오직 파일 경로",
+        "explanation": "논리적 관계 모델과 파일 배치는 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "프로세스와 코어",
+        "explanation": "실행 환경의 구성이다."
+      },
+      {
+        "id": "c3",
+        "text": "픽셀과 삼각형",
+        "explanation": "그래픽스 데이터의 예일 뿐 일반 정의가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "행은 레코드, 열은 속성을 표현한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-002",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "기본 키",
+    "prompt": "기본 키의 주요 조건은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 삽입 시각",
+        "explanation": "시간이 아닌 키도 사용할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "각 행을 유일하게 식별하고 NULL이 아니다",
+        "explanation": "기본 키는 행 식별을 위한 유일성과 비NULL을 요구한다."
+      },
+      {
+        "id": "c1",
+        "text": "중복 값을 반드시 허용",
+        "explanation": "행을 유일하게 구분하지 못한다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 문자열 한 열",
+        "explanation": "복합 키·다른 타입도 가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본 키는 행 식별을 위한 유일성과 비NULL을 요구한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-003",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "외래 키",
+    "prompt": "외래 키가 주로 유지하는 것은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "모든 쿼리 속도 보장",
+        "explanation": "무결성과 성능은 별개다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 문자열 암호화",
+        "explanation": "참조 제약은 암호화가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "다른 관계의 참조 무결성",
+        "explanation": "참조하는 키의 존재 등 관계 제약을 검사한다."
+      },
+      {
+        "id": "c1",
+        "text": "응답 캐시 만료",
+        "explanation": "DB 관계 제약과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "참조하는 키의 존재 등 관계 제약을 검사한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-004",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "SELECT",
+    "prompt": "테이블에서 조건에 맞는 행을 조회하는 대표 SQL 명령은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "DROP",
+        "explanation": "객체 제거에 사용한다."
+      },
+      {
+        "id": "c2",
+        "text": "COMMIT",
+        "explanation": "트랜잭션을 확정한다."
+      },
+      {
+        "id": "c3",
+        "text": "GRANT",
+        "explanation": "권한 부여에 사용한다."
+      },
+      {
+        "id": "c0",
+        "text": "SELECT",
+        "explanation": "SELECT는 조회 결과를 구성하는 명령이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "SELECT는 조회 결과를 구성하는 명령이다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-005",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "WHERE",
+    "prompt": "SQL WHERE 절의 기본 역할은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "조건에 맞는 행을 필터링한다",
+        "explanation": "조회·갱신 등의 대상 행을 조건으로 제한한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 결과를 정렬한다",
+        "explanation": "정렬은 ORDER BY를 사용한다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 테이블을 삭제한다",
+        "explanation": "필터 조건과 테이블 삭제는 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "트랜잭션을 종료한다",
+        "explanation": "COMMIT·ROLLBACK과 다른 역할이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "조회·갱신 등의 대상 행을 조건으로 제한한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-006",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "정렬",
+    "prompt": "SELECT 결과 순서를 명시적으로 요청할 때 사용하는 절은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "FROM만",
+        "explanation": "데이터 원천을 지정한다."
+      },
+      {
+        "id": "c0",
+        "text": "ORDER BY",
+        "explanation": "정렬 순서가 필요하면 명시적으로 지정한다."
+      },
+      {
+        "id": "c1",
+        "text": "WHERE만",
+        "explanation": "행을 필터링하지만 순서를 보장하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "PRIMARY KEY만",
+        "explanation": "키 존재가 조회 결과 순서를 보장하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정렬 순서가 필요하면 명시적으로 지정한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-007",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "NULL",
+    "prompt": "SQL에서 NULL을 검사하는 적절한 조건은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "= 0",
+        "explanation": "0과 NULL은 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "= 빈 문자열",
+        "explanation": "빈 문자열과 NULL은 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "IS NULL",
+        "explanation": "NULL은 일반 동등 비교 대신 IS NULL로 검사한다."
+      },
+      {
+        "id": "c1",
+        "text": "= NULL",
+        "explanation": "일반 동등 비교는 NULL 여부의 참 결과를 주지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "NULL은 일반 동등 비교 대신 IS NULL로 검사한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-008",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "트랜잭션",
+    "prompt": "트랜잭션의 원자성이 의미하는 것은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 쿼리가 가장 빠르다",
+        "explanation": "원자성은 성능 보장이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 동시 작업 순서가 같다",
+        "explanation": "격리와 실행 순서는 별도 성질이다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 DB가 같은 제품이다",
+        "explanation": "제품 종류와 원자성은 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "묶인 변경 전체가 반영되거나 전체가 반영되지 않는다",
+        "explanation": "부분 성공으로 남기지 않도록 하나의 작업 단위를 구성한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "부분 성공으로 남기지 않도록 하나의 작업 단위를 구성한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-009",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "롤백",
+    "prompt": "현재 트랜잭션의 변경을 취소하는 명령은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "ROLLBACK",
+        "explanation": "현재 트랜잭션을 확정하지 않고 취소한다."
+      },
+      {
+        "id": "c1",
+        "text": "COMMIT",
+        "explanation": "변경을 확정한다."
+      },
+      {
+        "id": "c2",
+        "text": "SELECT",
+        "explanation": "조회 명령이다."
+      },
+      {
+        "id": "c3",
+        "text": "ORDER BY",
+        "explanation": "정렬 절이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "현재 트랜잭션을 확정하지 않고 취소한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-010",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "인덱스 목적",
+    "prompt": "인덱스를 추가하는 대표 이유는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "모든 쿼리를 항상 빠르게 만들기 위해",
+        "explanation": "사용 여부와 선택도에 따라 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "특정 조회의 탐색 범위를 줄이기 위해",
+        "explanation": "조건·정렬 등에 맞는 접근 경로를 제공할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 쓰기 비용을 없애기 위해",
+        "explanation": "쓰기 때 인덱스 갱신 비용이 추가된다."
+      },
+      {
+        "id": "c2",
+        "text": "저장 공간을 항상 줄이기 위해",
+        "explanation": "인덱스 자체 공간이 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "조건·정렬 등에 맞는 접근 경로를 제공할 수 있다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-011",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "INNER JOIN",
+    "prompt": "두 테이블의 INNER JOIN은 기본적으로 무엇을 반환하나?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 한 행만",
+        "explanation": "일치 관계 수에 따라 여러 행일 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "중복을 무조건 제거한 결과",
+        "explanation": "DISTINCT 같은 처리가 별도로 필요할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "조인 조건에 맞는 행 조합",
+        "explanation": "양쪽의 조건을 만족하는 조합만 포함한다."
+      },
+      {
+        "id": "c1",
+        "text": "조건 없는 모든 한쪽 행",
+        "explanation": "외부 조인과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "양쪽의 조건을 만족하는 조합만 포함한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-012",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "LEFT JOIN",
+    "prompt": "LEFT JOIN에서 오른쪽에 대응 행이 없는 왼쪽 행은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "무조건 삭제된다",
+        "explanation": "INNER JOIN과 혼동했다."
+      },
+      {
+        "id": "c2",
+        "text": "오른쪽 전체 테이블로 대체된다",
+        "explanation": "매칭 없는 행의 확장 방식과 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "반드시 오류가 난다",
+        "explanation": "외부 조인의 정상 동작이다."
+      },
+      {
+        "id": "c0",
+        "text": "왼쪽 행은 남고 오른쪽 열은 NULL로 채워진다",
+        "explanation": "왼쪽 외부 조인은 왼쪽 행을 유지한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "왼쪽 외부 조인은 왼쪽 행을 유지한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-013",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "집계",
+    "prompt": "부서별 인원 수를 세려고 한다. 필요한 기본 구성은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "GROUP BY 부서와 COUNT",
+        "explanation": "동일 부서의 행을 그룹으로 묶어 집계한다."
+      },
+      {
+        "id": "c1",
+        "text": "ORDER BY만",
+        "explanation": "정렬이 그룹 집계를 대신하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "DROP 부서",
+        "explanation": "대상을 삭제하는 명령이다."
+      },
+      {
+        "id": "c3",
+        "text": "COMMIT만",
+        "explanation": "트랜잭션 확정은 집계가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "동일 부서의 행을 그룹으로 묶어 집계한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-014",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "HAVING",
+    "prompt": "GROUP BY 결과 중 COUNT가 10 이상인 그룹을 걸러내는 절은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "UNION만",
+        "explanation": "결과 합치기 연산이다."
+      },
+      {
+        "id": "c0",
+        "text": "HAVING",
+        "explanation": "집계된 그룹에 조건을 적용한다."
+      },
+      {
+        "id": "c1",
+        "text": "WHERE COUNT만",
+        "explanation": "일반 WHERE는 그룹 집계 이전 행 조건이다."
+      },
+      {
+        "id": "c2",
+        "text": "LIMIT 10만",
+        "explanation": "반환 수 제한이지 집계값 조건이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "집계된 그룹에 조건을 적용한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-015",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "정규화",
+    "prompt": "데이터 정규화를 검토하는 주요 이유는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "모든 조회가 자동 최적이어서",
+        "explanation": "정규화와 조회 성능은 별도다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 값을 NULL로 만들기 위해",
+        "explanation": "데이터 관계 설계 목적이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "중복과 갱신 이상을 줄이기 위해",
+        "explanation": "함수 종속성 등 관계를 기준으로 데이터 책임을 나눌 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 조인을 제거하기 위해",
+        "explanation": "분해 후 조회에 조인이 필요할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "함수 종속성 등 관계를 기준으로 데이터 책임을 나눌 수 있다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-016",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "복합 인덱스",
+    "prompt": "PostgreSQL B-tree (a,b) 인덱스에서 a 조건 없이 b만 조회할 때 판단은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "b는 어떤 경우에도 사용 불가",
+        "explanation": "제품 최적화와 데이터에 따라 사용 가능성이 있다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 단일 b 인덱스와 같은 비용",
+        "explanation": "선두 열과 데이터 분포 영향이 있다."
+      },
+      {
+        "id": "c3",
+        "text": "인덱스 순서는 무관",
+        "explanation": "복합 인덱스의 열 순서는 중요하다."
+      },
+      {
+        "id": "c0",
+        "text": "선두 열 제약 여부 등을 실제 계획과 데이터로 확인한다",
+        "explanation": "선두 열 조건이 탐색 범위를 줄이는 데 중요하며 인덱스 사용을 단정하면 안 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "선두 열 조건이 탐색 범위를 줄이는 데 중요하며 인덱스 사용을 단정하면 안 된다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-017",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "선택도",
+    "prompt": "조건이 테이블 대부분의 행을 반환할 때 인덱스가 불리할 수 있는 이유는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "많은 인덱스·테이블 접근 비용이 순차 스캔보다 클 수 있다",
+        "explanation": "선택도가 낮으면 인덱스 사용 이점이 작아진다."
+      },
+      {
+        "id": "c1",
+        "text": "인덱스가 정확한 행을 못 찾기 때문",
+        "explanation": "성능 비용 문제이지 정확성 실패는 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "정렬된 값만 조회 가능해서",
+        "explanation": "사용 가능한 조건은 인덱스 종류에 따른다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 인덱스는 쓰기 전용이어서",
+        "explanation": "조회 접근 경로로 사용한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "선택도가 낮으면 인덱스 사용 이점이 작아진다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-018",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "COUNT NULL",
+    "prompt": "PostgreSQL에서 COUNT(column)이 세는 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "서로 다른 값 수만",
+        "explanation": "DISTINCT를 별도로 지정해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "column이 NULL이 아닌 행 수",
+        "explanation": "COUNT(*)는 전체 행, COUNT(column)은 비NULL 값을 센다."
+      },
+      {
+        "id": "c1",
+        "text": "전체 행 수 항상",
+        "explanation": "NULL 행은 COUNT(column)에서 제외된다."
+      },
+      {
+        "id": "c2",
+        "text": "NULL인 행 수만",
+        "explanation": "반대다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "COUNT(*)는 전체 행, COUNT(column)은 비NULL 값을 센다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-019",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "유일 제약",
+    "prompt": "이메일 유일성을 응용의 조회 후 삽입만으로 검사할 때 부족한 점은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "문자열은 비교할 수 없다",
+        "explanation": "문자열 비교는 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "HTTP를 쓰면 경쟁이 없다",
+        "explanation": "전송 방식이 DB 동시성을 제거하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "동시 요청 사이에서 중복 삽입 경쟁이 가능하다",
+        "explanation": "DB 유일 제약 등 원자적인 보장이 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "조회가 있으면 항상 직렬화된다",
+        "explanation": "조회와 삽입 사이 다른 요청이 실행될 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "DB 유일 제약 등 원자적인 보장이 필요하다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-020",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "실행계획",
+    "prompt": "PostgreSQL에서 쿼리의 계획을 확인하는 대표 명령은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "GRANT",
+        "explanation": "권한을 부여한다."
+      },
+      {
+        "id": "c2",
+        "text": "DROP",
+        "explanation": "객체를 제거한다."
+      },
+      {
+        "id": "c3",
+        "text": "ROLLBACK",
+        "explanation": "트랜잭션을 취소한다."
+      },
+      {
+        "id": "c0",
+        "text": "EXPLAIN",
+        "explanation": "선택된 접근 경로와 계획 비용 등을 볼 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "선택된 접근 경로와 계획 비용 등을 볼 수 있다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-021",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "Read Committed",
+    "prompt": "PostgreSQL Read Committed에서 같은 트랜잭션의 서로 다른 SELECT가 다른 커밋 결과를 볼 수 있는가?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "가능하다",
+        "explanation": "각 명령 시작 시점의 스냅샷을 사용하므로 사이에 커밋된 변경이 다음 조회에 보일 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "절대 불가능하다",
+        "explanation": "Repeatable Read와 구분된다."
+      },
+      {
+        "id": "c2",
+        "text": "반드시 미커밋 변경도 보인다",
+        "explanation": "Read Committed는 더티 읽기를 허용하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 DB 전체를 잠근다",
+        "explanation": "모든 조회에 전체 잠금이 필요한 것은 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "각 명령 시작 시점의 스냅샷을 사용하므로 사이에 커밋된 변경이 다음 조회에 보일 수 있다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-022",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "MVCC",
+    "prompt": "MVCC의 핵심 아이디어는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "동기화가 전혀 필요 없다",
+        "explanation": "제약·쓰기 충돌·정리 등은 여전히 관리해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "여러 버전으로 각 조회에 적절한 데이터 모습을 제공한다",
+        "explanation": "버전을 이용해 읽기와 쓰기의 동시성을 관리한다."
+      },
+      {
+        "id": "c1",
+        "text": "단 하나의 행 버전만 유지",
+        "explanation": "여러 버전을 사용하는 취지와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 읽기가 모든 쓰기를 반드시 막는다",
+        "explanation": "버전을 이용해 충돌을 줄일 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "버전을 이용해 읽기와 쓰기의 동시성을 관리한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-023",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "Repeatable Read",
+    "prompt": "PostgreSQL Repeatable Read가 Read Committed와 구분되는 대표 특징은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "미커밋 변경을 반드시 읽는다",
+        "explanation": "더티 읽기를 뜻하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 쿼리에 새로운 스냅샷",
+        "explanation": "Read Committed의 대표 동작이다."
+      },
+      {
+        "id": "c0",
+        "text": "같은 트랜잭션에서 일관된 스냅샷을 사용한다",
+        "explanation": "첫 비트랜잭션 제어 명령 시점의 스냅샷으로 이후 읽기의 일관성을 제공한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 직렬화 이상을 항상 막는다",
+        "explanation": "Serializable과 보장 범위가 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "첫 비트랜잭션 제어 명령 시점의 스냅샷으로 이후 읽기의 일관성을 제공한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-024",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "Serializable 재시도",
+    "prompt": "PostgreSQL Serializable에서 serialization failure가 나면 일반적인 처리 단위는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "COMMIT만 무한 반복",
+        "explanation": "이미 실패한 트랜잭션을 그대로 확정할 수 없다."
+      },
+      {
+        "id": "c2",
+        "text": "오류를 무시하고 성공 처리",
+        "explanation": "원하는 변경이 확정되지 않았다."
+      },
+      {
+        "id": "c3",
+        "text": "실패한 SELECT 문자열만 출력",
+        "explanation": "논리 작업 전체를 복구하지 못한다."
+      },
+      {
+        "id": "c0",
+        "text": "전체 트랜잭션을 다시 시도한다",
+        "explanation": "중간 결과를 그대로 쓰지 말고 트랜잭션의 읽기·판단부터 재실행해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "중간 결과를 그대로 쓰지 말고 트랜잭션의 읽기·판단부터 재실행해야 한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-025",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "쓰기 충돌",
+    "prompt": "은행 잔액을 읽고 계산한 값을 UPDATE하는 사이 다른 작업이 갱신한다. 필요한 고려는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "원자 갱신·잠금·격리 등으로 충돌을 제어한다",
+        "explanation": "읽기와 쓰기의 관계를 보호해야 갱신 유실을 막을 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "SELECT가 있으면 모든 갱신이 안전",
+        "explanation": "조회만으로 보호되지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "인덱스 이름만 바꾼다",
+        "explanation": "갱신 프로토콜이 바뀌지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "데이터 타입을 문자열로 바꾸면 해결",
+        "explanation": "저장 타입이 동시성 제어를 대신하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "읽기와 쓰기의 관계를 보호해야 갱신 유실을 막을 수 있다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-026",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "Deadlock DB",
+    "prompt": "트랜잭션 둘이 서로 보유한 행 락을 기다린다. 응용에서 준비할 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "무조건 모든 락 제거",
+        "explanation": "필요한 일관성을 잃을 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "교착 오류 처리와 전체 트랜잭션 재시도",
+        "explanation": "DB가 하나를 중단할 수 있으므로 실패한 작업을 안전하게 재시도해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "DB가 모든 작업을 성공시킨다고 가정",
+        "explanation": "교착 해소 과정에서 트랜잭션 실패가 가능하다."
+      },
+      {
+        "id": "c2",
+        "text": "응답만 성공으로 바꾼다",
+        "explanation": "실제 변경을 확정하지 못한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "DB가 하나를 중단할 수 있으므로 실패한 작업을 안전하게 재시도해야 한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-027",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "EXPLAIN ANALYZE",
+    "prompt": "PostgreSQL에서 EXPLAIN ANALYZE UPDATE를 실행할 때 유의할 점은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 자동 롤백된다",
+        "explanation": "자동 취소를 보장하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 읽기 전용이다",
+        "explanation": "UPDATE를 실제 실행한다."
+      },
+      {
+        "id": "c0",
+        "text": "실제로 명령을 실행한다",
+        "explanation": "실측을 얻기 위해 실행하므로 변경문은 데이터에 영향을 주며 적절한 트랜잭션 관리가 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "계획만 보고 실행하지 않는다",
+        "explanation": "일반 EXPLAIN과 ANALYZE를 구분해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "실측을 얻기 위해 실행하므로 변경문은 데이터에 영향을 주며 적절한 트랜잭션 관리가 필요하다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-028",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "Offset pagination",
+    "prompt": "변경되는 큰 테이블에서 큰 OFFSET으로 페이지를 넘길 때 문제는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "OFFSET은 항상 상수 비용",
+        "explanation": "건너뛰는 행 처리 비용이 있을 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "ORDER BY가 있으면 모든 동시 변경에 완전 안정",
+        "explanation": "삽입·삭제로 오프셋 경계가 바뀔 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "페이지마다 테이블이 자동 복제됨",
+        "explanation": "일반 페이징의 동작이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "많은 앞 행 처리와 페이지 사이 중복·누락 가능성",
+        "explanation": "안정된 키 순서의 keyset 방식 등을 검토할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "안정된 키 순서의 keyset 방식 등을 검토할 수 있다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-029",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "장기 트랜잭션",
+    "prompt": "오래 유지되는 스냅샷이 PostgreSQL의 정리에 불리할 수 있는 이유는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "아직 필요할 수 있는 오래된 행 버전을 제거하지 못할 수 있다",
+        "explanation": "MVCC 버전 보존 때문에 테이블 팽창과 정리 지연을 유발할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 행이 즉시 삭제된다",
+        "explanation": "오히려 제거를 미뤄야 할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "인덱스가 항상 사라진다",
+        "explanation": "버전 정리와 인덱스 삭제는 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "스냅샷은 메모리 주소라서",
+        "explanation": "논리 데이터 가시성 기준이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "MVCC 버전 보존 때문에 테이블 팽창과 정리 지연을 유발할 수 있다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "database-030",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "저장과 전송",
+    "prompt": "DB 커밋 후 응답 전송이 실패했다. 재요청 시 필요한 판단은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "파일 정렬만 수행",
+        "explanation": "논리 작업의 결과를 확인하지 못한다."
+      },
+      {
+        "id": "c0",
+        "text": "기존 커밋을 확인하고 논리 중복을 방지한다",
+        "explanation": "응답 전송 실패가 DB 롤백을 뜻하지 않으므로 작업 키·조회 등으로 확인해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "커밋이 반드시 취소됐다",
+        "explanation": "전송과 트랜잭션 확정은 별개다."
+      },
+      {
+        "id": "c2",
+        "text": "같은 INSERT를 무조건 재실행",
+        "explanation": "중복 생성 위험이 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "응답 전송 실패가 DB 롤백을 뜻하지 않으므로 작업 키·조회 등으로 확인해야 한다.",
+    "environment": "관계형 DB 공통 개념. 제품별 동작은 PostgreSQL 18을 기준으로 명시.",
+    "sources": [
+      {
+        "title": "PostgreSQL 18 Tutorial",
+        "url": "https://www.postgresql.org/docs/18/tutorial.html"
+      },
+      {
+        "title": "PostgreSQL 18 SQL·동시성·인덱스",
+        "url": "https://www.postgresql.org/docs/18/sql.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  }
+]
