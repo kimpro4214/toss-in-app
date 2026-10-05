@@ -1,0 +1,1524 @@
+[
+  {
+    "id": "typescript-001",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "타입 표기",
+    "prompt": "let age: number의 number는 무엇을 제한하나?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "값을 자동 숫자로 변환",
+        "explanation": "타입 표기는 변환 코드가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "변수를 상수로 만든다",
+        "explanation": "let은 재할당 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "타입 검사 시 대입 가능한 값",
+        "explanation": "정적 타입 표기이며 실행 때 변수를 검사하는 가드가 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "실행 중 모든 입력을 검사",
+        "explanation": "런타임 검증은 따로 작성한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정적 타입 표기이며 실행 때 변수를 검사하는 가드가 아니다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-002",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "타입 추론",
+    "prompt": "let title='CS'의 추론 타입은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "number",
+        "explanation": "초기화 값은 문자열이다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 리터럴 'CS'만",
+        "explanation": "const 리터럴 추론과 구분해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "never",
+        "explanation": "정상 문자열 값을 가질 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "string",
+        "explanation": "재할당 가능한 일반 let 문자열은 string으로 넓혀진다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "재할당 가능한 일반 let 문자열은 string으로 넓혀진다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-003",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "interface",
+    "prompt": "객체 interface가 주로 표현하는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "요구하는 속성의 형태",
+        "explanation": "객체의 구조를 정적 타입으로 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "메모리 배치 강제",
+        "explanation": "런타임 메모리 레이아웃을 정의하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "자동 생성자 실행",
+        "explanation": "interface는 생성자가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "입력 JSON 검증",
+        "explanation": "타입은 런타임에 소거된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "객체의 구조를 정적 타입으로 표현한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-004",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "유니온",
+    "prompt": "string 또는 number를 허용하는 타입은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 any",
+        "explanation": "가능한 타입을 한정할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "string과 number의 유니온",
+        "explanation": "두 타입 중 하나에 해당하는 값을 허용한다."
+      },
+      {
+        "id": "c1",
+        "text": "교차 타입",
+        "explanation": "동시에 두 조건을 요구하는 형태와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "number 배열",
+        "explanation": "배열 원소 조건이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "두 타입 중 하나에 해당하는 값을 허용한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-005",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "옵셔널 속성",
+    "prompt": "strictNullChecks에서 name?: string을 읽으면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 null",
+        "explanation": "누락과 null은 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "never",
+        "explanation": "읽을 수 없는 타입이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "string 또는 undefined",
+        "explanation": "속성이 없을 수 있으므로 undefined 가능성을 다뤄야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 string",
+        "explanation": "옵셔널 속성이 없다면 undefined이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "속성이 없을 수 있으므로 undefined 가능성을 다뤄야 한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-006",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "unknown",
+    "prompt": "unknown 값의 속성을 안전하게 읽기 전에 해야 할 일은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "아무 속성이나 즉시 읽는다",
+        "explanation": "any의 허용 범위와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 string으로 자동 변환",
+        "explanation": "unknown은 변환 명령이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 값을 거부한다",
+        "explanation": "모든 값을 unknown에 대입할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "검사로 타입을 좁힌다",
+        "explanation": "unknown은 사용 전 정당한 타입 확인을 요구한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "unknown은 사용 전 정당한 타입 확인을 요구한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-007",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "튜플",
+    "prompt": "[string, number] 타입의 배열 구조는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "첫 값 문자열, 두 번째 값 숫자",
+        "explanation": "튜플은 위치별 타입과 길이 정보를 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "두 값 모두 임의 타입",
+        "explanation": "위치별 타입 제약이 있다."
+      },
+      {
+        "id": "c2",
+        "text": "문자열이나 숫자 한 개만",
+        "explanation": "유니온 타입과 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 배열 길이 허용",
+        "explanation": "고정 튜플의 길이 제약이 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "튜플은 위치별 타입과 길이 정보를 표현한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-008",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "readonly",
+    "prompt": "readonly 속성을 표시하는 주목적은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "참조한 모든 객체를 깊게 불변화",
+        "explanation": "얕은 타입 제한이다."
+      },
+      {
+        "id": "c0",
+        "text": "해당 타입을 통한 재대입을 막는다",
+        "explanation": "정적 검사에서 속성 쓰기를 제한한다."
+      },
+      {
+        "id": "c1",
+        "text": "객체를 런타임 동결한다",
+        "explanation": "Object.freeze 등과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "속성 읽기도 금지",
+        "explanation": "읽기는 가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정적 검사에서 속성 쓰기를 제한한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-009",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "타입 별칭",
+    "prompt": "type ID = string은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "문자열 암호화",
+        "explanation": "타입 선언은 암호화가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "값 ID를 초기화",
+        "explanation": "타입과 값은 다른 문맥이다."
+      },
+      {
+        "id": "c0",
+        "text": "string 타입에 이름을 붙인다",
+        "explanation": "별칭은 별도 런타임 객체를 만들지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "새로운 명목 타입 생성",
+        "explanation": "단순 별칭은 기존 타입과 호환된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "별칭은 별도 런타임 객체를 만들지 않는다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-010",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "any 비용",
+    "prompt": "외부 데이터를 any로 두면 무엇이 약해지나?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "실행 속도가 반드시 느려진다",
+        "explanation": "소거되는 정적 타입 자체가 속도를 결정하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "저장 용량이 두 배가 된다",
+        "explanation": "any가 별도 데이터 복사를 만들지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 실행 예외가 사라진다",
+        "explanation": "검사 우회는 런타임 안전 보장이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "그 값에 대한 정적 검사",
+        "explanation": "잘못된 속성 접근도 검사기를 통과할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "잘못된 속성 접근도 검사기를 통과할 수 있다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-011",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "typeof narrowing",
+    "prompt": "string 또는 number인 x에 typeof x==='string'이면?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "해당 분기에서 string으로 좁혀진다",
+        "explanation": "타입 가드의 제어 흐름을 반영한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 number로 변경",
+        "explanation": "검사는 변환이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "유니온 그대로만 유지",
+        "explanation": "분기 내부에서 좁히기를 수행한다."
+      },
+      {
+        "id": "c3",
+        "text": "x 값을 삭제",
+        "explanation": "타입 검사가 값 삭제를 뜻하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "타입 가드의 제어 흐름을 반영한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-012",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "판별 유니온",
+    "prompt": "kind가 'ok'인 항목에 value, 'error'에 message가 있다. 안전한 접근 방법은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "kind 속성 삭제",
+        "explanation": "판별 정보가 사라진다."
+      },
+      {
+        "id": "c0",
+        "text": "kind로 분기를 나눈다",
+        "explanation": "공통 리터럴 판별자를 검사하면 해당 구성원으로 좁혀진다."
+      },
+      {
+        "id": "c1",
+        "text": "둘 다 무조건 읽는다",
+        "explanation": "다른 구성원에 속성이 없을 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 any로 변환",
+        "explanation": "판별 정보를 버릴 필요가 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "공통 리터럴 판별자를 검사하면 해당 구성원으로 좁혀진다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-013",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "제네릭 관계",
+    "prompt": "identity<T>(x:T):T의 장점은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "런타임 새 클래스를 만든다",
+        "explanation": "제네릭 타입도 소거된다."
+      },
+      {
+        "id": "c3",
+        "text": "오직 number만 받는다",
+        "explanation": "별도 제약 없는 T이다."
+      },
+      {
+        "id": "c0",
+        "text": "입력 타입과 반환 타입의 관계를 보존한다",
+        "explanation": "타입 매개변수로 입력과 출력의 연관을 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 반환이 string",
+        "explanation": "T는 호출마다 다른 타입일 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "타입 매개변수로 입력과 출력의 연관을 표현한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-014",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "구조적 타이핑",
+    "prompt": "필수 속성이 같은 두 타입의 대입 판단에서 중요한 것은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "클래스 이름만",
+        "explanation": "명목 타입 체계와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "파일 경로만",
+        "explanation": "구조 호환성의 기준이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "속성 선언 순서",
+        "explanation": "객체 속성 순서가 타입 호환 조건은 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "구조의 호환성",
+        "explanation": "기본적으로 선언 이름보다 요구 속성과 타입을 비교한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본적으로 선언 이름보다 요구 속성과 타입을 비교한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-015",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "keyof",
+    "prompt": "type User={id:number,name:string}의 keyof User는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "id와 name의 리터럴 유니온",
+        "explanation": "객체 타입의 키를 타입으로 추출한다."
+      },
+      {
+        "id": "c1",
+        "text": "number와 string의 값 타입",
+        "explanation": "키와 값은 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "실제 사용자 데이터 배열",
+        "explanation": "타입 연산은 런타임 데이터를 만들지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "오직 id",
+        "explanation": "모든 명시 키를 포함한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "객체 타입의 키를 타입으로 추출한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-016",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "Partial",
+    "prompt": "Partial<User>의 효과는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "모든 속성을 readonly로 만든다",
+        "explanation": "Readonly 유틸리티와 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "모든 속성을 옵셔널로 만든다",
+        "explanation": "매핑된 타입으로 각 속성의 필수 여부를 바꾼다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 값을 null로 바꾼다",
+        "explanation": "런타임 값은 바꾸지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 키를 제거한다",
+        "explanation": "키는 유지되며 선택 사항이 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "매핑된 타입으로 각 속성의 필수 여부를 바꾼다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-017",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "함수 타입",
+    "prompt": "숫자 두 개를 받아 숫자를 반환하는 함수 타입의 역할은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "비동기 전용이다",
+        "explanation": "반환 타입에 Promise 조건이 없다."
+      },
+      {
+        "id": "c3",
+        "text": "인자를 자동 반올림한다",
+        "explanation": "타입은 계산 동작이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "매개변수와 반환 계약 검사",
+        "explanation": "호출과 구현의 타입 관계를 확인한다."
+      },
+      {
+        "id": "c1",
+        "text": "함수를 자동 구현한다",
+        "explanation": "타입 선언은 함수 본문을 제공하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호출과 구현의 타입 관계를 확인한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-018",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "as const",
+    "prompt": "객체 리터럴에 as const를 붙이면 타입은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Object.freeze가 자동 실행",
+        "explanation": "런타임 동결하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "객체 값이 전부 문자열화",
+        "explanation": "타입 단언은 값 변환이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "메모리 해제가 빨라진다",
+        "explanation": "GC 동작을 지정하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "리터럴 값과 readonly 속성을 보존한다",
+        "explanation": "const assertion은 값의 타입 넓히기를 줄이고 readonly 정보를 부여한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "const assertion은 값의 타입 넓히기를 줄이고 readonly 정보를 부여한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-019",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "satisfies",
+    "prompt": "표현식 satisfies T의 목적은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "T 호환성을 확인하면서 표현식의 추론을 유지한다",
+        "explanation": "타입 주석으로 전체를 T로 넓히는 것과 차이가 있다."
+      },
+      {
+        "id": "c1",
+        "text": "데이터를 T로 런타임 변환",
+        "explanation": "코드 변환 가드가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "호환 여부와 무관하게 통과",
+        "explanation": "호환성 오류를 보고한다."
+      },
+      {
+        "id": "c3",
+        "text": "T의 생성자를 호출",
+        "explanation": "타입은 생성자가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "타입 주석으로 전체를 T로 넓히는 것과 차이가 있다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-020",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "never 검사",
+    "prompt": "switch의 모든 유니온 경우를 처리했는지 검사하려면?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "모든 경우를 문자열 변환",
+        "explanation": "완전성 검사와 관계없다."
+      },
+      {
+        "id": "c0",
+        "text": "남은 값을 never에 대입한다",
+        "explanation": "처리되지 않은 구성원이 있으면 never 대입에서 오류가 난다."
+      },
+      {
+        "id": "c1",
+        "text": "남은 값을 any에 대입",
+        "explanation": "검사를 우회한다."
+      },
+      {
+        "id": "c2",
+        "text": "default에서 무조건 성공 반환",
+        "explanation": "누락 경우를 드러내지 못한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "처리되지 않은 구성원이 있으면 never 대입에서 오류가 난다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-021",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "타입 소거",
+    "prompt": "User 타입으로 JSON.parse 결과를 단언하면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "잘못된 필드가 자동 수정",
+        "explanation": "단언은 변환 코드가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "예외가 컴파일 시 모두 검출",
+        "explanation": "외부 입력은 정적으로 확정하지 못한다."
+      },
+      {
+        "id": "c0",
+        "text": "실제 필드가 올바른지는 보장되지 않는다",
+        "explanation": "타입 단언은 실행 검증을 추가하지 않으므로 외부 데이터는 별도 검사해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "파싱 시 schema가 자동 검사",
+        "explanation": "JSON.parse는 문법을 검사할 뿐이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "타입 단언은 실행 검증을 추가하지 않으므로 외부 데이터는 별도 검사해야 한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-022",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "분배 조건부 타입",
+    "prompt": "T가 나체 타입 매개변수인 조건부 타입에 유니온을 넣으면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 교차 타입 생성",
+        "explanation": "조건부 분배와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 타입이 never",
+        "explanation": "조건의 결과에 따라 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "런타임 반복문 실행",
+        "explanation": "타입 수준 계산이다."
+      },
+      {
+        "id": "c0",
+        "text": "각 구성원에 분배될 수 있다",
+        "explanation": "T extends U 형태는 유니온의 각 구성원에 적용된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "T extends U 형태는 유니온의 각 구성원에 적용된다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-023",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "분배 억제",
+    "prompt": "조건부 타입의 유니온 분배를 억제하는 일반 방법은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "양쪽 타입을 튜플로 감싼다",
+        "explanation": "[T] extends [U] 형태는 나체 매개변수 조건을 피한다."
+      },
+      {
+        "id": "c1",
+        "text": "T를 any로 바꾸기만",
+        "explanation": "원하는 전체 유니온 검사와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "조건부 타입을 함수로 호출",
+        "explanation": "타입은 런타임 함수가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "타입 이름을 짧게 변경",
+        "explanation": "이름은 분배 조건이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "[T] extends [U] 형태는 나체 매개변수 조건을 피한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-024",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "타입 가드의 책임",
+    "prompt": "사용자 정의 x is User가 잘못 구현되면?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "가드가 값을 자동 수리",
+        "explanation": "불리언 검사일 뿐이다."
+      },
+      {
+        "id": "c0",
+        "text": "검사기가 믿어 런타임 오류가 가능하다",
+        "explanation": "반환 논리가 타입 술어와 일치하는지 작성자가 보장해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "컴파일러가 모든 입력을 자동 검증",
+        "explanation": "임의 함수의 완전한 의미를 증명하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 컴파일 오류",
+        "explanation": "논리적으로 잘못된 가드도 타입 검사를 통과할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "반환 논리가 타입 술어와 일치하는지 작성자가 보장해야 한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-025",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "배열 읽기 한계",
+    "prompt": "strict=true, noUncheckedIndexedAccess=false에서 number[]의 범위 밖 읽기는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "strict가 배열 길이까지 증명",
+        "explanation": "일반 동적 배열 범위를 자동 증명하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일러가 인덱스를 보정",
+        "explanation": "런타임 코드를 추가하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "정적 number여도 런타임 undefined일 수 있다",
+        "explanation": "strict만으로 인덱스 범위가 검증되지 않으며 해당 추가 옵션은 별도이다."
+      },
+      {
+        "id": "c1",
+        "text": "반드시 숫자 0",
+        "explanation": "범위 밖 값은 기본 0이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "strict만으로 인덱스 범위가 검증되지 않으며 해당 추가 옵션은 별도이다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript noUncheckedIndexedAccess",
+        "url": "https://www.typescriptlang.org/tsconfig/noUncheckedIndexedAccess.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-026",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "교차 충돌",
+    "prompt": "{x:string}과 {x:number}의 교차에서 x 타입은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "string과 number의 유니온",
+        "explanation": "교차는 선택적 합집합이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "자동 string 우선",
+        "explanation": "선언 순서로 덮어쓰지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "unknown",
+        "explanation": "모든 값 허용과 반대이다."
+      },
+      {
+        "id": "c0",
+        "text": "never",
+        "explanation": "양쪽 요구를 동시에 만족해야 하며 string과 number의 교집합은 never이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "양쪽 요구를 동시에 만족해야 하며 string과 number의 교집합은 never이다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-027",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "비-null 단언",
+    "prompt": "value! 사용 시 실행 때 value가 null이면?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "단언이 null을 제거하지 않는다",
+        "explanation": "비-null 단언은 검사기에만 정보를 주며 값에는 손대지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 빈 객체로 교체",
+        "explanation": "대체값을 만들지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "자동 return 수행",
+        "explanation": "제어 흐름 코드가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "null을 undefined로 변환",
+        "explanation": "변환을 수행하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "비-null 단언은 검사기에만 정보를 주며 값에는 손대지 않는다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-028",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "readonly 별칭",
+    "prompt": "mutable 배열을 readonly 참조로 노출하면 원래 mutable 참조는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "원본이 자동 복제",
+        "explanation": "참조를 복제할 뿐 배열 복제는 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "계속 수정할 수 있다",
+        "explanation": "읽기 전용 뷰가 원본의 다른 별칭까지 불변으로 만들지는 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "자동으로 권한 상실",
+        "explanation": "다른 참조의 타입은 그대로이다."
+      },
+      {
+        "id": "c2",
+        "text": "객체가 깊게 동결",
+        "explanation": "readonly 타입은 동결이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "읽기 전용 뷰가 원본의 다른 별칭까지 불변으로 만들지는 않는다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-029",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "조건부 infer",
+    "prompt": "함수 타입의 반환 타입을 infer R로 추출하는 작업은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "실행 예외를 잡는다",
+        "explanation": "try/catch가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "반환 값을 JSON으로 저장",
+        "explanation": "런타임 저장이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "타입 구조에서 정보를 추론한다",
+        "explanation": "조건부 타입 안에서 일치한 구조의 타입 부분을 바인딩한다."
+      },
+      {
+        "id": "c1",
+        "text": "함수를 실행해 결과를 얻는다",
+        "explanation": "정적 타입 추론이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "조건부 타입 안에서 일치한 구조의 타입 부분을 바인딩한다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "typescript-030",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "초과 속성 검사",
+    "prompt": "fresh 객체 리터럴의 대입과 변수 대입에서 추가 속성 허용이 다른 이유는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 객체는 반드시 같은 키 수",
+        "explanation": "구조적 타이핑은 추가 속성을 허용할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "변수 대입이 타입 검사를 모두 생략",
+        "explanation": "필수 구조 호환성은 검사한다."
+      },
+      {
+        "id": "c3",
+        "text": "객체 리터럴이 런타임에 삭제됨",
+        "explanation": "타입 오류 여부와 실행 객체는 별개이다."
+      },
+      {
+        "id": "c0",
+        "text": "리터럴에는 초과 속성 검사가 적용될 수 있다",
+        "explanation": "일반 구조 호환성 외에 fresh 리터럴을 검사하는 규칙이 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "일반 구조 호환성 외에 fresh 리터럴을 검사하는 규칙이 있다.",
+    "environment": "TypeScript 5.9, strict=true. 타입 검사와 JavaScript 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "TypeScript 공식 핸드북: 타입",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      },
+      {
+        "title": "TypeScript 공식 핸드북: 타입 조작",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  }
+]
