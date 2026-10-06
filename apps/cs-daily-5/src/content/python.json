@@ -1,0 +1,1509 @@
+[
+  {
+    "id": "python-001",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "리스트 가변성",
+    "prompt": "list와 tuple의 기본 차이는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "list는 숫자만 저장",
+        "explanation": "여러 타입 객체를 담을 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "tuple은 반드시 한 개 항목",
+        "explanation": "항목 수가 고정 제한되는 것은 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "list는 원소 교체가 가능하다",
+        "explanation": "리스트는 가변 시퀀스이며 튜플은 항목 참조를 교체하지 못한다."
+      },
+      {
+        "id": "c1",
+        "text": "tuple도 항목 교체 가능",
+        "explanation": "튜플 항목 대입은 허용되지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "리스트는 가변 시퀀스이며 튜플은 항목 참조를 교체하지 못한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-002",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "이름 바인딩",
+    "prompt": "a=[1], b=a에서 b.append(2) 이후 a는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "[1]",
+        "explanation": "대입은 리스트 복사가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "[2]",
+        "explanation": "append는 기존 원소를 제거하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "None",
+        "explanation": "a의 바인딩을 변경하지 않았다."
+      },
+      {
+        "id": "c0",
+        "text": "[1, 2]",
+        "explanation": "두 이름이 같은 리스트 객체에 바인딩되어 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "두 이름이 같은 리스트 객체에 바인딩되어 있다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-003",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "동등성과 동일성",
+    "prompt": "두 값의 내용 동등성을 비교하는 연산자는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "==",
+        "explanation": "==는 동등성, is는 객체 동일성을 검사한다."
+      },
+      {
+        "id": "c1",
+        "text": "is",
+        "explanation": "내용이 같아도 다른 객체일 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "=",
+        "explanation": "대입 문법이다."
+      },
+      {
+        "id": "c3",
+        "text": "in",
+        "explanation": "멤버십을 검사한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "==는 동등성, is는 객체 동일성을 검사한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-004",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "딕셔너리",
+    "prompt": "dict에서 값을 찾는 기준은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "정렬된 순위",
+        "explanation": "dict는 정렬 순위 조회 구조가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "키",
+        "explanation": "해시 가능한 키에 값을 대응시킨다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 삽입 번호",
+        "explanation": "시퀀스 인덱스와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "값의 메모리 크기",
+        "explanation": "조회 기준이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "해시 가능한 키에 값을 대응시킨다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-005",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "None",
+    "prompt": "명시적 return 없이 함수가 종료되면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "빈 리스트",
+        "explanation": "컨테이너를 자동 생성하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "반드시 예외",
+        "explanation": "정상 종료가 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "None",
+        "explanation": "Python 함수의 기본 반환 값은 None이다."
+      },
+      {
+        "id": "c1",
+        "text": "0",
+        "explanation": "숫자로 기본 반환하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Python 함수의 기본 반환 값은 None이다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-006",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "슬라이스",
+    "prompt": "a[1:3]이 선택하는 인덱스는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "1, 2, 3",
+        "explanation": "끝 인덱스는 제외한다."
+      },
+      {
+        "id": "c2",
+        "text": "0과 1",
+        "explanation": "시작 인덱스는 1이다."
+      },
+      {
+        "id": "c3",
+        "text": "3만",
+        "explanation": "범위 의미가 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "1과 2",
+        "explanation": "시작은 포함하고 끝은 제외한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "시작은 포함하고 끝은 제외한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-007",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "range",
+    "prompt": "list(range(3))의 값은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "[0, 1, 2]",
+        "explanation": "기본 시작 0, 끝 3 제외, 간격 1이다."
+      },
+      {
+        "id": "c1",
+        "text": "[1, 2, 3]",
+        "explanation": "시작과 끝 포함 규칙이 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "[0, 1, 2, 3]",
+        "explanation": "끝을 포함하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "[3]",
+        "explanation": "range는 범위 시퀀스이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본 시작 0, 끝 3 제외, 간격 1이다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-008",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "집합",
+    "prompt": "set이 표현하기 적절한 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "키-값 매핑",
+        "explanation": "dict의 역할이다."
+      },
+      {
+        "id": "c0",
+        "text": "중복 없는 항목 집합",
+        "explanation": "원소 중복을 제거하며 해시 가능한 원소를 저장한다."
+      },
+      {
+        "id": "c1",
+        "text": "위치별 순서 계약",
+        "explanation": "집합은 시퀀스 순서를 제공하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "같은 원소의 개수 보존",
+        "explanation": "중복을 보존하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "원소 중복을 제거하며 해시 가능한 원소를 저장한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-009",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "예외",
+    "prompt": "try에서 발생한 특정 예외를 처리하는 절은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "yield",
+        "explanation": "제너레이터 값을 내보낸다."
+      },
+      {
+        "id": "c3",
+        "text": "import",
+        "explanation": "모듈을 가져온다."
+      },
+      {
+        "id": "c0",
+        "text": "except",
+        "explanation": "일치하는 예외 처리기를 실행한다."
+      },
+      {
+        "id": "c1",
+        "text": "else",
+        "explanation": "예외 없이 try가 완료된 경우이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "일치하는 예외 처리기를 실행한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-010",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "함수 인자",
+    "prompt": "def f(x):로 전달받는 x의 본질은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 객체의 깊은 복사",
+        "explanation": "호출 시 자동 깊은 복사를 하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "호출자 변수 이름 자체",
+        "explanation": "지역 이름 재바인딩이 호출자 이름을 바꾸지는 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "문자열로만 전달",
+        "explanation": "임의 객체를 전달할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "전달된 객체에 대한 지역 바인딩",
+        "explanation": "호출 인자의 객체를 함수 지역 이름에 바인딩한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호출 인자의 객체를 함수 지역 이름에 바인딩한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-011",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "이터레이터",
+    "prompt": "next(it)가 항목을 모두 소비한 뒤 알리는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "StopIteration",
+        "explanation": "반복 종료를 나타내는 예외이다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 None",
+        "explanation": "None 자체도 유효한 항목일 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "0으로 종료를 표시하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "인덱스 -1",
+        "explanation": "이터레이터 프로토콜과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "반복 종료를 나타내는 예외이다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-012",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "제너레이터",
+    "prompt": "yield를 가진 함수를 호출하면 우선 얻는 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "새 OS 스레드",
+        "explanation": "제너레이터는 스레드 생성 문법이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "제너레이터 객체",
+        "explanation": "함수 본문을 끝까지 즉시 실행하지 않고 반복할 객체를 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "전체 결과 리스트",
+        "explanation": "지연 생산한다."
+      },
+      {
+        "id": "c2",
+        "text": "마지막 yield 값만",
+        "explanation": "여러 값을 차례로 생산할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "함수 본문을 끝까지 즉시 실행하지 않고 반복할 객체를 반환한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-013",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "컨텍스트 관리자",
+    "prompt": "with가 파일 닫기 관리에 유용한 이유는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "파일을 항상 메모리 복사",
+        "explanation": "with의 일반 역할이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "파일 닫기는 프로그램 종료 때만",
+        "explanation": "블록 종료 시 종료 프로토콜을 수행한다."
+      },
+      {
+        "id": "c0",
+        "text": "정상·예외 경로에서 종료 처리를 수행한다",
+        "explanation": "__exit__가 실행되어 자원 해제 정책을 적용할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "예외 발생을 전부 막는다",
+        "explanation": "처리 정책에 따라 예외는 전파된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "__exit__가 실행되어 자원 해제 정책을 적용할 수 있다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-014",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "얕은 복사",
+    "prompt": "중첩 리스트를 list.copy() 하면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 내부 객체도 복제",
+        "explanation": "깊은 복사와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "원본 리스트를 삭제",
+        "explanation": "복사는 삭제가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 tuple 반환",
+        "explanation": "리스트 복사이다."
+      },
+      {
+        "id": "c0",
+        "text": "내부 리스트 참조가 공유된다",
+        "explanation": "외부 컨테이너만 새로 만들고 항목 참조는 복사한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "외부 컨테이너만 새로 만들고 항목 참조는 복사한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-015",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "컴프리헨션",
+    "prompt": "[x*x for x in data if x>0]의 결과는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "양수 원소들의 제곱 리스트",
+        "explanation": "필터를 통과한 원소를 변환해 새 리스트로 모은다."
+      },
+      {
+        "id": "c1",
+        "text": "원본을 제자리 정렬",
+        "explanation": "정렬 문법이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "음수만 제거하며 값 유지",
+        "explanation": "x*x 변환이 있다."
+      },
+      {
+        "id": "c3",
+        "text": "지연 제너레이터",
+        "explanation": "대괄호는 리스트를 만든다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "필터를 통과한 원소를 변환해 새 리스트로 모은다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-016",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "키의 해시 가능성",
+    "prompt": "일반 list를 dict 키로 직접 쓸 수 없는 이유는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "dict가 값만 저장한다",
+        "explanation": "키와 값을 모두 저장한다."
+      },
+      {
+        "id": "c0",
+        "text": "해시 가능한 객체가 아니다",
+        "explanation": "가변 리스트는 표준 해시를 제공하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "길이가 너무 길다",
+        "explanation": "길이와 관계없다."
+      },
+      {
+        "id": "c2",
+        "text": "정수만 dict 키가 된다",
+        "explanation": "문자열 등도 해시 가능한 키이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "가변 리스트는 표준 해시를 제공하지 않는다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-017",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "기본 인자 평가",
+    "prompt": "def f(items=[])의 기본 리스트 생성 시점은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "함수 종료 시",
+        "explanation": "이미 인자로 사용한 뒤이다."
+      },
+      {
+        "id": "c3",
+        "text": "import 문법 검사 시만",
+        "explanation": "정의 문장이 실행되는 때이다."
+      },
+      {
+        "id": "c0",
+        "text": "함수 정의 실행 시",
+        "explanation": "호출마다 다시 생성되지 않으므로 여러 호출에서 공유될 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "매번 호출 직전",
+        "explanation": "가변 기본 인자 함정의 원인과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호출마다 다시 생성되지 않으므로 여러 호출에서 공유될 수 있다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    },
+    "code": "def f(items=[]):\n    items.append(1)\n    return items\nprint(f())\nprint(f())"
+  },
+  {
+    "id": "python-018",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "변수 범위",
+    "prompt": "함수에서 이름에 대입하면 global/nonlocal이 없는 경우?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 전역 이름 변경",
+        "explanation": "명시 global이 필요하다."
+      },
+      {
+        "id": "c2",
+        "text": "외부 이름 자동 삭제",
+        "explanation": "지역 바인딩과 별개이다."
+      },
+      {
+        "id": "c3",
+        "text": "기존 값을 무조건 깊게 복사",
+        "explanation": "이름 범위 규칙이지 복사가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "그 함수의 지역 이름으로 판단한다",
+        "explanation": "바인딩 연산이 함수 지역 범위를 결정한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "바인딩 연산이 함수 지역 범위를 결정한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-019",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "enumerate",
+    "prompt": "enumerate(data)가 순회 중 제공하는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "인덱스와 원소의 쌍",
+        "explanation": "기본 인덱스는 0부터 시작하며 항목과 묶는다."
+      },
+      {
+        "id": "c1",
+        "text": "원소의 해시 값",
+        "explanation": "해시 함수가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "정렬된 원소만",
+        "explanation": "정렬하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "두 배열의 대응 항목",
+        "explanation": "zip의 역할이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본 인덱스는 0부터 시작하며 항목과 묶는다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-020",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "raise 연결",
+    "prompt": "새 예외를 raise X from original로 올리는 목적은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "모든 예외 로그를 제거",
+        "explanation": "원인을 보존할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "예외 원인을 명시한다",
+        "explanation": "원래 예외와 새 예외의 원인 관계를 기록한다."
+      },
+      {
+        "id": "c1",
+        "text": "원래 예외를 성공으로 바꾼다",
+        "explanation": "새 예외를 발생시킨다."
+      },
+      {
+        "id": "c2",
+        "text": "외부 API를 재시도한다",
+        "explanation": "재시도 동작을 하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "원래 예외와 새 예외의 원인 관계를 기록한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-021",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "가변 기본 인자 대책",
+    "prompt": "호출마다 독립 리스트가 필요할 때 적절한 방법은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "매번 기존 기본 리스트에 추가",
+        "explanation": "공유 문제를 더한다."
+      },
+      {
+        "id": "c3",
+        "text": "기본 리스트를 tuple로 표시만",
+        "explanation": "타입 주석은 객체를 바꾸지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "기본 None 후 함수 안에서 새 리스트 생성",
+        "explanation": "공유 기본 객체를 피하고 호출별 객체를 만든다."
+      },
+      {
+        "id": "c1",
+        "text": "빈 리스트 기본 값 유지",
+        "explanation": "같은 객체를 공유한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "공유 기본 객체를 피하고 호출별 객체를 만든다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-022",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "늦은 바인딩",
+    "prompt": "반복문의 같은 이름을 참조한 lambda들을 나중에 호출하면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "생성 순간 값이 자동 고정",
+        "explanation": "기본 인자 등으로 별도 캡처할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "lambda가 즉시 실행된다",
+        "explanation": "함수 생성과 호출은 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "각 lambda가 별도 스레드",
+        "explanation": "함수 객체가 스레드가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "호출 시점 바인딩 값을 읽는다",
+        "explanation": "클로저는 기본적으로 변수 바인딩을 참조하며 각 시점 값 복사는 별도이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "클로저는 기본적으로 변수 바인딩을 참조하며 각 시점 값 복사는 별도이다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-023",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "튜플 내부 변경",
+    "prompt": "t=([1],) 이후 t[0].append(2)는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "내부 리스트가 변경된다",
+        "explanation": "튜플은 원소 참조 교체를 막을 뿐 참조한 객체를 동결하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 TypeError",
+        "explanation": "리스트의 append는 가능하다."
+      },
+      {
+        "id": "c2",
+        "text": "튜플에 두 번째 원소 추가",
+        "explanation": "내부 리스트 변경이다."
+      },
+      {
+        "id": "c3",
+        "text": "기존 리스트가 자동 복제",
+        "explanation": "같은 리스트 객체를 수정한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "튜플은 원소 참조 교체를 막을 뿐 참조한 객체를 동결하지 않는다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-024",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "재사용 불가 반복",
+    "prompt": "동일 제너레이터를 list로 한 번 다 소비한 후 다시 list로 감싸면?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 예외",
+        "explanation": "반복에서는 정상 종료로 처리된다."
+      },
+      {
+        "id": "c0",
+        "text": "빈 리스트",
+        "explanation": "소진된 같은 이터레이터는 처음부터 자동 재시작하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "처음 항목 전체",
+        "explanation": "새 제너레이터를 만들어야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "마지막 항목만",
+        "explanation": "이미 소진되었다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "소진된 같은 이터레이터는 처음부터 자동 재시작하지 않는다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-025",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "finally와 반환",
+    "prompt": "try에서 1을 반환하지만 finally가 2를 반환하면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "반환 값을 합치지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "None",
+        "explanation": "명시 반환이 있다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "finally의 반환이 보류 중인 반환을 덮어쓴다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "finally의 return이 우선한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "finally의 반환이 보류 중인 반환을 덮어쓴다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-026",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "CPython GIL",
+    "prompt": "일반 CPython 3.12에서 GIL이 있어도 공유 카운터에 동기화가 필요한 이유는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 스레드가 항상 동시 바이트코드 실행",
+        "explanation": "GIL은 바이트코드 실행을 제한한다."
+      },
+      {
+        "id": "c2",
+        "text": "GIL이 메모리를 자동 복사",
+        "explanation": "공유 객체는 그대로이다."
+      },
+      {
+        "id": "c3",
+        "text": "락은 절대 사용 불가",
+        "explanation": "threading.Lock을 사용할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "복합 갱신 전체의 원자성을 보장하지 않는다",
+        "explanation": "읽기·계산·쓰기라는 논리 작업을 GIL만으로 안전하다고 가정하면 안 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "읽기·계산·쓰기라는 논리 작업을 GIL만으로 안전하다고 가정하면 안 된다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "CPython 3.12 GIL 및 스레드",
+        "url": "https://docs.python.org/3.12/c-api/init.html#thread-state-and-the-global-interpreter-lock"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-027",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "asyncio 협력",
+    "prompt": "async 함수의 긴 CPU 루프에 await가 없으면?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "이벤트 루프의 다른 태스크 진행을 막을 수 있다",
+        "explanation": "협력적 실행에서 양보 지점 없이 오래 실행하면 다른 태스크가 대기한다."
+      },
+      {
+        "id": "c1",
+        "text": "자동으로 새 코어에 분산",
+        "explanation": "코루틴이 병렬 CPU 스케줄러는 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "루프가 컴파일 시 제거",
+        "explanation": "임의 루프를 제거하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "반드시 매 반복 양보",
+        "explanation": "await 등 양보 지점이 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "협력적 실행에서 양보 지점 없이 오래 실행하면 다른 태스크가 대기한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "asyncio 태스크",
+        "url": "https://docs.python.org/3.12/library/asyncio-task.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-028",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "nonlocal",
+    "prompt": "중첩 함수에서 nonlocal x의 대상은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "호출자의 임의 이름",
+        "explanation": "렉시컬 범위로 결정된다."
+      },
+      {
+        "id": "c0",
+        "text": "둘러싼 함수의 기존 바인딩",
+        "explanation": "전역이 아닌 바깥 함수 범위의 이름을 재바인딩한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 모듈 전역",
+        "explanation": "global과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "새 지역 x 생성",
+        "explanation": "외부 바인딩을 대상으로 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "전역이 아닌 바깥 함수 범위의 이름을 재바인딩한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-029",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "키 불변 조건",
+    "prompt": "사용자 객체를 dict 키로 쓰며 hash와 equality에 쓰는 상태를 변경하면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 데이터가 깊게 복제",
+        "explanation": "키 객체를 참조한다."
+      },
+      {
+        "id": "c3",
+        "text": "해시는 동등성과 무관",
+        "explanation": "같은 객체 값의 해시 계약을 지켜야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "조회 계약이 깨질 수 있다",
+        "explanation": "키 수명 동안 해시와 동등성 규칙이 안정적이어야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "dict가 모든 키를 자동 재배치",
+        "explanation": "일반 상태 변경을 추적하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "키 수명 동안 해시와 동등성 규칙이 안정적이어야 한다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "Python 3.12 데이터 모델",
+        "url": "https://docs.python.org/3.12/reference/datamodel.html"
+      },
+      {
+        "title": "Python 3.12 표현식",
+        "url": "https://docs.python.org/3.12/reference/expressions.html"
+      },
+      {
+        "title": "Python 3.12 복합 문장",
+        "url": "https://docs.python.org/3.12/reference/compound_stmts.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "python-030",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "순환과 해제",
+    "prompt": "CPython에서 참조 카운트만으로 순환 참조를 해제하기 어려운 이유는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 순환이 즉시 SyntaxError",
+        "explanation": "순환 객체는 만들 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "카운트가 무조건 음수",
+        "explanation": "서로 참조하면 양수로 남을 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "Python에는 GC가 없다",
+        "explanation": "CPython은 참조 카운트와 순환 GC를 함께 쓴다."
+      },
+      {
+        "id": "c0",
+        "text": "서로 참조하여 카운트가 남을 수 있다",
+        "explanation": "순환 쓰레기는 추가 순환 GC가 처리할 수 있다. 자원 정리를 GC 시점에 의존하지 않는 편이 안전하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "순환 쓰레기는 추가 순환 GC가 처리할 수 있다. 자원 정리를 GC 시점에 의존하지 않는 편이 안전하다.",
+    "environment": "Python 3.12. 구현 의존 문항은 CPython 3.12로 명시한다.",
+    "sources": [
+      {
+        "title": "CPython 순환 GC",
+        "url": "https://docs.python.org/3.12/library/gc.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  }
+]

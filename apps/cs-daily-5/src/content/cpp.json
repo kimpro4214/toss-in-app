@@ -1,0 +1,1533 @@
+[
+  {
+    "id": "cpp-001",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "참조",
+    "prompt": "int x=1; int& r=x; r=3; 이후 x는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "정의되지 않음",
+        "explanation": "유효한 객체에 바인딩된 참조 대입이다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "r은 x를 가리키는 별칭이므로 대입은 x를 수정한다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "참조는 값 복사 변수가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "기본 초기화 문제가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "r은 x를 가리키는 별칭이므로 대입은 x를 수정한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    },
+    "code": "int x = 1;\nint& r = x;\nr = 3;\n// 이 시점의 x는?"
+  },
+  {
+    "id": "cpp-002",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "포인터",
+    "prompt": "nullptr가 나타내는 것은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "메모리 해제 명령",
+        "explanation": "포인터 값이며 해제를 수행하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "빈 객체 주소",
+        "explanation": "객체를 생성하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "널 포인터 값",
+        "explanation": "어떤 객체도 가리키지 않는 포인터 값을 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 정수 0 타입",
+        "explanation": "nullptr의 타입은 std::nullptr_t이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "어떤 객체도 가리키지 않는 포인터 값을 표현한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-003",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "const 객체",
+    "prompt": "const int n=4; 이후 n=5;는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "n이 5가 된다",
+        "explanation": "const 대입 금지이다."
+      },
+      {
+        "id": "c2",
+        "text": "n이 0이 된다",
+        "explanation": "자동 초기화하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "실행 시만 예외",
+        "explanation": "타입 검사에서 대입을 거부한다."
+      },
+      {
+        "id": "c0",
+        "text": "컴파일 오류",
+        "explanation": "상수 객체에 재대입할 수 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "상수 객체에 재대입할 수 없다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-004",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "자동 수명",
+    "prompt": "블록 지역 자동 객체의 소멸자가 보통 실행되는 때는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "블록을 벗어날 때",
+        "explanation": "자동 저장 기간의 객체는 범위를 벗어나며 소멸한다."
+      },
+      {
+        "id": "c1",
+        "text": "프로그램 종료만",
+        "explanation": "블록 지역 객체는 더 일찍 소멸한다."
+      },
+      {
+        "id": "c2",
+        "text": "생성자 실행 직후",
+        "explanation": "객체 사용 기간을 유지한다."
+      },
+      {
+        "id": "c3",
+        "text": "매 프레임 무조건",
+        "explanation": "언어가 프레임 개념을 알지 못한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "자동 저장 기간의 객체는 범위를 벗어나며 소멸한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-005",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "vector 연속성",
+    "prompt": "std::vector<int> 원소의 배치 특성은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "크기 변경 불가",
+        "explanation": "동적으로 크기를 변경할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "연속된 메모리에 저장",
+        "explanation": "vector<bool> 특수화를 제외한 일반 vector는 연속 원소 저장을 보장한다."
+      },
+      {
+        "id": "c1",
+        "text": "각 원소가 독립 연결 노드",
+        "explanation": "list와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 정렬 상태",
+        "explanation": "정렬을 자동 수행하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "vector<bool> 특수화를 제외한 일반 vector는 연속 원소 저장을 보장한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-006",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "값 전달",
+    "prompt": "void f(int x){x=9;}에서 호출자의 int 변수는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "호출자 변수가 해제",
+        "explanation": "int 값 전달은 해제를 하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "포인터가 된다",
+        "explanation": "매개변수 타입은 int이다."
+      },
+      {
+        "id": "c0",
+        "text": "그대로 유지된다",
+        "explanation": "값으로 전달된 매개변수는 별도 객체이다."
+      },
+      {
+        "id": "c1",
+        "text": "9로 변경",
+        "explanation": "참조 전달과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "값으로 전달된 매개변수는 별도 객체이다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-007",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "struct와 class",
+    "prompt": "기본 접근 지정자의 차이는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "struct는 함수 불가",
+        "explanation": "멤버 함수를 가질 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "class만 생성자 가능",
+        "explanation": "struct도 생성자를 가질 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "struct는 항상 값 전달",
+        "explanation": "전달 방식은 함수 선언에 따른다."
+      },
+      {
+        "id": "c0",
+        "text": "struct는 public, class는 private",
+        "explanation": "명시하지 않은 멤버와 기반 클래스 접근의 기본값이 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "명시하지 않은 멤버와 기반 클래스 접근의 기본값이 다르다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-008",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "오버로딩",
+    "prompt": "함수 이름은 같고 매개변수 목록이 다른 선언은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "함수 오버로딩",
+        "explanation": "호출 인자 타입 등에 따라 후보를 선택한다."
+      },
+      {
+        "id": "c1",
+        "text": "반환 타입만으로 항상 구분",
+        "explanation": "반환 타입만 다른 함수는 오버로드하지 못한다."
+      },
+      {
+        "id": "c2",
+        "text": "가상 함수만 가능",
+        "explanation": "일반 함수도 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "변수 섀도잉",
+        "explanation": "다른 함수 시그니처의 선언이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호출 인자 타입 등에 따라 후보를 선택한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-009",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "헤더 보호",
+    "prompt": "같은 헤더의 중복 포함을 막는 전통적 방법은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "매번 새 namespace 사용",
+        "explanation": "중복 포함을 막지 못한다."
+      },
+      {
+        "id": "c0",
+        "text": "include guard",
+        "explanation": "전처리 조건과 매크로로 한 번만 선언 내용을 처리한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 include 제거",
+        "explanation": "필요한 선언도 사라진다."
+      },
+      {
+        "id": "c2",
+        "text": "함수마다 delete",
+        "explanation": "메모리 해제와 무관하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "전처리 조건과 매크로로 한 번만 선언 내용을 처리한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-010",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "enum class",
+    "prompt": "일반 enum 대비 enum class의 특성은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "객체 생성 불가",
+        "explanation": "열거형 변수 생성이 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 열거자 전역 노출",
+        "explanation": "범위 안에 이름을 둔다."
+      },
+      {
+        "id": "c0",
+        "text": "열거자 범위를 갖고 정수로 암묵 변환하지 않는다",
+        "explanation": "강한 범위와 타입 구분을 제공한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 문자열 값",
+        "explanation": "열거형은 정수 기반 타입이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "강한 범위와 타입 구분을 제공한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-011",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "RAII",
+    "prompt": "파일 핸들을 RAII 객체가 소유할 때 기대하는 동작은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "수동 delete만 강요",
+        "explanation": "해제를 자동 객체 수명에 연결한다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 예외를 무시",
+        "explanation": "예외를 없애는 기법이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "프로그램 종료까지 항상 유지",
+        "explanation": "소유 객체 수명에 따라 해제한다."
+      },
+      {
+        "id": "c0",
+        "text": "소멸자에서 해제",
+        "explanation": "객체 수명과 자원 소유권을 결합하여 정상·예외 경로를 관리한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "객체 수명과 자원 소유권을 결합하여 정상·예외 경로를 관리한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-012",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "unique_ptr",
+    "prompt": "std::unique_ptr의 소유권은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "단독 소유하며 이동할 수 있다",
+        "explanation": "복사는 금지하고 이동으로 소유권을 이전한다."
+      },
+      {
+        "id": "c1",
+        "text": "복사하면 소유자 수 증가",
+        "explanation": "shared_ptr와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "대상 객체를 절대 해제하지 않음",
+        "explanation": "소멸 시 deleter로 해제한다."
+      },
+      {
+        "id": "c3",
+        "text": "포인터 산술 자동 지원",
+        "explanation": "단독 소유를 위한 클래스이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "복사는 금지하고 이동으로 소유권을 이전한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-013",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "shared_ptr",
+    "prompt": "shared_ptr 복사 시 주로 공유되는 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 스레드 안전한 대상",
+        "explanation": "대상 객체 접근 동기화는 별도이다."
+      },
+      {
+        "id": "c0",
+        "text": "같은 대상과 소유권 제어 블록",
+        "explanation": "객체를 깊게 복제하지 않고 강한 참조 카운트를 공유한다."
+      },
+      {
+        "id": "c1",
+        "text": "대상 객체 전체 복제",
+        "explanation": "일반 복사는 같은 객체를 공유한다."
+      },
+      {
+        "id": "c2",
+        "text": "별개 raw pointer만 생성",
+        "explanation": "소유권 제어를 공유한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "객체를 깊게 복제하지 않고 강한 참조 카운트를 공유한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-014",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "weak_ptr",
+    "prompt": "순환 shared_ptr 소유 관계를 끊는 도구는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "const shared_ptr",
+        "explanation": "const가 소유 참조를 약하게 만들지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "원소 정렬",
+        "explanation": "소유권 관계와 무관하다."
+      },
+      {
+        "id": "c0",
+        "text": "weak_ptr",
+        "explanation": "강한 참조 카운트를 늘리지 않으며 lock으로 살아 있는 소유자를 얻을 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "shared_ptr 추가 복사",
+        "explanation": "순환 강한 참조를 더한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "강한 참조 카운트를 늘리지 않으며 lock으로 살아 있는 소유자를 얻을 수 있다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-015",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "이동 의미",
+    "prompt": "std::move 자체가 하는 일은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 메모리를 즉시 복제",
+        "explanation": "move 자체는 복사 동작이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "소멸자를 즉시 호출",
+        "explanation": "객체 수명은 그대로이다."
+      },
+      {
+        "id": "c3",
+        "text": "대상을 자동 해제",
+        "explanation": "이동 동작은 타입 구현에 달렸다."
+      },
+      {
+        "id": "c0",
+        "text": "이동 가능한 값 범주로 캐스트",
+        "explanation": "실제 자원 이전은 선택된 생성자·대입 연산 등이 수행한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "실제 자원 이전은 선택된 생성자·대입 연산 등이 수행한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-016",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "가상 호출",
+    "prompt": "virtual 메서드를 기반 참조로 호출할 때 선택되는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "동적 타입의 최종 재정의",
+        "explanation": "가상 디스패치가 실제 객체 타입에 따른 구현을 선택한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 기반 구현",
+        "explanation": "재정의한 virtual 함수는 동적 디스패치된다."
+      },
+      {
+        "id": "c2",
+        "text": "가장 먼저 선언한 이름",
+        "explanation": "선언 순서로 결정하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "매크로 이름",
+        "explanation": "가상 함수 선택은 전처리가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "가상 디스패치가 실제 객체 타입에 따른 구현을 선택한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-017",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "가상 소멸자",
+    "prompt": "기반 포인터로 파생 객체를 delete할 소유 API의 필요 조건은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "포인터를 const로 표시",
+        "explanation": "소멸 디스패치 문제를 해결하지 못한다."
+      },
+      {
+        "id": "c0",
+        "text": "기반 소멸자를 virtual로 제공",
+        "explanation": "이 조건의 일반 다형 삭제를 정의된 동작으로 만들려면 가상 소멸자가 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "생성자만 virtual",
+        "explanation": "C++ 생성자는 가상이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "멤버 전부 static",
+        "explanation": "파생 객체 정리 계약을 보장하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "이 조건의 일반 다형 삭제를 정의된 동작으로 만들려면 가상 소멸자가 필요하다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-018",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "람다 캡처",
+    "prompt": "지역 정수 x를 값 캡처한 람다의 기본 의미는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "x가 전역으로 이동",
+        "explanation": "지역 이름을 전역화하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "호출 때 x를 다시 검색",
+        "explanation": "값 캡처는 생성 시 값을 가진다."
+      },
+      {
+        "id": "c0",
+        "text": "생성 시 값의 복사본을 저장",
+        "explanation": "이후 원래 x가 바뀌어도 캡처 복사본은 별도이다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 x 주소 저장",
+        "explanation": "참조 캡처와 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "이후 원래 x가 바뀌어도 캡처 복사본은 별도이다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-019",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "범위 for",
+    "prompt": "vector의 원소를 제자리 수정하려면 루프 변수는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "auto",
+        "explanation": "값 복사에 대한 수정이다."
+      },
+      {
+        "id": "c2",
+        "text": "const auto&",
+        "explanation": "읽기 전용 참조이다."
+      },
+      {
+        "id": "c3",
+        "text": "원소 타입과 무관한 void",
+        "explanation": "void 객체 루프 변수를 만들 수 없다."
+      },
+      {
+        "id": "c0",
+        "text": "auto&",
+        "explanation": "참조를 통해 각 원소 자체를 수정한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "참조를 통해 각 원소 자체를 수정한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-020",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "전방 선언",
+    "prompt": "다른 클래스의 포인터 멤버만 선언할 때 가능한 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "그 클래스의 전방 선언",
+        "explanation": "크기와 구현을 사용할 필요가 없는 포인터 선언은 불완전 타입으로 가능하다."
+      },
+      {
+        "id": "c1",
+        "text": "멤버 접근도 무조건 가능",
+        "explanation": "정의 없이 멤버 정보를 알 수 없다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 전체 헤더 필요",
+        "explanation": "포인터 선언만은 불완전 타입으로 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "대상 객체 크기도 알 수 있음",
+        "explanation": "완전 타입이 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "크기와 구현을 사용할 필요가 없는 포인터 선언은 불완전 타입으로 가능하다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-021",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "vector 무효화",
+    "prompt": "vector 재할당이 발생한 push_back 후 이전 원소 포인터는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "capacity가 작아지는 경우만",
+        "explanation": "용량 증가로 재할당할 때도 무효화된다."
+      },
+      {
+        "id": "c0",
+        "text": "무효화된다",
+        "explanation": "원소 저장소가 옮겨지므로 이전 참조·반복자·포인터를 사용하면 안 된다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 자동 갱신",
+        "explanation": "외부 포인터를 갱신하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "첫 원소만 유효",
+        "explanation": "재할당은 전체 저장소를 바꾼다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "원소 저장소가 옮겨지므로 이전 참조·반복자·포인터를 사용하면 안 된다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-022",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "string_view 수명",
+    "prompt": "지역 string을 가리키는 string_view를 반환하면 위험한 이유는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "문자열이 영구 전역화",
+        "explanation": "지역 객체 수명은 연장되지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "뷰는 숫자만 참조",
+        "explanation": "문자 시퀀스를 참조한다."
+      },
+      {
+        "id": "c0",
+        "text": "원본 문자열이 소멸한다",
+        "explanation": "string_view는 문자 저장소를 소유하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "뷰가 항상 원본을 복사",
+        "explanation": "비소유 뷰이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "string_view는 문자 저장소를 소유하지 않는다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-023",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "예외 안전성",
+    "prompt": "연산 실패 시 원래 상태를 유지하는 보장 이름은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "기본 보장",
+        "explanation": "유효 상태와 누수 방지를 보장하지만 원상태 유지까지는 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "무예외 보장",
+        "explanation": "예외 자체가 발생하지 않는다는 보장이다."
+      },
+      {
+        "id": "c3",
+        "text": "가상 호출 보장",
+        "explanation": "예외 안전성 수준이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "강한 예외 보장",
+        "explanation": "실패가 관찰 가능한 상태를 바꾸지 않도록 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "실패가 관찰 가능한 상태를 바꾸지 않도록 한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-024",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "noexcept 이동",
+    "prompt": "vector가 재할당 시 복사 가능한 타입의 이동 대신 복사를 선택할 수 있는 이유는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "던질 수 있는 이동의 실패가 원상태 보장을 어렵게 한다",
+        "explanation": "이동이 noexcept이면 강한 보장을 유지하며 이동하기 쉬워진다."
+      },
+      {
+        "id": "c1",
+        "text": "복사가 항상 더 빠르다",
+        "explanation": "성능만으로 정해진 규칙이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "이동 생성자가 절대 호출 불가",
+        "explanation": "조건에 따라 이동한다."
+      },
+      {
+        "id": "c3",
+        "text": "vector는 클래스 저장 불가",
+        "explanation": "클래스도 저장할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "이동이 noexcept이면 강한 보장을 유지하며 이동하기 쉬워진다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-025",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "공유 객체 동기화",
+    "prompt": "같은 shared_ptr 대상의 비원자 필드를 두 스레드가 수정할 때 필요한 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "const 변수 이름만",
+        "explanation": "다른 가변 별칭이 있으면 데이터 보호가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "대상 데이터에 대한 동기화",
+        "explanation": "제어 블록의 참조 카운트 안전성과 대상 객체의 데이터 경쟁은 별개이다."
+      },
+      {
+        "id": "c1",
+        "text": "shared_ptr만으로 충분",
+        "explanation": "필드 접근을 자동 동기화하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "weak_ptr로 바꾸면 안전",
+        "explanation": "약한 소유권도 데이터 보호가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "제어 블록의 참조 카운트 안전성과 대상 객체의 데이터 경쟁은 별개이다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-026",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "release-acquire",
+    "prompt": "생산자가 데이터를 쓰고 release 플래그, 소비자가 그 값을 acquire로 읽으면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "데이터를 깊게 복제",
+        "explanation": "메모리 순서 규칙이지 복사가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "읽은 플래그 값과 무관하게 항상 연결",
+        "explanation": "대응 release를 관찰해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "이전 데이터 쓰기의 가시성 관계를 만든다",
+        "explanation": "해당 release에서 읽은 acquire는 동기화하여 이전 쓰기를 이후 읽기에 연결한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 가능한 스레드 연산 총정렬",
+        "explanation": "release/acquire가 모든 연산의 총정렬을 보장하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "해당 release에서 읽은 acquire는 동기화하여 이전 쓰기를 이후 읽기에 연결한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-027",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "소멸자 예외",
+    "prompt": "예외 전파 중 스택 해제에서 소멸자가 또 예외를 전파하면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "원래 예외를 자동 무시",
+        "explanation": "안전하게 무시하는 규칙이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "무조건 정상 반환",
+        "explanation": "프로그램이 종료될 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "소멸자가 재시도된다",
+        "explanation": "언어가 자동 재시도하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "std::terminate 위험",
+        "explanation": "두 예외를 동시에 전파하는 상황은 terminate로 이어진다. 소멸자에서 예외를 내보내지 않는 정책이 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "두 예외를 동시에 전파하는 상황은 terminate로 이어진다. 소멸자에서 예외를 내보내지 않는 정책이 필요하다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-028",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "shared_ptr 중복 소유",
+    "prompt": "같은 raw pointer로 독립 shared_ptr 제어 블록 둘을 만드는 문제는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "같은 대상을 두 번 해제할 수 있다",
+        "explanation": "같은 객체의 소유권은 동일 제어 블록을 공유하도록 복사해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "자동으로 제어 블록 합침",
+        "explanation": "주소만으로 자동 합치지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "참조 카운트가 항상 1개",
+        "explanation": "독립 제어 블록에 각각 카운트가 있다."
+      },
+      {
+        "id": "c3",
+        "text": "대상이 자동 깊은 복사",
+        "explanation": "raw pointer로 생성은 객체 복제가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "같은 객체의 소유권은 동일 제어 블록을 공유하도록 복사해야 한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-029",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "객체 슬라이싱",
+    "prompt": "파생 객체를 기반 타입 값 변수로 복사하면?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "원래 파생 객체가 파괴",
+        "explanation": "복사 대상의 변화이며 원본 수명을 끝내지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "기반 부분만 보존된다",
+        "explanation": "기반 값 객체에는 파생 부분이 들어가지 않는다. 다형성은 참조·포인터로 보존한다."
+      },
+      {
+        "id": "c1",
+        "text": "파생 객체가 그대로 저장",
+        "explanation": "기반 값의 크기와 타입은 고정된다."
+      },
+      {
+        "id": "c2",
+        "text": "무조건 컴파일 오류",
+        "explanation": "접근 가능한 기반 복사이면 가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기반 값 객체에는 파생 부분이 들어가지 않는다. 다형성은 참조·포인터로 보존한다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "cpp-030",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "이동 후 계약",
+    "prompt": "표준 라이브러리 객체의 이동 후 상태가 별도 명시되지 않았을 때는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "모든 사용이 UB",
+        "explanation": "유효 상태이며 연산 전제 조건을 확인해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "원본 객체가 수명 종료",
+        "explanation": "이동은 소멸이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "유효하지만 값은 미지정",
+        "explanation": "소멸 및 전제 조건 없는 연산은 가능하며 빈 상태를 항상 가정해서는 안 된다."
+      },
+      {
+        "id": "c1",
+        "text": "반드시 빈 상태",
+        "explanation": "타입별 명시 보장 외에는 일반화 불가이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "소멸 및 전제 조건 없는 연산은 가능하며 빈 상태를 항상 가정해서는 안 된다.",
+    "environment": "ISO C++20의 정의된 동작만 사용한다. 컴파일러 확장·ABI·플랫폼 크기를 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "Microsoft C++ 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      },
+      {
+        "title": "C++ 객체 수명과 RAII",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  }
+]

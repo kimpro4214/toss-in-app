@@ -1,0 +1,1412 @@
+[
+  {
+    "id": "java-001",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "기본 타입",
+    "prompt": "Java int의 기본 성질은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "32비트 부호 있는 정수 타입",
+        "explanation": "Java int는 32비트 2의 보수 정수 범위를 갖는다."
+      },
+      {
+        "id": "c1",
+        "text": "플랫폼마다 반드시 16비트",
+        "explanation": "Java 명세가 int 크기를 규정한다."
+      },
+      {
+        "id": "c2",
+        "text": "문자열만 저장",
+        "explanation": "String과 다른 타입이다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 객체 참조",
+        "explanation": "int는 primitive 타입이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Java int는 32비트 2의 보수 정수 범위를 갖는다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-002",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "문자열",
+    "prompt": "Java String 객체의 중요한 성질은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 숫자만 담는다",
+        "explanation": "다양한 문자열을 표현한다."
+      },
+      {
+        "id": "c0",
+        "text": "생성된 문자열 내용은 불변이다",
+        "explanation": "문자열을 바꾸는 것처럼 보이는 연산은 새 결과를 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 메서드가 원본 내용을 수정",
+        "explanation": "불변 객체의 의미와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "변수에 다른 String을 대입할 수 없음",
+        "explanation": "객체 불변성과 참조 변수 재대입은 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "문자열을 바꾸는 것처럼 보이는 연산은 새 결과를 반환한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-003",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "참조",
+    "prompt": "Java에서 객체 변수에 다른 객체 변수 값을 대입하면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "두 객체가 반드시 합쳐진다",
+        "explanation": "새 객체 병합 연산이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 컴파일 오류",
+        "explanation": "호환 타입의 참조 대입은 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "같은 객체를 가리키는 참조 값을 복사할 수 있다",
+        "explanation": "일반 참조 대입은 객체의 깊은 복사가 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "객체 내용 전체가 반드시 복제된다",
+        "explanation": "참조 복사와 깊은 복사는 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "일반 참조 대입은 객체의 깊은 복사가 아니다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-004",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "null",
+    "prompt": "null 참조에 인스턴스 메서드를 호출하면 일반적으로?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "새 객체가 자동 생성된다",
+        "explanation": "Java는 이를 자동 복구하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 false를 반환한다",
+        "explanation": "메서드 반환 규칙이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 프로그램이 컴파일되지 않는다",
+        "explanation": "null 가능 참조의 호출은 실행 중 실패할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "NullPointerException이 발생한다",
+        "explanation": "호출 대상 객체가 없으므로 예외가 발생한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호출 대상 객체가 없으므로 예외가 발생한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-005",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "조건",
+    "prompt": "Java if 조건식이 요구하는 타입은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "boolean 또는 언박싱 가능한 Boolean",
+        "explanation": "Java는 정수 값을 조건으로 직접 사용하는 규칙을 제공하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "int만",
+        "explanation": "정수의 진위 변환은 Java 조건 규칙이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "아무 객체나 가능",
+        "explanation": "boolean 조건을 요구한다."
+      },
+      {
+        "id": "c3",
+        "text": "String만",
+        "explanation": "문자열을 그대로 조건으로 쓰지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Java는 정수 값을 조건으로 직접 사용하는 규칙을 제공하지 않는다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-006",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "배열 길이",
+    "prompt": "Java 배열의 요소 수를 확인하는 멤버는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "capacity()",
+        "explanation": "배열 길이의 표준 멤버가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "length",
+        "explanation": "배열 길이는 length 필드로 확인한다."
+      },
+      {
+        "id": "c1",
+        "text": "size()",
+        "explanation": "컬렉션에서 주로 사용하는 메서드다."
+      },
+      {
+        "id": "c2",
+        "text": "count만",
+        "explanation": "배열의 표준 길이 멤버가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "배열 길이는 length 필드로 확인한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-007",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "생성자",
+    "prompt": "Java 생성자의 역할로 적절한 것은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 모든 객체를 삭제한다",
+        "explanation": "초기화 역할과 반대다."
+      },
+      {
+        "id": "c3",
+        "text": "인스턴스 메서드와 이름이 자유롭게 다르다",
+        "explanation": "클래스 이름을 사용한다."
+      },
+      {
+        "id": "c0",
+        "text": "새 인스턴스 초기화를 수행한다",
+        "explanation": "객체 생성 과정에서 필드와 불변식을 준비한다."
+      },
+      {
+        "id": "c1",
+        "text": "반드시 반환 타입 void를 적는다",
+        "explanation": "생성자는 반환 타입을 적지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "객체 생성 과정에서 필드와 불변식을 준비한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-008",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "static",
+    "prompt": "static 필드는 어떤 단위에 속하나?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "반드시 각 객체마다 독립 복사",
+        "explanation": "static의 의미와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 지역 변수",
+        "explanation": "지역 변수와 클래스 필드는 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "스레드마다 자동 독립",
+        "explanation": "ThreadLocal과 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "클래스",
+        "explanation": "개별 인스턴스마다 분리된 인스턴스 필드와 구분된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "개별 인스턴스마다 분리된 인스턴스 필드와 구분된다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-009",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "final 참조",
+    "prompt": "final로 선언한 참조 변수에 대한 올바른 설명은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "재대입은 막지만 객체 자체의 변경 가능성은 별개다",
+        "explanation": "final 참조가 가리키는 가변 객체는 여전히 수정될 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "객체가 자동으로 깊게 불변",
+        "explanation": "참조 재대입 제한은 깊은 불변성을 보장하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "초기화 후 null 대입 가능",
+        "explanation": "final 변수 재대입은 금지된다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 static이 된다",
+        "explanation": "두 수식어의 의미는 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "final 참조가 가리키는 가변 객체는 여전히 수정될 수 있다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-010",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "접근 제한",
+    "prompt": "private 멤버의 의도는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "상속을 반드시 금지",
+        "explanation": "클래스 상속 제한과 멤버 접근 제한은 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "접근 범위를 제한해 내부 구현을 숨긴다",
+        "explanation": "상세 접근 규칙을 통해 캡슐화를 지원한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 패키지에 공개",
+        "explanation": "public과 다른 제한이다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 암호화된 메모리 사용",
+        "explanation": "접근 제어와 암호화는 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "상세 접근 규칙을 통해 캡슐화를 지원한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-011",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "동등성",
+    "prompt": "두 String의 내용을 비교하는 기본 메서드는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "hashCode만",
+        "explanation": "동일 해시가 동일 내용을 보장하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "toString만",
+        "explanation": "표현을 얻는 것만으로 비교되지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "equals",
+        "explanation": "==는 참조 동일성 비교이고 equals는 String 내용을 비교한다."
+      },
+      {
+        "id": "c1",
+        "text": "==만",
+        "explanation": "서로 다른 인스턴스여도 내용이 같을 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "==는 참조 동일성 비교이고 equals는 String 내용을 비교한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-012",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "hashCode 계약",
+    "prompt": "equals가 true인 두 객체의 hashCode는 어떻게 되어야 하나?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "반드시 달라야 한다",
+        "explanation": "해시 계약과 반대다."
+      },
+      {
+        "id": "c2",
+        "text": "아무 관계 없어도 된다",
+        "explanation": "동등성 계약을 위반한다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 0이어야 한다",
+        "explanation": "같은 값이면 되며 특정 상수는 요구하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "같아야 한다",
+        "explanation": "해시 컬렉션이 동등한 키를 일관되게 찾도록 요구되는 계약이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "해시 컬렉션이 동등한 키를 일관되게 찾도록 요구되는 계약이다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-013",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "컬렉션",
+    "prompt": "삽입 순서에 따른 인덱스 접근과 중복 요소가 필요한 ADT는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "List",
+        "explanation": "List는 순서 있는 컬렉션이며 중복을 허용할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "Set만",
+        "explanation": "집합은 중복을 구분하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "Map만",
+        "explanation": "키와 값 연결을 다룬다."
+      },
+      {
+        "id": "c3",
+        "text": "Thread만",
+        "explanation": "실행 흐름의 객체다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "List는 순서 있는 컬렉션이며 중복을 허용할 수 있다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-014",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "제네릭",
+    "prompt": "List<String>을 사용하는 대표 이점은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "모든 객체가 불변",
+        "explanation": "제네릭이 객체 가변성을 바꾸지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "요소 타입을 컴파일 시 검사한다",
+        "explanation": "타입 매개변수로 잘못된 요소 사용을 줄일 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 요소가 런타임에 int로 변환",
+        "explanation": "제네릭 의미가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 배열보다 빠르다",
+        "explanation": "타입 안전성과 성능 보장은 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "타입 매개변수로 잘못된 요소 사용을 줄일 수 있다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-015",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "전달 방식",
+    "prompt": "Java의 메서드 인자 전달 방식은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "무조건 깊은 복사",
+        "explanation": "객체 내용 전체를 복사하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "인자 이름이 같으면 전역 공유",
+        "explanation": "변수 이름은 전달 방식을 바꾸지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "값 전달",
+        "explanation": "참조 타입도 참조 값이 복사된다. 호출된 메서드에서 변수 재대입이 호출자의 참조 변수를 바꾸지는 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "객체 변수 자체의 참조 전달",
+        "explanation": "참조 값 복사와 혼동했다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "참조 타입도 참조 값이 복사된다. 호출된 메서드에서 변수 재대입이 호출자의 참조 변수를 바꾸지는 않는다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-016",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "오버라이드",
+    "prompt": "인스턴스 메서드 오버라이드의 동적 호출에서 중요한 것은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 참조 변수의 선언 타입만",
+        "explanation": "가상 호출의 동적 선택과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 파일 이름",
+        "explanation": "호출 선택 규칙이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 가장 오래된 구현",
+        "explanation": "클래스 계층과 실제 객체가 기준이다."
+      },
+      {
+        "id": "c0",
+        "text": "실제 객체의 타입",
+        "explanation": "부모 타입 참조여도 실제 객체의 오버라이드 구현을 호출할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "부모 타입 참조여도 실제 객체의 오버라이드 구현을 호출할 수 있다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-017",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Checked 예외",
+    "prompt": "checked exception에 대한 컴파일 시 요구는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "잡거나 throws로 선언해야 한다",
+        "explanation": "호출 경로가 해당 checked exception을 처리·전파하도록 검사한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 무시 가능",
+        "explanation": "처리 또는 선언이 필요하다."
+      },
+      {
+        "id": "c2",
+        "text": "반드시 모든 예외가 checked",
+        "explanation": "RuntimeException 계열 등은 unchecked다."
+      },
+      {
+        "id": "c3",
+        "text": "반드시 실행 전 네트워크 연결",
+        "explanation": "예외 검사와 무관하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호출 경로가 해당 checked exception을 처리·전파하도록 검사한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-018",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "try-with-resources",
+    "prompt": "AutoCloseable 자원을 try-with-resources로 관리하는 목적은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "참조를 자동 영구 저장",
+        "explanation": "자원 정리와 반대다."
+      },
+      {
+        "id": "c0",
+        "text": "블록 종료 시 자원을 닫는다",
+        "explanation": "정상·예외 경로에서 close 호출을 관리한다."
+      },
+      {
+        "id": "c1",
+        "text": "GC가 즉시 실행됨을 보장",
+        "explanation": "자원 close와 GC 실행은 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 예외를 없앤다",
+        "explanation": "예외는 발생하고 전파될 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정상·예외 경로에서 close 호출을 관리한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-019",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Integer 언박싱",
+    "prompt": "null인 Integer를 int로 언박싱하면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 -1이다",
+        "explanation": "그런 표준 규칙은 없다."
+      },
+      {
+        "id": "c3",
+        "text": "새 Integer를 생성한다",
+        "explanation": "언박싱이 null 복구를 제공하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "NullPointerException이 발생한다",
+        "explanation": "null 객체에서 기본 값을 얻을 수 없다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 0이다",
+        "explanation": "null의 자동 기본값 변환은 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "null 객체에서 기본 값을 얻을 수 없다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-020",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Stream 지연",
+    "prompt": "Stream의 중간 연산 map만 만들고 terminal 연산을 호출하지 않았다. 일반적으로?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "즉시 모든 결과가 List에 저장된다",
+        "explanation": "List를 만들려면 수집 등 종단 연산이 필요하다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 새 스레드가 생성된다",
+        "explanation": "Stream은 자동 병렬 실행을 뜻하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "입력이 삭제된다",
+        "explanation": "파이프라인 생성만으로 원본을 삭제하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "파이프라인 실행은 terminal 연산까지 지연된다",
+        "explanation": "Stream 중간 연산은 결과가 필요한 종단 연산에 연결되어 실행된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Stream 중간 연산은 결과가 필요한 종단 연산에 연결되어 실행된다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-021",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "volatile",
+    "prompt": "volatile int에 count++를 여러 스레드가 수행해도 부족한 이유는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "읽기·덧셈·쓰기를 합친 원자성을 보장하지 않는다",
+        "explanation": "volatile의 가시성·순서 보장과 복합 갱신의 원자성은 별개다."
+      },
+      {
+        "id": "c1",
+        "text": "volatile은 로컬 변수만 가능",
+        "explanation": "필드에 사용하는 수식어다."
+      },
+      {
+        "id": "c2",
+        "text": "volatile은 값을 영구 저장",
+        "explanation": "메모리 동기화 의미다."
+      },
+      {
+        "id": "c3",
+        "text": "count++가 연산 하나로 보이니 항상 안전",
+        "explanation": "소스 표현 하나와 원자성은 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "volatile의 가시성·순서 보장과 복합 갱신의 원자성은 별개다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-022",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "synchronized",
+    "prompt": "같은 모니터로 보호된 임계 구역끼리 제공하는 핵심 보장은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "모든 네트워크 호출 취소",
+        "explanation": "모니터는 요청 취소 프로토콜이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "상호 배제와 동기화 관계",
+        "explanation": "락 해제·획득을 통해 보호 상태의 가시성을 연결할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "서로 다른 모든 락도 자동 배제",
+        "explanation": "같은 모니터를 사용해야 해당 배제 관계가 생긴다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 메서드가 자동 동기화",
+        "explanation": "명시한 범위에 적용된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "락 해제·획득을 통해 보호 상태의 가시성을 연결할 수 있다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-023",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "제네릭 소거",
+    "prompt": "Java 제네릭의 타입 소거와 관련한 설명은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "제네릭은 전혀 컴파일 검사되지 않는다",
+        "explanation": "소거와 컴파일 타입 안전성은 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 인스턴스가 int로 바뀐다",
+        "explanation": "소거는 데이터 내용의 정수 변환이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "많은 타입 인자 정보가 실행 표현에서 소거된다",
+        "explanation": "컴파일 시 타입 검사가 있어도 런타임 모든 타입 인자가 그대로 구분되는 것은 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "List<String>과 List<Integer>는 항상 다른 런타임 클래스",
+        "explanation": "동일 raw 클래스일 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "컴파일 시 타입 검사가 있어도 런타임 모든 타입 인자가 그대로 구분되는 것은 아니다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-024",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "배열 공변성",
+    "prompt": "Object[] 변수에 String[]을 대입한 뒤 Integer를 저장하려 하면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 Integer를 String으로 자동 변환",
+        "explanation": "요소 타입 불일치가 변환되지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "배열 타입은 실행 중 사라진다",
+        "explanation": "배열은 런타임 요소 타입을 검사한다."
+      },
+      {
+        "id": "c3",
+        "text": "부모 변수라 모든 객체 저장 가능",
+        "explanation": "실제 배열의 요소 타입 제한이 남는다."
+      },
+      {
+        "id": "c0",
+        "text": "ArrayStoreException이 발생할 수 있다",
+        "explanation": "런타임 배열 요소 타입은 String이므로 호환되지 않는 저장을 거부한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "런타임 배열 요소 타입은 String이므로 호환되지 않는 저장을 거부한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-025",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "가변 맵 키",
+    "prompt": "HashMap 키의 equals·hashCode에 쓰이는 값을 저장 후 변경하면?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "키를 정상 조회하지 못할 수 있다",
+        "explanation": "저장 당시 버킷과 변경 후 해시·동등성 판단이 달라질 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "HashMap이 항상 자동 감지한다",
+        "explanation": "키 내부 필드 변경을 일반적으로 감시하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "String 키에도 동일 방식으로 내용 수정 가능",
+        "explanation": "String 내용은 불변이다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 값이 삭제된다",
+        "explanation": "전체 삭제가 아니라 조회 불변식 문제가 생긴다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "저장 당시 버킷과 변경 후 해시·동등성 판단이 달라질 수 있다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-026",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "finally 반환",
+    "prompt": "try의 반환 뒤 finally에서도 값을 반환하도록 작성하면 왜 위험한가?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "메서드가 무조건 컴파일 불가",
+        "explanation": "허용될 수 있지만 흐름을 숨긴다."
+      },
+      {
+        "id": "c0",
+        "text": "기존 반환이나 예외가 finally의 반환에 의해 가려질 수 있다",
+        "explanation": "정리 블록의 abrupt completion은 이전 흐름을 대체할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "finally는 실행되지 않기 때문",
+        "explanation": "일반적인 try 종료에서 실행된다."
+      },
+      {
+        "id": "c2",
+        "text": "반환 값이 자동 합산되기 때문",
+        "explanation": "두 반환을 합하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정리 블록의 abrupt completion은 이전 흐름을 대체할 수 있다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-027",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "억제된 예외",
+    "prompt": "try-with-resources에서 본문과 close가 둘 다 예외를 던지면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "close 예외만 항상 반환된다",
+        "explanation": "본문 예외가 주 예외일 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "close가 절대 호출되지 않는다",
+        "explanation": "블록 종료 과정에서 정리를 수행한다."
+      },
+      {
+        "id": "c0",
+        "text": "close 예외가 suppressed exception으로 보존될 수 있다",
+        "explanation": "주 예외를 유지하면서 정리 중 예외도 확인할 수 있도록 한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 예외가 반드시 무시된다",
+        "explanation": "주 예외와 억제된 예외가 남을 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "주 예외를 유지하면서 정리 중 예외도 확인할 수 있도록 한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-028",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "ConcurrentHashMap",
+    "prompt": "ConcurrentHashMap으로 containsKey 후 put을 호출해도 중복 생성이 가능한 이유는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "맵의 개별 연산도 항상 비동기라서",
+        "explanation": "핵심은 복합 연산의 간격이다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 키가 같은 해시여서",
+        "explanation": "충돌 여부와 별개로 경쟁이 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "concurrent라는 이름이 모든 업무를 직렬화해서",
+        "explanation": "개별 기능 보장을 업무 전체로 확대하면 안 된다."
+      },
+      {
+        "id": "c0",
+        "text": "별도 호출 두 개는 하나의 원자 작업이 아니다",
+        "explanation": "putIfAbsent·compute 계열처럼 목적에 맞는 원자 연산을 검토해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "putIfAbsent·compute 계열처럼 목적에 맞는 원자 연산을 검토해야 한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-029",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "객체 공개",
+    "prompt": "생성 중인 객체의 this를 다른 스레드에 노출하면 왜 문제인가?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "초기화가 끝나지 않은 상태를 관찰할 수 있다",
+        "explanation": "생성·공개 순서와 안전한 공개 규칙을 지켜야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "객체가 항상 깊게 복사된다",
+        "explanation": "this는 같은 객체를 참조할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "GC가 객체를 즉시 삭제한다",
+        "explanation": "도달 가능한 참조와 초기화 문제는 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 필드가 static으로 바뀐다",
+        "explanation": "공개 시점이 필드 종류를 바꾸지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "생성·공개 순서와 안전한 공개 규칙을 지켜야 한다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "java-030",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "인터럽트",
+    "prompt": "Thread interruption을 사용할 때 올바른 관점은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 파일 내용을 롤백한다",
+        "explanation": "응용의 정리 정책이 별도로 필요하다."
+      },
+      {
+        "id": "c0",
+        "text": "협력적인 취소 신호로 처리한다",
+        "explanation": "코드가 인터럽트 상태·예외를 적절히 처리해야 취소가 진행된다."
+      },
+      {
+        "id": "c1",
+        "text": "스레드가 즉시 강제 제거된다",
+        "explanation": "일반 인터럽트는 강제 종료가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 락을 자동 해제한다",
+        "explanation": "인터럽트가 임의의 락을 해제하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "코드가 인터럽트 상태·예외를 적절히 처리해야 취소가 진행된다.",
+    "environment": "Java SE 21. Preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "Java Language Specification 21",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  }
+]

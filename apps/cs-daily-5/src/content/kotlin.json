@@ -1,0 +1,1412 @@
+[
+  {
+    "id": "kotlin-001",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "val",
+    "prompt": "Kotlin val의 기본 의미는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 스레드 안전",
+        "explanation": "동기화 보장 수식어가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "무조건 상수식",
+        "explanation": "런타임에 계산한 값도 val에 담을 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "변수를 다시 대입할 수 없다",
+        "explanation": "참조 자체는 재대입할 수 없지만 가리키는 가변 객체는 수정될 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "객체 내부도 항상 불변",
+        "explanation": "재대입 제한과 객체 불변성은 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "참조 자체는 재대입할 수 없지만 가리키는 가변 객체는 수정될 수 있다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-002",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "var",
+    "prompt": "Kotlin var는 val과 어떻게 다른가?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 객체가 자동 복제된다",
+        "explanation": "재대입 가능성과 깊은 복사는 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "반드시 null이다",
+        "explanation": "선언 타입과 초기값에 따라 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 전역 변수다",
+        "explanation": "지역 변수도 var로 선언할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "변수 값을 다시 대입할 수 있다",
+        "explanation": "호환 타입의 새로운 값으로 재대입을 허용한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호환 타입의 새로운 값으로 재대입을 허용한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-003",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "nullable",
+    "prompt": "String? 타입이 나타내는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "String 또는 null",
+        "explanation": "물음표는 null 가능 타입을 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "빈 문자열만",
+        "explanation": "빈 문자열과 null은 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "String 배열",
+        "explanation": "배열 타입 표기와 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 실패를 강제",
+        "explanation": "유효한 nullable 타입이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "물음표는 null 가능 타입을 표현한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-004",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "safe call",
+    "prompt": "nullable 값에 ?. 호출을 사용하면 null일 때?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 빈 문자열 반환",
+        "explanation": "호출을 건너뛴 결과는 null이다."
+      },
+      {
+        "id": "c0",
+        "text": "호출을 건너뛰고 null 결과를 낸다",
+        "explanation": "safe call은 null에서 메서드를 실행하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "자동으로 새 객체 생성",
+        "explanation": "null 대체 객체를 만드는 규칙이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 예외를 던짐",
+        "explanation": "!!과 다른 처리다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "safe call은 null에서 메서드를 실행하지 않는다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-005",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "Elvis",
+    "prompt": "a ?: b에서 a가 null이면 결과는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 false",
+        "explanation": "부울 비교 연산이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일러가 b를 삭제",
+        "explanation": "오른쪽 대체 값은 필요 시 사용된다."
+      },
+      {
+        "id": "c0",
+        "text": "b",
+        "explanation": "Elvis 연산자는 null인 경우 오른쪽 값을 사용한다."
+      },
+      {
+        "id": "c1",
+        "text": "반드시 a",
+        "explanation": "null 대체의 목적과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Elvis 연산자는 null인 경우 오른쪽 값을 사용한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-006",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "함수",
+    "prompt": "Kotlin 함수 선언의 키워드는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "class만",
+        "explanation": "클래스 선언 키워드다."
+      },
+      {
+        "id": "c2",
+        "text": "val만",
+        "explanation": "변수 선언 키워드다."
+      },
+      {
+        "id": "c3",
+        "text": "import만",
+        "explanation": "다른 선언을 가져오는 키워드다."
+      },
+      {
+        "id": "c0",
+        "text": "fun",
+        "explanation": "fun으로 함수와 인자를 선언한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "fun으로 함수와 인자를 선언한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-007",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "Unit",
+    "prompt": "의미 있는 반환값을 제공하지 않는 Kotlin 함수의 일반 타입은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "Unit",
+        "explanation": "Unit은 일반적인 반환값 없는 함수의 결과 타입이다."
+      },
+      {
+        "id": "c1",
+        "text": "Nothing 항상",
+        "explanation": "정상적으로 반환하지 않는 타입이다."
+      },
+      {
+        "id": "c2",
+        "text": "null 타입만",
+        "explanation": "Unit은 null의 다른 이름이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "Int 반드시",
+        "explanation": "정수 반환은 별도 선언이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Unit은 일반적인 반환값 없는 함수의 결과 타입이다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-008",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "문자열 템플릿",
+    "prompt": "Kotlin 문자열에서 $name 표현을 사용하는 목적은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "모든 값을 암호화한다",
+        "explanation": "문자열 변환은 암호화가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "변수 값을 문자열에 넣는다",
+        "explanation": "문자열 템플릿은 값과 식을 문자열로 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "변수를 영구 저장한다",
+        "explanation": "문자열 구성과 저장은 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "변수를 자동 삭제한다",
+        "explanation": "표현을 만든다고 변수 수명이 끝나지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "문자열 템플릿은 값과 식을 문자열로 표현한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-009",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "listOf",
+    "prompt": "listOf로 얻은 List의 인터페이스가 제공하는 것은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 스레드 안전 변경",
+        "explanation": "읽기 전용 인터페이스와 동기화는 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "키와 값 조회만",
+        "explanation": "Map 인터페이스와 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "읽기 전용 목록 연산",
+        "explanation": "List 인터페이스에는 요소 추가 같은 변경 연산이 없다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 깊은 불변 객체 그래프",
+        "explanation": "요소나 다른 참조의 가변성까지 보장하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "List 인터페이스에는 요소 추가 같은 변경 연산이 없다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-010",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "when",
+    "prompt": "Kotlin when의 대표 용도는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 새 스레드를 생성",
+        "explanation": "분기와 실행 스레드는 별개다."
+      },
+      {
+        "id": "c2",
+        "text": "오직 반복만 가능",
+        "explanation": "분기 표현식이다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 예외를 자동 잡는다",
+        "explanation": "try·catch와 다른 구문이다."
+      },
+      {
+        "id": "c0",
+        "text": "여러 조건에 따라 분기한다",
+        "explanation": "값·타입 등 조건을 표현해 제어 흐름이나 결과 값을 선택한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "값·타입 등 조건을 표현해 제어 흐름이나 결과 값을 선택한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-011",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "data class",
+    "prompt": "data class의 기본 생성 기능으로 적절한 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "주 생성자 속성 기반 equals·hashCode·copy 등",
+        "explanation": "데이터 표현을 위한 대표 멤버를 생성한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 필드 자동 암호화",
+        "explanation": "데이터 클래스 기능이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "깊은 복사만 제공",
+        "explanation": "copy는 기본적으로 얕은 복사다."
+      },
+      {
+        "id": "c3",
+        "text": "자동 DB 테이블 생성",
+        "explanation": "언어 기능만으로 DB를 생성하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "데이터 표현을 위한 대표 멤버를 생성한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-012",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "copy",
+    "prompt": "data class에 가변 List 참조가 있고 기본 copy를 호출했다. 주의할 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "copy는 컴파일되지 않는다",
+        "explanation": "가변 참조 속성도 copy가 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "두 객체가 같은 List를 공유할 수 있다",
+        "explanation": "copy는 속성 값을 복사하므로 참조가 같은 내부 객체를 가리킬 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 목록 요소까지 재귀 복제",
+        "explanation": "깊은 복사를 기본 제공하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "원본을 반드시 삭제",
+        "explanation": "복사가 원본 삭제를 뜻하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "copy는 속성 값을 복사하므로 참조가 같은 내부 객체를 가리킬 수 있다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-013",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "sealed",
+    "prompt": "sealed 계층을 when과 함께 사용하는 이점은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "모든 필드가 불변",
+        "explanation": "계층 제한과 상태 가변성은 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "상속과 구현이 전혀 불가능",
+        "explanation": "제한된 계층 안에서 하위 타입을 둔다."
+      },
+      {
+        "id": "c0",
+        "text": "닫힌 타입 계층의 경우를 검사할 수 있다",
+        "explanation": "허용된 하위 타입을 근거로 분기의 완전성을 확인할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 인스턴스가 하나만 존재",
+        "explanation": "Singleton 보장이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "허용된 하위 타입을 근거로 분기의 완전성을 확인할 수 있다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-014",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "확장 함수",
+    "prompt": "Kotlin 확장 함수가 하는 일은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "클래스 바이트코드를 반드시 수정",
+        "explanation": "정적 확장 호출로 구현될 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "private 멤버 접근을 항상 허용",
+        "explanation": "접근 제한은 여전히 적용된다."
+      },
+      {
+        "id": "c3",
+        "text": "자동 가상 메서드 추가",
+        "explanation": "일반 확장은 수신 타입에 따라 정적으로 선택된다."
+      },
+      {
+        "id": "c0",
+        "text": "수신 타입 문법으로 외부 함수를 호출할 수 있게 한다",
+        "explanation": "기존 클래스 자체에 실제 새 멤버를 추가하는 것은 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기존 클래스 자체에 실제 새 멤버를 추가하는 것은 아니다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-015",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "smart cast",
+    "prompt": "안정적인 nullable 지역 변수를 null 아닌지 검사한 뒤 가능한 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "non-null 타입으로 사용할 수 있다",
+        "explanation": "컴파일러가 값 변화 가능성을 배제할 수 있는 경우 타입을 좁힌다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 가변 공유 속성에 항상 적용",
+        "explanation": "다른 시점의 변경 가능성 때문에 제한될 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "객체를 다른 타입으로 깊게 변환",
+        "explanation": "캐스트의 타입 분석과 데이터 변환은 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "null 검사 코드가 항상 삭제됨",
+        "explanation": "흐름 분석이 의미 있는 검사를 없애는 보장은 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "컴파일러가 값 변화 가능성을 배제할 수 있는 경우 타입을 좁힌다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-016",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "동등 연산",
+    "prompt": "Kotlin ==와 ===의 기본 차이는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "===는 깊은 복사",
+        "explanation": "동일성 검사다."
+      },
+      {
+        "id": "c0",
+        "text": "구조적 동등성과 참조 동일성을 구분한다",
+        "explanation": "==는 equals 의미를 활용하고 ===는 같은 참조인지 확인한다."
+      },
+      {
+        "id": "c1",
+        "text": "둘은 모든 타입에서 반드시 같은 결과",
+        "explanation": "다른 인스턴스여도 구조적으로 같을 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "==는 문자열 연결",
+        "explanation": "동등 비교다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "==는 equals 의미를 활용하고 ===는 같은 참조인지 확인한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-017",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "상속 기본",
+    "prompt": "Kotlin 클래스의 기본 상속 가능성은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "모든 클래스가 abstract",
+        "explanation": "일반 구체 클래스도 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "함수만 있고 클래스는 없다",
+        "explanation": "클래스 기반 프로그래밍을 지원한다."
+      },
+      {
+        "id": "c0",
+        "text": "기본적으로 final이며 상속하려면 open 등으로 허용한다",
+        "explanation": "명시적으로 확장 가능성을 드러내도록 설계되어 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 클래스가 자동 open",
+        "explanation": "기본 정책과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "명시적으로 확장 가능성을 드러내도록 설계되어 있다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-018",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "제네릭 out",
+    "prompt": "타입 매개변수 out을 사용하는 핵심 의미는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "입력 인자 어디에나 자유롭게 쓴다",
+        "explanation": "공변성 사용 위치 제한을 지켜야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "런타임 깊은 복사",
+        "explanation": "분산과 복사는 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "무조건 primitive만 허용",
+        "explanation": "일반 참조 타입에도 적용할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "생산자 위치의 공변성을 표현한다",
+        "explanation": "반환 등 생산 위치를 중심으로 안전한 타입 관계를 표현한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "반환 등 생산 위치를 중심으로 안전한 타입 관계를 표현한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-019",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "Sequence",
+    "prompt": "Kotlin Sequence를 선택할 때 기대할 수 있는 차이는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "연산을 지연하며 요소별로 처리할 수 있다",
+        "explanation": "중간 목록 생성 감소 가능성이 있지만 항상 더 빠른 것은 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 연산이 반드시 병렬",
+        "explanation": "지연 평가와 병렬 실행은 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "결과 요청 없이 항상 전부 실행",
+        "explanation": "지연 평가와 반대다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 컬렉션보다 항상 빠름",
+        "explanation": "작은 입력이나 연산 비용에 따라 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "중간 목록 생성 감소 가능성이 있지만 항상 더 빠른 것은 아니다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-020",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "suspend",
+    "prompt": "suspend 함수에 대한 설명으로 옳은 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "호출 즉시 반드시 중단",
+        "explanation": "실제 중단 여부는 본문 실행에 달려 있다."
+      },
+      {
+        "id": "c0",
+        "text": "일시 중단 가능한 호출을 표현하지만 새 스레드 생성은 아니다",
+        "explanation": "중단 가능성과 스레드·dispatcher 선택을 구분해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 백그라운드 스레드다",
+        "explanation": "실행 문맥에 따라 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 본문이 자동 non-blocking",
+        "explanation": "블로킹 호출을 넣으면 여전히 블로킹할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "중단 가능성과 스레드·dispatcher 선택을 구분해야 한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-021",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "취소 협력",
+    "prompt": "긴 계산 루프에서 코루틴 취소가 늦게 반영될 때 필요한 것은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "var를 val로 바꾸면 해결",
+        "explanation": "참조 재대입과 취소 확인은 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 예외를 무시",
+        "explanation": "취소 신호 전파를 막을 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "취소 상태 확인 또는 취소 가능한 중단 지점",
+        "explanation": "협력적 취소를 위해 ensureActive·yield 등의 확인을 넣을 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "launch를 호출하면 모든 루프가 강제 중단",
+        "explanation": "강제 선점 취소가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "협력적 취소를 위해 ensureActive·yield 등의 확인을 넣을 수 있다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-022",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "구조적 동시성",
+    "prompt": "구조적 동시성에서 부모 scope와 자식 작업의 관계는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 작업이 서로 완전히 독립",
+        "explanation": "부모·자식 관계의 취지와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 한 코어만 사용",
+        "explanation": "동시성 생명주기와 코어 수는 별개다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 결과가 동시에 반환",
+        "explanation": "각 작업의 완료 시점은 다를 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "작업 생명주기와 취소를 scope에 연결한다",
+        "explanation": "자식이 무분별하게 남지 않도록 완료·취소를 관리한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "자식이 무분별하게 남지 않도록 완료·취소를 관리한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-023",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "공유 카운터",
+    "prompt": "여러 코루틴이 공유 카운터를 ++ 한다. 안전을 위해 고려할 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "Mutex·원자 연산·단일 실행 경계 같은 동기화",
+        "explanation": "코루틴도 공유 가변 상태에 경쟁이 생길 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "코루틴이면 자동 안전",
+        "explanation": "작업 모델이 공유 연산을 자동 보호하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 immutable 이름을 붙이면 해결",
+        "explanation": "이름이 동기화를 제공하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "delay만 추가하면 항상 안전",
+        "explanation": "시간 지연은 배제를 보장하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "코루틴도 공유 가변 상태에 경쟁이 생길 수 있다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-024",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "Dispatcher",
+    "prompt": "블로킹 I/O를 Main dispatcher에서 수행할 때의 문제는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "Main은 항상 전용 무한 스레드 풀",
+        "explanation": "UI 문맥의 특성과 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "UI 실행을 막을 수 있다",
+        "explanation": "블로킹 작업은 적절한 실행 문맥으로 이동해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "suspend라서 절대 막히지 않는다",
+        "explanation": "함수 수식어가 블로킹 본문을 바꾸지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "UI가 반드시 두 번 생성된다",
+        "explanation": "실행 정지 문제다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "블로킹 작업은 적절한 실행 문맥으로 이동해야 한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-025",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "Coroutine 예외",
+    "prompt": "코루틴 취소 예외를 일반 오류처럼 잡고 삼켜버리면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "부모 scope가 자동 삭제된다",
+        "explanation": "객체 삭제의 보장이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "원자 연산이 자동 활성화된다",
+        "explanation": "예외 처리와 공유 상태 보호는 별개다."
+      },
+      {
+        "id": "c0",
+        "text": "취소 전파와 정리가 의도대로 동작하지 않을 수 있다",
+        "explanation": "CancellationException은 협력적 취소 프로토콜의 일부라 적절히 전파해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "취소가 항상 더 빨라진다",
+        "explanation": "신호를 숨기면 오히려 방해할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "CancellationException은 협력적 취소 프로토콜의 일부라 적절히 전파해야 한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-026",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "Supervisor",
+    "prompt": "SupervisorJob의 대표 목적은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 자식 실패를 무시",
+        "explanation": "오류 처리 책임은 여전히 있다."
+      },
+      {
+        "id": "c2",
+        "text": "부모 취소를 자식이 절대 받지 않음",
+        "explanation": "부모의 취소 관계는 남는다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 작업을 직렬 실행",
+        "explanation": "실패 전파와 실행 순서는 별개다."
+      },
+      {
+        "id": "c0",
+        "text": "한 자식 실패가 다른 자식을 자동 취소하지 않도록 분리한다",
+        "explanation": "실패 격리를 제공하지만 모든 예외를 자동 처리해 주는 것은 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "실패 격리를 제공하지만 모든 예외를 자동 처리해 주는 것은 아니다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-027",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "플랫폼 타입",
+    "prompt": "Java에서 들어온 플랫폼 타입을 Kotlin에서 사용할 때 주의할 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "Java의 실제 null 가능성을 확인한다",
+        "explanation": "플랫폼 타입은 컴파일 타입 정보만으로 null 안전성이 완전히 보장되지 않을 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "Java 값은 절대 null이 아니다",
+        "explanation": "Java API는 null을 반환할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "플랫폼 타입은 항상 Int",
+        "explanation": "다양한 타입이 있다."
+      },
+      {
+        "id": "c3",
+        "text": "플랫폼 타입을 읽으면 무조건 실패",
+        "explanation": "실제 값과 사용 방식에 따른다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "플랫폼 타입은 컴파일 타입 정보만으로 null 안전성이 완전히 보장되지 않을 수 있다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-028",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "확장 선택",
+    "prompt": "부모 타입 변수에 자식 객체를 넣고 확장 함수를 호출할 때 일반적인 선택 기준은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "현재 스레드 이름",
+        "explanation": "타입 선택과 무관하다."
+      },
+      {
+        "id": "c0",
+        "text": "변수의 정적 수신 타입",
+        "explanation": "확장 함수는 실제 객체 타입에 따른 가상 메서드 디스패치와 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 자식의 확장만",
+        "explanation": "정적 수신 타입을 근거로 결정된다."
+      },
+      {
+        "id": "c2",
+        "text": "파일 수정 시각",
+        "explanation": "언어 호출 규칙이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "확장 함수는 실제 객체 타입에 따른 가상 메서드 디스패치와 다르다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-029",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "Nothing",
+    "prompt": "Nothing 반환 타입이 적합한 함수는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "빈 문자열을 반환하는 함수",
+        "explanation": "String을 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "정수 0을 반환하는 함수",
+        "explanation": "Int 반환이다."
+      },
+      {
+        "id": "c0",
+        "text": "정상적으로 값을 반환하지 않는 함수",
+        "explanation": "항상 예외를 던지는 함수 등 정상 반환 경로가 없는 경우를 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "반드시 null을 반환하는 함수",
+        "explanation": "Nothing?과 정상 반환 없음은 구분된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "항상 예외를 던지는 함수 등 정상 반환 경로가 없는 경우를 표현한다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "kotlin-030",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "Flow",
+    "prompt": "cold Flow의 대표적인 실행 특성은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "선언만 하면 항상 영구 백그라운드 실행",
+        "explanation": "cold 동작과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 구독이 반드시 하나의 결과를 공유",
+        "explanation": "공유 hot stream과 구분된다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 데이터를 깊게 복제",
+        "explanation": "흐름 실행 모델과 객체 복사는 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "수집할 때 생산 코드가 실행된다",
+        "explanation": "cold stream은 collect 등 수집 과정에 실행이 연결된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "cold stream은 collect 등 수집 과정에 실행이 연결된다.",
+    "environment": "Kotlin/JVM 2.2. 코루틴은 kotlinx.coroutines의 공식 가이드를 기준으로 한다.",
+    "sources": [
+      {
+        "title": "Kotlin language concepts",
+        "url": "https://kotlinlang.org/docs/basic-syntax.html"
+      },
+      {
+        "title": "Kotlin coroutines guide",
+        "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  }
+]

@@ -1,0 +1,20 @@
+export const subjects = [
+  ['architecture', '컴퓨터구조', 'CPU부터 캐시까지', 'CS'],
+  ['os', '운영체제', '프로세스와 동시성', 'CS'],
+  ['network', '네트워크', '요청이 도착하는 과정', 'CS'],
+  ['structures', '자료구조', '데이터를 담는 방법', 'CS'],
+  ['algorithms', '알고리즘', '문제를 푸는 전략', 'CS'],
+  ['database', '데이터베이스', '저장과 트랜잭션', 'CS'],
+  ['java', 'Java', '타입과 JVM', '언어'],
+  ['javascript', 'JavaScript', '값과 비동기 실행', '언어'],
+  ['cpp', 'C++', '수명과 자원 관리', '언어'],
+  ['kotlin', 'Kotlin', 'null 안전성과 코루틴', '언어'],
+  ['python', 'Python', '객체와 이터레이션', '언어'],
+  ['typescript', 'TypeScript', '타입으로 표현하는 의도', '언어'],
+  ['csharp', 'C#', '관리 환경과 비동기', '언어'],
+  ['graphics', '그래픽스 · 엔진', '픽셀 뒤의 원리', '게임 개발'],
+  ['gof', 'GoF 디자인 패턴', '23개의 설계 도구', '설계'],
+  ['oop', '객체지향', '책임과 다형성', '설계'],
+  ['design', '소프트웨어 설계', '변경에 견디는 경계', '설계'],
+].map(([id, name, description, group]) => ({ id, name, description, group }));
+export const subjectName = (id: string) => subjects.find(s => s.id === id)?.name ?? id;

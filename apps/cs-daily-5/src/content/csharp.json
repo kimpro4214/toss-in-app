@@ -1,0 +1,1532 @@
+[
+  {
+    "id": "csharp-001",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "값 타입",
+    "prompt": "int 변수를 다른 int 변수에 대입하면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "자동 포인터 생성",
+        "explanation": "포인터 대입이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "원본 값 삭제",
+        "explanation": "대입은 원본을 지우지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "값이 복사된다",
+        "explanation": "int는 값 타입이며 별도 변수에 값을 복사한다."
+      },
+      {
+        "id": "c1",
+        "text": "같은 수정 가능한 박스 공유",
+        "explanation": "일반 int 변수 대입은 참조 복사가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "int는 값 타입이며 별도 변수에 값을 복사한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-002",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "참조 타입",
+    "prompt": "클래스 인스턴스를 두 변수에 대입하면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 객체 전체 복제",
+        "explanation": "참조가 복사된다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 스택에만 존재",
+        "explanation": "참조 변수와 객체의 개념을 혼동했다."
+      },
+      {
+        "id": "c3",
+        "text": "원본 객체 불변화",
+        "explanation": "대입이 객체를 불변화하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "같은 객체 참조를 공유할 수 있다",
+        "explanation": "클래스는 참조 타입이며 대입이 깊은 복사를 하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "클래스는 참조 타입이며 대입이 깊은 복사를 하지 않는다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-003",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "인터페이스",
+    "prompt": "interface가 주로 정의하는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "구현 타입이 제공할 계약",
+        "explanation": "호출자가 사용할 공통 기능을 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "특정 객체를 자동 생성",
+        "explanation": "인터페이스 자체로 일반 인스턴스를 만들지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 구현 필드 배치",
+        "explanation": "내부 필드 배치 계약과 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "파일 이름 규칙",
+        "explanation": "언어 계약과 무관하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호출자가 사용할 공통 기능을 표현한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-004",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "프로퍼티",
+    "prompt": "get과 set을 가진 프로퍼티의 장점은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "메서드를 사용할 수 없게 한다",
+        "explanation": "메서드와 공존한다."
+      },
+      {
+        "id": "c0",
+        "text": "접근 문법에 로직을 결합한다",
+        "explanation": "필드처럼 읽고 쓰면서 접근자에서 정책을 적용할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 값이 자동 검증",
+        "explanation": "검증 로직은 직접 작성해야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "반드시 별도 스레드 실행",
+        "explanation": "접근자는 일반 코드이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "필드처럼 읽고 쓰면서 접근자에서 정책을 적용할 수 있다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-005",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "null 허용 값 타입",
+    "prompt": "int?가 의미하는 것은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "int 배열",
+        "explanation": "배열 문법은 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 0만 가능",
+        "explanation": "정수와 null을 표현한다."
+      },
+      {
+        "id": "c0",
+        "text": "int 값 또는 null",
+        "explanation": "Nullable<int>로 값 타입에 null 상태를 추가한다."
+      },
+      {
+        "id": "c1",
+        "text": "어떤 참조 객체든 가능",
+        "explanation": "기본 값 타입은 int이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Nullable<int>로 값 타입에 null 상태를 추가한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-006",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "예외 정리",
+    "prompt": "예외 여부와 관계없이 정리 코드를 실행하는 절은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "catch만",
+        "explanation": "catch는 일치한 예외 때만 실행한다."
+      },
+      {
+        "id": "c2",
+        "text": "throw",
+        "explanation": "예외를 발생시킨다."
+      },
+      {
+        "id": "c3",
+        "text": "return",
+        "explanation": "제어를 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "finally",
+        "explanation": "try를 벗어나며 finally를 실행한다. 프로세스 강제 종료 등은 별개이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "try를 벗어나며 finally를 실행한다. 프로세스 강제 종료 등은 별개이다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-007",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "배열 길이",
+    "prompt": "배열을 만든 뒤 길이를 바꾸려면?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "다른 배열을 만들어야 한다",
+        "explanation": "배열의 길이는 생성 후 고정이다. List<T>는 동적 크기를 제공한다."
+      },
+      {
+        "id": "c1",
+        "text": "Length에 직접 대입",
+        "explanation": "Length는 설정할 수 없다."
+      },
+      {
+        "id": "c2",
+        "text": "원소 값을 바꾸면 자동 확장",
+        "explanation": "원소 변경은 길이 변경이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "배열은 원소도 수정 불가",
+        "explanation": "일반 배열 원소는 변경 가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "배열의 길이는 생성 후 고정이다. List<T>는 동적 크기를 제공한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-008",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "문자열 불변",
+    "prompt": "string.ToUpper가 원본을 제자리 변경하는가?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 char 배열 반환",
+        "explanation": "반환은 string이다."
+      },
+      {
+        "id": "c0",
+        "text": "새 결과 문자열을 반환한다",
+        "explanation": "string은 불변이며 변환 결과를 사용해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "원본 문자를 모두 수정",
+        "explanation": "원본 객체의 내용은 불변이다."
+      },
+      {
+        "id": "c2",
+        "text": "호출 시 예외만 발생",
+        "explanation": "정상 문자열에 사용할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "string은 불변이며 변환 결과를 사용해야 한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-009",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "매개변수 ref",
+    "prompt": "호출자 변수 자체를 수정하게 전달하는 키워드는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "async",
+        "explanation": "비동기 메서드 표시이다."
+      },
+      {
+        "id": "c3",
+        "text": "static",
+        "explanation": "인스턴스 멤버 여부이다."
+      },
+      {
+        "id": "c0",
+        "text": "ref",
+        "explanation": "매개변수가 호출자 저장 위치의 별칭이 된다."
+      },
+      {
+        "id": "c1",
+        "text": "params",
+        "explanation": "가변 인자 목록과 관련 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "매개변수가 호출자 저장 위치의 별칭이 된다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-010",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "제네릭 컬렉션",
+    "prompt": "List<int>의 주요 타입 안전성은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 타입을 동일하게 저장",
+        "explanation": "List<object>와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "정렬 순서 자동 보장",
+        "explanation": "List는 자동 정렬하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "정수 덧셈 오버플로 제거",
+        "explanation": "제네릭 컬렉션의 역할이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "정수 원소를 정적으로 제한한다",
+        "explanation": "제네릭 인자로 원소 타입을 표현하며 불필요한 객체 캐스팅을 줄인다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "제네릭 인자로 원소 타입을 표현하며 불필요한 객체 캐스팅을 줄인다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-011",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "IDisposable",
+    "prompt": "using이 IDisposable 자원에 제공하는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "범위 종료 시 Dispose 호출",
+        "explanation": "정상 및 예외 경로에서 명시적 자원 정리를 돕는다."
+      },
+      {
+        "id": "c1",
+        "text": "GC 즉시 강제 실행",
+        "explanation": "Dispose와 GC는 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "객체 메모리 직접 반환 보장",
+        "explanation": "관리 메모리 회수는 GC의 역할이다."
+      },
+      {
+        "id": "c3",
+        "text": "예외 자동 삼킴",
+        "explanation": "정리 후 예외가 전파될 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정상 및 예외 경로에서 명시적 자원 정리를 돕는다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-012",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "LINQ 지연 실행",
+    "prompt": "IEnumerable에 Where를 적용한 결과가 보통 평가되는 때는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "프로세스 종료 시",
+        "explanation": "열거 시 실행 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "열거할 때",
+        "explanation": "지연 쿼리는 생성 때 모든 원소를 평가하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "Where 호출 직후 항상 전체",
+        "explanation": "지연 실행의 특성과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "컴파일 때",
+        "explanation": "실제 데이터는 런타임에 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "지연 쿼리는 생성 때 모든 원소를 평가하지 않는다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-013",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "ToList",
+    "prompt": "지연 쿼리에 ToList를 호출하는 효과는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 지연 유지",
+        "explanation": "ToList는 즉시 구체화한다."
+      },
+      {
+        "id": "c3",
+        "text": "원소들을 모두 깊게 복사",
+        "explanation": "참조 타입 원소의 참조가 담길 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "열거하여 결과를 구체 리스트로 만든다",
+        "explanation": "현재 원소를 평가하여 별도 리스트에 담는다."
+      },
+      {
+        "id": "c1",
+        "text": "원본 컬렉션 잠금",
+        "explanation": "동기화 락을 제공하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "현재 원소를 평가하여 별도 리스트에 담는다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-014",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "delegate",
+    "prompt": "delegate의 역할은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "반드시 새 스레드를 만든다",
+        "explanation": "호출 방식과 스레드 생성은 별개이다."
+      },
+      {
+        "id": "c2",
+        "text": "객체의 모든 필드를 복사",
+        "explanation": "메서드 참조이다."
+      },
+      {
+        "id": "c3",
+        "text": "자동 파일 저장",
+        "explanation": "저장 API가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "호출 가능한 메서드를 참조한다",
+        "explanation": "타입이 정해진 메서드 참조를 값처럼 전달할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "타입이 정해진 메서드 참조를 값처럼 전달할 수 있다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-015",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "event 접근 제한",
+    "prompt": "외부 구독자가 event에 일반적으로 할 수 있는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "구독과 구독 해제",
+        "explanation": "호출은 선언한 타입 내부로 제한되어 발행 책임을 지킨다."
+      },
+      {
+        "id": "c1",
+        "text": "직접 Invoke를 자유롭게 호출",
+        "explanation": "event의 외부 발행은 제한된다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 다른 구독자를 삭제",
+        "explanation": "대입으로 전체 목록을 바꾸지 못한다."
+      },
+      {
+        "id": "c3",
+        "text": "구독 불가",
+        "explanation": "구독을 위한 기능이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호출은 선언한 타입 내부로 제한되어 발행 책임을 지킨다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-016",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "오버라이딩",
+    "prompt": "가상 메서드를 재정의하는 키워드는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "readonly",
+        "explanation": "필드 쓰기 제한이다."
+      },
+      {
+        "id": "c0",
+        "text": "override",
+        "explanation": "virtual 또는 abstract 기반 메서드를 다형 재정의한다."
+      },
+      {
+        "id": "c1",
+        "text": "new",
+        "explanation": "멤버 숨김과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "sealed만",
+        "explanation": "추가 파생이나 재정의를 제한한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "virtual 또는 abstract 기반 메서드를 다형 재정의한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-017",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "struct 복사",
+    "prompt": "필드 x를 가진 struct를 b=a로 복사한 뒤 b.x만 변경하면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "a가 자동 null",
+        "explanation": "값 복사로 원본을 지우지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "구조체 대입 불가",
+        "explanation": "값 복사가 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "a.x는 유지된다",
+        "explanation": "struct 값 복사는 별도 필드를 가진다. 참조 필드의 대상 공유는 별도이다."
+      },
+      {
+        "id": "c1",
+        "text": "a.x도 항상 바뀐다",
+        "explanation": "값 필드 복사를 공유 참조와 혼동했다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "struct 값 복사는 별도 필드를 가진다. 참조 필드의 대상 공유는 별도이다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-018",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "박싱",
+    "prompt": "int를 object 변수에 대입할 때 일반적으로 발생하는 것은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "정수 나눗셈",
+        "explanation": "산술 연산이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "문자열 변환",
+        "explanation": "ToString과 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 참조만 그대로 복사",
+        "explanation": "기존 int는 값 타입이다."
+      },
+      {
+        "id": "c0",
+        "text": "박싱",
+        "explanation": "값을 객체로 감싸 참조 타입 위치에서 다룬다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "값을 객체로 감싸 참조 타입 위치에서 다룬다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-019",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "Task 반환",
+    "prompt": "async Task<int> 메서드가 return 5를 하면 호출자는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "결과 5를 제공하는 Task<int>를 받는다",
+        "explanation": "await로 결과를 얻을 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "int 5를 직접 즉시 받는다",
+        "explanation": "반환은 Task<int>이다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 새 OS 스레드 핸들",
+        "explanation": "Task와 스레드는 일대일이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "결과가 항상 null",
+        "explanation": "정수 결과를 제공한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "await로 결과를 얻을 수 있다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-020",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "취소 토큰",
+    "prompt": "CancellationToken의 기본 취소 방식은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "저장된 데이터 자동 롤백",
+        "explanation": "취소와 트랜잭션은 별개이다."
+      },
+      {
+        "id": "c0",
+        "text": "작업이 취소 요청을 협력적으로 확인한다",
+        "explanation": "토큰 전달·확인·취소 예외 처리로 작업이 반응한다."
+      },
+      {
+        "id": "c1",
+        "text": "임의 스레드 즉시 강제 종료",
+        "explanation": "협력적 취소이다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 메서드 자동 취소",
+        "explanation": "토큰을 사용하지 않으면 반응하지 않을 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "토큰 전달·확인·취소 예외 처리로 작업이 반응한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-021",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "async void 위험",
+    "prompt": "일반 비동기 API에 async void보다 Task를 권하는 이유는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "Task는 예외를 모두 제거",
+        "explanation": "예외를 관찰하도록 제공한다."
+      },
+      {
+        "id": "c3",
+        "text": "void만 병렬 가능",
+        "explanation": "반환 타입이 병렬 여부를 정하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "호출자가 완료와 예외를 관찰하기 쉽다",
+        "explanation": "Task는 대기와 예외 전파를 표현한다. 이벤트 처리기는 async void 사용이 있을 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "async void가 컴파일 불가",
+        "explanation": "컴파일 가능하지만 제약이 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Task는 대기와 예외 전파를 표현한다. 이벤트 처리기는 async void 사용이 있을 수 있다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-022",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "UI와 동기 대기",
+    "prompt": "단일 스레드 UI 문맥에서 Task.Result로 막고 이어 실행이 같은 문맥을 기다리면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "언제나 안전한 비동기 대기",
+        "explanation": "Result는 동기 대기이다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 CPU 병렬 실행",
+        "explanation": "스케줄링 문맥과 대기 관계가 중요하다."
+      },
+      {
+        "id": "c3",
+        "text": "Task가 자동 UI 문맥 삭제",
+        "explanation": "그런 보장이 없다."
+      },
+      {
+        "id": "c0",
+        "text": "교착 위험이 있다",
+        "explanation": "UI 스레드가 대기하는 동안 해당 스레드에서 재개해야 하는 작업이 진행하지 못할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "UI 스레드가 대기하는 동안 해당 스레드에서 재개해야 하는 작업이 진행하지 못할 수 있다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-023",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "ConfigureAwait",
+    "prompt": "ConfigureAwait(false)의 정확한 목적은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "재개에 원래 문맥 캡처를 요구하지 않는다",
+        "explanation": "항상 새 스레드로 옮긴다는 보장은 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 작업 취소",
+        "explanation": "취소 토큰이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 스레드풀 새 스레드 생성",
+        "explanation": "이미 완료된 작업 등에서 같은 스레드로 이어질 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 공유 상태 안전화",
+        "explanation": "동기화는 별도이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "항상 새 스레드로 옮긴다는 보장은 아니다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-024",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "값 타입의 참조 필드",
+    "prompt": "struct 안에 List<int>가 있고 struct를 복사하면?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "참조 필드는 금지",
+        "explanation": "struct에 참조 타입 필드가 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "같은 리스트 참조가 복사된다",
+        "explanation": "값 타입의 필드 값 복사 중 참조 타입 필드는 같은 대상 참조를 복사한다."
+      },
+      {
+        "id": "c1",
+        "text": "리스트도 깊게 복제",
+        "explanation": "재귀 복사가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "리스트가 자동 불변",
+        "explanation": "공유 객체를 동결하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "값 타입의 필드 값 복사 중 참조 타입 필드는 같은 대상 참조를 복사한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-025",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "이벤트 수명",
+    "prompt": "장수명 발행자 event를 단수명 구독자가 해제하지 않으면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "발행자가 무조건 소멸",
+        "explanation": "구독자가 발행자 수명을 종료하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "메모리 누수는 절대 불가능",
+        "explanation": "관리 코드도 의도하지 않은 참조 유지가 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "구독자가 의도보다 오래 살아 있을 수 있다",
+        "explanation": "delegate가 구독자를 참조하므로 구독 해제 등 수명 정책이 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "GC가 항상 즉시 제거",
+        "explanation": "발행자로부터 참조가 남을 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "delegate가 구독자를 참조하므로 구독 해제 등 수명 정책이 필요하다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-026",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "재열거 부작용",
+    "prompt": "DB 요청을 포함한 지연 IEnumerable을 두 번 열거하면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 첫 결과를 캐시",
+        "explanation": "자동 캐시 보장이 없다."
+      },
+      {
+        "id": "c2",
+        "text": "두 번째 열거는 컴파일 오류",
+        "explanation": "일반 IEnumerable은 재열거 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "원본 데이터를 자동 삭제",
+        "explanation": "열거가 삭제를 의미하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "요청이 반복될 수 있다",
+        "explanation": "지연 쿼리의 재열거는 계산·부작용을 다시 실행할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "지연 쿼리의 재열거는 계산·부작용을 다시 실행할 수 있다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-027",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "가변 struct 프로퍼티",
+    "prompt": "값으로 반환되는 가변 struct 프로퍼티 수정에 주의할 이유는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "반환된 복사본만 수정할 수 있다",
+        "explanation": "프로퍼티는 일반 변수 저장 위치와 다르며 직접 필드 수정은 오류가 나거나 복사 수정이 된다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 원본을 자동 갱신",
+        "explanation": "값 반환이 별도 값일 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "struct가 항상 참조 타입",
+        "explanation": "값 타입이다."
+      },
+      {
+        "id": "c3",
+        "text": "get이 깊은 불변성을 제공",
+        "explanation": "get만으로 내부 참조 객체까지 불변이 되지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "프로퍼티는 일반 변수 저장 위치와 다르며 직접 필드 수정은 오류가 나거나 복사 수정이 된다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-028",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "Interlocked",
+    "prompt": "여러 스레드의 정수 카운터 증가에 적절한 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "Task 이름 변경",
+        "explanation": "동기화 효과가 없다."
+      },
+      {
+        "id": "c0",
+        "text": "Interlocked.Increment",
+        "explanation": "원자적 증가를 제공하며 읽기·증가·쓰기 경쟁을 피한다."
+      },
+      {
+        "id": "c1",
+        "text": "count++만 사용",
+        "explanation": "복합 연산 전체 원자성을 보장하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "volatile만 선언",
+        "explanation": "가시성 규칙과 원자적 복합 증가가 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "원자적 증가를 제공하며 읽기·증가·쓰기 경쟁을 피한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-029",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "await using",
+    "prompt": "IAsyncDisposable 객체에 await using을 사용하는 이유는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "GC를 별도 스레드로 강제",
+        "explanation": "관리 메모리 회수 명령이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "취소 토큰을 자동 생성",
+        "explanation": "별도 취소 정책이다."
+      },
+      {
+        "id": "c0",
+        "text": "비동기 정리의 완료를 기다린다",
+        "explanation": "DisposeAsync의 완료를 기다리며 범위를 종료한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 동기 메서드를 비동기로 변환",
+        "explanation": "정리 계약에 적용한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "DisposeAsync의 완료를 기다리며 범위를 종료한다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "csharp-030",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "Task.WhenAll",
+    "prompt": "독립 Task들을 WhenAll로 모았을 때 보장하는 것은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "첫 성공만 반환",
+        "explanation": "WhenAny와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 작업에 새 스레드 할당",
+        "explanation": "작업 시작·스레드 할당을 보장하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "하나 실패 시 전부 강제 취소",
+        "explanation": "취소는 별도이다."
+      },
+      {
+        "id": "c0",
+        "text": "모인 작업들의 완료를 관찰한다",
+        "explanation": "여러 작업의 집계 완료와 예외를 제공하지만 하나의 실패가 나머지를 자동 취소하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "여러 작업의 집계 완료와 예외를 제공하지만 하나의 실패가 나머지를 자동 취소하지 않는다.",
+    "environment": "C# 12 / .NET 8. Unity 전용 API·Mono 동작은 별도 가정하지 않는다.",
+    "sources": [
+      {
+        "title": "C# 언어 참조",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      },
+      {
+        "title": "C# 타입 시스템",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/"
+      },
+      {
+        "title": "C# async와 await",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  }
+]

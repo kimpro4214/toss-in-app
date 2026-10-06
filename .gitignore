@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.ait
+.env
+.env.local
+playwright-report/
+test-results/
+coverage/
+/idea.md
+
+# Keep planning, documentation, and generated reports local, except shared instructions.
+*.md
+!AGENTS.md
+!CLAUDE.md
+!LICENSE.md
+!NOTICE.md
+/apps/*/reports/
