@@ -1529,5 +1529,4505 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "cpp-031",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "정수 나눗셈",
+    "prompt": "정수 나눗셈: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 두 피연산자가 int이므로 소수 부분을 버린 정수 몫 3을 얻는다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "두 피연산자가 int이므로 소수 부분을 버린 정수 몫 3을 얻는다."
+      },
+      {
+        "id": "c2",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. 두 피연산자가 int이므로 소수 부분을 버린 정수 몫 3을 얻는다."
+      },
+      {
+        "id": "c1",
+        "text": "3.4",
+        "explanation": "이 조건에서 3.4는 성립하지 않는다. 두 피연산자가 int이므로 소수 부분을 버린 정수 몫 3을 얻는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "두 피연산자가 int이므로 소수 부분을 버린 정수 몫 3을 얻는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int a = 17, b = 5;\nstd::cout << a / b;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-032",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "나머지와 몫",
+    "prompt": "나머지와 몫: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "23 0",
+        "explanation": "이 조건에서 23 0는 성립하지 않는다. 정수 나눗셈은 십의 자리 2, 나머지는 일의 자리 3을 얻는다."
+      },
+      {
+        "id": "c1",
+        "text": "3 2",
+        "explanation": "이 조건에서 3 2는 성립하지 않는다. 정수 나눗셈은 십의 자리 2, 나머지는 일의 자리 3을 얻는다."
+      },
+      {
+        "id": "c0",
+        "text": "2 3",
+        "explanation": "정수 나눗셈은 십의 자리 2, 나머지는 일의 자리 3을 얻는다."
+      },
+      {
+        "id": "c2",
+        "text": "2 2",
+        "explanation": "이 조건에서 2 2는 성립하지 않는다. 정수 나눗셈은 십의 자리 2, 나머지는 일의 자리 3을 얻는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정수 나눗셈은 십의 자리 2, 나머지는 일의 자리 3을 얻는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 23;\nstd::cout << n / 10 << \" \" << n % 10;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-033",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "명시적 실수 변환",
+    "prompt": "명시적 실수 변환: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "0.5",
+        "explanation": "이 조건에서 0.5는 성립하지 않는다. a가 double로 변환된 뒤 나눗셈에 참여하므로 실수 결과 1.5를 얻는다."
+      },
+      {
+        "id": "c0",
+        "text": "1.5",
+        "explanation": "a가 double로 변환된 뒤 나눗셈에 참여하므로 실수 결과 1.5를 얻는다."
+      },
+      {
+        "id": "c2",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. a가 double로 변환된 뒤 나눗셈에 참여하므로 실수 결과 1.5를 얻는다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. a가 double로 변환된 뒤 나눗셈에 참여하므로 실수 결과 1.5를 얻는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "a가 double로 변환된 뒤 나눗셈에 참여하므로 실수 결과 1.5를 얻는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int a = 3, b = 2;\nstd::cout << static_cast<double>(a) / b;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-034",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "비트 마스크",
+    "prompt": "비트 마스크: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "4",
+        "explanation": "1101과 0110의 AND는 0100이다. OR나 덧셈과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "13",
+        "explanation": "이 조건에서 13는 성립하지 않는다. 1101과 0110의 AND는 0100이다. OR나 덧셈과 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 1101과 0110의 AND는 0100이다. OR나 덧셈과 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "19",
+        "explanation": "이 조건에서 19는 성립하지 않는다. 1101과 0110의 AND는 0100이다. OR나 덧셈과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "1101과 0110의 AND는 0100이다. OR나 덧셈과 다르다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "unsigned flags = 13;\nstd::cout << (flags & 6u);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-035",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "부호 없는 시프트",
+    "prompt": "부호 없는 시프트: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "32",
+        "explanation": "이 조건에서 32는 성립하지 않는다. 표현 가능한 범위에서 두 비트 왼쪽 이동은 4배인 12이다."
+      },
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 표현 가능한 범위에서 두 비트 왼쪽 이동은 4배인 12이다."
+      },
+      {
+        "id": "c0",
+        "text": "12",
+        "explanation": "표현 가능한 범위에서 두 비트 왼쪽 이동은 4배인 12이다."
+      },
+      {
+        "id": "c1",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 표현 가능한 범위에서 두 비트 왼쪽 이동은 4배인 12이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "표현 가능한 범위에서 두 비트 왼쪽 이동은 4배인 12이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "unsigned n = 3;\nstd::cout << (n << 2);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-036",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "비교식의 bool",
+    "prompt": "비교식의 bool: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "true true",
+        "explanation": "이 조건에서 true true는 성립하지 않는다. 4는 9보다 작지만 같지는 않다. boolalpha를 적용한 출력이다."
+      },
+      {
+        "id": "c1",
+        "text": "false true",
+        "explanation": "이 조건에서 false true는 성립하지 않는다. 4는 9보다 작지만 같지는 않다. boolalpha를 적용한 출력이다."
+      },
+      {
+        "id": "c3",
+        "text": "false false",
+        "explanation": "이 조건에서 false false는 성립하지 않는다. 4는 9보다 작지만 같지는 않다. boolalpha를 적용한 출력이다."
+      },
+      {
+        "id": "c0",
+        "text": "true false",
+        "explanation": "4는 9보다 작지만 같지는 않다. boolalpha를 적용한 출력이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "4는 9보다 작지만 같지는 않다. boolalpha를 적용한 출력이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int a = 4, b = 9;\nstd::cout << (a < b) << \" \" << (a == b);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-037",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "조건 연산자",
+    "prompt": "조건 연산자: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 조건 hp > 0이 거짓이므로 세 번째 피연산자 문자열을 선택한다."
+      },
+      {
+        "id": "c0",
+        "text": "dead",
+        "explanation": "조건 hp > 0이 거짓이므로 세 번째 피연산자 문자열을 선택한다."
+      },
+      {
+        "id": "c1",
+        "text": "alive",
+        "explanation": "이 조건에서 alive는 성립하지 않는다. 조건 hp > 0이 거짓이므로 세 번째 피연산자 문자열을 선택한다."
+      },
+      {
+        "id": "c3",
+        "text": "true",
+        "explanation": "이 조건에서 true는 성립하지 않는다. 조건 hp > 0이 거짓이므로 세 번째 피연산자 문자열을 선택한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "조건 hp > 0이 거짓이므로 세 번째 피연산자 문자열을 선택한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int hp = 0;\nstd::cout << (hp > 0 ? \"alive\" : \"dead\");",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-038",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "단락 평가",
+    "prompt": "단락 평가: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "true",
+        "explanation": "이 조건에서 true는 성립하지 않는다. && 왼쪽이 false이면 오른쪽 함수를 호출하지 않아 calls는 0이다."
+      },
+      {
+        "id": "c0",
+        "text": "0",
+        "explanation": "&& 왼쪽이 false이면 오른쪽 함수를 호출하지 않아 calls는 0이다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. && 왼쪽이 false이면 오른쪽 함수를 호출하지 않아 calls는 0이다."
+      },
+      {
+        "id": "c2",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. && 왼쪽이 false이면 오른쪽 함수를 호출하지 않아 calls는 0이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "&& 왼쪽이 false이면 오른쪽 함수를 호출하지 않아 calls는 0이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int calls = 0;\nauto check = [&] { ++calls; return true; };\nbool ok = false && check();\nstd::cout << calls;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-039",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "후위 증가의 저장값",
+    "prompt": "후위 증가의 저장값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "8 7",
+        "explanation": "이 조건에서 8 7는 성립하지 않는다. 후위 증가는 기존 값 7을 식의 결과로 쓰고 n을 8로 바꾼다. 별도 문장이라 평가 순서 충돌이 없다."
+      },
+      {
+        "id": "c0",
+        "text": "7 8",
+        "explanation": "후위 증가는 기존 값 7을 식의 결과로 쓰고 n을 8로 바꾼다. 별도 문장이라 평가 순서 충돌이 없다."
+      },
+      {
+        "id": "c1",
+        "text": "8 8",
+        "explanation": "이 조건에서 8 8는 성립하지 않는다. 후위 증가는 기존 값 7을 식의 결과로 쓰고 n을 8로 바꾼다. 별도 문장이라 평가 순서 충돌이 없다."
+      },
+      {
+        "id": "c2",
+        "text": "7 7",
+        "explanation": "이 조건에서 7 7는 성립하지 않는다. 후위 증가는 기존 값 7을 식의 결과로 쓰고 n을 8로 바꾼다. 별도 문장이라 평가 순서 충돌이 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "후위 증가는 기존 값 7을 식의 결과로 쓰고 n을 8로 바꾼다. 별도 문장이라 평가 순서 충돌이 없다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 7;\nint old = n++;\nstd::cout << old << \" \" << n;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-040",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "연산자 우선순위",
+    "prompt": "연산자 우선순위: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "24",
+        "explanation": "이 조건에서 24는 성립하지 않는다. 곱셈 3*4를 먼저 계산한 뒤 2를 더해 14를 얻는다."
+      },
+      {
+        "id": "c1",
+        "text": "20",
+        "explanation": "이 조건에서 20는 성립하지 않는다. 곱셈 3*4를 먼저 계산한 뒤 2를 더해 14를 얻는다."
+      },
+      {
+        "id": "c0",
+        "text": "14",
+        "explanation": "곱셈 3*4를 먼저 계산한 뒤 2를 더해 14를 얻는다."
+      },
+      {
+        "id": "c3",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. 곱셈 3*4를 먼저 계산한 뒤 2를 더해 14를 얻는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "곱셈 3*4를 먼저 계산한 뒤 2를 더해 14를 얻는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 2 + 3 * 4;\nstd::cout << n;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-041",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "continue 누적",
+    "prompt": "continue 누적: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 2일 때만 덧셈을 건너뛰므로 1+3+4=8이다."
+      },
+      {
+        "id": "c3",
+        "text": "7",
+        "explanation": "이 조건에서 7는 성립하지 않는다. 2일 때만 덧셈을 건너뛰므로 1+3+4=8이다."
+      },
+      {
+        "id": "c1",
+        "text": "10",
+        "explanation": "이 조건에서 10는 성립하지 않는다. 2일 때만 덧셈을 건너뛰므로 1+3+4=8이다."
+      },
+      {
+        "id": "c0",
+        "text": "8",
+        "explanation": "2일 때만 덧셈을 건너뛰므로 1+3+4=8이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "2일 때만 덧셈을 건너뛰므로 1+3+4=8이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int sum = 0;\nfor (int i = 1; i <= 4; ++i) {\n  if (i == 2) continue;\n  sum += i;\n}\nstd::cout << sum;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-042",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "break 종료 시점",
+    "prompt": "break 종료 시점: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. i가 0,1,2인 세 번만 증가한 뒤 i=3에서 반복을 종료한다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "i가 0,1,2인 세 번만 증가한 뒤 i=3에서 반복을 종료한다."
+      },
+      {
+        "id": "c3",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. i가 0,1,2인 세 번만 증가한 뒤 i=3에서 반복을 종료한다."
+      },
+      {
+        "id": "c2",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. i가 0,1,2인 세 번만 증가한 뒤 i=3에서 반복을 종료한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "i가 0,1,2인 세 번만 증가한 뒤 i=3에서 반복을 종료한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int count = 0;\nfor (int i = 0; i < 5; ++i) {\n  if (i == 3) break;\n  ++count;\n}\nstd::cout << count;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-043",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "범위 반복 값 복사",
+    "prompt": "범위 반복 값 복사: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "2 8",
+        "explanation": "이 조건에서 2 8는 성립하지 않는다. auto x는 요소의 복사본이다. 복사본 변경은 vector 요소에 반영되지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "4 8",
+        "explanation": "이 조건에서 4 8는 성립하지 않는다. auto x는 요소의 복사본이다. 복사본 변경은 vector 요소에 반영되지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "4 4",
+        "explanation": "이 조건에서 4 4는 성립하지 않는다. auto x는 요소의 복사본이다. 복사본 변경은 vector 요소에 반영되지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "2 4",
+        "explanation": "auto x는 요소의 복사본이다. 복사본 변경은 vector 요소에 반영되지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "auto x는 요소의 복사본이다. 복사본 변경은 vector 요소에 반영되지 않는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{2, 4};\nfor (auto x : v) x *= 2;\nstd::cout << v[0] << \" \" << v[1];",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-044",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "범위 반복 참조 수정",
+    "prompt": "범위 반복 참조 수정: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "3 4",
+        "explanation": "이 조건에서 3 4는 성립하지 않는다. 각 요소에 참조를 바인딩하여 두 요소를 모두 직접 수정한다."
+      },
+      {
+        "id": "c1",
+        "text": "2 4",
+        "explanation": "이 조건에서 2 4는 성립하지 않는다. 각 요소에 참조를 바인딩하여 두 요소를 모두 직접 수정한다."
+      },
+      {
+        "id": "c0",
+        "text": "3 5",
+        "explanation": "각 요소에 참조를 바인딩하여 두 요소를 모두 직접 수정한다."
+      },
+      {
+        "id": "c3",
+        "text": "2 5",
+        "explanation": "이 조건에서 2 5는 성립하지 않는다. 각 요소에 참조를 바인딩하여 두 요소를 모두 직접 수정한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "각 요소에 참조를 바인딩하여 두 요소를 모두 직접 수정한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{2, 4};\nfor (auto& x : v) x += 1;\nstd::cout << v[0] << \" \" << v[1];",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-045",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "문자열 이어 붙이기",
+    "prompt": "문자열 이어 붙이기: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "corecraft",
+        "explanation": "이 조건에서 corecraft는 성립하지 않는다. 문자열에 공백이 포함된 리터럴을 덧붙이므로 공백도 유지된다."
+      },
+      {
+        "id": "c1",
+        "text": "core",
+        "explanation": "이 조건에서 core는 성립하지 않는다. 문자열에 공백이 포함된 리터럴을 덧붙이므로 공백도 유지된다."
+      },
+      {
+        "id": "c2",
+        "text": "craft",
+        "explanation": "이 조건에서 craft는 성립하지 않는다. 문자열에 공백이 포함된 리터럴을 덧붙이므로 공백도 유지된다."
+      },
+      {
+        "id": "c0",
+        "text": "core craft",
+        "explanation": "문자열에 공백이 포함된 리터럴을 덧붙이므로 공백도 유지된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "문자열에 공백이 포함된 리터럴을 덧붙이므로 공백도 유지된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::string s = \"core\";\ns += \" craft\";\nstd::cout << s;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-046",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "배열 경계 안 인덱싱",
+    "prompt": "배열 경계 안 인덱싱: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "배열 인덱스는 0부터 시작하므로 인덱스 1은 두 번째 원소 3이다."
+      },
+      {
+        "id": "c1",
+        "text": "8",
+        "explanation": "이 조건에서 8는 성립하지 않는다. 배열 인덱스는 0부터 시작하므로 인덱스 1은 두 번째 원소 3이다."
+      },
+      {
+        "id": "c3",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 배열 인덱스는 0부터 시작하므로 인덱스 1은 두 번째 원소 3이다."
+      },
+      {
+        "id": "c2",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 배열 인덱스는 0부터 시작하므로 인덱스 1은 두 번째 원소 3이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "배열 인덱스는 0부터 시작하므로 인덱스 1은 두 번째 원소 3이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int values[]{8, 3, 6};\nstd::cout << values[1];",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-047",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "포인터 간접 수정",
+    "prompt": "포인터 간접 수정: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 역참조 *p는 a를 지칭하므로 a에 6을 더해 10이 된다."
+      },
+      {
+        "id": "c2",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 역참조 *p는 a를 지칭하므로 a에 6을 더해 10이 된다."
+      },
+      {
+        "id": "c0",
+        "text": "10",
+        "explanation": "역참조 *p는 a를 지칭하므로 a에 6을 더해 10이 된다."
+      },
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. 역참조 *p는 a를 지칭하므로 a에 6을 더해 10이 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "역참조 *p는 a를 지칭하므로 a에 6을 더해 10이 된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int a = 4;\nint* p = &a;\n*p += 6;\nstd::cout << a;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-048",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "포인터 재바인딩",
+    "prompt": "포인터 재바인딩: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "9 2",
+        "explanation": "포인터를 b 주소로 바꾸는 것은 a 값을 수정하는 연산이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "2 2",
+        "explanation": "이 조건에서 2 2는 성립하지 않는다. 포인터를 b 주소로 바꾸는 것은 a 값을 수정하는 연산이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "9 9",
+        "explanation": "이 조건에서 9 9는 성립하지 않는다. 포인터를 b 주소로 바꾸는 것은 a 값을 수정하는 연산이 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "2 9",
+        "explanation": "이 조건에서 2 9는 성립하지 않는다. 포인터를 b 주소로 바꾸는 것은 a 값을 수정하는 연산이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "포인터를 b 주소로 바꾸는 것은 a 값을 수정하는 연산이 아니다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int a = 2, b = 9;\nint* p = &a;\np = &b;\nstd::cout << *p << \" \" << a;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-049",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "지역 범위 가림",
+    "prompt": "지역 범위 가림: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. 안쪽 n은 별개의 지역 변수이며 바깥쪽 n은 5를 유지한다."
+      },
+      {
+        "id": "c3",
+        "text": "14",
+        "explanation": "이 조건에서 14는 성립하지 않는다. 안쪽 n은 별개의 지역 변수이며 바깥쪽 n은 5를 유지한다."
+      },
+      {
+        "id": "c0",
+        "text": "5",
+        "explanation": "안쪽 n은 별개의 지역 변수이며 바깥쪽 n은 5를 유지한다."
+      },
+      {
+        "id": "c1",
+        "text": "8",
+        "explanation": "이 조건에서 8는 성립하지 않는다. 안쪽 n은 별개의 지역 변수이며 바깥쪽 n은 5를 유지한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "안쪽 n은 별개의 지역 변수이며 바깥쪽 n은 5를 유지한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 5;\n{ int n = 8; n += 1; }\nstd::cout << n;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-050",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "switch fallthrough",
+    "prompt": "switch fallthrough: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. case 2 뒤에 break가 없어 case 3도 수행한 뒤 종료한다."
+      },
+      {
+        "id": "c0",
+        "text": "5",
+        "explanation": "case 2 뒤에 break가 없어 case 3도 수행한 뒤 종료한다."
+      },
+      {
+        "id": "c3",
+        "text": "14",
+        "explanation": "이 조건에서 14는 성립하지 않는다. case 2 뒤에 break가 없어 case 3도 수행한 뒤 종료한다."
+      },
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. case 2 뒤에 break가 없어 case 3도 수행한 뒤 종료한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "case 2 뒤에 break가 없어 case 3도 수행한 뒤 종료한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int sum = 0;\nswitch (2) {\ncase 2: sum += 2;\ncase 3: sum += 3; break;\ndefault: sum += 9;\n}\nstd::cout << sum;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-051",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "vector 삽입",
+    "prompt": "vector 끝에 7을 추가하려면 빈칸에 어떤 함수를 넣나요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "pop_back",
+        "explanation": "이 조건에서 pop_back는 성립하지 않는다. push_back은 새 요소를 끝에 추가한다. pop_back은 삭제, clear는 모두 삭제, size는 개수 조회다."
+      },
+      {
+        "id": "c0",
+        "text": "push_back",
+        "explanation": "push_back은 새 요소를 끝에 추가한다. pop_back은 삭제, clear는 모두 삭제, size는 개수 조회다."
+      },
+      {
+        "id": "c3",
+        "text": "size",
+        "explanation": "이 조건에서 size는 성립하지 않는다. push_back은 새 요소를 끝에 추가한다. pop_back은 삭제, clear는 모두 삭제, size는 개수 조회다."
+      },
+      {
+        "id": "c2",
+        "text": "clear",
+        "explanation": "이 조건에서 clear는 성립하지 않는다. push_back은 새 요소를 끝에 추가한다. pop_back은 삭제, clear는 모두 삭제, size는 개수 조회다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "push_back은 새 요소를 끝에 추가한다. pop_back은 삭제, clear는 모두 삭제, size는 개수 조회다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::vector<int> v{1};\nv.____(7);\nstd::cout << v.back();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-052",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "배열 원소 수",
+    "prompt": "고정 배열의 원소 수 4를 출력하려면 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "front",
+        "explanation": "이 조건에서 front는 성립하지 않는다. size는 원소 개수이고 empty는 비어 있는지, front/back은 실제 첫/마지막 값을 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "empty",
+        "explanation": "이 조건에서 empty는 성립하지 않는다. size는 원소 개수이고 empty는 비어 있는지, front/back은 실제 첫/마지막 값을 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "back",
+        "explanation": "이 조건에서 back는 성립하지 않는다. size는 원소 개수이고 empty는 비어 있는지, front/back은 실제 첫/마지막 값을 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "size",
+        "explanation": "size는 원소 개수이고 empty는 비어 있는지, front/back은 실제 첫/마지막 값을 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "size는 원소 개수이고 empty는 비어 있는지, front/back은 실제 첫/마지막 값을 반환한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::array<int, 4> a{1,2,3,4};\nstd::cout << a.____();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-053",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "빈 컨테이너 검사",
+    "prompt": "비어 있는 vector에 대해 true를 출력하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "max_size",
+        "explanation": "이 조건에서 max_size는 성립하지 않는다. empty는 요소가 없으면 true이다. size와 capacity는 수치이며 max_size는 최대 요소 수를 나타낸다."
+      },
+      {
+        "id": "c0",
+        "text": "empty",
+        "explanation": "empty는 요소가 없으면 true이다. size와 capacity는 수치이며 max_size는 최대 요소 수를 나타낸다."
+      },
+      {
+        "id": "c1",
+        "text": "size",
+        "explanation": "이 조건에서 size는 성립하지 않는다. empty는 요소가 없으면 true이다. size와 capacity는 수치이며 max_size는 최대 요소 수를 나타낸다."
+      },
+      {
+        "id": "c2",
+        "text": "capacity",
+        "explanation": "이 조건에서 capacity는 성립하지 않는다. empty는 요소가 없으면 true이다. size와 capacity는 수치이며 max_size는 최대 요소 수를 나타낸다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "empty는 요소가 없으면 true이다. size와 capacity는 수치이며 max_size는 최대 요소 수를 나타낸다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::vector<int> v;\nstd::cout << v.____();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-054",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "문자열 일부 추출",
+    "prompt": "문자열에서 인덱스 1부터 세 글자 ngi를 얻는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "append",
+        "explanation": "이 조건에서 append는 성립하지 않는다. substr(pos,count)는 부분 문자열을 만든다. find와 compare는 위치/비교값이며 append는 추가한다."
+      },
+      {
+        "id": "c2",
+        "text": "compare",
+        "explanation": "이 조건에서 compare는 성립하지 않는다. substr(pos,count)는 부분 문자열을 만든다. find와 compare는 위치/비교값이며 append는 추가한다."
+      },
+      {
+        "id": "c0",
+        "text": "substr",
+        "explanation": "substr(pos,count)는 부분 문자열을 만든다. find와 compare는 위치/비교값이며 append는 추가한다."
+      },
+      {
+        "id": "c1",
+        "text": "find",
+        "explanation": "이 조건에서 find는 성립하지 않는다. substr(pos,count)는 부분 문자열을 만든다. find와 compare는 위치/비교값이며 append는 추가한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "substr(pos,count)는 부분 문자열을 만든다. find와 compare는 위치/비교값이며 append는 추가한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::string s = \"engine\";\nstd::cout << s.____(1, 3);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-055",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "읽기 전용 참조",
+    "prompt": "r을 통해 n을 수정할 수 없게 만드는 한정자는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "volatile",
+        "explanation": "이 조건에서 volatile는 성립하지 않는다. const int&는 참조를 통한 수정을 금지한다. volatile은 수정 금지가 아니며 static과 mutable은 이 위치의 대체 한정자가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "mutable",
+        "explanation": "이 조건에서 mutable는 성립하지 않는다. const int&는 참조를 통한 수정을 금지한다. volatile은 수정 금지가 아니며 static과 mutable은 이 위치의 대체 한정자가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "const",
+        "explanation": "const int&는 참조를 통한 수정을 금지한다. volatile은 수정 금지가 아니며 static과 mutable은 이 위치의 대체 한정자가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "static",
+        "explanation": "이 조건에서 static는 성립하지 않는다. const int&는 참조를 통한 수정을 금지한다. volatile은 수정 금지가 아니며 static과 mutable은 이 위치의 대체 한정자가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "const int&는 참조를 통한 수정을 금지한다. volatile은 수정 금지가 아니며 static과 mutable은 이 위치의 대체 한정자가 아니다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "int n = 6;\n____ int& r = n;\nstd::cout << r;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-056",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "pair 두 번째 값",
+    "prompt": "pair에서 값 9에 접근하려면 빈칸에 무엇을 넣나요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "value",
+        "explanation": "이 조건에서 value는 성립하지 않는다. pair는 first와 second 멤버를 제공하며 second가 두 번째 요소다."
+      },
+      {
+        "id": "c0",
+        "text": "second",
+        "explanation": "pair는 first와 second 멤버를 제공하며 second가 두 번째 요소다."
+      },
+      {
+        "id": "c2",
+        "text": "back",
+        "explanation": "이 조건에서 back는 성립하지 않는다. pair는 first와 second 멤버를 제공하며 second가 두 번째 요소다."
+      },
+      {
+        "id": "c1",
+        "text": "first",
+        "explanation": "이 조건에서 first는 성립하지 않는다. pair는 first와 second 멤버를 제공하며 second가 두 번째 요소다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "pair는 first와 second 멤버를 제공하며 second가 두 번째 요소다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::pair<int,int> p{3,9};\nstd::cout << p.____;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-057",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "최솟값 함수",
+    "prompt": "두 수 중 더 작은 값 2를 출력하는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "move",
+        "explanation": "이 조건에서 move는 성립하지 않는다. min은 작은 값, max는 큰 값을 반환한다. swap은 교환, move는 값 범주 변환이다."
+      },
+      {
+        "id": "c1",
+        "text": "max",
+        "explanation": "이 조건에서 max는 성립하지 않는다. min은 작은 값, max는 큰 값을 반환한다. swap은 교환, move는 값 범주 변환이다."
+      },
+      {
+        "id": "c0",
+        "text": "min",
+        "explanation": "min은 작은 값, max는 큰 값을 반환한다. swap은 교환, move는 값 범주 변환이다."
+      },
+      {
+        "id": "c2",
+        "text": "swap",
+        "explanation": "이 조건에서 swap는 성립하지 않는다. min은 작은 값, max는 큰 값을 반환한다. swap은 교환, move는 값 범주 변환이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "min은 작은 값, max는 큰 값을 반환한다. swap은 교환, move는 값 범주 변환이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "int a = 7, b = 2;\nstd::cout << std::____(a,b);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-058",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "문자열 초기화",
+    "prompt": "문자열 값을 저장하는 표준 타입을 완성하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "pair<int,int>",
+        "explanation": "이 조건에서 pair<int,int>는 성립하지 않는다. std::string은 문자 시퀀스를 저장한다. 나머지 타입은 이 문자열 리터럴로 선언처럼 초기화할 수 없다."
+      },
+      {
+        "id": "c0",
+        "text": "string",
+        "explanation": "std::string은 문자 시퀀스를 저장한다. 나머지 타입은 이 문자열 리터럴로 선언처럼 초기화할 수 없다."
+      },
+      {
+        "id": "c1",
+        "text": "vector<int>",
+        "explanation": "이 조건에서 vector<int>는 성립하지 않는다. std::string은 문자 시퀀스를 저장한다. 나머지 타입은 이 문자열 리터럴로 선언처럼 초기화할 수 없다."
+      },
+      {
+        "id": "c2",
+        "text": "array<int,2>",
+        "explanation": "이 조건에서 array<int,2>는 성립하지 않는다. std::string은 문자 시퀀스를 저장한다. 나머지 타입은 이 문자열 리터럴로 선언처럼 초기화할 수 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "std::string은 문자 시퀀스를 저장한다. 나머지 타입은 이 문자열 리터럴로 선언처럼 초기화할 수 없다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::____ name = \"CS\";\nstd::cout << name;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-059",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "0으로 초기화",
+    "prompt": "지역 int를 0으로 값 초기화하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "{}",
+        "explanation": "빈 중괄호 값 초기화는 int를 0으로 초기화한다. 배열 선언이나 9/1 초기화와 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "[1]",
+        "explanation": "이 조건에서 [1]는 성립하지 않는다. 빈 중괄호 값 초기화는 int를 0으로 초기화한다. 배열 선언이나 9/1 초기화와 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "= 1",
+        "explanation": "이 조건에서 = 1는 성립하지 않는다. 빈 중괄호 값 초기화는 int를 0으로 초기화한다. 배열 선언이나 9/1 초기화와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "(9)",
+        "explanation": "이 조건에서 (9)는 성립하지 않는다. 빈 중괄호 값 초기화는 int를 0으로 초기화한다. 배열 선언이나 9/1 초기화와 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "빈 중괄호 값 초기화는 int를 0으로 초기화한다. 배열 선언이나 9/1 초기화와 다르다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "int value____;\nstd::cout << value;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-060",
+    "subject": "cpp",
+    "difficulty": "easy",
+    "topic": "참조로 교환",
+    "prompt": "두 변수 값을 교환해서 7 3을 출력하는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "swap",
+        "explanation": "std::swap은 두 변수의 값을 교환한다. min/max는 값을 반환할 뿐 변수를 수정하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "max",
+        "explanation": "이 조건에서 max는 성립하지 않는다. std::swap은 두 변수의 값을 교환한다. min/max는 값을 반환할 뿐 변수를 수정하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "equal",
+        "explanation": "이 조건에서 equal는 성립하지 않는다. std::swap은 두 변수의 값을 교환한다. min/max는 값을 반환할 뿐 변수를 수정하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "min",
+        "explanation": "이 조건에서 min는 성립하지 않는다. std::swap은 두 변수의 값을 교환한다. min/max는 값을 반환할 뿐 변수를 수정하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "std::swap은 두 변수의 값을 교환한다. min/max는 값을 반환할 뿐 변수를 수정하지 않는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "int a = 3, b = 7;\nstd::____(a,b);\nstd::cout << a << \" \" << b;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-061",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "클래스 멤버 초기화",
+    "prompt": "클래스 멤버 초기화: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. 생성자 본문에 들어가기 전에 멤버 초기화 목록 n(x+1)이 실행된다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 생성자 본문에 들어가기 전에 멤버 초기화 목록 n(x+1)이 실행된다."
+      },
+      {
+        "id": "c0",
+        "text": "5",
+        "explanation": "생성자 본문에 들어가기 전에 멤버 초기화 목록 n(x+1)이 실행된다."
+      },
+      {
+        "id": "c3",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 생성자 본문에 들어가기 전에 멤버 초기화 목록 n(x+1)이 실행된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "생성자 본문에 들어가기 전에 멤버 초기화 목록 n(x+1)이 실행된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "struct Item { int n; explicit Item(int x) : n(x + 1) {} };\nItem item(4);\nstd::cout << item.n;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-062",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "소멸자와 블록 수명",
+    "prompt": "소멸자와 블록 수명: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "A B D",
+        "explanation": "이 조건에서 A B D는 성립하지 않는다. 블록 종료 시 Guard가 파괴되어 D를 출력하고, 그 뒤 바깥의 B가 실행된다."
+      },
+      {
+        "id": "c1",
+        "text": "D A B",
+        "explanation": "이 조건에서 D A B는 성립하지 않는다. 블록 종료 시 Guard가 파괴되어 D를 출력하고, 그 뒤 바깥의 B가 실행된다."
+      },
+      {
+        "id": "c0",
+        "text": "A D B",
+        "explanation": "블록 종료 시 Guard가 파괴되어 D를 출력하고, 그 뒤 바깥의 B가 실행된다."
+      },
+      {
+        "id": "c3",
+        "text": "A B",
+        "explanation": "이 조건에서 A B는 성립하지 않는다. 블록 종료 시 Guard가 파괴되어 D를 출력하고, 그 뒤 바깥의 B가 실행된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "블록 종료 시 Guard가 파괴되어 D를 출력하고, 그 뒤 바깥의 B가 실행된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "struct Guard { ~Guard() { std::cout << \"D \"; } };\n{ Guard g; std::cout << \"A \"; }\nstd::cout << \"B\";",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-063",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "가상 호출과 참조",
+    "prompt": "가상 호출과 참조: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "9",
+        "explanation": "기반 참조로 호출해도 가상 함수는 실제 Child 객체의 재정의를 선택한다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 기반 참조로 호출해도 가상 함수는 실제 Child 객체의 재정의를 선택한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 기반 참조로 호출해도 가상 함수는 실제 Child 객체의 재정의를 선택한다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 기반 참조로 호출해도 가상 함수는 실제 Child 객체의 재정의를 선택한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기반 참조로 호출해도 가상 함수는 실제 Child 객체의 재정의를 선택한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "struct Base { virtual int value() const { return 1; } };\nstruct Child : Base { int value() const override { return 9; } };\nChild c; Base& ref = c;\nstd::cout << ref.value();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-064",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "객체 슬라이싱",
+    "prompt": "객체 슬라이싱: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. Base 값 객체로 복사하면 Child 부분이 보존되지 않는다. copy의 동적 타입은 Base다."
+      },
+      {
+        "id": "c0",
+        "text": "1",
+        "explanation": "Base 값 객체로 복사하면 Child 부분이 보존되지 않는다. copy의 동적 타입은 Base다."
+      },
+      {
+        "id": "c1",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. Base 값 객체로 복사하면 Child 부분이 보존되지 않는다. copy의 동적 타입은 Base다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. Base 값 객체로 복사하면 Child 부분이 보존되지 않는다. copy의 동적 타입은 Base다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Base 값 객체로 복사하면 Child 부분이 보존되지 않는다. copy의 동적 타입은 Base다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "struct Base { virtual int value() const { return 1; } };\nstruct Child : Base { int value() const override { return 9; } };\nChild c; Base copy = c;\nstd::cout << copy.value();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-065",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "람다 값 캡처의 시점",
+    "prompt": "람다 값 캡처의 시점: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "8",
+        "explanation": "이 조건에서 8는 성립하지 않는다. 값 캡처는 람다를 만들 때 n의 값을 저장하여 이후 바깥 n 변경과 분리된다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 값 캡처는 람다를 만들 때 n의 값을 저장하여 이후 바깥 n 변경과 분리된다."
+      },
+      {
+        "id": "c2",
+        "text": "11",
+        "explanation": "이 조건에서 11는 성립하지 않는다. 값 캡처는 람다를 만들 때 n의 값을 저장하여 이후 바깥 n 변경과 분리된다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "값 캡처는 람다를 만들 때 n의 값을 저장하여 이후 바깥 n 변경과 분리된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "값 캡처는 람다를 만들 때 n의 값을 저장하여 이후 바깥 n 변경과 분리된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 3;\nauto read = [n] { return n; };\nn = 8;\nstd::cout << read();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-066",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "람다 mutable의 복사 상태",
+    "prompt": "람다 mutable의 복사 상태: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "2 3 2",
+        "explanation": "이 조건에서 2 3 2는 성립하지 않는다. mutable로 캡처 복사본을 수정한다. 람다 내부 값은 호출 사이에 유지되지만 바깥 n은 2다."
+      },
+      {
+        "id": "c2",
+        "text": "3 4 4",
+        "explanation": "이 조건에서 3 4 4는 성립하지 않는다. mutable로 캡처 복사본을 수정한다. 람다 내부 값은 호출 사이에 유지되지만 바깥 n은 2다."
+      },
+      {
+        "id": "c1",
+        "text": "3 3 2",
+        "explanation": "이 조건에서 3 3 2는 성립하지 않는다. mutable로 캡처 복사본을 수정한다. 람다 내부 값은 호출 사이에 유지되지만 바깥 n은 2다."
+      },
+      {
+        "id": "c0",
+        "text": "3 4 2",
+        "explanation": "mutable로 캡처 복사본을 수정한다. 람다 내부 값은 호출 사이에 유지되지만 바깥 n은 2다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "mutable로 캡처 복사본을 수정한다. 람다 내부 값은 호출 사이에 유지되지만 바깥 n은 2다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 2;\nauto next = [n]() mutable { return ++n; };\nstd::cout << next() << \" \";\nstd::cout << next() << \" \" << n;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-067",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "참조 캡처 갱신",
+    "prompt": "참조 캡처 갱신: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 참조 캡처는 바깥 total을 직접 수정하여 1+4+2가 된다."
+      },
+      {
+        "id": "c3",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 참조 캡처는 바깥 total을 직접 수정하여 1+4+2가 된다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 참조 캡처는 바깥 total을 직접 수정하여 1+4+2가 된다."
+      },
+      {
+        "id": "c0",
+        "text": "7",
+        "explanation": "참조 캡처는 바깥 total을 직접 수정하여 1+4+2가 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "참조 캡처는 바깥 total을 직접 수정하여 1+4+2가 된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int total = 1;\nauto add = [&total](int x) { total += x; };\nadd(4); add(2);\nstd::cout << total;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-068",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "std accumulate 초기값",
+    "prompt": "std accumulate 초기값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "10",
+        "explanation": "이 조건에서 10는 성립하지 않는다. 초기값 10에 모든 요소 1,2,3을 더한다. 초기값도 누적 결과에 포함된다."
+      },
+      {
+        "id": "c1",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 초기값 10에 모든 요소 1,2,3을 더한다. 초기값도 누적 결과에 포함된다."
+      },
+      {
+        "id": "c3",
+        "text": "13",
+        "explanation": "이 조건에서 13는 성립하지 않는다. 초기값 10에 모든 요소 1,2,3을 더한다. 초기값도 누적 결과에 포함된다."
+      },
+      {
+        "id": "c0",
+        "text": "16",
+        "explanation": "초기값 10에 모든 요소 1,2,3을 더한다. 초기값도 누적 결과에 포함된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "초기값 10에 모든 요소 1,2,3을 더한다. 초기값도 누적 결과에 포함된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{1,2,3};\nstd::cout << std::accumulate(v.begin(),v.end(),10);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-069",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "내림차순 비교자",
+    "prompt": "내림차순 비교자: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "7 1",
+        "explanation": "greater 비교자는 큰 값을 앞에 놓아 순서가 7,4,1이 된다."
+      },
+      {
+        "id": "c1",
+        "text": "1 7",
+        "explanation": "이 조건에서 1 7는 성립하지 않는다. greater 비교자는 큰 값을 앞에 놓아 순서가 7,4,1이 된다."
+      },
+      {
+        "id": "c2",
+        "text": "4 7",
+        "explanation": "이 조건에서 4 7는 성립하지 않는다. greater 비교자는 큰 값을 앞에 놓아 순서가 7,4,1이 된다."
+      },
+      {
+        "id": "c3",
+        "text": "7 4",
+        "explanation": "이 조건에서 7 4는 성립하지 않는다. greater 비교자는 큰 값을 앞에 놓아 순서가 7,4,1이 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "greater 비교자는 큰 값을 앞에 놓아 순서가 7,4,1이 된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{4,1,7};\nstd::sort(v.begin(),v.end(),std::greater<int>{});\nstd::cout << v[0] << \" \" << v[2];",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-070",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "erase remove 관용구",
+    "prompt": "erase remove 관용구: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "remove가 제거 대상 이외의 요소를 앞으로 모으고 erase가 뒤쪽 범위를 실제 삭제한다."
+      },
+      {
+        "id": "c3",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. remove가 제거 대상 이외의 요소를 앞으로 모으고 erase가 뒤쪽 범위를 실제 삭제한다."
+      },
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. remove가 제거 대상 이외의 요소를 앞으로 모으고 erase가 뒤쪽 범위를 실제 삭제한다."
+      },
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. remove가 제거 대상 이외의 요소를 앞으로 모으고 erase가 뒤쪽 범위를 실제 삭제한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "remove가 제거 대상 이외의 요소를 앞으로 모으고 erase가 뒤쪽 범위를 실제 삭제한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{1,2,2,3};\nv.erase(std::remove(v.begin(),v.end(),2),v.end());\nstd::cout << v.size();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-071",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "lower_bound 위치",
+    "prompt": "lower_bound 위치: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 정렬된 범위에서 4 이상인 첫 위치는 인덱스 1이다. 같은 값의 마지막 위치가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 정렬된 범위에서 4 이상인 첫 위치는 인덱스 1이다. 같은 값의 마지막 위치가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. 정렬된 범위에서 4 이상인 첫 위치는 인덱스 1이다. 같은 값의 마지막 위치가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "1",
+        "explanation": "정렬된 범위에서 4 이상인 첫 위치는 인덱스 1이다. 같은 값의 마지막 위치가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정렬된 범위에서 4 이상인 첫 위치는 인덱스 1이다. 같은 값의 마지막 위치가 아니다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{2,4,4,7};\nauto it = std::lower_bound(v.begin(),v.end(),4);\nstd::cout << (it - v.begin());",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-072",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "min_element 위치",
+    "prompt": "min_element 위치: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. min_element가 반환하는 것은 최소 요소를 가리키는 반복자이며 역참조 값은 2다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. min_element가 반환하는 것은 최소 요소를 가리키는 반복자이며 역참조 값은 2다."
+      },
+      {
+        "id": "c3",
+        "text": "8",
+        "explanation": "이 조건에서 8는 성립하지 않는다. min_element가 반환하는 것은 최소 요소를 가리키는 반복자이며 역참조 값은 2다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "min_element가 반환하는 것은 최소 요소를 가리키는 반복자이며 역참조 값은 2다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "min_element가 반환하는 것은 최소 요소를 가리키는 반복자이며 역참조 값은 2다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{8,2,5};\nauto it = std::min_element(v.begin(),v.end());\nstd::cout << *it;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-073",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "map 인덱스 기본 삽입",
+    "prompt": "map 인덱스 기본 삽입: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "0 1",
+        "explanation": "존재하지 않는 key에 operator[]를 쓰면 값 초기화한 int 0을 가진 항목을 삽입한다."
+      },
+      {
+        "id": "c2",
+        "text": "1 1",
+        "explanation": "이 조건에서 1 1는 성립하지 않는다. 존재하지 않는 key에 operator[]를 쓰면 값 초기화한 int 0을 가진 항목을 삽입한다."
+      },
+      {
+        "id": "c1",
+        "text": "0 0",
+        "explanation": "이 조건에서 0 0는 성립하지 않는다. 존재하지 않는 key에 operator[]를 쓰면 값 초기화한 int 0을 가진 항목을 삽입한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 존재하지 않는 key에 operator[]를 쓰면 값 초기화한 int 0을 가진 항목을 삽입한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "존재하지 않는 key에 operator[]를 쓰면 값 초기화한 int 0을 가진 항목을 삽입한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::map<std::string,int> m;\nstd::cout << m[\"score\"] << \" \" << m.size();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-074",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "map 중복 키 insert",
+    "prompt": "map 중복 키 insert: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "16",
+        "explanation": "이 조건에서 16는 성립하지 않는다. map::insert는 이미 존재하는 키를 덮어쓰지 않는다. 첫 값 7이 남는다."
+      },
+      {
+        "id": "c1",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. map::insert는 이미 존재하는 키를 덮어쓰지 않는다. 첫 값 7이 남는다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. map::insert는 이미 존재하는 키를 덮어쓰지 않는다. 첫 값 7이 남는다."
+      },
+      {
+        "id": "c0",
+        "text": "7",
+        "explanation": "map::insert는 이미 존재하는 키를 덮어쓰지 않는다. 첫 값 7이 남는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "map::insert는 이미 존재하는 키를 덮어쓰지 않는다. 첫 값 7이 남는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::map<int,int> m;\nm.insert({1,7});\nm.insert({1,9});\nstd::cout << m.at(1);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-075",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "스택 top pop",
+    "prompt": "스택 top pop: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 마지막에 넣은 8을 제거한 뒤 남은 top은 2다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "마지막에 넣은 8을 제거한 뒤 남은 top은 2다."
+      },
+      {
+        "id": "c3",
+        "text": "10",
+        "explanation": "이 조건에서 10는 성립하지 않는다. 마지막에 넣은 8을 제거한 뒤 남은 top은 2다."
+      },
+      {
+        "id": "c1",
+        "text": "8",
+        "explanation": "이 조건에서 8는 성립하지 않는다. 마지막에 넣은 8을 제거한 뒤 남은 top은 2다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "마지막에 넣은 8을 제거한 뒤 남은 top은 2다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::stack<int> s;\ns.push(2); s.push(8); s.pop();\nstd::cout << s.top();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-076",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "큐 front pop",
+    "prompt": "큐 front pop: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "13",
+        "explanation": "이 조건에서 13는 성립하지 않는다. queue는 가장 먼저 들어온 4를 먼저 제거하여 front가 9가 된다."
+      },
+      {
+        "id": "c0",
+        "text": "9",
+        "explanation": "queue는 가장 먼저 들어온 4를 먼저 제거하여 front가 9가 된다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. queue는 가장 먼저 들어온 4를 먼저 제거하여 front가 9가 된다."
+      },
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. queue는 가장 먼저 들어온 4를 먼저 제거하여 front가 9가 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "queue는 가장 먼저 들어온 4를 먼저 제거하여 front가 9가 된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::queue<int> q;\nq.push(4); q.push(9); q.pop();\nstd::cout << q.front();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-077",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "priority_queue 기본 top",
+    "prompt": "priority_queue 기본 top: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "16",
+        "explanation": "이 조건에서 16는 성립하지 않는다. 기본 less 비교자를 쓰는 priority_queue는 가장 큰 값을 top에 둔다."
+      },
+      {
+        "id": "c0",
+        "text": "8",
+        "explanation": "기본 less 비교자를 쓰는 priority_queue는 가장 큰 값을 top에 둔다."
+      },
+      {
+        "id": "c1",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 기본 less 비교자를 쓰는 priority_queue는 가장 큰 값을 top에 둔다."
+      },
+      {
+        "id": "c2",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. 기본 less 비교자를 쓰는 priority_queue는 가장 큰 값을 top에 둔다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본 less 비교자를 쓰는 priority_queue는 가장 큰 값을 top에 둔다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::priority_queue<int> q;\nq.push(3); q.push(8); q.push(5);\nstd::cout << q.top();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-078",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "set 중복 제거",
+    "prompt": "set 중복 제거: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. set은 같은 키를 하나만 유지하므로 서로 다른 2와 5 두 개만 저장한다."
+      },
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. set은 같은 키를 하나만 유지하므로 서로 다른 2와 5 두 개만 저장한다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "set은 같은 키를 하나만 유지하므로 서로 다른 2와 5 두 개만 저장한다."
+      },
+      {
+        "id": "c1",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. set은 같은 키를 하나만 유지하므로 서로 다른 2와 5 두 개만 저장한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "set은 같은 키를 하나만 유지하므로 서로 다른 2와 5 두 개만 저장한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::set<int> s{2,2,5,5,5};\nstd::cout << s.size();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-079",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "vector resize 값 초기화",
+    "prompt": "vector resize 값 초기화: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0 0",
+        "explanation": "이 조건에서 0 0는 성립하지 않는다. 기존 첫 요소는 유지되고 새 int 요소는 값 초기화되어 0이 된다."
+      },
+      {
+        "id": "c1",
+        "text": "7 7",
+        "explanation": "이 조건에서 7 7는 성립하지 않는다. 기존 첫 요소는 유지되고 새 int 요소는 값 초기화되어 0이 된다."
+      },
+      {
+        "id": "c0",
+        "text": "7 0",
+        "explanation": "기존 첫 요소는 유지되고 새 int 요소는 값 초기화되어 0이 된다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 기존 첫 요소는 유지되고 새 int 요소는 값 초기화되어 0이 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기존 첫 요소는 유지되고 새 int 요소는 값 초기화되어 0이 된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{7};\nv.resize(3);\nstd::cout << v[0] << \" \" << v[2];",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-080",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "구조적 바인딩 복사",
+    "prompt": "구조적 바인딩 복사: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "2 9",
+        "explanation": "auto 구조적 바인딩은 여기서 pair를 복사한다. 복사본의 a 변경은 원본 p에 반영되지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "2 2",
+        "explanation": "이 조건에서 2 2는 성립하지 않는다. auto 구조적 바인딩은 여기서 pair를 복사한다. 복사본의 a 변경은 원본 p에 반영되지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "9 2",
+        "explanation": "이 조건에서 9 2는 성립하지 않는다. auto 구조적 바인딩은 여기서 pair를 복사한다. 복사본의 a 변경은 원본 p에 반영되지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "9 9",
+        "explanation": "이 조건에서 9 9는 성립하지 않는다. auto 구조적 바인딩은 여기서 pair를 복사한다. 복사본의 a 변경은 원본 p에 반영되지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "auto 구조적 바인딩은 여기서 pair를 복사한다. 복사본의 a 변경은 원본 p에 반영되지 않는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::pair<int,int> p{2,8};\nauto [a,b] = p;\na = 9;\nstd::cout << p.first << \" \" << a;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-081",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "구조적 바인딩 참조",
+    "prompt": "원본 pair의 first를 9로 바꾸도록 빈칸을 채우세요.",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "&",
+        "explanation": "auto&로 원본 pair에 참조를 바인딩해야 a 변경이 first에 반영된다."
+      },
+      {
+        "id": "c1",
+        "text": "*",
+        "explanation": "이 조건에서 *는 성립하지 않는다. auto&로 원본 pair에 참조를 바인딩해야 a 변경이 first에 반영된다."
+      },
+      {
+        "id": "c3",
+        "text": "const",
+        "explanation": "이 조건에서 const는 성립하지 않는다. auto&로 원본 pair에 참조를 바인딩해야 a 변경이 first에 반영된다."
+      },
+      {
+        "id": "c2",
+        "text": "&&&",
+        "explanation": "이 조건에서 &&&는 성립하지 않는다. auto&로 원본 pair에 참조를 바인딩해야 a 변경이 first에 반영된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "auto&로 원본 pair에 참조를 바인딩해야 a 변경이 first에 반영된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::pair<int,int> p{2,8};\nauto____ [a,b] = p;\na = 9;\nstd::cout << p.first;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-082",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "컨테이너 역순",
+    "prompt": "원소 순서를 뒤집어 첫 값이 3이 되는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "reverse",
+        "explanation": "reverse가 범위 순서를 뒤집는다. sort는 오름차순을 유지하며 remove/count는 이 호출의 목적과 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "count",
+        "explanation": "이 조건에서 count는 성립하지 않는다. reverse가 범위 순서를 뒤집는다. sort는 오름차순을 유지하며 remove/count는 이 호출의 목적과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "remove",
+        "explanation": "이 조건에서 remove는 성립하지 않는다. reverse가 범위 순서를 뒤집는다. sort는 오름차순을 유지하며 remove/count는 이 호출의 목적과 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "sort",
+        "explanation": "이 조건에서 sort는 성립하지 않는다. reverse가 범위 순서를 뒤집는다. sort는 오름차순을 유지하며 remove/count는 이 호출의 목적과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "reverse가 범위 순서를 뒤집는다. sort는 오름차순을 유지하며 remove/count는 이 호출의 목적과 다르다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::vector<int> v{1,2,3};\nstd::____(v.begin(),v.end());\nstd::cout << v.front();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-083",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "포함 여부 탐색",
+    "prompt": "값 6의 반복자를 찾는 선형 탐색 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "sort",
+        "explanation": "이 조건에서 sort는 성립하지 않는다. find는 값과 같은 첫 원소의 반복자 또는 end를 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "accumulate",
+        "explanation": "이 조건에서 accumulate는 성립하지 않는다. find는 값과 같은 첫 원소의 반복자 또는 end를 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "find",
+        "explanation": "find는 값과 같은 첫 원소의 반복자 또는 end를 반환한다."
+      },
+      {
+        "id": "c2",
+        "text": "reverse",
+        "explanation": "이 조건에서 reverse는 성립하지 않는다. find는 값과 같은 첫 원소의 반복자 또는 end를 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "find는 값과 같은 첫 원소의 반복자 또는 end를 반환한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::vector<int> v{3,6,9};\nauto it = std::____(v.begin(),v.end(),6);\nstd::cout << (it != v.end());",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-084",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "람다 매개변수",
+    "prompt": "모든 타입 추론 호출을 허용하는 제네릭 람다를 만드는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "class",
+        "explanation": "이 조건에서 class는 성립하지 않는다. 람다의 auto 매개변수는 호출 인수에 맞춰 타입을 추론한다. void 값 매개변수는 불가능하다."
+      },
+      {
+        "id": "c2",
+        "text": "nullptr_t",
+        "explanation": "이 조건에서 nullptr_t는 성립하지 않는다. 람다의 auto 매개변수는 호출 인수에 맞춰 타입을 추론한다. void 값 매개변수는 불가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "auto",
+        "explanation": "람다의 auto 매개변수는 호출 인수에 맞춰 타입을 추론한다. void 값 매개변수는 불가능하다."
+      },
+      {
+        "id": "c1",
+        "text": "void",
+        "explanation": "이 조건에서 void는 성립하지 않는다. 람다의 auto 매개변수는 호출 인수에 맞춰 타입을 추론한다. void 값 매개변수는 불가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "람다의 auto 매개변수는 호출 인수에 맞춰 타입을 추론한다. void 값 매개변수는 불가능하다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "auto twice = [](____ x) { return x * 2; };\nstd::cout << twice(4);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-085",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "객체 생성 shared_ptr",
+    "prompt": "int 객체와 공유 소유권을 함께 만드는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "weak_ptr",
+        "explanation": "이 조건에서 weak_ptr는 성립하지 않는다. make_shared<int>는 shared_ptr<int>를 만든다. make_unique는 고유 소유권이므로 요구 조건과 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "make_shared",
+        "explanation": "make_shared<int>는 shared_ptr<int>를 만든다. make_unique는 고유 소유권이므로 요구 조건과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "move",
+        "explanation": "이 조건에서 move는 성립하지 않는다. make_shared<int>는 shared_ptr<int>를 만든다. make_unique는 고유 소유권이므로 요구 조건과 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "make_unique",
+        "explanation": "이 조건에서 make_unique는 성립하지 않는다. make_shared<int>는 shared_ptr<int>를 만든다. make_unique는 고유 소유권이므로 요구 조건과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "make_shared<int>는 shared_ptr<int>를 만든다. make_unique는 고유 소유권이므로 요구 조건과 다르다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "auto p = std::____<int>(7);\nstd::cout << *p;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-086",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "optional 기본값",
+    "prompt": "값이 없는 optional에서 기본값 9를 얻는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "emplace",
+        "explanation": "이 조건에서 emplace는 성립하지 않는다. value_or는 값이 없으면 인수 기본값을 반환한다. value는 예외, reset은 제거, emplace는 삽입이다."
+      },
+      {
+        "id": "c2",
+        "text": "reset",
+        "explanation": "이 조건에서 reset는 성립하지 않는다. value_or는 값이 없으면 인수 기본값을 반환한다. value는 예외, reset은 제거, emplace는 삽입이다."
+      },
+      {
+        "id": "c1",
+        "text": "value",
+        "explanation": "이 조건에서 value는 성립하지 않는다. value_or는 값이 없으면 인수 기본값을 반환한다. value는 예외, reset은 제거, emplace는 삽입이다."
+      },
+      {
+        "id": "c0",
+        "text": "value_or",
+        "explanation": "value_or는 값이 없으면 인수 기본값을 반환한다. value는 예외, reset은 제거, emplace는 삽입이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "value_or는 값이 없으면 인수 기본값을 반환한다. value는 예외, reset은 제거, emplace는 삽입이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::optional<int> value;\nstd::cout << value.____(9);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-087",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "map 조회와 예외",
+    "prompt": "없는 키를 삽입하지 않고, 키가 없으면 예외를 던지는 조회 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "at",
+        "explanation": "at은 키의 값을 조회하며 없으면 out_of_range를 던진다. count는 항목 수, erase는 삭제다."
+      },
+      {
+        "id": "c2",
+        "text": "erase",
+        "explanation": "이 조건에서 erase는 성립하지 않는다. at은 키의 값을 조회하며 없으면 out_of_range를 던진다. count는 항목 수, erase는 삭제다."
+      },
+      {
+        "id": "c3",
+        "text": "count",
+        "explanation": "이 조건에서 count는 성립하지 않는다. at은 키의 값을 조회하며 없으면 out_of_range를 던진다. count는 항목 수, erase는 삭제다."
+      },
+      {
+        "id": "c1",
+        "text": "operator[]",
+        "explanation": "이 조건에서 operator[]는 성립하지 않는다. at은 키의 값을 조회하며 없으면 out_of_range를 던진다. count는 항목 수, erase는 삭제다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "at은 키의 값을 조회하며 없으면 out_of_range를 던진다. count는 항목 수, erase는 삭제다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::map<int,int> m{{1,5}};\nstd::cout << m.____(1);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-088",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "string 숫자 변환",
+    "prompt": "문자열을 int로 변환해서 43을 출력하는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "move",
+        "explanation": "이 조건에서 move는 성립하지 않는다. stoi는 문자열을 정수로 해석한다. to_string은 반대 방향인 숫자에서 문자열로 변환한다."
+      },
+      {
+        "id": "c1",
+        "text": "to_string",
+        "explanation": "이 조건에서 to_string는 성립하지 않는다. stoi는 문자열을 정수로 해석한다. to_string은 반대 방향인 숫자에서 문자열로 변환한다."
+      },
+      {
+        "id": "c2",
+        "text": "strlen",
+        "explanation": "이 조건에서 strlen는 성립하지 않는다. stoi는 문자열을 정수로 해석한다. to_string은 반대 방향인 숫자에서 문자열로 변환한다."
+      },
+      {
+        "id": "c0",
+        "text": "stoi",
+        "explanation": "stoi는 문자열을 정수로 해석한다. to_string은 반대 방향인 숫자에서 문자열로 변환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "stoi는 문자열을 정수로 해석한다. to_string은 반대 방향인 숫자에서 문자열로 변환한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::cout << std::____(\"42\") + 1;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-089",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "범위 복사 목적지",
+    "prompt": "미리 크기를 확보한 dst의 첫 위치부터 복사하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "begin",
+        "explanation": "출력 반복자는 유효한 첫 요소의 begin이어야 한다. end부터 쓰면 확보된 요소 범위를 벗어난다."
+      },
+      {
+        "id": "c2",
+        "text": "size",
+        "explanation": "이 조건에서 size는 성립하지 않는다. 출력 반복자는 유효한 첫 요소의 begin이어야 한다. end부터 쓰면 확보된 요소 범위를 벗어난다."
+      },
+      {
+        "id": "c1",
+        "text": "end",
+        "explanation": "이 조건에서 end는 성립하지 않는다. 출력 반복자는 유효한 첫 요소의 begin이어야 한다. end부터 쓰면 확보된 요소 범위를 벗어난다."
+      },
+      {
+        "id": "c3",
+        "text": "clear",
+        "explanation": "이 조건에서 clear는 성립하지 않는다. 출력 반복자는 유효한 첫 요소의 begin이어야 한다. end부터 쓰면 확보된 요소 범위를 벗어난다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "출력 반복자는 유효한 첫 요소의 begin이어야 한다. end부터 쓰면 확보된 요소 범위를 벗어난다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::vector<int> src{1,2};\nstd::vector<int> dst(2);\nstd::copy(src.begin(),src.end(),dst.____());\nstd::cout << dst[1];",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-090",
+    "subject": "cpp",
+    "difficulty": "medium",
+    "topic": "문자열 스트림 읽기",
+    "prompt": "스트림에서 두 정수를 읽어 합계 15를 출력하는 연산자는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "&&",
+        "explanation": "이 조건에서 &&는 성립하지 않는다. 입력 스트림의 추출 연산자 >>는 텍스트를 읽어 변수에 저장한다."
+      },
+      {
+        "id": "c3",
+        "text": "+=",
+        "explanation": "이 조건에서 +=는 성립하지 않는다. 입력 스트림의 추출 연산자 >>는 텍스트를 읽어 변수에 저장한다."
+      },
+      {
+        "id": "c0",
+        "text": ">>",
+        "explanation": "입력 스트림의 추출 연산자 >>는 텍스트를 읽어 변수에 저장한다."
+      },
+      {
+        "id": "c1",
+        "text": "<<",
+        "explanation": "이 조건에서 <<는 성립하지 않는다. 입력 스트림의 추출 연산자 >>는 텍스트를 읽어 변수에 저장한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "입력 스트림의 추출 연산자 >>는 텍스트를 읽어 변수에 저장한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::istringstream in(\"7 8\");\nint a = 0, b = 0;\nin ____ a ____ b;\nstd::cout << a + b;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-091",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "decltype 참조 보존",
+    "prompt": "decltype 참조 보존: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 괄호 친 lvalue 식 (n)에 대한 decltype은 int&이다. 이름 자체의 decltype(n)=int와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 괄호 친 lvalue 식 (n)에 대한 decltype은 int&이다. 이름 자체의 decltype(n)=int와 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 괄호 친 lvalue 식 (n)에 대한 decltype은 int&이다. 이름 자체의 decltype(n)=int와 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "8",
+        "explanation": "괄호 친 lvalue 식 (n)에 대한 decltype은 int&이다. 이름 자체의 decltype(n)=int와 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "괄호 친 lvalue 식 (n)에 대한 decltype은 int&이다. 이름 자체의 decltype(n)=int와 다르다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 3;\ndecltype((n)) ref = n;\nref = 8;\nstd::cout << n;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-092",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "auto 참조 제거",
+    "prompt": "auto 참조 제거: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "2 2",
+        "explanation": "이 조건에서 2 2는 성립하지 않는다. 일반 auto 값 변수 추론은 참조를 제거해 int 복사본을 만든다."
+      },
+      {
+        "id": "c1",
+        "text": "9 9",
+        "explanation": "이 조건에서 9 9는 성립하지 않는다. 일반 auto 값 변수 추론은 참조를 제거해 int 복사본을 만든다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 일반 auto 값 변수 추론은 참조를 제거해 int 복사본을 만든다."
+      },
+      {
+        "id": "c0",
+        "text": "2 9",
+        "explanation": "일반 auto 값 변수 추론은 참조를 제거해 int 복사본을 만든다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "일반 auto 값 변수 추론은 참조를 제거해 int 복사본을 만든다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 2;\nint& ref = n;\nauto copy = ref;\ncopy = 9;\nstd::cout << n << \" \" << copy;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-093",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "if constexpr 분기",
+    "prompt": "if constexpr 분기: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "1 1",
+        "explanation": "이 조건에서 1 1는 성립하지 않는다. 템플릿 인스턴스별로 정수형 조건을 컴파일 시점에 판별해 각각 다른 분기를 선택한다."
+      },
+      {
+        "id": "c0",
+        "text": "1 2",
+        "explanation": "템플릿 인스턴스별로 정수형 조건을 컴파일 시점에 판별해 각각 다른 분기를 선택한다."
+      },
+      {
+        "id": "c1",
+        "text": "2 1",
+        "explanation": "이 조건에서 2 1는 성립하지 않는다. 템플릿 인스턴스별로 정수형 조건을 컴파일 시점에 판별해 각각 다른 분기를 선택한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 템플릿 인스턴스별로 정수형 조건을 컴파일 시점에 판별해 각각 다른 분기를 선택한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "템플릿 인스턴스별로 정수형 조건을 컴파일 시점에 판별해 각각 다른 분기를 선택한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "auto classify = []<class T>(T) {\n  if constexpr (std::is_integral_v<T>) return 1;\n  else return 2;\n};\nstd::cout << classify(7) << \" \" << classify(1.5);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-094",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "initializer_list 우선 선택",
+    "prompt": "initializer_list 우선 선택: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "1 2",
+        "explanation": "괄호 초기화는 두 int 생성자를, 중괄호 목록 초기화는 가능한 initializer_list 생성자를 우선한다."
+      },
+      {
+        "id": "c3",
+        "text": "2 1",
+        "explanation": "이 조건에서 2 1는 성립하지 않는다. 괄호 초기화는 두 int 생성자를, 중괄호 목록 초기화는 가능한 initializer_list 생성자를 우선한다."
+      },
+      {
+        "id": "c2",
+        "text": "2 2",
+        "explanation": "이 조건에서 2 2는 성립하지 않는다. 괄호 초기화는 두 int 생성자를, 중괄호 목록 초기화는 가능한 initializer_list 생성자를 우선한다."
+      },
+      {
+        "id": "c1",
+        "text": "1 1",
+        "explanation": "이 조건에서 1 1는 성립하지 않는다. 괄호 초기화는 두 int 생성자를, 중괄호 목록 초기화는 가능한 initializer_list 생성자를 우선한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "괄호 초기화는 두 int 생성자를, 중괄호 목록 초기화는 가능한 initializer_list 생성자를 우선한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "struct Bag {\n  int tag;\n  Bag(int,int) : tag(1) {}\n  Bag(std::initializer_list<int>) : tag(2) {}\n};\nBag a(3,4); Bag b{3,4};\nstd::cout << a.tag << \" \" << b.tag;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-095",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "unique_ptr 이동 소유권",
+    "prompt": "unique_ptr 이동 소유권: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "false 0",
+        "explanation": "이 조건에서 false 0는 성립하지 않는다. unique_ptr의 이동 생성자는 소유권을 이전하고 원본을 빈 포인터로 만든다."
+      },
+      {
+        "id": "c0",
+        "text": "false 8",
+        "explanation": "unique_ptr의 이동 생성자는 소유권을 이전하고 원본을 빈 포인터로 만든다."
+      },
+      {
+        "id": "c1",
+        "text": "true 8",
+        "explanation": "이 조건에서 true 8는 성립하지 않는다. unique_ptr의 이동 생성자는 소유권을 이전하고 원본을 빈 포인터로 만든다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. unique_ptr의 이동 생성자는 소유권을 이전하고 원본을 빈 포인터로 만든다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "unique_ptr의 이동 생성자는 소유권을 이전하고 원본을 빈 포인터로 만든다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "auto a = std::make_unique<int>(8);\nauto b = std::move(a);\nstd::cout << static_cast<bool>(a) << \" \" << *b;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-096",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "shared_ptr 복사 횟수",
+    "prompt": "shared_ptr 복사 횟수: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "2 1",
+        "explanation": "복사본 b가 살아 있을 때 강한 소유자가 두 개이고 블록 종료 후 a만 남는다."
+      },
+      {
+        "id": "c3",
+        "text": "1 0",
+        "explanation": "이 조건에서 1 0는 성립하지 않는다. 복사본 b가 살아 있을 때 강한 소유자가 두 개이고 블록 종료 후 a만 남는다."
+      },
+      {
+        "id": "c2",
+        "text": "2 2",
+        "explanation": "이 조건에서 2 2는 성립하지 않는다. 복사본 b가 살아 있을 때 강한 소유자가 두 개이고 블록 종료 후 a만 남는다."
+      },
+      {
+        "id": "c1",
+        "text": "1 1",
+        "explanation": "이 조건에서 1 1는 성립하지 않는다. 복사본 b가 살아 있을 때 강한 소유자가 두 개이고 블록 종료 후 a만 남는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "복사본 b가 살아 있을 때 강한 소유자가 두 개이고 블록 종료 후 a만 남는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "auto a = std::make_shared<int>(4);\n{ auto b = a; std::cout << a.use_count() << \" \"; }\nstd::cout << a.use_count();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-097",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "weak_ptr 만료",
+    "prompt": "weak_ptr 만료: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "true",
+        "explanation": "weak_ptr는 강한 소유권을 늘리지 않는다. 마지막 shared_ptr가 사라지면 expired가 true다."
+      },
+      {
+        "id": "c1",
+        "text": "false",
+        "explanation": "이 조건에서 false는 성립하지 않는다. weak_ptr는 강한 소유권을 늘리지 않는다. 마지막 shared_ptr가 사라지면 expired가 true다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. weak_ptr는 강한 소유권을 늘리지 않는다. 마지막 shared_ptr가 사라지면 expired가 true다."
+      },
+      {
+        "id": "c2",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. weak_ptr는 강한 소유권을 늘리지 않는다. 마지막 shared_ptr가 사라지면 expired가 true다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "weak_ptr는 강한 소유권을 늘리지 않는다. 마지막 shared_ptr가 사라지면 expired가 true다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::weak_ptr<int> weak;\n{ auto strong = std::make_shared<int>(5); weak = strong; }\nstd::cout << weak.expired();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-098",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "optional 값 보유와 0",
+    "prompt": "optional 값 보유와 0: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "true 0",
+        "explanation": "optional의 존재 여부는 담긴 정수의 참/거짓과 별개다. 값 0이 존재하므로 기본값 9를 쓰지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "true 9",
+        "explanation": "이 조건에서 true 9는 성립하지 않는다. optional의 존재 여부는 담긴 정수의 참/거짓과 별개다. 값 0이 존재하므로 기본값 9를 쓰지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "false 0",
+        "explanation": "이 조건에서 false 0는 성립하지 않는다. optional의 존재 여부는 담긴 정수의 참/거짓과 별개다. 값 0이 존재하므로 기본값 9를 쓰지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "false 9",
+        "explanation": "이 조건에서 false 9는 성립하지 않는다. optional의 존재 여부는 담긴 정수의 참/거짓과 별개다. 값 0이 존재하므로 기본값 9를 쓰지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "optional의 존재 여부는 담긴 정수의 참/거짓과 별개다. 값 0이 존재하므로 기본값 9를 쓰지 않는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::optional<int> x = 0;\nstd::cout << x.has_value() << \" \" << x.value_or(9);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-099",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "variant 활성 대안",
+    "prompt": "variant 활성 대안: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 대안 목록의 인덱스는 0부터 시작하고 현재 활성 타입 string은 두 번째 대안이다."
+      },
+      {
+        "id": "c0",
+        "text": "1 ok",
+        "explanation": "대안 목록의 인덱스는 0부터 시작하고 현재 활성 타입 string은 두 번째 대안이다."
+      },
+      {
+        "id": "c1",
+        "text": "0 ok",
+        "explanation": "이 조건에서 0 ok는 성립하지 않는다. 대안 목록의 인덱스는 0부터 시작하고 현재 활성 타입 string은 두 번째 대안이다."
+      },
+      {
+        "id": "c2",
+        "text": "1 0",
+        "explanation": "이 조건에서 1 0는 성립하지 않는다. 대안 목록의 인덱스는 0부터 시작하고 현재 활성 타입 string은 두 번째 대안이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "대안 목록의 인덱스는 0부터 시작하고 현재 활성 타입 string은 두 번째 대안이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::variant<int,std::string> x = std::string(\"ok\");\nstd::cout << x.index() << \" \" << std::get<std::string>(x);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-100",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "가상 함수 기본 인수",
+    "prompt": "가상 함수 기본 인수: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "20",
+        "explanation": "기본 인수는 정적 타입 Base에서 2를 선택하고 가상 함수 본문은 Child에서 x*10을 실행한다."
+      },
+      {
+        "id": "c3",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. 기본 인수는 정적 타입 Base에서 2를 선택하고 가상 함수 본문은 Child에서 x*10을 실행한다."
+      },
+      {
+        "id": "c2",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 기본 인수는 정적 타입 Base에서 2를 선택하고 가상 함수 본문은 Child에서 x*10을 실행한다."
+      },
+      {
+        "id": "c1",
+        "text": "90",
+        "explanation": "이 조건에서 90는 성립하지 않는다. 기본 인수는 정적 타입 Base에서 2를 선택하고 가상 함수 본문은 Child에서 x*10을 실행한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본 인수는 정적 타입 Base에서 2를 선택하고 가상 함수 본문은 Child에서 x*10을 실행한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "struct Base { virtual int f(int x = 2) { return x; } };\nstruct Child : Base { int f(int x = 9) override { return x * 10; } };\nChild child; Base& base = child;\nstd::cout << base.f();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-101",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "함수 오버로드 exact match",
+    "prompt": "함수 오버로드 exact match: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "모호해서 컴파일 오류",
+        "explanation": "이 조건에서 모호해서 컴파일 오류는 성립하지 않는다. double 인수는 double 매개변수에 정확히 맞아 int로 변환하는 후보보다 우선한다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. double 인수는 double 매개변수에 정확히 맞아 int로 변환하는 후보보다 우선한다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "double 인수는 double 매개변수에 정확히 맞아 int로 변환하는 후보보다 우선한다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. double 인수는 double 매개변수에 정확히 맞아 int로 변환하는 후보보다 우선한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "double 인수는 double 매개변수에 정확히 맞아 int로 변환하는 후보보다 우선한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "struct Ops { static int f(int) { return 1; } static int f(double) { return 2; } };\nstd::cout << Ops::f(2.5);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-102",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "reference_wrapper 공유",
+    "prompt": "reference_wrapper 공유: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. reference_wrapper를 복사하면 참조 대상이 공유되며 get을 통한 수정이 원래 변수에 반영된다."
+      },
+      {
+        "id": "c0",
+        "text": "9",
+        "explanation": "reference_wrapper를 복사하면 참조 대상이 공유되며 get을 통한 수정이 원래 변수에 반영된다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. reference_wrapper를 복사하면 참조 대상이 공유되며 get을 통한 수정이 원래 변수에 반영된다."
+      },
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. reference_wrapper를 복사하면 참조 대상이 공유되며 get을 통한 수정이 원래 변수에 반영된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "reference_wrapper를 복사하면 참조 대상이 공유되며 get을 통한 수정이 원래 변수에 반영된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 4;\nauto r = std::ref(n);\nauto copy = r;\ncopy.get() = 9;\nstd::cout << n;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-103",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "vector capacity와 size",
+    "prompt": "vector capacity와 size: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "50",
+        "explanation": "이 조건에서 50는 성립하지 않는다. reserve는 저장 공간 capacity를 확보하지만 살아 있는 요소의 수 size는 바꾸지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. reserve는 저장 공간 capacity를 확보하지만 살아 있는 요소의 수 size는 바꾸지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "52",
+        "explanation": "이 조건에서 52는 성립하지 않는다. reserve는 저장 공간 capacity를 확보하지만 살아 있는 요소의 수 size는 바꾸지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "reserve는 저장 공간 capacity를 확보하지만 살아 있는 요소의 수 size는 바꾸지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "reserve는 저장 공간 capacity를 확보하지만 살아 있는 요소의 수 size는 바꾸지 않는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{1,2};\nv.reserve(50);\nstd::cout << v.size();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-104",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "remove와 실제 크기",
+    "prompt": "remove와 실제 크기: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "2 4",
+        "explanation": "이 조건에서 2 4는 성립하지 않는다. remove는 논리적 끝만 반환하고 실제 컨테이너 크기를 줄이지 않는다. 유효 논리 길이는 2다."
+      },
+      {
+        "id": "c1",
+        "text": "2 2",
+        "explanation": "이 조건에서 2 2는 성립하지 않는다. remove는 논리적 끝만 반환하고 실제 컨테이너 크기를 줄이지 않는다. 유효 논리 길이는 2다."
+      },
+      {
+        "id": "c0",
+        "text": "4 2",
+        "explanation": "remove는 논리적 끝만 반환하고 실제 컨테이너 크기를 줄이지 않는다. 유효 논리 길이는 2다."
+      },
+      {
+        "id": "c2",
+        "text": "4 4",
+        "explanation": "이 조건에서 4 4는 성립하지 않는다. remove는 논리적 끝만 반환하고 실제 컨테이너 크기를 줄이지 않는다. 유효 논리 길이는 2다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "remove는 논리적 끝만 반환하고 실제 컨테이너 크기를 줄이지 않는다. 유효 논리 길이는 2다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> v{1,2,2,3};\nauto end = std::remove(v.begin(),v.end(),2);\nstd::cout << v.size() << \" \" << (end - v.begin());",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-105",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "삽입 없는 map contains",
+    "prompt": "삽입 없는 map contains: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. C++20 contains는 키 존재를 조회할 뿐 삽입하지 않는다. 빈 map의 크기는 유지된다."
+      },
+      {
+        "id": "c1",
+        "text": "false 1",
+        "explanation": "이 조건에서 false 1는 성립하지 않는다. C++20 contains는 키 존재를 조회할 뿐 삽입하지 않는다. 빈 map의 크기는 유지된다."
+      },
+      {
+        "id": "c0",
+        "text": "false 0",
+        "explanation": "C++20 contains는 키 존재를 조회할 뿐 삽입하지 않는다. 빈 map의 크기는 유지된다."
+      },
+      {
+        "id": "c2",
+        "text": "true 0",
+        "explanation": "이 조건에서 true 0는 성립하지 않는다. C++20 contains는 키 존재를 조회할 뿐 삽입하지 않는다. 빈 map의 크기는 유지된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "C++20 contains는 키 존재를 조회할 뿐 삽입하지 않는다. 빈 map의 크기는 유지된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::map<int,int> m;\nstd::cout << m.contains(2) << \" \" << m.size();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-106",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "const 멤버 오버로드",
+    "prompt": "const 멤버 오버로드: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "1 1",
+        "explanation": "이 조건에서 1 1는 성립하지 않는다. 비const 객체는 비const 오버로드를 선호하고 const 객체에는 const 오버로드만 유효하다."
+      },
+      {
+        "id": "c0",
+        "text": "1 2",
+        "explanation": "비const 객체는 비const 오버로드를 선호하고 const 객체에는 const 오버로드만 유효하다."
+      },
+      {
+        "id": "c2",
+        "text": "2 2",
+        "explanation": "이 조건에서 2 2는 성립하지 않는다. 비const 객체는 비const 오버로드를 선호하고 const 객체에는 const 오버로드만 유효하다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 비const 객체는 비const 오버로드를 선호하고 const 객체에는 const 오버로드만 유효하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "비const 객체는 비const 오버로드를 선호하고 const 객체에는 const 오버로드만 유효하다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "struct Item { int f() { return 1; } int f() const { return 2; } };\nItem a; const Item b;\nstd::cout << a.f() << \" \" << b.f();",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-107",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "noexcept 식",
+    "prompt": "noexcept 식: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "true",
+        "explanation": "noexcept 연산자는 호출 식이 예외를 던질 수 없다고 선언되었는지 컴파일 시점에 판별한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. noexcept 연산자는 호출 식이 예외를 던질 수 없다고 선언되었는지 컴파일 시점에 판별한다."
+      },
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. noexcept 연산자는 호출 식이 예외를 던질 수 없다고 선언되었는지 컴파일 시점에 판별한다."
+      },
+      {
+        "id": "c1",
+        "text": "false",
+        "explanation": "이 조건에서 false는 성립하지 않는다. noexcept 연산자는 호출 식이 예외를 던질 수 없다고 선언되었는지 컴파일 시점에 판별한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "noexcept 연산자는 호출 식이 예외를 던질 수 없다고 선언되었는지 컴파일 시점에 판별한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "auto f = []() noexcept { return 1; };\nstd::cout << noexcept(f());",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-108",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "tuple 타입별 접근",
+    "prompt": "tuple 타입별 접근: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "7 x",
+        "explanation": "인덱스 0은 int 값 7이고 string 타입이 유일하므로 타입을 통한 get도 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 인덱스 0은 int 값 7이고 string 타입이 유일하므로 타입을 통한 get도 가능하다."
+      },
+      {
+        "id": "c2",
+        "text": "0 x",
+        "explanation": "이 조건에서 0 x는 성립하지 않는다. 인덱스 0은 int 값 7이고 string 타입이 유일하므로 타입을 통한 get도 가능하다."
+      },
+      {
+        "id": "c1",
+        "text": "x 7",
+        "explanation": "이 조건에서 x 7는 성립하지 않는다. 인덱스 0은 int 값 7이고 string 타입이 유일하므로 타입을 통한 get도 가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "인덱스 0은 int 값 7이고 string 타입이 유일하므로 타입을 통한 get도 가능하다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::tuple<int,std::string> t{7,\"x\"};\nstd::cout << std::get<0>(t) << \" \" << std::get<std::string>(t);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-109",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "span 원본 참조",
+    "prompt": "span 원본 참조: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "9",
+        "explanation": "span은 요소를 소유하거나 복사하지 않는 뷰이며 쓰기가 원래 배열에 반영된다."
+      },
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. span은 요소를 소유하거나 복사하지 않는 뷰이며 쓰기가 원래 배열에 반영된다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. span은 요소를 소유하거나 복사하지 않는 뷰이며 쓰기가 원래 배열에 반영된다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. span은 요소를 소유하거나 복사하지 않는 뷰이며 쓰기가 원래 배열에 반영된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "span은 요소를 소유하거나 복사하지 않는 뷰이며 쓰기가 원래 배열에 반영된다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int values[]{1,2,3};\nstd::span<int> view(values);\nview[1] = 9;\nstd::cout << values[1];",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-110",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "예외를 잡는 순서",
+    "prompt": "예외를 잡는 순서: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "exception",
+        "explanation": "이 조건에서 exception는 성립하지 않는다. out_of_range는 logic_error 계열이며 가장 먼저 일치하는 catch에서 처리하고 다른 catch는 실행하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "프로그램 종료",
+        "explanation": "이 조건에서 프로그램 종료는 성립하지 않는다. out_of_range는 logic_error 계열이며 가장 먼저 일치하는 catch에서 처리하고 다른 catch는 실행하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "logic exception",
+        "explanation": "이 조건에서 logic exception는 성립하지 않는다. out_of_range는 logic_error 계열이며 가장 먼저 일치하는 catch에서 처리하고 다른 catch는 실행하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "logic",
+        "explanation": "out_of_range는 logic_error 계열이며 가장 먼저 일치하는 catch에서 처리하고 다른 catch는 실행하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "out_of_range는 logic_error 계열이며 가장 먼저 일치하는 catch에서 처리하고 다른 catch는 실행하지 않는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "try { throw std::out_of_range(\"x\"); }\ncatch (const std::logic_error&) { std::cout << \"logic\"; }\ncatch (const std::exception&) { std::cout << \"exception\"; }",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-111",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "소유권 이동 표현",
+    "prompt": "복사할 수 없는 unique_ptr 소유권을 b로 옮기는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "as_const",
+        "explanation": "이 조건에서 as_const는 성립하지 않는다. move가 이동 생성자에 필요한 rvalue 표현을 제공한다. ref/cref는 소유권 이동이 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "ref",
+        "explanation": "이 조건에서 ref는 성립하지 않는다. move가 이동 생성자에 필요한 rvalue 표현을 제공한다. ref/cref는 소유권 이동이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "move",
+        "explanation": "move가 이동 생성자에 필요한 rvalue 표현을 제공한다. ref/cref는 소유권 이동이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "cref",
+        "explanation": "이 조건에서 cref는 성립하지 않는다. move가 이동 생성자에 필요한 rvalue 표현을 제공한다. ref/cref는 소유권 이동이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "move가 이동 생성자에 필요한 rvalue 표현을 제공한다. ref/cref는 소유권 이동이 아니다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "auto a = std::make_unique<int>(6);\nauto b = std::____(a);\nstd::cout << *b;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-112",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "정렬된 구간 상한",
+    "prompt": "3보다 큰 첫 원소의 인덱스 3을 얻는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "find",
+        "explanation": "이 조건에서 find는 성립하지 않는다. upper_bound는 대상보다 큰 첫 위치다. lower_bound와 find는 처음 만난 3 위치를 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "upper_bound",
+        "explanation": "upper_bound는 대상보다 큰 첫 위치다. lower_bound와 find는 처음 만난 3 위치를 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "min_element",
+        "explanation": "이 조건에서 min_element는 성립하지 않는다. upper_bound는 대상보다 큰 첫 위치다. lower_bound와 find는 처음 만난 3 위치를 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "lower_bound",
+        "explanation": "이 조건에서 lower_bound는 성립하지 않는다. upper_bound는 대상보다 큰 첫 위치다. lower_bound와 find는 처음 만난 3 위치를 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "upper_bound는 대상보다 큰 첫 위치다. lower_bound와 find는 처음 만난 3 위치를 반환한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::vector<int> v{1,3,3,5};\nauto it = std::____(v.begin(),v.end(),3);\nstd::cout << (it - v.begin());",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-113",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "weak 잠금으로 소유 확보",
+    "prompt": "살아 있는 weak_ptr 대상으로부터 일시적인 shared_ptr를 얻는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "reset",
+        "explanation": "이 조건에서 reset는 성립하지 않는다. lock은 대상이 살아 있으면 강한 소유권 shared_ptr를 반환한다. expired와 use_count는 조회값이다."
+      },
+      {
+        "id": "c0",
+        "text": "lock",
+        "explanation": "lock은 대상이 살아 있으면 강한 소유권 shared_ptr를 반환한다. expired와 use_count는 조회값이다."
+      },
+      {
+        "id": "c3",
+        "text": "use_count",
+        "explanation": "이 조건에서 use_count는 성립하지 않는다. lock은 대상이 살아 있으면 강한 소유권 shared_ptr를 반환한다. expired와 use_count는 조회값이다."
+      },
+      {
+        "id": "c1",
+        "text": "expired",
+        "explanation": "이 조건에서 expired는 성립하지 않는다. lock은 대상이 살아 있으면 강한 소유권 shared_ptr를 반환한다. expired와 use_count는 조회값이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "lock은 대상이 살아 있으면 강한 소유권 shared_ptr를 반환한다. expired와 use_count는 조회값이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "auto strong = std::make_shared<int>(7);\nstd::weak_ptr<int> weak = strong;\nauto held = weak.____();\nstd::cout << *held;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-114",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "열거형 명시적 변환",
+    "prompt": "enum class 값을 명시적으로 int 7로 변환하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "static_cast",
+        "explanation": "scoped enum의 정수 변환에는 static_cast가 적합하다. 동적/주소 재해석/const 제거 캐스트가 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "dynamic_cast",
+        "explanation": "이 조건에서 dynamic_cast는 성립하지 않는다. scoped enum의 정수 변환에는 static_cast가 적합하다. 동적/주소 재해석/const 제거 캐스트가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "const_cast",
+        "explanation": "이 조건에서 const_cast는 성립하지 않는다. scoped enum의 정수 변환에는 static_cast가 적합하다. 동적/주소 재해석/const 제거 캐스트가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "reinterpret_cast",
+        "explanation": "이 조건에서 reinterpret_cast는 성립하지 않는다. scoped enum의 정수 변환에는 static_cast가 적합하다. 동적/주소 재해석/const 제거 캐스트가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "scoped enum의 정수 변환에는 static_cast가 적합하다. 동적/주소 재해석/const 제거 캐스트가 아니다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "enum class Mode { Idle = 3, Run = 7 };\nstd::cout << ____<int>(Mode::Run);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-115",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "비트 독립 플래그 설정",
+    "prompt": "이미 켜진 비트도 유지하며 값 4의 비트를 켜는 연산자는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "^=",
+        "explanation": "이 조건에서 ^=는 성립하지 않는다. OR 대입은 기존 0101의 비트를 유지한다. XOR은 켜진 비트를 끄고 AND와 단순 대입은 첫 비트를 없앤다."
+      },
+      {
+        "id": "c0",
+        "text": "|=",
+        "explanation": "OR 대입은 기존 0101의 비트를 유지한다. XOR은 켜진 비트를 끄고 AND와 단순 대입은 첫 비트를 없앤다."
+      },
+      {
+        "id": "c1",
+        "text": "&=",
+        "explanation": "이 조건에서 &=는 성립하지 않는다. OR 대입은 기존 0101의 비트를 유지한다. XOR은 켜진 비트를 끄고 AND와 단순 대입은 첫 비트를 없앤다."
+      },
+      {
+        "id": "c3",
+        "text": "=",
+        "explanation": "이 조건에서 =는 성립하지 않는다. OR 대입은 기존 0101의 비트를 유지한다. XOR은 켜진 비트를 끄고 AND와 단순 대입은 첫 비트를 없앤다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "OR 대입은 기존 0101의 비트를 유지한다. XOR은 켜진 비트를 끄고 AND와 단순 대입은 첫 비트를 없앤다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "unsigned flags = 5;\nflags ____ 4u;\nstd::cout << flags;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-116",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "narrowing 목록 초기화",
+    "prompt": "int n{2.7};에 대한 C++20의 판단은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "정수 2로 항상 허용",
+        "explanation": "이 조건에서 정수 2로 항상 허용는 성립하지 않는다. 목록 초기화에서 double에서 int로의 narrowing은 허용되지 않는다. 런타임 무작위 값이나 반올림 문제가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "좁히기 변환으로 컴파일 오류",
+        "explanation": "목록 초기화에서 double에서 int로의 narrowing은 허용되지 않는다. 런타임 무작위 값이나 반올림 문제가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "값이 정의되지 않아 아무 정수",
+        "explanation": "이 조건에서 값이 정의되지 않아 아무 정수는 성립하지 않는다. 목록 초기화에서 double에서 int로의 narrowing은 허용되지 않는다. 런타임 무작위 값이나 반올림 문제가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "반올림되어 3",
+        "explanation": "이 조건에서 반올림되어 3는 성립하지 않는다. 목록 초기화에서 double에서 int로의 narrowing은 허용되지 않는다. 런타임 무작위 값이나 반올림 문제가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "목록 초기화에서 double에서 int로의 narrowing은 허용되지 않는다. 런타임 무작위 값이나 반올림 문제가 아니다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "int n{2.7};",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-117",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "unique_ptr 복사 금지",
+    "prompt": "다음 unique_ptr 복사를 고칠 가장 적절한 방법은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "const를 붙이면 복사 가능",
+        "explanation": "이 조건에서 const를 붙이면 복사 가능는 성립하지 않는다. unique_ptr 복사 생성자는 삭제되어 있다. 소유권 이전이 의도라면 move를 쓰고 이전 후 원본은 빈 포인터로 취급한다."
+      },
+      {
+        "id": "c0",
+        "text": "이후 원본을 소유자로 쓰지 않을 때 std::move(a)로 이전",
+        "explanation": "unique_ptr 복사 생성자는 삭제되어 있다. 소유권 이전이 의도라면 move를 쓰고 이전 후 원본은 빈 포인터로 취급한다."
+      },
+      {
+        "id": "c1",
+        "text": "포인터 주소를 int로 바꿔 복사",
+        "explanation": "이 조건에서 포인터 주소를 int로 바꿔 복사는 성립하지 않는다. unique_ptr 복사 생성자는 삭제되어 있다. 소유권 이전이 의도라면 move를 쓰고 이전 후 원본은 빈 포인터로 취급한다."
+      },
+      {
+        "id": "c3",
+        "text": "복사 생성자를 직접 호출하면 가능",
+        "explanation": "이 조건에서 복사 생성자를 직접 호출하면 가능는 성립하지 않는다. unique_ptr 복사 생성자는 삭제되어 있다. 소유권 이전이 의도라면 move를 쓰고 이전 후 원본은 빈 포인터로 취급한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "unique_ptr 복사 생성자는 삭제되어 있다. 소유권 이전이 의도라면 move를 쓰고 이전 후 원본은 빈 포인터로 취급한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "auto a = std::make_unique<int>(5);\nauto b = a;",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-118",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "const 컨테이너 수정 금지",
+    "prompt": "다음 선언 후 push_back이 실패하는 이유는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "vector는 항상 고정 길이",
+        "explanation": "이 조건에서 vector는 항상 고정 길이는 성립하지 않는다. const가 객체의 변경 가능한 연산 호출을 막는다. 일반 vector는 동적으로 요소를 추가할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "값 2는 vector에 저장 불가",
+        "explanation": "이 조건에서 값 2는 vector에 저장 불가는 성립하지 않는다. const가 객체의 변경 가능한 연산 호출을 막는다. 일반 vector는 동적으로 요소를 추가할 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "initializer_list로 만들면 영원히 읽기 전용",
+        "explanation": "이 조건에서 initializer_list로 만들면 영원히 읽기 전용는 성립하지 않는다. const가 객체의 변경 가능한 연산 호출을 막는다. 일반 vector는 동적으로 요소를 추가할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "const vector에는 요소를 추가할 수 없음",
+        "explanation": "const가 객체의 변경 가능한 연산 호출을 막는다. 일반 vector는 동적으로 요소를 추가할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "const가 객체의 변경 가능한 연산 호출을 막는다. 일반 vector는 동적으로 요소를 추가할 수 있다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "const std::vector<int> v{1};\nv.push_back(2);",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-119",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "캡처 복사본 수정 제한",
+    "prompt": "다음 람다가 컴파일되지 않는 원인을 고치는 방법은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "캡처 복사본 수정이 의도라면 mutable 추가",
+        "explanation": "값 캡처 람다의 호출 연산자는 기본적으로 const다. mutable을 명시하면 복사본을 수정할 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "호출을 두 번 하기",
+        "explanation": "이 조건에서 호출을 두 번 하기는 성립하지 않는다. 값 캡처 람다의 호출 연산자는 기본적으로 const다. mutable을 명시하면 복사본을 수정할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "int를 long으로만 바꾸기",
+        "explanation": "이 조건에서 int를 long으로만 바꾸기는 성립하지 않는다. 값 캡처 람다의 호출 연산자는 기본적으로 const다. mutable을 명시하면 복사본을 수정할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "반환 타입을 void로 바꾸기",
+        "explanation": "이 조건에서 반환 타입을 void로 바꾸기는 성립하지 않는다. 값 캡처 람다의 호출 연산자는 기본적으로 const다. mutable을 명시하면 복사본을 수정할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "값 캡처 람다의 호출 연산자는 기본적으로 const다. mutable을 명시하면 복사본을 수정할 수 있다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "int n = 1;\nauto f = [n]() { return ++n; };",
+    "language": "cpp"
+  },
+  {
+    "id": "cpp-120",
+    "subject": "cpp",
+    "difficulty": "hard",
+    "topic": "순수 가상 함수 미구현",
+    "prompt": "다음 Child 객체를 만들 수 없는 이유는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "순수 가상 함수 f를 구현하지 않아 추상 타입",
+        "explanation": "Child가 순수 가상 함수 f를 재정의하지 않아 추상 클래스다. f를 구현하면 객체를 만들 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "virtual 함수는 반환값이 없어야 함",
+        "explanation": "이 조건에서 virtual 함수는 반환값이 없어야 함는 성립하지 않는다. Child가 순수 가상 함수 f를 재정의하지 않아 추상 클래스다. f를 구현하면 객체를 만들 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "Base의 기본 생성자가 반드시 삭제됨",
+        "explanation": "이 조건에서 Base의 기본 생성자가 반드시 삭제됨는 성립하지 않는다. Child가 순수 가상 함수 f를 재정의하지 않아 추상 클래스다. f를 구현하면 객체를 만들 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "상속 클래스는 모두 인스턴스화 금지",
+        "explanation": "이 조건에서 상속 클래스는 모두 인스턴스화 금지는 성립하지 않는다. Child가 순수 가상 함수 f를 재정의하지 않아 추상 클래스다. f를 구현하면 객체를 만들 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Child가 순수 가상 함수 f를 재정의하지 않아 추상 클래스다. f를 구현하면 객체를 만들 수 있다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. bool 출력에는 boolalpha를 적용한다.",
+    "sources": [
+      {
+        "title": "cpp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-170"
+      },
+      {
+        "title": "Microsoft C++ 표준 라이브러리",
+        "url": "https://learn.microsoft.com/en-us/cpp/standard-library/cpp-standard-library-reference?view=msvc-170"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "struct Base { virtual int f() = 0; };\nstruct Child : Base {};\nChild child;",
+    "language": "cpp"
   }
 ]

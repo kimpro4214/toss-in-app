@@ -12,7 +12,7 @@ function finish(state: State, id: string, correct = true) {
   return state;
 }
 describe('출제와 진행', () => {
-  it('510개의 실제 은행을 사용한다',()=>expect(bank).toHaveLength(510));
+  it('870개의 실제 은행을 사용한다',()=>expect(bank).toHaveLength(870));
   it('랜덤은 서로 다른 5과목이고 쉬움으로 시작한다',()=>{
     const {session}=createDailySession(initialState(BANK_VERSION),bank,'2026-10-05',fixed);
     expect(new Set(session.entries.map(e=>bank.find(q=>q.id===e.questionId)!.subject)).size).toBe(5);

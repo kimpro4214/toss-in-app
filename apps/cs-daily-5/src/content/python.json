@@ -1505,5 +1505,1385 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "python-031",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "음수 몫과 나머지",
+    "prompt": "음수 몫과 나머지: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "-2 -1",
+        "explanation": "이 조건에서 -2 -1는 성립하지 않는다. Python //는 음의 무한대 방향으로 내림한다. -7 = (-3)*3+2이므로 나머지는 2다."
+      },
+      {
+        "id": "c2",
+        "text": "-2 2",
+        "explanation": "이 조건에서 -2 2는 성립하지 않는다. Python //는 음의 무한대 방향으로 내림한다. -7 = (-3)*3+2이므로 나머지는 2다."
+      },
+      {
+        "id": "c3",
+        "text": "-3 -1",
+        "explanation": "이 조건에서 -3 -1는 성립하지 않는다. Python //는 음의 무한대 방향으로 내림한다. -7 = (-3)*3+2이므로 나머지는 2다."
+      },
+      {
+        "id": "c0",
+        "text": "-3 2",
+        "explanation": "Python //는 음의 무한대 방향으로 내림한다. -7 = (-3)*3+2이므로 나머지는 2다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Python //는 음의 무한대 방향으로 내림한다. -7 = (-3)*3+2이므로 나머지는 2다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "print(-7 // 3, -7 % 3)",
+    "language": "python"
+  },
+  {
+    "id": "python-032",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "슬라이스 범위",
+    "prompt": "슬라이스 범위: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "[2, 4, 6]",
+        "explanation": "이 조건에서 [2, 4, 6]는 성립하지 않는다. 시작 인덱스 1은 포함하고 끝 인덱스 4는 제외한다."
+      },
+      {
+        "id": "c1",
+        "text": "[4, 6, 8, 10]",
+        "explanation": "이 조건에서 [4, 6, 8, 10]는 성립하지 않는다. 시작 인덱스 1은 포함하고 끝 인덱스 4는 제외한다."
+      },
+      {
+        "id": "c3",
+        "text": "[6, 8]",
+        "explanation": "이 조건에서 [6, 8]는 성립하지 않는다. 시작 인덱스 1은 포함하고 끝 인덱스 4는 제외한다."
+      },
+      {
+        "id": "c0",
+        "text": "[4, 6, 8]",
+        "explanation": "시작 인덱스 1은 포함하고 끝 인덱스 4는 제외한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "시작 인덱스 1은 포함하고 끝 인덱스 4는 제외한다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "items = [2,4,6,8,10]\nprint(items[1:4])",
+    "language": "python"
+  },
+  {
+    "id": "python-033",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "문자열 반복",
+    "prompt": "문자열 반복: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "ab ab ab",
+        "explanation": "이 조건에서 ab ab ab는 성립하지 않는다. 문자열 곱셈은 전체 문자열을 횟수만큼 이어 붙이며 자동 공백을 삽입하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "ababab",
+        "explanation": "문자열 곱셈은 전체 문자열을 횟수만큼 이어 붙이며 자동 공백을 삽입하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "ab3",
+        "explanation": "이 조건에서 ab3는 성립하지 않는다. 문자열 곱셈은 전체 문자열을 횟수만큼 이어 붙이며 자동 공백을 삽입하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "aaabbb",
+        "explanation": "이 조건에서 aaabbb는 성립하지 않는다. 문자열 곱셈은 전체 문자열을 횟수만큼 이어 붙이며 자동 공백을 삽입하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "문자열 곱셈은 전체 문자열을 횟수만큼 이어 붙이며 자동 공백을 삽입하지 않는다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "print(\"ab\" * 3)",
+    "language": "python"
+  },
+  {
+    "id": "python-034",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "range 끝 제외",
+    "prompt": "range 끝 제외: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "[2, 4, 6, 7]",
+        "explanation": "이 조건에서 [2, 4, 6, 7]는 성립하지 않는다. 2에서 시작해 2씩 증가하며 stop 7은 포함하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "[2, 3, 4, 5, 6]",
+        "explanation": "이 조건에서 [2, 3, 4, 5, 6]는 성립하지 않는다. 2에서 시작해 2씩 증가하며 stop 7은 포함하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "[2, 4, 6]",
+        "explanation": "2에서 시작해 2씩 증가하며 stop 7은 포함하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "[0, 2, 4, 6]",
+        "explanation": "이 조건에서 [0, 2, 4, 6]는 성립하지 않는다. 2에서 시작해 2씩 증가하며 stop 7은 포함하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "2에서 시작해 2씩 증가하며 stop 7은 포함하지 않는다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "print(list(range(2, 7, 2)))",
+    "language": "python"
+  },
+  {
+    "id": "python-035",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "리스트 pop 반환",
+    "prompt": "리스트 pop 반환: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "8 2",
+        "explanation": "인수가 없는 pop은 마지막 요소를 제거하고 그 값을 반환한다."
+      },
+      {
+        "id": "c2",
+        "text": "8 3",
+        "explanation": "이 조건에서 8 3는 성립하지 않는다. 인수가 없는 pop은 마지막 요소를 제거하고 그 값을 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "None 2",
+        "explanation": "이 조건에서 None 2는 성립하지 않는다. 인수가 없는 pop은 마지막 요소를 제거하고 그 값을 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "3 2",
+        "explanation": "이 조건에서 3 2는 성립하지 않는다. 인수가 없는 pop은 마지막 요소를 제거하고 그 값을 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "인수가 없는 pop은 마지막 요소를 제거하고 그 값을 반환한다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "items = [3,5,8]\nvalue = items.pop()\nprint(value, len(items))",
+    "language": "python"
+  },
+  {
+    "id": "python-036",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "리스트 단일 추가",
+    "prompt": "리스트 [2,3] 자체를 한 요소로 추가해 길이가 2가 되는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "sort",
+        "explanation": "이 조건에서 sort는 성립하지 않는다. append는 인수 객체 하나를 추가한다. extend는 인수의 요소를 각각 추가한다."
+      },
+      {
+        "id": "c2",
+        "text": "clear",
+        "explanation": "이 조건에서 clear는 성립하지 않는다. append는 인수 객체 하나를 추가한다. extend는 인수의 요소를 각각 추가한다."
+      },
+      {
+        "id": "c1",
+        "text": "extend",
+        "explanation": "이 조건에서 extend는 성립하지 않는다. append는 인수 객체 하나를 추가한다. extend는 인수의 요소를 각각 추가한다."
+      },
+      {
+        "id": "c0",
+        "text": "append",
+        "explanation": "append는 인수 객체 하나를 추가한다. extend는 인수의 요소를 각각 추가한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "append는 인수 객체 하나를 추가한다. extend는 인수의 요소를 각각 추가한다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "items = [1]\nitems.____([2,3])\nprint(len(items))",
+    "language": "python"
+  },
+  {
+    "id": "python-037",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "집합 원소 추가",
+    "prompt": "set에 원소 3을 추가하는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "append",
+        "explanation": "이 조건에서 append는 성립하지 않는다. set은 add로 한 원소를 추가한다. append는 리스트 메서드이고 나머지는 set 메서드가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "push",
+        "explanation": "이 조건에서 push는 성립하지 않는다. set은 add로 한 원소를 추가한다. append는 리스트 메서드이고 나머지는 set 메서드가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "insert",
+        "explanation": "이 조건에서 insert는 성립하지 않는다. set은 add로 한 원소를 추가한다. append는 리스트 메서드이고 나머지는 set 메서드가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "add",
+        "explanation": "set은 add로 한 원소를 추가한다. append는 리스트 메서드이고 나머지는 set 메서드가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "set은 add로 한 원소를 추가한다. append는 리스트 메서드이고 나머지는 set 메서드가 아니다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "values = {1,2}\nvalues.____(3)\nprint(len(values))",
+    "language": "python"
+  },
+  {
+    "id": "python-038",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "딕셔너리 기본 조회",
+    "prompt": "없는 키 b에서 예외 없이 기본값 0을 얻는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "keys",
+        "explanation": "이 조건에서 keys는 성립하지 않는다. dict.get(key,default)는 키가 없으면 기본값을 반환하며 항목을 삽입하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "get",
+        "explanation": "dict.get(key,default)는 키가 없으면 기본값을 반환하며 항목을 삽입하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "clear",
+        "explanation": "이 조건에서 clear는 성립하지 않는다. dict.get(key,default)는 키가 없으면 기본값을 반환하며 항목을 삽입하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "popitem",
+        "explanation": "이 조건에서 popitem는 성립하지 않는다. dict.get(key,default)는 키가 없으면 기본값을 반환하며 항목을 삽입하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "dict.get(key,default)는 키가 없으면 기본값을 반환하며 항목을 삽입하지 않는다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "scores = {\"a\": 4}\nprint(scores.____(\"b\", 0))",
+    "language": "python"
+  },
+  {
+    "id": "python-039",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "리스트 길이 함수",
+    "prompt": "요소 개수 3을 얻는 내장 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "len",
+        "explanation": "len은 개수, sum은 합, max/min은 최댓값과 최솟값이다."
+      },
+      {
+        "id": "c2",
+        "text": "max",
+        "explanation": "이 조건에서 max는 성립하지 않는다. len은 개수, sum은 합, max/min은 최댓값과 최솟값이다."
+      },
+      {
+        "id": "c1",
+        "text": "sum",
+        "explanation": "이 조건에서 sum는 성립하지 않는다. len은 개수, sum은 합, max/min은 최댓값과 최솟값이다."
+      },
+      {
+        "id": "c3",
+        "text": "min",
+        "explanation": "이 조건에서 min는 성립하지 않는다. len은 개수, sum은 합, max/min은 최댓값과 최솟값이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "len은 개수, sum은 합, max/min은 최댓값과 최솟값이다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "items = [4,7,9]\nprint(____(items))",
+    "language": "python"
+  },
+  {
+    "id": "python-040",
+    "subject": "python",
+    "difficulty": "easy",
+    "topic": "합계 내장 함수",
+    "prompt": "세 정수의 합 9를 출력하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "len",
+        "explanation": "이 조건에서 len는 성립하지 않는다. sum은 요소들을 더한다. len은 개수, all과 any는 진릿값을 계산한다."
+      },
+      {
+        "id": "c3",
+        "text": "any",
+        "explanation": "이 조건에서 any는 성립하지 않는다. sum은 요소들을 더한다. len은 개수, all과 any는 진릿값을 계산한다."
+      },
+      {
+        "id": "c0",
+        "text": "sum",
+        "explanation": "sum은 요소들을 더한다. len은 개수, all과 any는 진릿값을 계산한다."
+      },
+      {
+        "id": "c2",
+        "text": "all",
+        "explanation": "이 조건에서 all는 성립하지 않는다. sum은 요소들을 더한다. len은 개수, all과 any는 진릿값을 계산한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "sum은 요소들을 더한다. len은 개수, all과 any는 진릿값을 계산한다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "items = [2,3,4]\nprint(____(items))",
+    "language": "python"
+  },
+  {
+    "id": "python-041",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "조건부 컴프리헨션",
+    "prompt": "조건부 컴프리헨션: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "[0, 2, 4]",
+        "explanation": "이 조건에서 [0, 2, 4]는 성립하지 않는다. 조건은 짝수 0,2,4를 선택하고 결과 식 x*x가 각 제곱을 만든다."
+      },
+      {
+        "id": "c1",
+        "text": "[0, 1, 4, 9, 16]",
+        "explanation": "이 조건에서 [0, 1, 4, 9, 16]는 성립하지 않는다. 조건은 짝수 0,2,4를 선택하고 결과 식 x*x가 각 제곱을 만든다."
+      },
+      {
+        "id": "c0",
+        "text": "[0, 4, 16]",
+        "explanation": "조건은 짝수 0,2,4를 선택하고 결과 식 x*x가 각 제곱을 만든다."
+      },
+      {
+        "id": "c2",
+        "text": "[2, 4]",
+        "explanation": "이 조건에서 [2, 4]는 성립하지 않는다. 조건은 짝수 0,2,4를 선택하고 결과 식 x*x가 각 제곱을 만든다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "조건은 짝수 0,2,4를 선택하고 결과 식 x*x가 각 제곱을 만든다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "print([x*x for x in range(5) if x % 2 == 0])",
+    "language": "python"
+  },
+  {
+    "id": "python-042",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "딕셔너리 삽입 순서",
+    "prompt": "딕셔너리 삽입 순서: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "['b', 'a']",
+        "explanation": "이 조건에서 ['b', 'a']는 성립하지 않는다. 기존 키 값을 갱신해도 삽입 순서는 바뀌지 않는다. 키가 중복 생성되는 것도 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "['a', 'b', 'a']",
+        "explanation": "이 조건에서 ['a', 'b', 'a']는 성립하지 않는다. 기존 키 값을 갱신해도 삽입 순서는 바뀌지 않는다. 키가 중복 생성되는 것도 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "['a', 'b']",
+        "explanation": "기존 키 값을 갱신해도 삽입 순서는 바뀌지 않는다. 키가 중복 생성되는 것도 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "[7, 2]",
+        "explanation": "이 조건에서 [7, 2]는 성립하지 않는다. 기존 키 값을 갱신해도 삽입 순서는 바뀌지 않는다. 키가 중복 생성되는 것도 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기존 키 값을 갱신해도 삽입 순서는 바뀌지 않는다. 키가 중복 생성되는 것도 아니다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "d = {\"a\": 1, \"b\": 2}\nd[\"a\"] = 7\nprint(list(d.keys()))",
+    "language": "python"
+  },
+  {
+    "id": "python-043",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "zip 짧은 입력 종료",
+    "prompt": "zip 짧은 입력 종료: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "[(1, 'x'), (2, 'y')]",
+        "explanation": "기본 zip은 가장 짧은 iterable이 끝나면 멈추며 빈 값을 채우지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "[(1, 'y'), (2, 'x')]",
+        "explanation": "이 조건에서 [(1, 'y'), (2, 'x')]는 성립하지 않는다. 기본 zip은 가장 짧은 iterable이 끝나면 멈추며 빈 값을 채우지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "[1, 2, 3]",
+        "explanation": "이 조건에서 [1, 2, 3]는 성립하지 않는다. 기본 zip은 가장 짧은 iterable이 끝나면 멈추며 빈 값을 채우지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "[(1, 'x'), (2, 'y'), (3, None)]",
+        "explanation": "이 조건에서 [(1, 'x'), (2, 'y'), (3, None)]는 성립하지 않는다. 기본 zip은 가장 짧은 iterable이 끝나면 멈추며 빈 값을 채우지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본 zip은 가장 짧은 iterable이 끝나면 멈추며 빈 값을 채우지 않는다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "print(list(zip([1,2,3], [\"x\",\"y\"])))",
+    "language": "python"
+  },
+  {
+    "id": "python-044",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "enumerate 시작 번호",
+    "prompt": "enumerate 시작 번호: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "[(1, 'x'), (2, 'y')]",
+        "explanation": "enumerate는 요소마다 카운터를 붙이며 지정한 start=1부터 시작한다."
+      },
+      {
+        "id": "c2",
+        "text": "[(1, 'y'), (2, 'x')]",
+        "explanation": "이 조건에서 [(1, 'y'), (2, 'x')]는 성립하지 않는다. enumerate는 요소마다 카운터를 붙이며 지정한 start=1부터 시작한다."
+      },
+      {
+        "id": "c1",
+        "text": "[(0, 'x'), (1, 'y')]",
+        "explanation": "이 조건에서 [(0, 'x'), (1, 'y')]는 성립하지 않는다. enumerate는 요소마다 카운터를 붙이며 지정한 start=1부터 시작한다."
+      },
+      {
+        "id": "c3",
+        "text": "['x', 'y']",
+        "explanation": "이 조건에서 ['x', 'y']는 성립하지 않는다. enumerate는 요소마다 카운터를 붙이며 지정한 start=1부터 시작한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "enumerate는 요소마다 카운터를 붙이며 지정한 start=1부터 시작한다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "print(list(enumerate([\"x\",\"y\"], start=1)))",
+    "language": "python"
+  },
+  {
+    "id": "python-045",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "얕은 복사와 내부 공유",
+    "prompt": "얕은 복사와 내부 공유: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "[1]",
+        "explanation": "이 조건에서 [1]는 성립하지 않는다. 외부 리스트만 복사되며 내부 리스트 객체는 공유되어 append가 원본 내부에도 보인다."
+      },
+      {
+        "id": "c0",
+        "text": "[1, 9]",
+        "explanation": "외부 리스트만 복사되며 내부 리스트 객체는 공유되어 append가 원본 내부에도 보인다."
+      },
+      {
+        "id": "c2",
+        "text": "[9]",
+        "explanation": "이 조건에서 [9]는 성립하지 않는다. 외부 리스트만 복사되며 내부 리스트 객체는 공유되어 append가 원본 내부에도 보인다."
+      },
+      {
+        "id": "c3",
+        "text": "[[1], [2]]",
+        "explanation": "이 조건에서 [[1], [2]]는 성립하지 않는다. 외부 리스트만 복사되며 내부 리스트 객체는 공유되어 append가 원본 내부에도 보인다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "외부 리스트만 복사되며 내부 리스트 객체는 공유되어 append가 원본 내부에도 보인다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "a = [[1], [2]]\nb = a.copy()\nb[0].append(9)\nprint(a[0])",
+    "language": "python"
+  },
+  {
+    "id": "python-046",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "sorted와 원본 보존",
+    "prompt": "sorted와 원본 보존: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "1 3",
+        "explanation": "이 조건에서 1 3는 성립하지 않는다. sorted는 새 리스트를 반환한다. 원래 a의 순서는 변경하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "3 3",
+        "explanation": "이 조건에서 3 3는 성립하지 않는다. sorted는 새 리스트를 반환한다. 원래 a의 순서는 변경하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "3 1",
+        "explanation": "sorted는 새 리스트를 반환한다. 원래 a의 순서는 변경하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "1 1",
+        "explanation": "이 조건에서 1 1는 성립하지 않는다. sorted는 새 리스트를 반환한다. 원래 a의 순서는 변경하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "sorted는 새 리스트를 반환한다. 원래 a의 순서는 변경하지 않는다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "a = [3,1,2]\nb = sorted(a)\nprint(a[0], b[0])",
+    "language": "python"
+  },
+  {
+    "id": "python-047",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "내림차순 정렬",
+    "prompt": "정렬 결과의 첫 요소가 9가 되도록 빈칸을 채우세요.",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "strict",
+        "explanation": "이 조건에서 strict는 성립하지 않는다. reverse=True는 내림차순을 지정한다. key는 키 함수이며 나머지는 sorted 옵션이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "reverse",
+        "explanation": "reverse=True는 내림차순을 지정한다. key는 키 함수이며 나머지는 sorted 옵션이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "start",
+        "explanation": "이 조건에서 start는 성립하지 않는다. reverse=True는 내림차순을 지정한다. key는 키 함수이며 나머지는 sorted 옵션이 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "key",
+        "explanation": "이 조건에서 key는 성립하지 않는다. reverse=True는 내림차순을 지정한다. key는 키 함수이며 나머지는 sorted 옵션이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "reverse=True는 내림차순을 지정한다. key는 키 함수이며 나머지는 sorted 옵션이 아니다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "values = [2,9,4]\nprint(sorted(values, ____=True)[0])",
+    "language": "python"
+  },
+  {
+    "id": "python-048",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "인수 펼치기",
+    "prompt": "리스트의 두 요소를 별개 위치 인수로 전달하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "*",
+        "explanation": "*iterable은 위치 인수를 펼친다. **는 매핑을 키워드 인수로 펼친다."
+      },
+      {
+        "id": "c3",
+        "text": "!",
+        "explanation": "이 조건에서 !는 성립하지 않는다. *iterable은 위치 인수를 펼친다. **는 매핑을 키워드 인수로 펼친다."
+      },
+      {
+        "id": "c1",
+        "text": "**",
+        "explanation": "이 조건에서 **는 성립하지 않는다. *iterable은 위치 인수를 펼친다. **는 매핑을 키워드 인수로 펼친다."
+      },
+      {
+        "id": "c2",
+        "text": "&",
+        "explanation": "이 조건에서 &는 성립하지 않는다. *iterable은 위치 인수를 펼친다. **는 매핑을 키워드 인수로 펼친다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "*iterable은 위치 인수를 펼친다. **는 매핑을 키워드 인수로 펼친다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "def add(a,b):\n    return a+b\nvalues = [3,4]\nprint(add(____values))",
+    "language": "python"
+  },
+  {
+    "id": "python-049",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "키워드 인수 펼치기",
+    "prompt": "딕셔너리 키를 매개변수 이름으로 전달하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "?",
+        "explanation": "이 조건에서 ?는 성립하지 않는다. **mapping은 키와 값을 키워드 인수로 전달한다. *mapping은 키만 위치 인수로 순회한다."
+      },
+      {
+        "id": "c2",
+        "text": "&",
+        "explanation": "이 조건에서 &는 성립하지 않는다. **mapping은 키와 값을 키워드 인수로 전달한다. *mapping은 키만 위치 인수로 순회한다."
+      },
+      {
+        "id": "c1",
+        "text": "*",
+        "explanation": "이 조건에서 *는 성립하지 않는다. **mapping은 키와 값을 키워드 인수로 전달한다. *mapping은 키만 위치 인수로 순회한다."
+      },
+      {
+        "id": "c0",
+        "text": "**",
+        "explanation": "**mapping은 키와 값을 키워드 인수로 전달한다. *mapping은 키만 위치 인수로 순회한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "**mapping은 키와 값을 키워드 인수로 전달한다. *mapping은 키만 위치 인수로 순회한다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "def add(a,b):\n    return a+b\nvalues = {\"a\": 2, \"b\": 5}\nprint(add(____values))",
+    "language": "python"
+  },
+  {
+    "id": "python-050",
+    "subject": "python",
+    "difficulty": "medium",
+    "topic": "조건 만족 항목 찾기",
+    "prompt": "하나라도 참인 원소가 있는지 검사해 True를 얻는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "any",
+        "explanation": "any는 하나라도 참이면 True이다. all은 모든 값이 참이어야 하므로 이 리스트에서는 False다."
+      },
+      {
+        "id": "c1",
+        "text": "all",
+        "explanation": "이 조건에서 all는 성립하지 않는다. any는 하나라도 참이면 True이다. all은 모든 값이 참이어야 하므로 이 리스트에서는 False다."
+      },
+      {
+        "id": "c2",
+        "text": "min",
+        "explanation": "이 조건에서 min는 성립하지 않는다. any는 하나라도 참이면 True이다. all은 모든 값이 참이어야 하므로 이 리스트에서는 False다."
+      },
+      {
+        "id": "c3",
+        "text": "len",
+        "explanation": "이 조건에서 len는 성립하지 않는다. any는 하나라도 참이면 True이다. all은 모든 값이 참이어야 하므로 이 리스트에서는 False다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "any는 하나라도 참이면 True이다. all은 모든 값이 참이어야 하므로 이 리스트에서는 False다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "values = [0,0,3]\nprint(____(values))",
+    "language": "python"
+  },
+  {
+    "id": "python-051",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "지연 제너레이터 평가",
+    "prompt": "지연 제너레이터 평가: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 제너레이터 표현식의 본문은 next 시점에 평가된다. 아직 소비하지 않은 첫 요소는 변경된 5다."
+      },
+      {
+        "id": "c3",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. 제너레이터 표현식의 본문은 next 시점에 평가된다. 아직 소비하지 않은 첫 요소는 변경된 5다."
+      },
+      {
+        "id": "c0",
+        "text": "10",
+        "explanation": "제너레이터 표현식의 본문은 next 시점에 평가된다. 아직 소비하지 않은 첫 요소는 변경된 5다."
+      },
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 제너레이터 표현식의 본문은 next 시점에 평가된다. 아직 소비하지 않은 첫 요소는 변경된 5다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "제너레이터 표현식의 본문은 next 시점에 평가된다. 아직 소비하지 않은 첫 요소는 변경된 5다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "values = [1,2]\ng = (x*2 for x in values)\nvalues[0] = 5\nprint(next(g))",
+    "language": "python"
+  },
+  {
+    "id": "python-052",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "클로저 늦은 바인딩",
+    "prompt": "클로저 늦은 바인딩: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "[1, 2, 3]",
+        "explanation": "이 조건에서 [1, 2, 3]는 성립하지 않는다. 각 람다는 동일한 외부 i 바인딩을 참조하며 실행 시점에는 마지막 값 2다."
+      },
+      {
+        "id": "c0",
+        "text": "[2, 2, 2]",
+        "explanation": "각 람다는 동일한 외부 i 바인딩을 참조하며 실행 시점에는 마지막 값 2다."
+      },
+      {
+        "id": "c2",
+        "text": "[0, 0, 0]",
+        "explanation": "이 조건에서 [0, 0, 0]는 성립하지 않는다. 각 람다는 동일한 외부 i 바인딩을 참조하며 실행 시점에는 마지막 값 2다."
+      },
+      {
+        "id": "c1",
+        "text": "[0, 1, 2]",
+        "explanation": "이 조건에서 [0, 1, 2]는 성립하지 않는다. 각 람다는 동일한 외부 i 바인딩을 참조하며 실행 시점에는 마지막 값 2다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "각 람다는 동일한 외부 i 바인딩을 참조하며 실행 시점에는 마지막 값 2다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "functions = [lambda: i for i in range(3)]\nprint([f() for f in functions])",
+    "language": "python"
+  },
+  {
+    "id": "python-053",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "기본 인수로 값 캡처",
+    "prompt": "기본 인수로 값 캡처: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "[0, 0, 0]",
+        "explanation": "이 조건에서 [0, 0, 0]는 성립하지 않는다. 기본 인수 표현식은 각 람다 정의 시점에 평가되어 반복마다 다른 값을 저장한다."
+      },
+      {
+        "id": "c3",
+        "text": "[1, 2, 3]",
+        "explanation": "이 조건에서 [1, 2, 3]는 성립하지 않는다. 기본 인수 표현식은 각 람다 정의 시점에 평가되어 반복마다 다른 값을 저장한다."
+      },
+      {
+        "id": "c0",
+        "text": "[0, 1, 2]",
+        "explanation": "기본 인수 표현식은 각 람다 정의 시점에 평가되어 반복마다 다른 값을 저장한다."
+      },
+      {
+        "id": "c1",
+        "text": "[2, 2, 2]",
+        "explanation": "이 조건에서 [2, 2, 2]는 성립하지 않는다. 기본 인수 표현식은 각 람다 정의 시점에 평가되어 반복마다 다른 값을 저장한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본 인수 표현식은 각 람다 정의 시점에 평가되어 반복마다 다른 값을 저장한다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "functions = [lambda i=i: i for i in range(3)]\nprint([f() for f in functions])",
+    "language": "python"
+  },
+  {
+    "id": "python-054",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "finally와 반환값",
+    "prompt": "finally와 반환값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. return의 값 1은 finally 실행 전에 결정된다. 지역 변수 재대입은 이미 결정한 정수 반환값을 바꾸지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "예외 발생",
+        "explanation": "이 조건에서 예외 발생는 성립하지 않는다. return의 값 1은 finally 실행 전에 결정된다. 지역 변수 재대입은 이미 결정한 정수 반환값을 바꾸지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "None",
+        "explanation": "이 조건에서 None는 성립하지 않는다. return의 값 1은 finally 실행 전에 결정된다. 지역 변수 재대입은 이미 결정한 정수 반환값을 바꾸지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "1",
+        "explanation": "return의 값 1은 finally 실행 전에 결정된다. 지역 변수 재대입은 이미 결정한 정수 반환값을 바꾸지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "return의 값 1은 finally 실행 전에 결정된다. 지역 변수 재대입은 이미 결정한 정수 반환값을 바꾸지 않는다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "def f():\n    result = 1\n    try:\n        return result\n    finally:\n        result = 9\nprint(f())",
+    "language": "python"
+  },
+  {
+    "id": "python-055",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "tuple 내부 가변 객체",
+    "prompt": "tuple 내부 가변 객체: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "[3]",
+        "explanation": "이 조건에서 [3]는 성립하지 않는다. tuple 요소 바인딩은 고정이지만 요소가 참조하는 리스트 객체 내부는 변경할 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "TypeError 발생",
+        "explanation": "이 조건에서 TypeError 발생는 성립하지 않는다. tuple 요소 바인딩은 고정이지만 요소가 참조하는 리스트 객체 내부는 변경할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "[1]",
+        "explanation": "이 조건에서 [1]는 성립하지 않는다. tuple 요소 바인딩은 고정이지만 요소가 참조하는 리스트 객체 내부는 변경할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "[1, 3]",
+        "explanation": "tuple 요소 바인딩은 고정이지만 요소가 참조하는 리스트 객체 내부는 변경할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "tuple 요소 바인딩은 고정이지만 요소가 참조하는 리스트 객체 내부는 변경할 수 있다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "data = ([1], 2)\ndata[0].append(3)\nprint(data[0])",
+    "language": "python"
+  },
+  {
+    "id": "python-056",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "동등성과 동일성",
+    "prompt": "동등성과 동일성: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "True False",
+        "explanation": "리스트의 내용은 같아 ==는 True이나 두 번 생성한 별개 객체라 is는 False다."
+      },
+      {
+        "id": "c2",
+        "text": "False True",
+        "explanation": "이 조건에서 False True는 성립하지 않는다. 리스트의 내용은 같아 ==는 True이나 두 번 생성한 별개 객체라 is는 False다."
+      },
+      {
+        "id": "c1",
+        "text": "True True",
+        "explanation": "이 조건에서 True True는 성립하지 않는다. 리스트의 내용은 같아 ==는 True이나 두 번 생성한 별개 객체라 is는 False다."
+      },
+      {
+        "id": "c3",
+        "text": "False False",
+        "explanation": "이 조건에서 False False는 성립하지 않는다. 리스트의 내용은 같아 ==는 True이나 두 번 생성한 별개 객체라 is는 False다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "리스트의 내용은 같아 ==는 True이나 두 번 생성한 별개 객체라 is는 False다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "a = [1,2]\nb = [1,2]\nprint(a == b, a is b)",
+    "language": "python"
+  },
+  {
+    "id": "python-057",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "반복자 단일 소비",
+    "prompt": "반복자 단일 소비: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "[2]\n[4, 6]",
+        "explanation": "이 조건에서 [2]\n[4, 6]는 성립하지 않는다. 같은 반복자는 첫 list 변환에서 전부 소비된다. 두 번째 소비는 빈 리스트다."
+      },
+      {
+        "id": "c3",
+        "text": "[]\n[]",
+        "explanation": "이 조건에서 []\n[]는 성립하지 않는다. 같은 반복자는 첫 list 변환에서 전부 소비된다. 두 번째 소비는 빈 리스트다."
+      },
+      {
+        "id": "c0",
+        "text": "[2, 4, 6]\n[]",
+        "explanation": "같은 반복자는 첫 list 변환에서 전부 소비된다. 두 번째 소비는 빈 리스트다."
+      },
+      {
+        "id": "c1",
+        "text": "[2, 4, 6]\n[2, 4, 6]",
+        "explanation": "이 조건에서 [2, 4, 6]\n[2, 4, 6]는 성립하지 않는다. 같은 반복자는 첫 list 변환에서 전부 소비된다. 두 번째 소비는 빈 리스트다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "같은 반복자는 첫 list 변환에서 전부 소비된다. 두 번째 소비는 빈 리스트다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "it = iter([2,4,6])\nprint(list(it))\nprint(list(it))",
+    "language": "python"
+  },
+  {
+    "id": "python-058",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "nonlocal 바인딩",
+    "prompt": "바깥 함수의 count를 수정해 1 2를 출력하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "static",
+        "explanation": "이 조건에서 static는 성립하지 않는다. nonlocal은 둘러싼 함수의 기존 바인딩을 참조한다. global은 모듈 범위라 이 count와 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "const",
+        "explanation": "이 조건에서 const는 성립하지 않는다. nonlocal은 둘러싼 함수의 기존 바인딩을 참조한다. global은 모듈 범위라 이 count와 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "nonlocal",
+        "explanation": "nonlocal은 둘러싼 함수의 기존 바인딩을 참조한다. global은 모듈 범위라 이 count와 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "global",
+        "explanation": "이 조건에서 global는 성립하지 않는다. nonlocal은 둘러싼 함수의 기존 바인딩을 참조한다. global은 모듈 범위라 이 count와 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "nonlocal은 둘러싼 함수의 기존 바인딩을 참조한다. global은 모듈 범위라 이 count와 다르다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Python 표준 런타임에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "def make():\n    count = 0\n    def step():\n        ____ count\n        count += 1\n        return count\n    return step\nf = make()\nprint(f(), f())",
+    "language": "python"
+  },
+  {
+    "id": "python-059",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "가변 기본 인수 누적",
+    "prompt": "호출마다 새 리스트를 만들려면 다음 함수를 어떻게 고쳐야 하나요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "기본값 None을 쓰고 함수 안에서 새 리스트 생성",
+        "explanation": "기본 인수 객체는 함수 정의 시 한 번 생성되어 호출 간 공유된다. None을 구분자로 쓰고 매 호출 새 리스트를 생성해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "return을 먼저 실행",
+        "explanation": "이 조건에서 return을 먼저 실행는 성립하지 않는다. 기본 인수 객체는 함수 정의 시 한 번 생성되어 호출 간 공유된다. None을 구분자로 쓰고 매 호출 새 리스트를 생성해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "기본값을 빈 리스트 두 개로 변경",
+        "explanation": "이 조건에서 기본값을 빈 리스트 두 개로 변경는 성립하지 않는다. 기본 인수 객체는 함수 정의 시 한 번 생성되어 호출 간 공유된다. None을 구분자로 쓰고 매 호출 새 리스트를 생성해야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "list를 tuple 이름으로만 변경",
+        "explanation": "이 조건에서 list를 tuple 이름으로만 변경는 성립하지 않는다. 기본 인수 객체는 함수 정의 시 한 번 생성되어 호출 간 공유된다. None을 구분자로 쓰고 매 호출 새 리스트를 생성해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본 인수 객체는 함수 정의 시 한 번 생성되어 호출 간 공유된다. None을 구분자로 쓰고 매 호출 새 리스트를 생성해야 한다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "def add(x, values=[]):\n    values.append(x)\n    return values",
+    "language": "python"
+  },
+  {
+    "id": "python-060",
+    "subject": "python",
+    "difficulty": "hard",
+    "topic": "리스트 반복과 삭제",
+    "prompt": "반복 중 원소를 삭제해 일부 항목을 건너뛰는 문제를 피할 방법은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "조건으로 새 리스트를 구성",
+        "explanation": "리스트의 인덱스와 요소 위치를 반복 중 바꾸면 다음 요소를 건너뛸 수 있다. 필터 컴프리헨션으로 새 리스트를 만드는 편이 명확하다."
+      },
+      {
+        "id": "c3",
+        "text": "삭제할 값을 int로 변환",
+        "explanation": "이 조건에서 삭제할 값을 int로 변환는 성립하지 않는다. 리스트의 인덱스와 요소 위치를 반복 중 바꾸면 다음 요소를 건너뛸 수 있다. 필터 컴프리헨션으로 새 리스트를 만드는 편이 명확하다."
+      },
+      {
+        "id": "c1",
+        "text": "반복 횟수를 두 배로 고정",
+        "explanation": "이 조건에서 반복 횟수를 두 배로 고정는 성립하지 않는다. 리스트의 인덱스와 요소 위치를 반복 중 바꾸면 다음 요소를 건너뛸 수 있다. 필터 컴프리헨션으로 새 리스트를 만드는 편이 명확하다."
+      },
+      {
+        "id": "c2",
+        "text": "리스트 길이를 매번 출력",
+        "explanation": "이 조건에서 리스트 길이를 매번 출력는 성립하지 않는다. 리스트의 인덱스와 요소 위치를 반복 중 바꾸면 다음 요소를 건너뛸 수 있다. 필터 컴프리헨션으로 새 리스트를 만드는 편이 명확하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "리스트의 인덱스와 요소 위치를 반복 중 바꾸면 다음 요소를 건너뛸 수 있다. 필터 컴프리헨션으로 새 리스트를 만드는 편이 명확하다.",
+    "environment": "Python 3.12 이상 표준 기능. print는 기본 공백 구분과 줄바꿈을 사용한다.",
+    "sources": [
+      {
+        "title": "python 공식 개념 근거",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "values = [1,1,2]\nfor x in values:\n    if x == 1: values.remove(x)",
+    "language": "python"
   }
 ]

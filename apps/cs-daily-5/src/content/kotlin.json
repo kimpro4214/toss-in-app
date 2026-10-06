@@ -1408,5 +1408,1504 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "kotlin-031",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "if 표현식",
+    "prompt": "if 표현식: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. Kotlin if는 표현식이며 참 조건에서 첫 분기 값 7을 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "7",
+        "explanation": "Kotlin if는 표현식이며 참 조건에서 첫 분기 값 7을 반환한다."
+      },
+      {
+        "id": "c2",
+        "text": "true",
+        "explanation": "이 조건에서 true는 성립하지 않는다. Kotlin if는 표현식이며 참 조건에서 첫 분기 값 7을 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. Kotlin if는 표현식이며 참 조건에서 첫 분기 값 7을 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Kotlin if는 표현식이며 참 조건에서 첫 분기 값 7을 반환한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val n = if (2 > 1) 7 else 9\nprintln(n)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-032",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "범위 until",
+    "prompt": "범위 until: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "[1, 2, 3]",
+        "explanation": "until은 끝 경계 4를 제외하는 정수 범위다."
+      },
+      {
+        "id": "c1",
+        "text": "[1, 2, 3, 4]",
+        "explanation": "이 조건에서 [1, 2, 3, 4]는 성립하지 않는다. until은 끝 경계 4를 제외하는 정수 범위다."
+      },
+      {
+        "id": "c2",
+        "text": "[0, 1, 2, 3]",
+        "explanation": "이 조건에서 [0, 1, 2, 3]는 성립하지 않는다. until은 끝 경계 4를 제외하는 정수 범위다."
+      },
+      {
+        "id": "c3",
+        "text": "[4, 3, 2, 1]",
+        "explanation": "이 조건에서 [4, 3, 2, 1]는 성립하지 않는다. until은 끝 경계 4를 제외하는 정수 범위다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "until은 끝 경계 4를 제외하는 정수 범위다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "println((1 until 4).toList())",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-033",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "문자열 템플릿",
+    "prompt": "문자열 템플릿: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "count=4",
+        "explanation": "${...} 안의 식을 평가해 그 값을 문자열에 삽입한다."
+      },
+      {
+        "id": "c1",
+        "text": "count=3 + 1",
+        "explanation": "이 조건에서 count=3 + 1는 성립하지 않는다. ${...} 안의 식을 평가해 그 값을 문자열에 삽입한다."
+      },
+      {
+        "id": "c2",
+        "text": "count=3",
+        "explanation": "이 조건에서 count=3는 성립하지 않는다. ${...} 안의 식을 평가해 그 값을 문자열에 삽입한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. ${...} 안의 식을 평가해 그 값을 문자열에 삽입한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "${...} 안의 식을 평가해 그 값을 문자열에 삽입한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val n = 3\nprintln(\"count=${n + 1}\")",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-034",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "엘비스 기본값",
+    "prompt": "엘비스 기본값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "NullPointerException",
+        "explanation": "이 조건에서 NullPointerException는 성립하지 않는다. ?:는 왼쪽 값이 null일 때만 오른쪽 기본값을 사용한다."
+      },
+      {
+        "id": "c2",
+        "text": "빈 문자열",
+        "explanation": "이 조건에서 빈 문자열는 성립하지 않는다. ?:는 왼쪽 값이 null일 때만 오른쪽 기본값을 사용한다."
+      },
+      {
+        "id": "c0",
+        "text": "guest",
+        "explanation": "?:는 왼쪽 값이 null일 때만 오른쪽 기본값을 사용한다."
+      },
+      {
+        "id": "c1",
+        "text": "null",
+        "explanation": "이 조건에서 null는 성립하지 않는다. ?:는 왼쪽 값이 null일 때만 오른쪽 기본값을 사용한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "?:는 왼쪽 값이 null일 때만 오른쪽 기본값을 사용한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val name: String? = null\nprintln(name ?: \"guest\")",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-035",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "가변 리스트 추가",
+    "prompt": "가변 리스트 추가: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. val은 바인딩 재대입을 막는다. mutableListOf로 만든 리스트 내부 변경은 가능하다."
+      },
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. val은 바인딩 재대입을 막는다. mutableListOf로 만든 리스트 내부 변경은 가능하다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. val은 바인딩 재대입을 막는다. mutableListOf로 만든 리스트 내부 변경은 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "val은 바인딩 재대입을 막는다. mutableListOf로 만든 리스트 내부 변경은 가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "val은 바인딩 재대입을 막는다. mutableListOf로 만든 리스트 내부 변경은 가능하다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val xs = mutableListOf(1,2)\nxs.add(3)\nprintln(xs.size)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-036",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "읽기 전용 바인딩",
+    "prompt": "count를 다른 값으로 재대입할 수 없는 바인딩 키워드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "const",
+        "explanation": "이 조건에서 const는 성립하지 않는다. val은 읽기 전용 바인딩이며 var은 재대입을 허용한다. const는 단독 지역 선언 키워드가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "let",
+        "explanation": "이 조건에서 let는 성립하지 않는다. val은 읽기 전용 바인딩이며 var은 재대입을 허용한다. const는 단독 지역 선언 키워드가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "val",
+        "explanation": "val은 읽기 전용 바인딩이며 var은 재대입을 허용한다. const는 단독 지역 선언 키워드가 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "var",
+        "explanation": "이 조건에서 var는 성립하지 않는다. val은 읽기 전용 바인딩이며 var은 재대입을 허용한다. const는 단독 지역 선언 키워드가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "val은 읽기 전용 바인딩이며 var은 재대입을 허용한다. const는 단독 지역 선언 키워드가 아니다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "____ count = 7\nprintln(count)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-037",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "null 허용 타입",
+    "prompt": "null을 허용하는 Int 타입의 접미사는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "!",
+        "explanation": "이 조건에서 !는 성립하지 않는다. Int?가 nullable 타입을 뜻한다. Int 자체에는 null을 대입할 수 없다."
+      },
+      {
+        "id": "c2",
+        "text": "&",
+        "explanation": "이 조건에서 &는 성립하지 않는다. Int?가 nullable 타입을 뜻한다. Int 자체에는 null을 대입할 수 없다."
+      },
+      {
+        "id": "c0",
+        "text": "?",
+        "explanation": "Int?가 nullable 타입을 뜻한다. Int 자체에는 null을 대입할 수 없다."
+      },
+      {
+        "id": "c3",
+        "text": "*",
+        "explanation": "이 조건에서 *는 성립하지 않는다. Int?가 nullable 타입을 뜻한다. Int 자체에는 null을 대입할 수 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Int?가 nullable 타입을 뜻한다. Int 자체에는 null을 대입할 수 없다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "val n: Int____ = null\nprintln(n)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-038",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "공백 제거",
+    "prompt": "문자열 양 끝 공백을 제거하는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "drop",
+        "explanation": "이 조건에서 drop는 성립하지 않는다. trim은 양쪽 공백을 제거한 새 문자열을 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "trim",
+        "explanation": "trim은 양쪽 공백을 제거한 새 문자열을 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "split",
+        "explanation": "이 조건에서 split는 성립하지 않는다. trim은 양쪽 공백을 제거한 새 문자열을 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "repeat",
+        "explanation": "이 조건에서 repeat는 성립하지 않는다. trim은 양쪽 공백을 제거한 새 문자열을 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "trim은 양쪽 공백을 제거한 새 문자열을 반환한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "println(\"  cs  \".____())",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-039",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "리스트 첫 요소",
+    "prompt": "첫 요소 3을 반환하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "count",
+        "explanation": "이 조건에서 count는 성립하지 않는다. first는 첫 요소, last는 마지막 요소, count는 요소 수, sum은 합계다."
+      },
+      {
+        "id": "c1",
+        "text": "last",
+        "explanation": "이 조건에서 last는 성립하지 않는다. first는 첫 요소, last는 마지막 요소, count는 요소 수, sum은 합계다."
+      },
+      {
+        "id": "c0",
+        "text": "first",
+        "explanation": "first는 첫 요소, last는 마지막 요소, count는 요소 수, sum은 합계다."
+      },
+      {
+        "id": "c3",
+        "text": "sum",
+        "explanation": "이 조건에서 sum는 성립하지 않는다. first는 첫 요소, last는 마지막 요소, count는 요소 수, sum은 합계다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "first는 첫 요소, last는 마지막 요소, count는 요소 수, sum은 합계다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "println(listOf(3,7,9).____())",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-040",
+    "subject": "kotlin",
+    "difficulty": "easy",
+    "topic": "조건 원소 포함",
+    "prompt": "리스트가 값 2를 포함하는지 확인하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "plus",
+        "explanation": "이 조건에서 plus는 성립하지 않는다. contains는 boolean을 반환한다. get은 인덱스 접근, indexOf는 위치, plus는 새 리스트다."
+      },
+      {
+        "id": "c0",
+        "text": "contains",
+        "explanation": "contains는 boolean을 반환한다. get은 인덱스 접근, indexOf는 위치, plus는 새 리스트다."
+      },
+      {
+        "id": "c2",
+        "text": "indexOf",
+        "explanation": "이 조건에서 indexOf는 성립하지 않는다. contains는 boolean을 반환한다. get은 인덱스 접근, indexOf는 위치, plus는 새 리스트다."
+      },
+      {
+        "id": "c1",
+        "text": "get",
+        "explanation": "이 조건에서 get는 성립하지 않는다. contains는 boolean을 반환한다. get은 인덱스 접근, indexOf는 위치, plus는 새 리스트다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "contains는 boolean을 반환한다. get은 인덱스 접근, indexOf는 위치, plus는 새 리스트다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "println(listOf(1,2,3).____(2))",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-041",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "map 값 변환",
+    "prompt": "map 값 변환: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "[1, 2, 3]",
+        "explanation": "이 조건에서 [1, 2, 3]는 성립하지 않는다. map은 각 요소를 람다 결과로 변환한 새 리스트를 만든다."
+      },
+      {
+        "id": "c0",
+        "text": "[2, 4, 6]",
+        "explanation": "map은 각 요소를 람다 결과로 변환한 새 리스트를 만든다."
+      },
+      {
+        "id": "c3",
+        "text": "[1, 4, 9]",
+        "explanation": "이 조건에서 [1, 4, 9]는 성립하지 않는다. map은 각 요소를 람다 결과로 변환한 새 리스트를 만든다."
+      },
+      {
+        "id": "c2",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. map은 각 요소를 람다 결과로 변환한 새 리스트를 만든다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "map은 각 요소를 람다 결과로 변환한 새 리스트를 만든다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "println(listOf(1,2,3).map { it * 2 })",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-042",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "filter 선택",
+    "prompt": "Kotlin filter 선택: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "[false, true, false, true]",
+        "explanation": "이 조건에서 [false, true, false, true]는 성립하지 않는다. filter는 조건이 true인 원소만 유지한다. 조건 결과 자체를 저장하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "[1, 3]",
+        "explanation": "이 조건에서 [1, 3]는 성립하지 않는다. filter는 조건이 true인 원소만 유지한다. 조건 결과 자체를 저장하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "[1, 2, 3, 4]",
+        "explanation": "이 조건에서 [1, 2, 3, 4]는 성립하지 않는다. filter는 조건이 true인 원소만 유지한다. 조건 결과 자체를 저장하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "[2, 4]",
+        "explanation": "filter는 조건이 true인 원소만 유지한다. 조건 결과 자체를 저장하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "filter는 조건이 true인 원소만 유지한다. 조건 결과 자체를 저장하지 않는다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "println(listOf(1,2,3,4).filter { it % 2 == 0 })",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-043",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "let 결과값",
+    "prompt": "let 결과값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "let은 블록의 마지막 식을 결과로 반환한다. length 2에 1을 더해 3이다."
+      },
+      {
+        "id": "c2",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. let은 블록의 마지막 식을 결과로 반환한다. length 2에 1을 더해 3이다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. let은 블록의 마지막 식을 결과로 반환한다. length 2에 1을 더해 3이다."
+      },
+      {
+        "id": "c1",
+        "text": "cs",
+        "explanation": "이 조건에서 cs는 성립하지 않는다. let은 블록의 마지막 식을 결과로 반환한다. length 2에 1을 더해 3이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "let은 블록의 마지막 식을 결과로 반환한다. length 2에 1을 더해 3이다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val value = \"cs\".let { it.length + 1 }\nprintln(value)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-044",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "also 수신자 반환",
+    "prompt": "also 수신자 반환: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. also는 블록 결과가 아닌 수신자 리스트를 반환한다. 블록의 add는 같은 리스트를 수정한다."
+      },
+      {
+        "id": "c2",
+        "text": "[1]",
+        "explanation": "이 조건에서 [1]는 성립하지 않는다. also는 블록 결과가 아닌 수신자 리스트를 반환한다. 블록의 add는 같은 리스트를 수정한다."
+      },
+      {
+        "id": "c1",
+        "text": "true",
+        "explanation": "이 조건에서 true는 성립하지 않는다. also는 블록 결과가 아닌 수신자 리스트를 반환한다. 블록의 add는 같은 리스트를 수정한다."
+      },
+      {
+        "id": "c0",
+        "text": "[1, 2]",
+        "explanation": "also는 블록 결과가 아닌 수신자 리스트를 반환한다. 블록의 add는 같은 리스트를 수정한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "also는 블록 결과가 아닌 수신자 리스트를 반환한다. 블록의 add는 같은 리스트를 수정한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val values = mutableListOf(1).also { it.add(2) }\nprintln(values)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-045",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "associate 중복 키",
+    "prompt": "associate 중복 키: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. associateWith는 항목을 키로 하는 map을 만들며 중복 키 a는 하나로 합쳐진다."
+      },
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. associateWith는 항목을 키로 하는 map을 만들며 중복 키 a는 하나로 합쳐진다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. associateWith는 항목을 키로 하는 map을 만들며 중복 키 a는 하나로 합쳐진다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "associateWith는 항목을 키로 하는 map을 만들며 중복 키 a는 하나로 합쳐진다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "associateWith는 항목을 키로 하는 map을 만들며 중복 키 a는 하나로 합쳐진다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val values = listOf(\"a\",\"a\",\"b\").associateWith { it.length }\nprintln(values.size)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-046",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "when 값 분기",
+    "prompt": "when 값 분기: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "low",
+        "explanation": "이 조건에서 low는 성립하지 않는다. 3은 닫힌 범위 3..5에 포함되어 mid 분기가 선택된다."
+      },
+      {
+        "id": "c2",
+        "text": "high",
+        "explanation": "이 조건에서 high는 성립하지 않는다. 3은 닫힌 범위 3..5에 포함되어 mid 분기가 선택된다."
+      },
+      {
+        "id": "c0",
+        "text": "mid",
+        "explanation": "3은 닫힌 범위 3..5에 포함되어 mid 분기가 선택된다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 3은 닫힌 범위 3..5에 포함되어 mid 분기가 선택된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "3은 닫힌 범위 3..5에 포함되어 mid 분기가 선택된다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val x = 3\nval label = when (x) {\n  1, 2 -> \"low\"\n  in 3..5 -> \"mid\"\n  else -> \"high\"\n}\nprintln(label)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-047",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "null 원소 제외",
+    "prompt": "null 원소를 제거해 [1, 3]을 얻는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "sorted",
+        "explanation": "이 조건에서 sorted는 성립하지 않는다. filterNotNull은 null 원소를 버리고 비null 요소 타입의 리스트를 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "distinct",
+        "explanation": "이 조건에서 distinct는 성립하지 않는다. filterNotNull은 null 원소를 버리고 비null 요소 타입의 리스트를 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "reversed",
+        "explanation": "이 조건에서 reversed는 성립하지 않는다. filterNotNull은 null 원소를 버리고 비null 요소 타입의 리스트를 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "filterNotNull",
+        "explanation": "filterNotNull은 null 원소를 버리고 비null 요소 타입의 리스트를 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "filterNotNull은 null 원소를 버리고 비null 요소 타입의 리스트를 반환한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "val values = listOf(1,null,3)\nprintln(values.____())",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-048",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "안전한 숫자 파싱",
+    "prompt": "잘못된 숫자에서 예외 대신 null을 얻는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "toInt",
+        "explanation": "이 조건에서 toInt는 성립하지 않는다. toIntOrNull은 숫자 변환 실패를 null로 반환하여 ?:로 처리할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "toString",
+        "explanation": "이 조건에서 toString는 성립하지 않는다. toIntOrNull은 숫자 변환 실패를 null로 반환하여 ?:로 처리할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "toIntOrNull",
+        "explanation": "toIntOrNull은 숫자 변환 실패를 null로 반환하여 ?:로 처리할 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "length",
+        "explanation": "이 조건에서 length는 성립하지 않는다. toIntOrNull은 숫자 변환 실패를 null로 반환하여 ?:로 처리할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "toIntOrNull은 숫자 변환 실패를 null로 반환하여 ?:로 처리할 수 있다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "println(\"bad\".____() ?: 0)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-049",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "리스트 펼친 매핑",
+    "prompt": "각 결과 리스트를 한 단계 펼쳐 [1, 1, 2, 2]를 만드는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "associateWith",
+        "explanation": "이 조건에서 associateWith는 성립하지 않는다. flatMap은 각 요소를 iterable로 바꾸고 결과들을 한 리스트로 펼친다."
+      },
+      {
+        "id": "c2",
+        "text": "filter",
+        "explanation": "이 조건에서 filter는 성립하지 않는다. flatMap은 각 요소를 iterable로 바꾸고 결과들을 한 리스트로 펼친다."
+      },
+      {
+        "id": "c0",
+        "text": "flatMap",
+        "explanation": "flatMap은 각 요소를 iterable로 바꾸고 결과들을 한 리스트로 펼친다."
+      },
+      {
+        "id": "c1",
+        "text": "map",
+        "explanation": "이 조건에서 map는 성립하지 않는다. flatMap은 각 요소를 iterable로 바꾸고 결과들을 한 리스트로 펼친다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "flatMap은 각 요소를 iterable로 바꾸고 결과들을 한 리스트로 펼친다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "println(listOf(1,2).____ { listOf(it, it) })",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-050",
+    "subject": "kotlin",
+    "difficulty": "medium",
+    "topic": "빈 리스트 조회",
+    "prompt": "빈 리스트 첫 요소를 안전하게 조회하는 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "firstOrNull",
+        "explanation": "firstOrNull은 비어 있으면 null이다. first/single/last는 빈 리스트에서 예외가 된다."
+      },
+      {
+        "id": "c1",
+        "text": "first",
+        "explanation": "이 조건에서 first는 성립하지 않는다. firstOrNull은 비어 있으면 null이다. first/single/last는 빈 리스트에서 예외가 된다."
+      },
+      {
+        "id": "c3",
+        "text": "last",
+        "explanation": "이 조건에서 last는 성립하지 않는다. firstOrNull은 비어 있으면 null이다. first/single/last는 빈 리스트에서 예외가 된다."
+      },
+      {
+        "id": "c2",
+        "text": "single",
+        "explanation": "이 조건에서 single는 성립하지 않는다. firstOrNull은 비어 있으면 null이다. first/single/last는 빈 리스트에서 예외가 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "firstOrNull은 비어 있으면 null이다. first/single/last는 빈 리스트에서 예외가 된다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "println(emptyList<Int>().____() ?: 9)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-051",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "data class 얕은 복사",
+    "prompt": "data class 얕은 복사: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. data class copy는 속성 값을 복사한다. MutableList 참조는 공유되며 깊은 복사가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "[1, 2]",
+        "explanation": "data class copy는 속성 값을 복사한다. MutableList 참조는 공유되며 깊은 복사가 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "[1]",
+        "explanation": "이 조건에서 [1]는 성립하지 않는다. data class copy는 속성 값을 복사한다. MutableList 참조는 공유되며 깊은 복사가 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "[2]",
+        "explanation": "이 조건에서 [2]는 성립하지 않는다. data class copy는 속성 값을 복사한다. MutableList 참조는 공유되며 깊은 복사가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "data class copy는 속성 값을 복사한다. MutableList 참조는 공유되며 깊은 복사가 아니다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "data class Box(val items: MutableList<Int>)\nval a = Box(mutableListOf(1))\nval b = a.copy()\nb.items.add(2)\nprintln(a.items)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-052",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "lazy 최초 접근",
+    "prompt": "lazy 최초 접근: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0\n7\n7\n2",
+        "explanation": "이 조건에서 0\n7\n7\n2는 성립하지 않는다. lazy 초기화는 최초 접근 때 한 번 실행되어 이후 값 7을 재사용한다."
+      },
+      {
+        "id": "c1",
+        "text": "1\n7\n7\n1",
+        "explanation": "이 조건에서 1\n7\n7\n1는 성립하지 않는다. lazy 초기화는 최초 접근 때 한 번 실행되어 이후 값 7을 재사용한다."
+      },
+      {
+        "id": "c3",
+        "text": "0\n0\n0\n0",
+        "explanation": "이 조건에서 0\n0\n0\n0는 성립하지 않는다. lazy 초기화는 최초 접근 때 한 번 실행되어 이후 값 7을 재사용한다."
+      },
+      {
+        "id": "c0",
+        "text": "0\n7\n7\n1",
+        "explanation": "lazy 초기화는 최초 접근 때 한 번 실행되어 이후 값 7을 재사용한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "lazy 초기화는 최초 접근 때 한 번 실행되어 이후 값 7을 재사용한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var calls = 0\nval n by lazy { calls++; 7 }\nprintln(calls)\nprintln(n)\nprintln(n)\nprintln(calls)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-053",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "Sequence 지연 처리",
+    "prompt": "Sequence 지연 처리: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0\n2\n3",
+        "explanation": "이 조건에서 0\n2\n3는 성립하지 않는다. Sequence map은 지연 실행된다. first 종료 연산은 첫 원소 하나만 처리하므로 calls가 1이다."
+      },
+      {
+        "id": "c0",
+        "text": "0\n2\n1",
+        "explanation": "Sequence map은 지연 실행된다. first 종료 연산은 첫 원소 하나만 처리하므로 calls가 1이다."
+      },
+      {
+        "id": "c1",
+        "text": "3\n2\n3",
+        "explanation": "이 조건에서 3\n2\n3는 성립하지 않는다. Sequence map은 지연 실행된다. first 종료 연산은 첫 원소 하나만 처리하므로 calls가 1이다."
+      },
+      {
+        "id": "c3",
+        "text": "1\n2\n1",
+        "explanation": "이 조건에서 1\n2\n1는 성립하지 않는다. Sequence map은 지연 실행된다. first 종료 연산은 첫 원소 하나만 처리하므로 calls가 1이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Sequence map은 지연 실행된다. first 종료 연산은 첫 원소 하나만 처리하므로 calls가 1이다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var calls = 0\nval seq = listOf(1,2,3).asSequence().map { calls++; it*2 }\nprintln(calls)\nprintln(seq.first())\nprintln(calls)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-054",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "동등성과 참조 동일성",
+    "prompt": "동등성과 참조 동일성: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "true false",
+        "explanation": "==는 구조적 동등성을, ===는 참조 동일성을 비교한다. 내용은 같지만 별개 리스트다."
+      },
+      {
+        "id": "c1",
+        "text": "true true",
+        "explanation": "이 조건에서 true true는 성립하지 않는다. ==는 구조적 동등성을, ===는 참조 동일성을 비교한다. 내용은 같지만 별개 리스트다."
+      },
+      {
+        "id": "c3",
+        "text": "false false",
+        "explanation": "이 조건에서 false false는 성립하지 않는다. ==는 구조적 동등성을, ===는 참조 동일성을 비교한다. 내용은 같지만 별개 리스트다."
+      },
+      {
+        "id": "c2",
+        "text": "false true",
+        "explanation": "이 조건에서 false true는 성립하지 않는다. ==는 구조적 동등성을, ===는 참조 동일성을 비교한다. 내용은 같지만 별개 리스트다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "==는 구조적 동등성을, ===는 참조 동일성을 비교한다. 내용은 같지만 별개 리스트다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val a = mutableListOf(1)\nval b = mutableListOf(1)\nprintln(\"${a == b} ${a === b}\")",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-055",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "복사 리스트 분리",
+    "prompt": "복사 리스트 분리: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. toList는 현재 원소를 담는 새 읽기 전용 리스트를 만든다. 원본의 이후 추가는 반영되지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "[1, 2]",
+        "explanation": "toList는 현재 원소를 담는 새 읽기 전용 리스트를 만든다. 원본의 이후 추가는 반영되지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "[]",
+        "explanation": "이 조건에서 []는 성립하지 않는다. toList는 현재 원소를 담는 새 읽기 전용 리스트를 만든다. 원본의 이후 추가는 반영되지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "[1, 2, 3]",
+        "explanation": "이 조건에서 [1, 2, 3]는 성립하지 않는다. toList는 현재 원소를 담는 새 읽기 전용 리스트를 만든다. 원본의 이후 추가는 반영되지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "toList는 현재 원소를 담는 새 읽기 전용 리스트를 만든다. 원본의 이후 추가는 반영되지 않는다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val source = mutableListOf(1,2)\nval copy = source.toList()\nsource.add(3)\nprintln(copy)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-056",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "접힘 초기값",
+    "prompt": "접힘 초기값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. fold는 초기값 10부터 시작해 2와 3을 순서대로 누적한다."
+      },
+      {
+        "id": "c2",
+        "text": "10",
+        "explanation": "이 조건에서 10는 성립하지 않는다. fold는 초기값 10부터 시작해 2와 3을 순서대로 누적한다."
+      },
+      {
+        "id": "c0",
+        "text": "15",
+        "explanation": "fold는 초기값 10부터 시작해 2와 3을 순서대로 누적한다."
+      },
+      {
+        "id": "c3",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. fold는 초기값 10부터 시작해 2와 3을 순서대로 누적한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "fold는 초기값 10부터 시작해 2와 3을 순서대로 누적한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val n = listOf(2,3).fold(10) { acc, x -> acc + x }\nprintln(n)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-057",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "runCatching 복구",
+    "prompt": "runCatching 복구: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 예외 전파",
+        "explanation": "이 조건에서 항상 예외 전파는 성립하지 않는다. runCatching은 실패를 Result에 담고 getOrElse가 실패 시 대체값을 제공한다."
+      },
+      {
+        "id": "c0",
+        "text": "9",
+        "explanation": "runCatching은 실패를 Result에 담고 getOrElse가 실패 시 대체값을 제공한다."
+      },
+      {
+        "id": "c1",
+        "text": "bad",
+        "explanation": "이 조건에서 bad는 성립하지 않는다. runCatching은 실패를 Result에 담고 getOrElse가 실패 시 대체값을 제공한다."
+      },
+      {
+        "id": "c2",
+        "text": "null",
+        "explanation": "이 조건에서 null는 성립하지 않는다. runCatching은 실패를 Result에 담고 getOrElse가 실패 시 대체값을 제공한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "runCatching은 실패를 Result에 담고 getOrElse가 실패 시 대체값을 제공한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "val result = runCatching { error(\"bad\") }.getOrElse { 9 }\nprintln(result)",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-058",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "객체 설정 apply",
+    "prompt": "수신자를 this로 쓰고 같은 리스트를 반환하는 범위 함수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "run",
+        "explanation": "이 조건에서 run는 성립하지 않는다. apply는 수신자를 this로 제공하며 수신자 자체를 반환한다. run/with는 마지막 식 반환이다."
+      },
+      {
+        "id": "c1",
+        "text": "let",
+        "explanation": "이 조건에서 let는 성립하지 않는다. apply는 수신자를 this로 제공하며 수신자 자체를 반환한다. run/with는 마지막 식 반환이다."
+      },
+      {
+        "id": "c0",
+        "text": "apply",
+        "explanation": "apply는 수신자를 this로 제공하며 수신자 자체를 반환한다. run/with는 마지막 식 반환이다."
+      },
+      {
+        "id": "c3",
+        "text": "with",
+        "explanation": "이 조건에서 with는 성립하지 않는다. apply는 수신자를 this로 제공하며 수신자 자체를 반환한다. run/with는 마지막 식 반환이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "apply는 수신자를 this로 제공하며 수신자 자체를 반환한다. run/with는 마지막 식 반환이다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Kotlin 2.2.20 / JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "val values = mutableListOf<Int>().____ { add(2); add(3) }\nprintln(values.sum())",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-059",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "확장 함수 정적 결정",
+    "prompt": "Base 타입 변수가 Child 객체를 참조할 때 Base와 Child에 각각 정의한 같은 이름 확장 함수의 선택 기준은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "실제 객체 Child",
+        "explanation": "이 조건에서 실제 객체 Child는 성립하지 않는다. 확장 함수는 정적으로 결정된다. 동적 디스패치되는 멤버 재정의와 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "확장 함수는 오버로드 불가능",
+        "explanation": "이 조건에서 확장 함수는 오버로드 불가능는 성립하지 않는다. 확장 함수는 정적으로 결정된다. 동적 디스패치되는 멤버 재정의와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 마지막에 선언한 확장",
+        "explanation": "이 조건에서 항상 마지막에 선언한 확장는 성립하지 않는다. 확장 함수는 정적으로 결정된다. 동적 디스패치되는 멤버 재정의와 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "변수의 선언 타입 Base",
+        "explanation": "확장 함수는 정적으로 결정된다. 동적 디스패치되는 멤버 재정의와 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "확장 함수는 정적으로 결정된다. 동적 디스패치되는 멤버 재정의와 다르다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "language": "kotlin"
+  },
+  {
+    "id": "kotlin-060",
+    "subject": "kotlin",
+    "difficulty": "hard",
+    "topic": "nullable 역참조 오류",
+    "prompt": "다음 코드가 컴파일되지 않는 이유와 해결은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "val에는 메서드 호출 불가능",
+        "explanation": "이 조건에서 val에는 메서드 호출 불가능는 성립하지 않는다. String?은 null일 수 있어 직접 속성 접근을 금지한다. ?.length나 null 검사로 안전성을 확보해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "nullable이므로 안전 호출 ?. 또는 null 검사 필요",
+        "explanation": "String?은 null일 수 있어 직접 속성 접근을 금지한다. ?.length나 null 검사로 안전성을 확보해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "null은 모든 Int로 자동 변환",
+        "explanation": "이 조건에서 null은 모든 Int로 자동 변환는 성립하지 않는다. String?은 null일 수 있어 직접 속성 접근을 금지한다. ?.length나 null 검사로 안전성을 확보해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "String에는 length가 없음",
+        "explanation": "이 조건에서 String에는 length가 없음는 성립하지 않는다. String?은 null일 수 있어 직접 속성 접근을 금지한다. ?.length나 null 검사로 안전성을 확보해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "String?은 null일 수 있어 직접 속성 접근을 금지한다. ?.length나 null 검사로 안전성을 확보해야 한다.",
+    "environment": "Kotlin 2.x / JVM. 표준 라이브러리를 사용한 main 내부 코드.",
+    "sources": [
+      {
+        "title": "kotlin 공식 개념 근거",
+        "url": "https://kotlinlang.org/docs/home.html"
+      },
+      {
+        "title": "Kotlin 컬렉션 연산",
+        "url": "https://kotlinlang.org/docs/collection-operations.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "val name: String? = null\nprintln(name.length)",
+    "language": "kotlin"
   }
 ]

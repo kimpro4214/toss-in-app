@@ -1528,5 +1528,1384 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "csharp-031",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "정수 나눗셈 결과",
+    "prompt": "정수 나눗셈 결과: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "4.25",
+        "explanation": "이 조건에서 4.25는 성립하지 않는다. 두 int의 나눗셈은 정수 몫을 반환해 소수 부분을 버린다."
+      },
+      {
+        "id": "c0",
+        "text": "4",
+        "explanation": "두 int의 나눗셈은 정수 몫을 반환해 소수 부분을 버린다."
+      },
+      {
+        "id": "c3",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 두 int의 나눗셈은 정수 몫을 반환해 소수 부분을 버린다."
+      },
+      {
+        "id": "c2",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. 두 int의 나눗셈은 정수 몫을 반환해 소수 부분을 버린다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "두 int의 나눗셈은 정수 몫을 반환해 소수 부분을 버린다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "Console.WriteLine(17 / 4);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-032",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "문자열 보간",
+    "prompt": "문자열 보간: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 보간 문자열은 중괄호 식을 평가한 값으로 대체한다."
+      },
+      {
+        "id": "c2",
+        "text": "count=3",
+        "explanation": "이 조건에서 count=3는 성립하지 않는다. 보간 문자열은 중괄호 식을 평가한 값으로 대체한다."
+      },
+      {
+        "id": "c0",
+        "text": "count=4",
+        "explanation": "보간 문자열은 중괄호 식을 평가한 값으로 대체한다."
+      },
+      {
+        "id": "c1",
+        "text": "count=3+1",
+        "explanation": "이 조건에서 count=3+1는 성립하지 않는다. 보간 문자열은 중괄호 식을 평가한 값으로 대체한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "보간 문자열은 중괄호 식을 평가한 값으로 대체한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 3;\nConsole.WriteLine($\"count={n+1}\");",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-033",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "배열 길이 속성",
+    "prompt": "배열 길이 속성: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "배열의 Length 속성은 요소 개수를 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 배열의 Length 속성은 요소 개수를 반환한다."
+      },
+      {
+        "id": "c2",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 배열의 Length 속성은 요소 개수를 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 배열의 Length 속성은 요소 개수를 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "배열의 Length 속성은 요소 개수를 반환한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int[] values = {2,4,6};\nConsole.WriteLine(values.Length);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-034",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "null 기본값",
+    "prompt": "null 기본값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "빈 문자열",
+        "explanation": "이 조건에서 빈 문자열는 성립하지 않는다. ??는 왼쪽이 null일 때 오른쪽 대체값을 선택한다. nullable 경고를 오류로 취급하지 않는 문맥이다."
+      },
+      {
+        "id": "c1",
+        "text": "null",
+        "explanation": "이 조건에서 null는 성립하지 않는다. ??는 왼쪽이 null일 때 오른쪽 대체값을 선택한다. nullable 경고를 오류로 취급하지 않는 문맥이다."
+      },
+      {
+        "id": "c3",
+        "text": "NullReferenceException",
+        "explanation": "이 조건에서 NullReferenceException는 성립하지 않는다. ??는 왼쪽이 null일 때 오른쪽 대체값을 선택한다. nullable 경고를 오류로 취급하지 않는 문맥이다."
+      },
+      {
+        "id": "c0",
+        "text": "guest",
+        "explanation": "??는 왼쪽이 null일 때 오른쪽 대체값을 선택한다. nullable 경고를 오류로 취급하지 않는 문맥이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "??는 왼쪽이 null일 때 오른쪽 대체값을 선택한다. nullable 경고를 오류로 취급하지 않는 문맥이다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "string name = null;\nConsole.WriteLine(name ?? \"guest\");",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-035",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "리스트 추가와 개수",
+    "prompt": "리스트 추가와 개수: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. List.Add는 요소를 끝에 추가하며 Count는 실제 요소 수이다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. List.Add는 요소를 끝에 추가하며 Count는 실제 요소 수이다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. List.Add는 요소를 끝에 추가하며 Count는 실제 요소 수이다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "List.Add는 요소를 끝에 추가하며 Count는 실제 요소 수이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "List.Add는 요소를 끝에 추가하며 Count는 실제 요소 수이다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var values = new List<int> {1,2};\nvalues.Add(3);\nConsole.WriteLine(values.Count);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-036",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "문자열 길이",
+    "prompt": "문자열 길이 6을 읽는 속성은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "Size",
+        "explanation": "이 조건에서 Size는 성립하지 않는다. string은 Length 속성을 제공한다. 컬렉션의 Count와 구분해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "Capacity",
+        "explanation": "이 조건에서 Capacity는 성립하지 않는다. string은 Length 속성을 제공한다. 컬렉션의 Count와 구분해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "Length",
+        "explanation": "string은 Length 속성을 제공한다. 컬렉션의 Count와 구분해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "Count",
+        "explanation": "이 조건에서 Count는 성립하지 않는다. string은 Length 속성을 제공한다. 컬렉션의 Count와 구분해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "string은 Length 속성을 제공한다. 컬렉션의 Count와 구분해야 한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "Console.WriteLine(\"engine\".____);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-037",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "문자열 공백 제거",
+    "prompt": "문자열 앞뒤 공백을 제거하는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "Substring",
+        "explanation": "이 조건에서 Substring는 성립하지 않는다. Trim은 양쪽 공백을 제거한다. Split은 배열, Replace는 대체 인수가 필요하다."
+      },
+      {
+        "id": "c0",
+        "text": "Trim",
+        "explanation": "Trim은 양쪽 공백을 제거한다. Split은 배열, Replace는 대체 인수가 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "Split",
+        "explanation": "이 조건에서 Split는 성립하지 않는다. Trim은 양쪽 공백을 제거한다. Split은 배열, Replace는 대체 인수가 필요하다."
+      },
+      {
+        "id": "c2",
+        "text": "Replace",
+        "explanation": "이 조건에서 Replace는 성립하지 않는다. Trim은 양쪽 공백을 제거한다. Split은 배열, Replace는 대체 인수가 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Trim은 양쪽 공백을 제거한다. Split은 배열, Replace는 대체 인수가 필요하다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "Console.WriteLine(\"  CS  \".____());",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-038",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "요소 포함 조회",
+    "prompt": "값 3의 포함 여부를 조회하는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "IndexOf",
+        "explanation": "이 조건에서 IndexOf는 성립하지 않는다. Contains는 포함 여부 boolean을 반환한다. Remove는 삭제 부작용이 있으므로 조회 요구에 맞지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "Contains",
+        "explanation": "Contains는 포함 여부 boolean을 반환한다. Remove는 삭제 부작용이 있으므로 조회 요구에 맞지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "Add",
+        "explanation": "이 조건에서 Add는 성립하지 않는다. Contains는 포함 여부 boolean을 반환한다. Remove는 삭제 부작용이 있으므로 조회 요구에 맞지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "Remove",
+        "explanation": "이 조건에서 Remove는 성립하지 않는다. Contains는 포함 여부 boolean을 반환한다. Remove는 삭제 부작용이 있으므로 조회 요구에 맞지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Contains는 포함 여부 boolean을 반환한다. Remove는 삭제 부작용이 있으므로 조회 요구에 맞지 않는다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "var values = new List<int> {1,3,5};\nConsole.WriteLine(values.____(3));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-039",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "문자열 숫자 파싱",
+    "prompt": "문자열에서 int 값으로 변환하는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "CompareTo",
+        "explanation": "이 조건에서 CompareTo는 성립하지 않는다. int.Parse는 숫자 텍스트를 정수로 변환한다."
+      },
+      {
+        "id": "c3",
+        "text": "Equals",
+        "explanation": "이 조건에서 Equals는 성립하지 않는다. int.Parse는 숫자 텍스트를 정수로 변환한다."
+      },
+      {
+        "id": "c1",
+        "text": "ToString",
+        "explanation": "이 조건에서 ToString는 성립하지 않는다. int.Parse는 숫자 텍스트를 정수로 변환한다."
+      },
+      {
+        "id": "c0",
+        "text": "Parse",
+        "explanation": "int.Parse는 숫자 텍스트를 정수로 변환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "int.Parse는 숫자 텍스트를 정수로 변환한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "Console.WriteLine(int.____(\"12\") + 1);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-040",
+    "subject": "csharp",
+    "difficulty": "easy",
+    "topic": "List 끝 추가",
+    "prompt": "List 끝에 새 요소를 추가하는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Push",
+        "explanation": "이 조건에서 Push는 성립하지 않는다. List는 Add를 제공한다. Push는 Stack, Enqueue는 Queue의 메서드다."
+      },
+      {
+        "id": "c3",
+        "text": "Put",
+        "explanation": "이 조건에서 Put는 성립하지 않는다. List는 Add를 제공한다. Push는 Stack, Enqueue는 Queue의 메서드다."
+      },
+      {
+        "id": "c0",
+        "text": "Add",
+        "explanation": "List는 Add를 제공한다. Push는 Stack, Enqueue는 Queue의 메서드다."
+      },
+      {
+        "id": "c2",
+        "text": "Enqueue",
+        "explanation": "이 조건에서 Enqueue는 성립하지 않는다. List는 Add를 제공한다. Push는 Stack, Enqueue는 Queue의 메서드다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "List는 Add를 제공한다. Push는 Stack, Enqueue는 Queue의 메서드다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "var values = new List<int>();\nvalues.____(7);\nConsole.WriteLine(values.Count);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-041",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "배열 참조 별칭",
+    "prompt": "배열 참조 별칭: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 배열은 참조 타입이며 a와 b가 같은 객체를 참조한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 배열은 참조 타입이며 a와 b가 같은 객체를 참조한다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 배열은 참조 타입이며 a와 b가 같은 객체를 참조한다."
+      },
+      {
+        "id": "c0",
+        "text": "8",
+        "explanation": "배열은 참조 타입이며 a와 b가 같은 객체를 참조한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "배열은 참조 타입이며 a와 b가 같은 객체를 참조한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int[] a = {1,2};\nint[] b = a;\nb[0] = 8;\nConsole.WriteLine(a[0]);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-042",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "LINQ Where 필터",
+    "prompt": "LINQ Where 필터: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "1,2,3,4",
+        "explanation": "이 조건에서 1,2,3,4는 성립하지 않는다. Where는 조건이 참인 원소만 통과시킨다. Select의 변환과 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "2,4",
+        "explanation": "Where는 조건이 참인 원소만 통과시킨다. Select의 변환과 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "1,3",
+        "explanation": "이 조건에서 1,3는 성립하지 않는다. Where는 조건이 참인 원소만 통과시킨다. Select의 변환과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "False,True,False,True",
+        "explanation": "이 조건에서 False,True,False,True는 성립하지 않는다. Where는 조건이 참인 원소만 통과시킨다. Select의 변환과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Where는 조건이 참인 원소만 통과시킨다. Select의 변환과 다르다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var values = new[] {1,2,3,4};\nConsole.WriteLine(string.Join(\",\", values.Where(x => x%2 == 0)));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-043",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "LINQ Select 변환",
+    "prompt": "LINQ Select 변환: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "3,6",
+        "explanation": "Select는 각 요소를 함수 결과로 변환한다."
+      },
+      {
+        "id": "c3",
+        "text": "1,4",
+        "explanation": "이 조건에서 1,4는 성립하지 않는다. Select는 각 요소를 함수 결과로 변환한다."
+      },
+      {
+        "id": "c1",
+        "text": "1,2",
+        "explanation": "이 조건에서 1,2는 성립하지 않는다. Select는 각 요소를 함수 결과로 변환한다."
+      },
+      {
+        "id": "c2",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. Select는 각 요소를 함수 결과로 변환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Select는 각 요소를 함수 결과로 변환한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "Console.WriteLine(string.Join(\",\", new[] {1,2}.Select(x => x*3)));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-044",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "Dictionary 키 갱신",
+    "prompt": "Dictionary 키 갱신: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "ArgumentException",
+        "explanation": "이 조건에서 ArgumentException는 성립하지 않는다. 인덱서는 기존 키의 값을 교체한다. Add로 중복 키를 추가하는 것과 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "1",
+        "explanation": "인덱서는 기존 키의 값을 교체한다. Add로 중복 키를 추가하는 것과 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 인덱서는 기존 키의 값을 교체한다. Add로 중복 키를 추가하는 것과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 인덱서는 기존 키의 값을 교체한다. Add로 중복 키를 추가하는 것과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "인덱서는 기존 키의 값을 교체한다. Add로 중복 키를 추가하는 것과 다르다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var values = new Dictionary<string,int>();\nvalues[\"a\"] = 1;\nvalues[\"a\"] = 9;\nConsole.WriteLine(values.Count);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-045",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "HashSet 중복 배제",
+    "prompt": "HashSet 중복 배제: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. HashSet은 서로 다른 값 1과 3만 유지한다."
+      },
+      {
+        "id": "c1",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. HashSet은 서로 다른 값 1과 3만 유지한다."
+      },
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. HashSet은 서로 다른 값 1과 3만 유지한다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "HashSet은 서로 다른 값 1과 3만 유지한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "HashSet은 서로 다른 값 1과 3만 유지한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var values = new HashSet<int> {1,1,3};\nConsole.WriteLine(values.Count);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-046",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "ToArray 복사",
+    "prompt": "ToArray 복사: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. ToArray는 새로운 배열을 만들어 int 값들을 복사한다. 원래 배열 요소는 변경되지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "1",
+        "explanation": "ToArray는 새로운 배열을 만들어 int 값들을 복사한다. 원래 배열 요소는 변경되지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. ToArray는 새로운 배열을 만들어 int 값들을 복사한다. 원래 배열 요소는 변경되지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. ToArray는 새로운 배열을 만들어 int 값들을 복사한다. 원래 배열 요소는 변경되지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "ToArray는 새로운 배열을 만들어 int 값들을 복사한다. 원래 배열 요소는 변경되지 않는다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int[] a = {1,2};\nint[] b = a.ToArray();\nb[0] = 9;\nConsole.WriteLine(a[0]);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-047",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "LINQ 합계",
+    "prompt": "LINQ에서 합계 9를 얻는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "Min",
+        "explanation": "이 조건에서 Min는 성립하지 않는다. Sum은 수치 합계, Count는 원소 수, Min/Max는 극값이다."
+      },
+      {
+        "id": "c1",
+        "text": "Count",
+        "explanation": "이 조건에서 Count는 성립하지 않는다. Sum은 수치 합계, Count는 원소 수, Min/Max는 극값이다."
+      },
+      {
+        "id": "c3",
+        "text": "Max",
+        "explanation": "이 조건에서 Max는 성립하지 않는다. Sum은 수치 합계, Count는 원소 수, Min/Max는 극값이다."
+      },
+      {
+        "id": "c0",
+        "text": "Sum",
+        "explanation": "Sum은 수치 합계, Count는 원소 수, Min/Max는 극값이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Sum은 수치 합계, Count는 원소 수, Min/Max는 극값이다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "Console.WriteLine(new[] {2,3,4}.____());",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-048",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "정렬 키",
+    "prompt": "문자열 길이 오름차순 정렬 후 a를 얻는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "OrderBy",
+        "explanation": "OrderBy는 지정 키의 오름차순 정렬이다. 내림차순은 bbb가 먼저다."
+      },
+      {
+        "id": "c2",
+        "text": "GroupBy",
+        "explanation": "이 조건에서 GroupBy는 성립하지 않는다. OrderBy는 지정 키의 오름차순 정렬이다. 내림차순은 bbb가 먼저다."
+      },
+      {
+        "id": "c3",
+        "text": "Select",
+        "explanation": "이 조건에서 Select는 성립하지 않는다. OrderBy는 지정 키의 오름차순 정렬이다. 내림차순은 bbb가 먼저다."
+      },
+      {
+        "id": "c1",
+        "text": "OrderByDescending",
+        "explanation": "이 조건에서 OrderByDescending는 성립하지 않는다. OrderBy는 지정 키의 오름차순 정렬이다. 내림차순은 bbb가 먼저다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "OrderBy는 지정 키의 오름차순 정렬이다. 내림차순은 bbb가 먼저다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "var words = new[] {\"bbb\",\"a\",\"cc\"};\nConsole.WriteLine(words.____(x => x.Length).First());",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-049",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "Dictionary 안전한 조회",
+    "prompt": "키가 없을 때 예외 없이 false를 반환하는 조회 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "Remove",
+        "explanation": "이 조건에서 Remove는 성립하지 않는다. TryGetValue는 성공 여부를 반환하고 out 매개변수로 값을 전달한다."
+      },
+      {
+        "id": "c1",
+        "text": "Add",
+        "explanation": "이 조건에서 Add는 성립하지 않는다. TryGetValue는 성공 여부를 반환하고 out 매개변수로 값을 전달한다."
+      },
+      {
+        "id": "c0",
+        "text": "TryGetValue",
+        "explanation": "TryGetValue는 성공 여부를 반환하고 out 매개변수로 값을 전달한다."
+      },
+      {
+        "id": "c3",
+        "text": "ContainsValue",
+        "explanation": "이 조건에서 ContainsValue는 성립하지 않는다. TryGetValue는 성공 여부를 반환하고 out 매개변수로 값을 전달한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "TryGetValue는 성공 여부를 반환하고 out 매개변수로 값을 전달한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "var values = new Dictionary<string,int>();\nint n;\nConsole.WriteLine(values.____(\"x\", out n));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-050",
+    "subject": "csharp",
+    "difficulty": "medium",
+    "topic": "빈 시퀀스 기본값",
+    "prompt": "빈 int 시퀀스에서 예외 대신 기본값 0을 얻는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "FirstOrDefault",
+        "explanation": "FirstOrDefault는 비어 있으면 int 기본값 0을 반환한다. First/Single/Last는 예외다."
+      },
+      {
+        "id": "c1",
+        "text": "First",
+        "explanation": "이 조건에서 First는 성립하지 않는다. FirstOrDefault는 비어 있으면 int 기본값 0을 반환한다. First/Single/Last는 예외다."
+      },
+      {
+        "id": "c2",
+        "text": "Single",
+        "explanation": "이 조건에서 Single는 성립하지 않는다. FirstOrDefault는 비어 있으면 int 기본값 0을 반환한다. First/Single/Last는 예외다."
+      },
+      {
+        "id": "c3",
+        "text": "Last",
+        "explanation": "이 조건에서 Last는 성립하지 않는다. FirstOrDefault는 비어 있으면 int 기본값 0을 반환한다. First/Single/Last는 예외다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "FirstOrDefault는 비어 있으면 int 기본값 0을 반환한다. First/Single/Last는 예외다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "Console.WriteLine(new int[0].____());",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-051",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "LINQ 지연 평가",
+    "prompt": "LINQ 지연 평가: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. Where 결과는 보통 지연 평가된다. 열거 시점에는 원본에 3이 추가되어 있다."
+      },
+      {
+        "id": "c2",
+        "text": "1,2",
+        "explanation": "이 조건에서 1,2는 성립하지 않는다. Where 결과는 보통 지연 평가된다. 열거 시점에는 원본에 3이 추가되어 있다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. Where 결과는 보통 지연 평가된다. 열거 시점에는 원본에 3이 추가되어 있다."
+      },
+      {
+        "id": "c0",
+        "text": "2,3",
+        "explanation": "Where 결과는 보통 지연 평가된다. 열거 시점에는 원본에 3이 추가되어 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Where 결과는 보통 지연 평가된다. 열거 시점에는 원본에 3이 추가되어 있다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var values = new List<int> {1,2};\nvar query = values.Where(x => x > 1);\nvalues.Add(3);\nConsole.WriteLine(string.Join(\",\", query));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-052",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "ToList 즉시 평가",
+    "prompt": "ToList 즉시 평가: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "2,3",
+        "explanation": "이 조건에서 2,3는 성립하지 않는다. ToList는 그 시점에 쿼리를 실행해 결과 리스트를 저장한다. 이후 원본 추가는 반영되지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "ToList는 그 시점에 쿼리를 실행해 결과 리스트를 저장한다. 이후 원본 추가는 반영되지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "1,2",
+        "explanation": "이 조건에서 1,2는 성립하지 않는다. ToList는 그 시점에 쿼리를 실행해 결과 리스트를 저장한다. 이후 원본 추가는 반영되지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. ToList는 그 시점에 쿼리를 실행해 결과 리스트를 저장한다. 이후 원본 추가는 반영되지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "ToList는 그 시점에 쿼리를 실행해 결과 리스트를 저장한다. 이후 원본 추가는 반영되지 않는다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var values = new List<int> {1,2};\nvar snapshot = values.Where(x => x > 1).ToList();\nvalues.Add(3);\nConsole.WriteLine(string.Join(\",\", snapshot));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-053",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "후위 증가 평가",
+    "prompt": "후위 증가 평가: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "3 4 4",
+        "explanation": "이 조건에서 3 4 4는 성립하지 않는다. 첫 후위 증가는 3을 저장하고 n=4, 다음 전위 증가는 n=5로 만든 뒤 5를 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "3 5 5",
+        "explanation": "첫 후위 증가는 3을 저장하고 n=4, 다음 전위 증가는 n=5로 만든 뒤 5를 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "4 5 5",
+        "explanation": "이 조건에서 4 5 5는 성립하지 않는다. 첫 후위 증가는 3을 저장하고 n=4, 다음 전위 증가는 n=5로 만든 뒤 5를 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "4 4 4",
+        "explanation": "이 조건에서 4 4 4는 성립하지 않는다. 첫 후위 증가는 3을 저장하고 n=4, 다음 전위 증가는 n=5로 만든 뒤 5를 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "첫 후위 증가는 3을 저장하고 n=4, 다음 전위 증가는 n=5로 만든 뒤 5를 반환한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 3;\nint a = n++;\nint b = ++n;\nConsole.WriteLine($\"{a} {b} {n}\");",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-054",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "unchecked overflow",
+    "prompt": "unchecked overflow: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. unchecked 컨텍스트에서 int의 하위 비트를 유지하여 최대값 다음은 최소값으로 돌아간다."
+      },
+      {
+        "id": "c0",
+        "text": "-2147483648",
+        "explanation": "unchecked 컨텍스트에서 int의 하위 비트를 유지하여 최대값 다음은 최소값으로 돌아간다."
+      },
+      {
+        "id": "c3",
+        "text": "OverflowException",
+        "explanation": "이 조건에서 OverflowException는 성립하지 않는다. unchecked 컨텍스트에서 int의 하위 비트를 유지하여 최대값 다음은 최소값으로 돌아간다."
+      },
+      {
+        "id": "c1",
+        "text": "2147483648",
+        "explanation": "이 조건에서 2147483648는 성립하지 않는다. unchecked 컨텍스트에서 int의 하위 비트를 유지하여 최대값 다음은 최소값으로 돌아간다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "unchecked 컨텍스트에서 int의 하위 비트를 유지하여 최대값 다음은 최소값으로 돌아간다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = int.MaxValue;\nConsole.WriteLine(unchecked(n + 1));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-055",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "finally 지역 재대입",
+    "prompt": "finally 지역 재대입: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. return 값은 finally 실행 전에 결정된다. 지역 정수 변수 재대입이 이미 결정한 반환값을 바꾸지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. return 값은 finally 실행 전에 결정된다. 지역 정수 변수 재대입이 이미 결정한 반환값을 바꾸지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "1",
+        "explanation": "return 값은 finally 실행 전에 결정된다. 지역 정수 변수 재대입이 이미 결정한 반환값을 바꾸지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. return 값은 finally 실행 전에 결정된다. 지역 정수 변수 재대입이 이미 결정한 반환값을 바꾸지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "return 값은 finally 실행 전에 결정된다. 지역 정수 변수 재대입이 이미 결정한 반환값을 바꾸지 않는다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int F() {\n  int n = 1;\n  try { return n; }\n  finally { n = 9; }\n}\nConsole.WriteLine(F());",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-056",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "foreach 개별 캡처",
+    "prompt": "foreach 개별 캡처: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "3,3,3",
+        "explanation": "이 조건에서 3,3,3는 성립하지 않는다. 현대 C# foreach 반복 변수는 반복마다 별도 바인딩을 사용해 각 람다가 해당 값을 캡처한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 현대 C# foreach 반복 변수는 반복마다 별도 바인딩을 사용해 각 람다가 해당 값을 캡처한다."
+      },
+      {
+        "id": "c0",
+        "text": "1,2,3",
+        "explanation": "현대 C# foreach 반복 변수는 반복마다 별도 바인딩을 사용해 각 람다가 해당 값을 캡처한다."
+      },
+      {
+        "id": "c2",
+        "text": "4,4,4",
+        "explanation": "이 조건에서 4,4,4는 성립하지 않는다. 현대 C# foreach 반복 변수는 반복마다 별도 바인딩을 사용해 각 람다가 해당 값을 캡처한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "현대 C# foreach 반복 변수는 반복마다 별도 바인딩을 사용해 각 람다가 해당 값을 캡처한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var functions = new List<Func<int>>();\nforeach (int x in new[] {1,2,3}) functions.Add(() => x);\nConsole.WriteLine(string.Join(\",\", functions.Select(f => f())));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-057",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "for 공유 캡처",
+    "prompt": "for 공유 캡처: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 이 for의 i는 하나의 바인딩이다. 루프 종료 후 호출하면 모두 최종값 3을 읽는다."
+      },
+      {
+        "id": "c2",
+        "text": "2,2,2",
+        "explanation": "이 조건에서 2,2,2는 성립하지 않는다. 이 for의 i는 하나의 바인딩이다. 루프 종료 후 호출하면 모두 최종값 3을 읽는다."
+      },
+      {
+        "id": "c1",
+        "text": "0,1,2",
+        "explanation": "이 조건에서 0,1,2는 성립하지 않는다. 이 for의 i는 하나의 바인딩이다. 루프 종료 후 호출하면 모두 최종값 3을 읽는다."
+      },
+      {
+        "id": "c0",
+        "text": "3,3,3",
+        "explanation": "이 for의 i는 하나의 바인딩이다. 루프 종료 후 호출하면 모두 최종값 3을 읽는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "이 for의 i는 하나의 바인딩이다. 루프 종료 후 호출하면 모두 최종값 3을 읽는다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "var functions = new List<Func<int>>();\nfor (int i = 0; i < 3; ++i) functions.Add(() => i);\nConsole.WriteLine(string.Join(\",\", functions.Select(f => f())));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-058",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "ref 매개변수",
+    "prompt": "호출자의 value 자체를 수정하는 매개변수 한정자는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "out",
+        "explanation": "이 조건에서 out는 성립하지 않는다. ref는 초기화된 호출자 저장 위치에 대한 읽기/쓰기를 허용한다. 호출 구문도 ref로 맞춰야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "in",
+        "explanation": "이 조건에서 in는 성립하지 않는다. ref는 초기화된 호출자 저장 위치에 대한 읽기/쓰기를 허용한다. 호출 구문도 ref로 맞춰야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "ref",
+        "explanation": "ref는 초기화된 호출자 저장 위치에 대한 읽기/쓰기를 허용한다. 호출 구문도 ref로 맞춰야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "params",
+        "explanation": "이 조건에서 params는 성립하지 않는다. ref는 초기화된 호출자 저장 위치에 대한 읽기/쓰기를 허용한다. 호출 구문도 ref로 맞춰야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "ref는 초기화된 호출자 저장 위치에 대한 읽기/쓰기를 허용한다. 호출 구문도 ref로 맞춰야 한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Roslyn C# 12 / .NET Framework 4.8 호환 연산 예시에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "void Change(____ int n) { n = 9; }\nint value = 1;\nChange(ref value);\nConsole.WriteLine(value);",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-059",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "값 검사 checked overflow",
+    "prompt": "checked 컨텍스트에서 다음 덧셈의 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 음수로 순환",
+        "explanation": "이 조건에서 항상 음수로 순환는 성립하지 않는다. checked의 런타임 int overflow는 OverflowException을 던진다. unchecked의 순환과 구분한다."
+      },
+      {
+        "id": "c0",
+        "text": "OverflowException 발생",
+        "explanation": "checked의 런타임 int overflow는 OverflowException을 던진다. unchecked의 순환과 구분한다."
+      },
+      {
+        "id": "c2",
+        "text": "자동으로 long 승격",
+        "explanation": "이 조건에서 자동으로 long 승격는 성립하지 않는다. checked의 런타임 int overflow는 OverflowException을 던진다. unchecked의 순환과 구분한다."
+      },
+      {
+        "id": "c3",
+        "text": "int.MaxValue로 고정",
+        "explanation": "이 조건에서 int.MaxValue로 고정는 성립하지 않는다. checked의 런타임 int overflow는 OverflowException을 던진다. unchecked의 순환과 구분한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "checked의 런타임 int overflow는 OverflowException을 던진다. unchecked의 순환과 구분한다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "int n = int.MaxValue;\nConsole.WriteLine(checked(n + 1));",
+    "language": "csharp"
+  },
+  {
+    "id": "csharp-060",
+    "subject": "csharp",
+    "difficulty": "hard",
+    "topic": "async void 관찰 어려움",
+    "prompt": "UI 이벤트 처리기 외의 일반 비동기 작업에서 async void보다 Task 반환을 권장하는 이유는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Task는 절대 예외가 없음",
+        "explanation": "이 조건에서 Task는 절대 예외가 없음는 성립하지 않는다. Task는 완료와 실패를 호출자에게 표현한다. 이벤트 외 일반 작업의 async void는 await할 수 없어 조합과 예외 관찰이 어렵다."
+      },
+      {
+        "id": "c2",
+        "text": "async void는 동기 함수이기 때문",
+        "explanation": "이 조건에서 async void는 동기 함수이기 때문는 성립하지 않는다. Task는 완료와 실패를 호출자에게 표현한다. 이벤트 외 일반 작업의 async void는 await할 수 없어 조합과 예외 관찰이 어렵다."
+      },
+      {
+        "id": "c0",
+        "text": "호출자가 await하고 예외 및 완료를 관찰할 수 있음",
+        "explanation": "Task는 완료와 실패를 호출자에게 표현한다. 이벤트 외 일반 작업의 async void는 await할 수 없어 조합과 예외 관찰이 어렵다."
+      },
+      {
+        "id": "c3",
+        "text": "Task이면 취소가 자동으로 보장",
+        "explanation": "이 조건에서 Task이면 취소가 자동으로 보장는 성립하지 않는다. Task는 완료와 실패를 호출자에게 표현한다. 이벤트 외 일반 작업의 async void는 await할 수 없어 조합과 예외 관찰이 어렵다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Task는 완료와 실패를 호출자에게 표현한다. 이벤트 외 일반 작업의 async void는 await할 수 없어 조합과 예외 관찰이 어렵다.",
+    "environment": "C# 12 / .NET 8. System, Collections.Generic, Linq를 using한 코드.",
+    "sources": [
+      {
+        "title": "csharp 공식 개념 근거",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "language": "csharp"
   }
 ]

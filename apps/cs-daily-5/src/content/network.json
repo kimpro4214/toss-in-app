@@ -1540,5 +1540,1355 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "network-031",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "스위치 학습 주소",
+    "prompt": "일반적인 이더넷 스위치가 수신 프레임으로 포워딩 테이블을 학습할 때 사용하는 값은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "출발지 MAC 주소",
+        "explanation": "스위치는 어느 포트에서 어떤 출발지 MAC이 관찰되었는지 학습한다. TCP 포트나 HTTP는 상위 계층 정보다."
+      },
+      {
+        "id": "c3",
+        "text": "HTTP 상태 코드",
+        "explanation": "이 조건에서 HTTP 상태 코드는 성립하지 않는다. 스위치는 어느 포트에서 어떤 출발지 MAC이 관찰되었는지 학습한다. TCP 포트나 HTTP는 상위 계층 정보다."
+      },
+      {
+        "id": "c1",
+        "text": "목적지 TCP 포트",
+        "explanation": "이 조건에서 목적지 TCP 포트는 성립하지 않는다. 스위치는 어느 포트에서 어떤 출발지 MAC이 관찰되었는지 학습한다. TCP 포트나 HTTP는 상위 계층 정보다."
+      },
+      {
+        "id": "c2",
+        "text": "출발지 프로세스 ID",
+        "explanation": "이 조건에서 출발지 프로세스 ID는 성립하지 않는다. 스위치는 어느 포트에서 어떤 출발지 MAC이 관찰되었는지 학습한다. TCP 포트나 HTTP는 상위 계층 정보다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "스위치는 어느 포트에서 어떤 출발지 MAC이 관찰되었는지 학습한다. TCP 포트나 HTTP는 상위 계층 정보다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "Cisco 스위치 MAC 주소 학습",
+        "url": "https://www.cisco.com/c/en/us/support/docs/switches/catalyst-9300-switch/222771-understand-unexpected-mac-learning-on-ca.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-032",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "라우터 전달 단위",
+    "prompt": "다른 IP 네트워크로 패킷을 전달할 때 라우터가 주로 참조하는 헤더 정보는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "사용자 비밀번호",
+        "explanation": "이 조건에서 사용자 비밀번호는 성립하지 않는다. IP 라우팅은 목적지 주소에 대응하는 경로를 선택한다. 애플리케이션 파일과 사용자 자격 증명은 경로 선택 기준이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "Java 클래스 이름",
+        "explanation": "이 조건에서 Java 클래스 이름는 성립하지 않는다. IP 라우팅은 목적지 주소에 대응하는 경로를 선택한다. 애플리케이션 파일과 사용자 자격 증명은 경로 선택 기준이 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "파일 이름",
+        "explanation": "이 조건에서 파일 이름는 성립하지 않는다. IP 라우팅은 목적지 주소에 대응하는 경로를 선택한다. 애플리케이션 파일과 사용자 자격 증명은 경로 선택 기준이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "목적지 IP 주소",
+        "explanation": "IP 라우팅은 목적지 주소에 대응하는 경로를 선택한다. 애플리케이션 파일과 사용자 자격 증명은 경로 선택 기준이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "IP 라우팅은 목적지 주소에 대응하는 경로를 선택한다. 애플리케이션 파일과 사용자 자격 증명은 경로 선택 기준이 아니다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-033",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "ARP 역할",
+    "prompt": "IPv4 로컬 이더넷에서 다음 홉 IP에 대응하는 MAC 주소를 찾는 프로토콜은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "HTTP",
+        "explanation": "이 조건에서 HTTP는 성립하지 않는다. ARP는 로컬 링크에서 IPv4 주소와 링크 계층 주소의 대응을 확인한다. DNS는 이름을 조회한다."
+      },
+      {
+        "id": "c3",
+        "text": "SMTP",
+        "explanation": "이 조건에서 SMTP는 성립하지 않는다. ARP는 로컬 링크에서 IPv4 주소와 링크 계층 주소의 대응을 확인한다. DNS는 이름을 조회한다."
+      },
+      {
+        "id": "c1",
+        "text": "DNS",
+        "explanation": "이 조건에서 DNS는 성립하지 않는다. ARP는 로컬 링크에서 IPv4 주소와 링크 계층 주소의 대응을 확인한다. DNS는 이름을 조회한다."
+      },
+      {
+        "id": "c0",
+        "text": "ARP",
+        "explanation": "ARP는 로컬 링크에서 IPv4 주소와 링크 계층 주소의 대응을 확인한다. DNS는 이름을 조회한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "ARP는 로컬 링크에서 IPv4 주소와 링크 계층 주소의 대응을 확인한다. DNS는 이름을 조회한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 826 ARP",
+        "url": "https://www.rfc-editor.org/rfc/rfc826.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-034",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "DHCP 주소 제공",
+    "prompt": "처음 네트워크에 연결된 장치에 IP 주소와 게이트웨이 설정을 자동 제공하는 프로토콜은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "SNMP",
+        "explanation": "이 조건에서 SNMP는 성립하지 않는다. DHCP는 주소와 네트워크 옵션을 임대한다. 파일 전송·원격 셸·관리 모니터링과 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "DHCP",
+        "explanation": "DHCP는 주소와 네트워크 옵션을 임대한다. 파일 전송·원격 셸·관리 모니터링과 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "SSH",
+        "explanation": "이 조건에서 SSH는 성립하지 않는다. DHCP는 주소와 네트워크 옵션을 임대한다. 파일 전송·원격 셸·관리 모니터링과 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "FTP",
+        "explanation": "이 조건에서 FTP는 성립하지 않는다. DHCP는 주소와 네트워크 옵션을 임대한다. 파일 전송·원격 셸·관리 모니터링과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "DHCP는 주소와 네트워크 옵션을 임대한다. 파일 전송·원격 셸·관리 모니터링과 다르다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 2131 DHCP",
+        "url": "https://www.rfc-editor.org/rfc/rfc2131.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-035",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "DNS 레코드 종류",
+    "prompt": "호스트 이름에 대한 IPv6 주소를 담는 DNS 레코드 종류는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A",
+        "explanation": "이 조건에서 A는 성립하지 않는다. AAAA는 IPv6 주소, A는 IPv4 주소, MX는 메일 서버 정보를 담는다."
+      },
+      {
+        "id": "c3",
+        "text": "TXT",
+        "explanation": "이 조건에서 TXT는 성립하지 않는다. AAAA는 IPv6 주소, A는 IPv4 주소, MX는 메일 서버 정보를 담는다."
+      },
+      {
+        "id": "c0",
+        "text": "AAAA",
+        "explanation": "AAAA는 IPv6 주소, A는 IPv4 주소, MX는 메일 서버 정보를 담는다."
+      },
+      {
+        "id": "c2",
+        "text": "MX",
+        "explanation": "이 조건에서 MX는 성립하지 않는다. AAAA는 IPv6 주소, A는 IPv4 주소, MX는 메일 서버 정보를 담는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "AAAA는 IPv6 주소, A는 IPv4 주소, MX는 메일 서버 정보를 담는다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 3596 IPv6 DNS",
+        "url": "https://www.rfc-editor.org/rfc/rfc3596.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-036",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "서브넷 비트",
+    "prompt": "IPv4 /24 네트워크에서 호스트 부분에 남는 비트 수는 얼마인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "24비트",
+        "explanation": "이 조건에서 24비트는 성립하지 않는다. IPv4 주소는 32비트다. 네트워크 접두사 24비트를 제외한 8비트가 호스트 부분이다."
+      },
+      {
+        "id": "c0",
+        "text": "8비트",
+        "explanation": "IPv4 주소는 32비트다. 네트워크 접두사 24비트를 제외한 8비트가 호스트 부분이다."
+      },
+      {
+        "id": "c2",
+        "text": "32비트",
+        "explanation": "이 조건에서 32비트는 성립하지 않는다. IPv4 주소는 32비트다. 네트워크 접두사 24비트를 제외한 8비트가 호스트 부분이다."
+      },
+      {
+        "id": "c3",
+        "text": "4비트",
+        "explanation": "이 조건에서 4비트는 성립하지 않는다. IPv4 주소는 32비트다. 네트워크 접두사 24비트를 제외한 8비트가 호스트 부분이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "IPv4 주소는 32비트다. 네트워크 접두사 24비트를 제외한 8비트가 호스트 부분이다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 4632 CIDR",
+        "url": "https://www.rfc-editor.org/rfc/rfc4632.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-037",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "HTTP 응답 분류",
+    "prompt": "HTTP 상태 코드 403의 일반적인 의미는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "서버가 요청 처리를 거부함",
+        "explanation": "403 Forbidden은 서버가 요청을 이해했으나 처리를 거부했음을 뜻한다."
+      },
+      {
+        "id": "c3",
+        "text": "요청이 아직 수신되지 않음",
+        "explanation": "이 조건에서 요청이 아직 수신되지 않음는 성립하지 않는다. 403 Forbidden은 서버가 요청을 이해했으나 처리를 거부했음을 뜻한다."
+      },
+      {
+        "id": "c1",
+        "text": "리소스가 다른 주소로 영구 이동",
+        "explanation": "이 조건에서 리소스가 다른 주소로 영구 이동는 성립하지 않는다. 403 Forbidden은 서버가 요청을 이해했으나 처리를 거부했음을 뜻한다."
+      },
+      {
+        "id": "c2",
+        "text": "서버 처리 성공",
+        "explanation": "이 조건에서 서버 처리 성공는 성립하지 않는다. 403 Forbidden은 서버가 요청을 이해했으나 처리를 거부했음을 뜻한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "403 Forbidden은 서버가 요청을 이해했으나 처리를 거부했음을 뜻한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-038",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "UDP 메시지 경계",
+    "prompt": "UDP가 애플리케이션에 제공하는 기본 데이터 단위는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "개별 데이터그램의 경계",
+        "explanation": "UDP는 데이터그램 단위다. TCP는 메시지 경계를 보존하지 않는 바이트 스트림이다."
+      },
+      {
+        "id": "c1",
+        "text": "경계 없는 신뢰성 바이트 스트림",
+        "explanation": "이 조건에서 경계 없는 신뢰성 바이트 스트림는 성립하지 않는다. UDP는 데이터그램 단위다. TCP는 메시지 경계를 보존하지 않는 바이트 스트림이다."
+      },
+      {
+        "id": "c3",
+        "text": "자동으로 정렬된 HTTP 메시지",
+        "explanation": "이 조건에서 자동으로 정렬된 HTTP 메시지는 성립하지 않는다. UDP는 데이터그램 단위다. TCP는 메시지 경계를 보존하지 않는 바이트 스트림이다."
+      },
+      {
+        "id": "c2",
+        "text": "암호화된 파일 객체",
+        "explanation": "이 조건에서 암호화된 파일 객체는 성립하지 않는다. UDP는 데이터그램 단위다. TCP는 메시지 경계를 보존하지 않는 바이트 스트림이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "UDP는 데이터그램 단위다. TCP는 메시지 경계를 보존하지 않는 바이트 스트림이다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 768 UDP",
+        "url": "https://www.rfc-editor.org/rfc/rfc768.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-039",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "대역폭과 지연",
+    "prompt": "첫 바이트가 도착하는 데 걸리는 시간과 구분되는 대역폭의 의미는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "DNS 이름의 글자 수",
+        "explanation": "이 조건에서 DNS 이름의 글자 수는 성립하지 않는다. 대역폭은 전송량의 비율이고 지연은 시간을 뜻한다. 두 지표는 서로 다른 병목을 설명한다."
+      },
+      {
+        "id": "c0",
+        "text": "단위 시간에 전송 가능한 데이터량",
+        "explanation": "대역폭은 전송량의 비율이고 지연은 시간을 뜻한다. 두 지표는 서로 다른 병목을 설명한다."
+      },
+      {
+        "id": "c2",
+        "text": "TCP 포트의 수",
+        "explanation": "이 조건에서 TCP 포트의 수는 성립하지 않는다. 대역폭은 전송량의 비율이고 지연은 시간을 뜻한다. 두 지표는 서로 다른 병목을 설명한다."
+      },
+      {
+        "id": "c1",
+        "text": "패킷 한 개의 왕복 시간만 의미",
+        "explanation": "이 조건에서 패킷 한 개의 왕복 시간만 의미는 성립하지 않는다. 대역폭은 전송량의 비율이고 지연은 시간을 뜻한다. 두 지표는 서로 다른 병목을 설명한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "대역폭은 전송량의 비율이고 지연은 시간을 뜻한다. 두 지표는 서로 다른 병목을 설명한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 1242 네트워크 성능 용어",
+        "url": "https://www.rfc-editor.org/rfc/rfc1242.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-040",
+    "subject": "network",
+    "difficulty": "easy",
+    "topic": "TLS 보호 대상",
+    "prompt": "정상적인 HTTPS 연결이 HTTP 페이로드에 제공하는 주요 보호는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "사용자 기기 악성코드 자동 제거",
+        "explanation": "이 조건에서 사용자 기기 악성코드 자동 제거는 성립하지 않는다. TLS는 연결을 통한 데이터 전송을 보호한다. 엔드포인트의 저장 데이터나 애플리케이션 결함까지 해결하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "저장된 모든 서버 파일의 암호화",
+        "explanation": "이 조건에서 저장된 모든 서버 파일의 암호화는 성립하지 않는다. TLS는 연결을 통한 데이터 전송을 보호한다. 엔드포인트의 저장 데이터나 애플리케이션 결함까지 해결하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "전송 중 기밀성과 무결성",
+        "explanation": "TLS는 연결을 통한 데이터 전송을 보호한다. 엔드포인트의 저장 데이터나 애플리케이션 결함까지 해결하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "애플리케이션 버그 자동 수정",
+        "explanation": "이 조건에서 애플리케이션 버그 자동 수정는 성립하지 않는다. TLS는 연결을 통한 데이터 전송을 보호한다. 엔드포인트의 저장 데이터나 애플리케이션 결함까지 해결하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "TLS는 연결을 통한 데이터 전송을 보호한다. 엔드포인트의 저장 데이터나 애플리케이션 결함까지 해결하지 않는다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 8446 TLS 1.3",
+        "url": "https://www.rfc-editor.org/rfc/rfc8446.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-041",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "CIDR 총 주소 수",
+    "prompt": "IPv4 /26 서브넷의 전체 주소 수는 얼마인가요? 네트워크·브로드캐스트도 포함합니다.",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "256개",
+        "explanation": "이 조건에서 256개는 성립하지 않는다. 호스트 비트 6개로 2^6=64개다. 62는 전통적인 두 예약 주소를 제외한 수이며 총 주소 수와 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "64개",
+        "explanation": "호스트 비트 6개로 2^6=64개다. 62는 전통적인 두 예약 주소를 제외한 수이며 총 주소 수와 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "26개",
+        "explanation": "이 조건에서 26개는 성립하지 않는다. 호스트 비트 6개로 2^6=64개다. 62는 전통적인 두 예약 주소를 제외한 수이며 총 주소 수와 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "62개",
+        "explanation": "이 조건에서 62개는 성립하지 않는다. 호스트 비트 6개로 2^6=64개다. 62는 전통적인 두 예약 주소를 제외한 수이며 총 주소 수와 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호스트 비트 6개로 2^6=64개다. 62는 전통적인 두 예약 주소를 제외한 수이며 총 주소 수와 다르다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 4632 CIDR",
+        "url": "https://www.rfc-editor.org/rfc/rfc4632.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-042",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "가장 긴 접두사",
+    "prompt": "목적지 10.1.2.3에 /8, /16, /24 경로가 모두 일치할 때 기본 IP 전달 원칙은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "IP 주소가 같으면 전달 불가능",
+        "explanation": "이 조건에서 IP 주소가 같으면 전달 불가능는 성립하지 않는다. 기본 라우팅은 가장 구체적인 longest prefix match 경로를 선택한다. 우선 등록 여부만으로 선택하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "가장 긴 /24 접두사 경로 선택",
+        "explanation": "기본 라우팅은 가장 구체적인 longest prefix match 경로를 선택한다. 우선 등록 여부만으로 선택하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "무조건 세 경로에 중복 전송",
+        "explanation": "이 조건에서 무조건 세 경로에 중복 전송는 성립하지 않는다. 기본 라우팅은 가장 구체적인 longest prefix match 경로를 선택한다. 우선 등록 여부만으로 선택하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 먼저 등록된 /8 경로 선택",
+        "explanation": "이 조건에서 항상 먼저 등록된 /8 경로 선택는 성립하지 않는다. 기본 라우팅은 가장 구체적인 longest prefix match 경로를 선택한다. 우선 등록 여부만으로 선택하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기본 라우팅은 가장 구체적인 longest prefix match 경로를 선택한다. 우선 등록 여부만으로 선택하지 않는다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-043",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "TCP 수신 윈도",
+    "prompt": "TCP 수신 윈도가 0인 상태가 알리는 주된 의미는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "목적지 IP 주소가 삭제됨",
+        "explanation": "이 조건에서 목적지 IP 주소가 삭제됨는 성립하지 않는다. 수신 윈도는 수신 측의 흐름 제어 정보다. IP 주소나 TLS 인증서 상태와 별개다."
+      },
+      {
+        "id": "c2",
+        "text": "송신 측 파일 길이가 0",
+        "explanation": "이 조건에서 송신 측 파일 길이가 0는 성립하지 않는다. 수신 윈도는 수신 측의 흐름 제어 정보다. IP 주소나 TLS 인증서 상태와 별개다."
+      },
+      {
+        "id": "c0",
+        "text": "수신 측이 당장 추가 데이터를 버퍼링할 여유가 없음",
+        "explanation": "수신 윈도는 수신 측의 흐름 제어 정보다. IP 주소나 TLS 인증서 상태와 별개다."
+      },
+      {
+        "id": "c3",
+        "text": "암호화 인증서가 만료됨",
+        "explanation": "이 조건에서 암호화 인증서가 만료됨는 성립하지 않는다. 수신 윈도는 수신 측의 흐름 제어 정보다. IP 주소나 TLS 인증서 상태와 별개다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "수신 윈도는 수신 측의 흐름 제어 정보다. IP 주소나 TLS 인증서 상태와 별개다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 9293 TCP",
+        "url": "https://www.rfc-editor.org/rfc/rfc9293.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-044",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "혼잡 제어와 흐름 제어",
+    "prompt": "네트워크 경로의 과부하에 대응하는 TCP 혼잡 제어와 구분되는 흐름 제어 목적은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "느린 수신 측의 버퍼 초과 방지",
+        "explanation": "흐름 제어는 수신 측 수용 능력, 혼잡 제어는 네트워크 경로 과부하에 대응한다."
+      },
+      {
+        "id": "c2",
+        "text": "IP 주소 크기 축소",
+        "explanation": "이 조건에서 IP 주소 크기 축소는 성립하지 않는다. 흐름 제어는 수신 측 수용 능력, 혼잡 제어는 네트워크 경로 과부하에 대응한다."
+      },
+      {
+        "id": "c1",
+        "text": "DNS 레코드 삭제",
+        "explanation": "이 조건에서 DNS 레코드 삭제는 성립하지 않는다. 흐름 제어는 수신 측 수용 능력, 혼잡 제어는 네트워크 경로 과부하에 대응한다."
+      },
+      {
+        "id": "c3",
+        "text": "TLS 키 길이 결정",
+        "explanation": "이 조건에서 TLS 키 길이 결정는 성립하지 않는다. 흐름 제어는 수신 측 수용 능력, 혼잡 제어는 네트워크 경로 과부하에 대응한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "흐름 제어는 수신 측 수용 능력, 혼잡 제어는 네트워크 경로 과부하에 대응한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 9293 TCP",
+        "url": "https://www.rfc-editor.org/rfc/rfc9293.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-045",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "GET 안전성",
+    "prompt": "HTTP의 안전한 메서드라는 설명은 무엇을 의미하나요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "요청 의도가 서버 상태 변경을 요구하지 않음",
+        "explanation": "safe는 메서드의 요청 의미가 본질적으로 읽기라는 뜻이다. 보안 인증이나 서버 내부 로깅 금지를 뜻하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 인증 없이 호출 가능",
+        "explanation": "이 조건에서 항상 인증 없이 호출 가능는 성립하지 않는다. safe는 메서드의 요청 의미가 본질적으로 읽기라는 뜻이다. 보안 인증이나 서버 내부 로깅 금지를 뜻하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "악성 입력이 절대 들어오지 않음",
+        "explanation": "이 조건에서 악성 입력이 절대 들어오지 않음는 성립하지 않는다. safe는 메서드의 요청 의미가 본질적으로 읽기라는 뜻이다. 보안 인증이나 서버 내부 로깅 금지를 뜻하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "반드시 암호화됨",
+        "explanation": "이 조건에서 반드시 암호화됨는 성립하지 않는다. safe는 메서드의 요청 의미가 본질적으로 읽기라는 뜻이다. 보안 인증이나 서버 내부 로깅 금지를 뜻하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "safe는 메서드의 요청 의미가 본질적으로 읽기라는 뜻이다. 보안 인증이나 서버 내부 로깅 금지를 뜻하지 않는다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-046",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "조건부 요청 ETag",
+    "prompt": "클라이언트가 저장된 ETag와 현재 리소스가 같은지 확인해 불필요한 본문 전송을 피할 요청 헤더는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Content-Type",
+        "explanation": "이 조건에서 Content-Type는 성립하지 않는다. If-None-Match는 주어진 엔티티 태그와 현재 표현이 일치하는지 조건을 건다. GET에서 일치하면 304를 사용할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "Authorization",
+        "explanation": "이 조건에서 Authorization는 성립하지 않는다. If-None-Match는 주어진 엔티티 태그와 현재 표현이 일치하는지 조건을 건다. GET에서 일치하면 304를 사용할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "If-None-Match",
+        "explanation": "If-None-Match는 주어진 엔티티 태그와 현재 표현이 일치하는지 조건을 건다. GET에서 일치하면 304를 사용할 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "Accept-Language",
+        "explanation": "이 조건에서 Accept-Language는 성립하지 않는다. If-None-Match는 주어진 엔티티 태그와 현재 표현이 일치하는지 조건을 건다. GET에서 일치하면 304를 사용할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "If-None-Match는 주어진 엔티티 태그와 현재 표현이 일치하는지 조건을 건다. GET에서 일치하면 304를 사용할 수 있다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-047",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "쿠키 서버 전달",
+    "prompt": "서버가 브라우저에 쿠키를 설정할 때 응답에서 사용하는 헤더는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Cookie",
+        "explanation": "이 조건에서 Cookie는 성립하지 않는다. Set-Cookie는 서버→클라이언트 설정이다. Cookie는 클라이언트가 저장된 쿠키를 요청에 실어 보내는 헤더다."
+      },
+      {
+        "id": "c0",
+        "text": "Set-Cookie",
+        "explanation": "Set-Cookie는 서버→클라이언트 설정이다. Cookie는 클라이언트가 저장된 쿠키를 요청에 실어 보내는 헤더다."
+      },
+      {
+        "id": "c2",
+        "text": "Origin",
+        "explanation": "이 조건에서 Origin는 성립하지 않는다. Set-Cookie는 서버→클라이언트 설정이다. Cookie는 클라이언트가 저장된 쿠키를 요청에 실어 보내는 헤더다."
+      },
+      {
+        "id": "c3",
+        "text": "Host",
+        "explanation": "이 조건에서 Host는 성립하지 않는다. Set-Cookie는 서버→클라이언트 설정이다. Cookie는 클라이언트가 저장된 쿠키를 요청에 실어 보내는 헤더다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Set-Cookie는 서버→클라이언트 설정이다. Cookie는 클라이언트가 저장된 쿠키를 요청에 실어 보내는 헤더다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 6265 쿠키",
+        "url": "https://www.rfc-editor.org/rfc/rfc6265.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-048",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "CORS 범위",
+    "prompt": "CORS가 주로 통제하는 동작은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "TCP 재전송 횟수 결정",
+        "explanation": "이 조건에서 TCP 재전송 횟수 결정는 성립하지 않는다. CORS는 브라우저의 출처 기반 접근 정책이다. 서버 간 클라이언트나 인증 권한 자체를 대체하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "서버 간 모든 HTTP 요청 암호화",
+        "explanation": "이 조건에서 서버 간 모든 HTTP 요청 암호화는 성립하지 않는다. CORS는 브라우저의 출처 기반 접근 정책이다. 서버 간 클라이언트나 인증 권한 자체를 대체하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "브라우저 스크립트의 다른 출처 응답 접근",
+        "explanation": "CORS는 브라우저의 출처 기반 접근 정책이다. 서버 간 클라이언트나 인증 권한 자체를 대체하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "인터넷의 모든 클라이언트 요청 차단",
+        "explanation": "이 조건에서 인터넷의 모든 클라이언트 요청 차단는 성립하지 않는다. CORS는 브라우저의 출처 기반 접근 정책이다. 서버 간 클라이언트나 인증 권한 자체를 대체하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "CORS는 브라우저의 출처 기반 접근 정책이다. 서버 간 클라이언트나 인증 권한 자체를 대체하지 않는다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "MDN CORS",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-049",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "NAT 포트 변환",
+    "prompt": "여러 사설 호스트가 하나의 공인 IPv4 주소를 공유할 때 흔히 구분에 사용하는 추가 정보는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "파일 확장자",
+        "explanation": "이 조건에서 파일 확장자는 성립하지 않는다. NAPT는 사설 주소/포트를 공인 주소/포트에 대응시켜 여러 흐름을 구분한다."
+      },
+      {
+        "id": "c1",
+        "text": "HTML 태그 수",
+        "explanation": "이 조건에서 HTML 태그 수는 성립하지 않는다. NAPT는 사설 주소/포트를 공인 주소/포트에 대응시켜 여러 흐름을 구분한다."
+      },
+      {
+        "id": "c2",
+        "text": "프로세스 언어",
+        "explanation": "이 조건에서 프로세스 언어는 성립하지 않는다. NAPT는 사설 주소/포트를 공인 주소/포트에 대응시켜 여러 흐름을 구분한다."
+      },
+      {
+        "id": "c0",
+        "text": "전송 계층 포트 매핑",
+        "explanation": "NAPT는 사설 주소/포트를 공인 주소/포트에 대응시켜 여러 흐름을 구분한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "NAPT는 사설 주소/포트를 공인 주소/포트에 대응시켜 여러 흐름을 구분한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 3022 NAPT",
+        "url": "https://www.rfc-editor.org/rfc/rfc3022.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-050",
+    "subject": "network",
+    "difficulty": "medium",
+    "topic": "프록시와 게이트웨이",
+    "prompt": "사용자가 원본 서버에 접속했다고 생각하지만 앞단 서버가 대신 요청을 처리하는 배치의 일반적인 이름은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "명령어 파이프라인",
+        "explanation": "이 조건에서 명령어 파이프라인는 성립하지 않는다. 리버스 프록시는 서버 앞에서 요청을 받아 원본 서버로 전달하거나 캐시 등 기능을 수행한다."
+      },
+      {
+        "id": "c1",
+        "text": "로컬 변수",
+        "explanation": "이 조건에서 로컬 변수는 성립하지 않는다. 리버스 프록시는 서버 앞에서 요청을 받아 원본 서버로 전달하거나 캐시 등 기능을 수행한다."
+      },
+      {
+        "id": "c0",
+        "text": "리버스 프록시",
+        "explanation": "리버스 프록시는 서버 앞에서 요청을 받아 원본 서버로 전달하거나 캐시 등 기능을 수행한다."
+      },
+      {
+        "id": "c2",
+        "text": "가비지 컬렉터",
+        "explanation": "이 조건에서 가비지 컬렉터는 성립하지 않는다. 리버스 프록시는 서버 앞에서 요청을 받아 원본 서버로 전달하거나 캐시 등 기능을 수행한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "리버스 프록시는 서버 앞에서 요청을 받아 원본 서버로 전달하거나 캐시 등 기능을 수행한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-051",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "304 본문",
+    "prompt": "정상적인 조건부 GET이 304 Not Modified를 받았을 때 사용할 본문은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "DNS 결과를 화면 본문으로 사용",
+        "explanation": "이 조건에서 DNS 결과를 화면 본문으로 사용는 성립하지 않는다. 304는 선택 표현이 변경되지 않았다는 응답이며 새 전체 본문을 전달하지 않는다. 저장된 캐시와 갱신 헤더를 사용한다."
+      },
+      {
+        "id": "c0",
+        "text": "기존 캐시 표현을 사용",
+        "explanation": "304는 선택 표현이 변경되지 않았다는 응답이며 새 전체 본문을 전달하지 않는다. 저장된 캐시와 갱신 헤더를 사용한다."
+      },
+      {
+        "id": "c2",
+        "text": "빈 리소스로 덮어씀",
+        "explanation": "이 조건에서 빈 리소스로 덮어씀는 성립하지 않는다. 304는 선택 표현이 변경되지 않았다는 응답이며 새 전체 본문을 전달하지 않는다. 저장된 캐시와 갱신 헤더를 사용한다."
+      },
+      {
+        "id": "c1",
+        "text": "304에 항상 전체 새 본문이 포함",
+        "explanation": "이 조건에서 304에 항상 전체 새 본문이 포함는 성립하지 않는다. 304는 선택 표현이 변경되지 않았다는 응답이며 새 전체 본문을 전달하지 않는다. 저장된 캐시와 갱신 헤더를 사용한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "304는 선택 표현이 변경되지 않았다는 응답이며 새 전체 본문을 전달하지 않는다. 저장된 캐시와 갱신 헤더를 사용한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-052",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "타임아웃과 실행 여부",
+    "prompt": "결제 요청 전송 후 응답 타임아웃만 발생했습니다. 서버의 실행 여부에 대해 가능한 판단은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "반드시 성공함",
+        "explanation": "이 조건에서 반드시 성공함는 성립하지 않는다. 응답을 관찰하지 못했다는 사실은 서버 처리 실패의 증거가 아니다. 멱등 키나 상태 조회가 필요하다."
+      },
+      {
+        "id": "c0",
+        "text": "성공했을 수도 실패했을 수도 있어 추가 확인 필요",
+        "explanation": "응답을 관찰하지 못했다는 사실은 서버 처리 실패의 증거가 아니다. 멱등 키나 상태 조회가 필요하다."
+      },
+      {
+        "id": "c3",
+        "text": "타임아웃이면 자동 취소가 보장됨",
+        "explanation": "이 조건에서 타임아웃이면 자동 취소가 보장됨는 성립하지 않는다. 응답을 관찰하지 못했다는 사실은 서버 처리 실패의 증거가 아니다. 멱등 키나 상태 조회가 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "반드시 실행되지 않음",
+        "explanation": "이 조건에서 반드시 실행되지 않음는 성립하지 않는다. 응답을 관찰하지 못했다는 사실은 서버 처리 실패의 증거가 아니다. 멱등 키나 상태 조회가 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "응답을 관찰하지 못했다는 사실은 서버 처리 실패의 증거가 아니다. 멱등 키나 상태 조회가 필요하다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-053",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "재시도 중복 방지",
+    "prompt": "네트워크 실패 후 같은 논리적 결제 요청을 재시도할 때 중복 실행 방지를 위한 설계는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "클라이언트 타이머만 늘림",
+        "explanation": "이 조건에서 클라이언트 타이머만 늘림는 성립하지 않는다. 동일 작업을 같은 키로 식별하고 서버에서 중복 여부와 결과를 일관되게 처리해야 한다. 새 키는 별개 작업으로 보일 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "POST를 GET 이름으로만 바꿈",
+        "explanation": "이 조건에서 POST를 GET 이름으로만 바꿈는 성립하지 않는다. 동일 작업을 같은 키로 식별하고 서버에서 중복 여부와 결과를 일관되게 처리해야 한다. 새 키는 별개 작업으로 보일 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "시도마다 새 키를 생성",
+        "explanation": "이 조건에서 시도마다 새 키를 생성는 성립하지 않는다. 동일 작업을 같은 키로 식별하고 서버에서 중복 여부와 결과를 일관되게 처리해야 한다. 새 키는 별개 작업으로 보일 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "같은 멱등 키로 결과를 식별하고 서버에서 원자적으로 기록",
+        "explanation": "동일 작업을 같은 키로 식별하고 서버에서 중복 여부와 결과를 일관되게 처리해야 한다. 새 키는 별개 작업으로 보일 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "동일 작업을 같은 키로 식별하고 서버에서 중복 여부와 결과를 일관되게 처리해야 한다. 새 키는 별개 작업으로 보일 수 있다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-054",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "Keep-Alive 한계",
+    "prompt": "HTTP 연결을 재사용하면 반드시 보장되는 것은 아닌 항목은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "모든 애플리케이션 요청의 중복 실행 방지",
+        "explanation": "연결 재사용은 전송 연결의 비용 문제를 줄인다. 애플리케이션 요청을 정확히 한 번 실행한다는 보장은 별도의 설계다."
+      },
+      {
+        "id": "c1",
+        "text": "연결 생성 비용 절감 가능",
+        "explanation": "이 조건에서 연결 생성 비용 절감 가능는 성립하지 않는다. 연결 재사용은 전송 연결의 비용 문제를 줄인다. 애플리케이션 요청을 정확히 한 번 실행한다는 보장은 별도의 설계다."
+      },
+      {
+        "id": "c2",
+        "text": "같은 연결에서 여러 요청 가능",
+        "explanation": "이 조건에서 같은 연결에서 여러 요청 가능는 성립하지 않는다. 연결 재사용은 전송 연결의 비용 문제를 줄인다. 애플리케이션 요청을 정확히 한 번 실행한다는 보장은 별도의 설계다."
+      },
+      {
+        "id": "c3",
+        "text": "일부 핸드셰이크 비용 절감 가능",
+        "explanation": "이 조건에서 일부 핸드셰이크 비용 절감 가능는 성립하지 않는다. 연결 재사용은 전송 연결의 비용 문제를 줄인다. 애플리케이션 요청을 정확히 한 번 실행한다는 보장은 별도의 설계다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "연결 재사용은 전송 연결의 비용 문제를 줄인다. 애플리케이션 요청을 정확히 한 번 실행한다는 보장은 별도의 설계다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "network 공식 개념 근거",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-055",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "DNS 캐시 TTL",
+    "prompt": "TTL이 남은 DNS 캐시를 보유한 클라이언트에 대해 서버 DNS 레코드를 바꾸면 어떤 일이 가능한가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 캐시가 즉시 원격 삭제됨",
+        "explanation": "이 조건에서 모든 캐시가 즉시 원격 삭제됨는 성립하지 않는다. 캐시 수명 동안 기존 주소가 재사용될 수 있다. DNS 변경만으로 모든 캐시나 연결을 강제 갱신할 수 없다."
+      },
+      {
+        "id": "c2",
+        "text": "기존 TCP 연결이 반드시 종료됨",
+        "explanation": "이 조건에서 기존 TCP 연결이 반드시 종료됨는 성립하지 않는다. 캐시 수명 동안 기존 주소가 재사용될 수 있다. DNS 변경만으로 모든 캐시나 연결을 강제 갱신할 수 없다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 브라우저 쿠키가 삭제됨",
+        "explanation": "이 조건에서 모든 브라우저 쿠키가 삭제됨는 성립하지 않는다. 캐시 수명 동안 기존 주소가 재사용될 수 있다. DNS 변경만으로 모든 캐시나 연결을 강제 갱신할 수 없다."
+      },
+      {
+        "id": "c0",
+        "text": "TTL 만료 전까지 이전 주소를 사용할 수 있음",
+        "explanation": "캐시 수명 동안 기존 주소가 재사용될 수 있다. DNS 변경만으로 모든 캐시나 연결을 강제 갱신할 수 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "캐시 수명 동안 기존 주소가 재사용될 수 있다. DNS 변경만으로 모든 캐시나 연결을 강제 갱신할 수 없다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 1034 DNS",
+        "url": "https://www.rfc-editor.org/rfc/rfc1034.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-056",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "TCP 메시지 프레이밍",
+    "prompt": "send 두 번에 대응하여 recv를 정확히 두 번 호출하면 각 send 메시지가 나뉘어 도착한다는 가정은 왜 틀리나요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "recv는 IPv6에서만 지원",
+        "explanation": "이 조건에서 recv는 IPv6에서만 지원는 성립하지 않는다. 한 send가 여러 recv로 나뉘거나 여러 send가 한 recv로 합쳐질 수 있다. 길이 접두사나 구분자 같은 프레이밍이 필요하다."
+      },
+      {
+        "id": "c0",
+        "text": "TCP는 바이트 스트림이라 메시지 경계를 앱이 정해야 함",
+        "explanation": "한 send가 여러 recv로 나뉘거나 여러 send가 한 recv로 합쳐질 수 있다. 길이 접두사나 구분자 같은 프레이밍이 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "TCP는 모든 바이트를 항상 삭제함",
+        "explanation": "이 조건에서 TCP는 모든 바이트를 항상 삭제함는 성립하지 않는다. 한 send가 여러 recv로 나뉘거나 여러 send가 한 recv로 합쳐질 수 있다. 길이 접두사나 구분자 같은 프레이밍이 필요하다."
+      },
+      {
+        "id": "c3",
+        "text": "send 순서가 항상 뒤집힘",
+        "explanation": "이 조건에서 send 순서가 항상 뒤집힘는 성립하지 않는다. 한 send가 여러 recv로 나뉘거나 여러 send가 한 recv로 합쳐질 수 있다. 길이 접두사나 구분자 같은 프레이밍이 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "한 send가 여러 recv로 나뉘거나 여러 send가 한 recv로 합쳐질 수 있다. 길이 접두사나 구분자 같은 프레이밍이 필요하다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 9293 TCP",
+        "url": "https://www.rfc-editor.org/rfc/rfc9293.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-057",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "HOL과 독립 연결",
+    "prompt": "하나의 TCP 연결을 쓰는 HTTP/2에서 패킷 손실이 여러 스트림에 영향을 줄 수 있는 이유는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "DNS가 각 스트림 내용을 정렬함",
+        "explanation": "이 조건에서 DNS가 각 스트림 내용을 정렬함는 성립하지 않는다. HTTP/2 프레임이 여러 스트림이어도 TCP의 순서 있는 바이트 전달은 공유한다. 손실 시 전송 계층 HOL 지연이 발생할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 HTTP/2 스트림이 하나의 파일임",
+        "explanation": "이 조건에서 모든 HTTP/2 스트림이 하나의 파일임는 성립하지 않는다. HTTP/2 프레임이 여러 스트림이어도 TCP의 순서 있는 바이트 전달은 공유한다. 손실 시 전송 계층 HOL 지연이 발생할 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "TLS가 반드시 매 요청 연결을 종료함",
+        "explanation": "이 조건에서 TLS가 반드시 매 요청 연결을 종료함는 성립하지 않는다. HTTP/2 프레임이 여러 스트림이어도 TCP의 순서 있는 바이트 전달은 공유한다. 손실 시 전송 계층 HOL 지연이 발생할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "기반 TCP가 누락 바이트 뒤의 순서 있는 전달을 기다림",
+        "explanation": "HTTP/2 프레임이 여러 스트림이어도 TCP의 순서 있는 바이트 전달은 공유한다. 손실 시 전송 계층 HOL 지연이 발생할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "HTTP/2 프레임이 여러 스트림이어도 TCP의 순서 있는 바이트 전달은 공유한다. 손실 시 전송 계층 HOL 지연이 발생할 수 있다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 9113 HTTP/2",
+        "url": "https://www.rfc-editor.org/rfc/rfc9113.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-058",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "TLS 인증서 이름 검증",
+    "prompt": "인증서 체인이 신뢰되어도 접속한 호스트 이름과 인증서 이름이 다르면 무엇이 필요한가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "체인만 신뢰되면 이름은 무관",
+        "explanation": "이 조건에서 체인만 신뢰되면 이름은 무관는 성립하지 않는다. 신뢰 체인과 호스트 이름 일치는 별개의 검증이다. 다른 서버의 유효 인증서가 목표 서버 인증을 대신하지 못한다."
+      },
+      {
+        "id": "c2",
+        "text": "HTTP 상태 200이면 인증서 검증 생략",
+        "explanation": "이 조건에서 HTTP 상태 200이면 인증서 검증 생략는 성립하지 않는다. 신뢰 체인과 호스트 이름 일치는 별개의 검증이다. 다른 서버의 유효 인증서가 목표 서버 인증을 대신하지 못한다."
+      },
+      {
+        "id": "c0",
+        "text": "호스트 이름 검증 실패로 연결을 거부하는 것이 정상",
+        "explanation": "신뢰 체인과 호스트 이름 일치는 별개의 검증이다. 다른 서버의 유효 인증서가 목표 서버 인증을 대신하지 못한다."
+      },
+      {
+        "id": "c3",
+        "text": "DNS 캐시를 삭제하면 이름 불일치 허용",
+        "explanation": "이 조건에서 DNS 캐시를 삭제하면 이름 불일치 허용는 성립하지 않는다. 신뢰 체인과 호스트 이름 일치는 별개의 검증이다. 다른 서버의 유효 인증서가 목표 서버 인증을 대신하지 못한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "신뢰 체인과 호스트 이름 일치는 별개의 검증이다. 다른 서버의 유효 인증서가 목표 서버 인증을 대신하지 못한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 9525 서비스 신원 검증",
+        "url": "https://www.rfc-editor.org/rfc/rfc9525.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-059",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "캐시 개인 응답",
+    "prompt": "로그인 사용자별 개인정보 응답을 공유 캐시에 저장하지 않도록 하는 Cache-Control 지시자는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "public",
+        "explanation": "이 조건에서 public는 성립하지 않는다. private는 응답이 개별 사용자용이며 공유 캐시에 저장할 수 없다고 지시한다. 저장 자체를 금지하려면 no-store도 별개로 고려한다."
+      },
+      {
+        "id": "c0",
+        "text": "private",
+        "explanation": "private는 응답이 개별 사용자용이며 공유 캐시에 저장할 수 없다고 지시한다. 저장 자체를 금지하려면 no-store도 별개로 고려한다."
+      },
+      {
+        "id": "c2",
+        "text": "immutable",
+        "explanation": "이 조건에서 immutable는 성립하지 않는다. private는 응답이 개별 사용자용이며 공유 캐시에 저장할 수 없다고 지시한다. 저장 자체를 금지하려면 no-store도 별개로 고려한다."
+      },
+      {
+        "id": "c3",
+        "text": "max-age=3600 단독",
+        "explanation": "이 조건에서 max-age=3600 단독는 성립하지 않는다. private는 응답이 개별 사용자용이며 공유 캐시에 저장할 수 없다고 지시한다. 저장 자체를 금지하려면 no-store도 별개로 고려한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "private는 응답이 개별 사용자용이며 공유 캐시에 저장할 수 없다고 지시한다. 저장 자체를 금지하려면 no-store도 별개로 고려한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 9111 HTTP 캐싱",
+        "url": "https://www.rfc-editor.org/rfc/rfc9111.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "network-060",
+    "subject": "network",
+    "difficulty": "hard",
+    "topic": "no-cache 의미",
+    "prompt": "HTTP Cache-Control: no-cache의 올바른 의미는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "저장할 수 있지만 재사용 전 성공적인 검증이 필요",
+        "explanation": "no-cache는 검증 없는 재사용을 제한한다. 저장 금지 지시자인 no-store와 구분해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "어떤 캐시도 절대 저장할 수 없음",
+        "explanation": "이 조건에서 어떤 캐시도 절대 저장할 수 없음는 성립하지 않는다. no-cache는 검증 없는 재사용을 제한한다. 저장 금지 지시자인 no-store와 구분해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "응답은 언제나 만료되지 않음",
+        "explanation": "이 조건에서 응답은 언제나 만료되지 않음는 성립하지 않는다. no-cache는 검증 없는 재사용을 제한한다. 저장 금지 지시자인 no-store와 구분해야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "TLS 연결을 끄라는 뜻",
+        "explanation": "이 조건에서 TLS 연결을 끄라는 뜻는 성립하지 않는다. no-cache는 검증 없는 재사용을 제한한다. 저장 금지 지시자인 no-store와 구분해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "no-cache는 검증 없는 재사용을 제한한다. 저장 금지 지시자인 no-store와 구분해야 한다.",
+    "environment": "HTTP·IP 표준 모델. 네트워크 및 전송 보장에 대한 조건은 문항에 명시한다.",
+    "sources": [
+      {
+        "title": "RFC 9111 HTTP 캐싱",
+        "url": "https://www.rfc-editor.org/rfc/rfc9111.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
   }
 ]

@@ -1408,5 +1408,1505 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "java-031",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "정수 몫 계산",
+    "prompt": "정수 몫 계산: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "4.75",
+        "explanation": "이 조건에서 4.75는 성립하지 않는다. 두 피연산자가 int라 소수 부분을 버린 몫 4를 얻는다."
+      },
+      {
+        "id": "c0",
+        "text": "4",
+        "explanation": "두 피연산자가 int라 소수 부분을 버린 몫 4를 얻는다."
+      },
+      {
+        "id": "c2",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. 두 피연산자가 int라 소수 부분을 버린 몫 4를 얻는다."
+      },
+      {
+        "id": "c3",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 두 피연산자가 int라 소수 부분을 버린 몫 4를 얻는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "두 피연산자가 int라 소수 부분을 버린 몫 4를 얻는다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "System.out.println(19 / 4);",
+    "language": "java"
+  },
+  {
+    "id": "java-032",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "문자열 연결 순서",
+    "prompt": "문자열 연결 순서: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. +는 왼쪽 결합이다. 문자열 sum=에 2를 연결한 뒤 3을 이어 붙인다."
+      },
+      {
+        "id": "c2",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. +는 왼쪽 결합이다. 문자열 sum=에 2를 연결한 뒤 3을 이어 붙인다."
+      },
+      {
+        "id": "c1",
+        "text": "sum=5",
+        "explanation": "이 조건에서 sum=5는 성립하지 않는다. +는 왼쪽 결합이다. 문자열 sum=에 2를 연결한 뒤 3을 이어 붙인다."
+      },
+      {
+        "id": "c0",
+        "text": "sum=23",
+        "explanation": "+는 왼쪽 결합이다. 문자열 sum=에 2를 연결한 뒤 3을 이어 붙인다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "+는 왼쪽 결합이다. 문자열 sum=에 2를 연결한 뒤 3을 이어 붙인다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "System.out.println(\"sum=\" + 2 + 3);",
+    "language": "java"
+  },
+  {
+    "id": "java-033",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "괄호 안 수치 덧셈",
+    "prompt": "괄호 안 수치 덧셈: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "sum=5",
+        "explanation": "괄호 안에서 정수 덧셈이 먼저 끝나 5를 문자열에 연결한다."
+      },
+      {
+        "id": "c2",
+        "text": "23",
+        "explanation": "이 조건에서 23는 성립하지 않는다. 괄호 안에서 정수 덧셈이 먼저 끝나 5를 문자열에 연결한다."
+      },
+      {
+        "id": "c1",
+        "text": "sum=23",
+        "explanation": "이 조건에서 sum=23는 성립하지 않는다. 괄호 안에서 정수 덧셈이 먼저 끝나 5를 문자열에 연결한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 괄호 안에서 정수 덧셈이 먼저 끝나 5를 문자열에 연결한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "괄호 안에서 정수 덧셈이 먼저 끝나 5를 문자열에 연결한다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "System.out.println(\"sum=\" + (2 + 3));",
+    "language": "java"
+  },
+  {
+    "id": "java-034",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "배열 길이",
+    "prompt": "배열 길이: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. 배열의 length 필드는 원소 개수이며 마지막 인덱스나 마지막 값이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "배열의 length 필드는 원소 개수이며 마지막 인덱스나 마지막 값이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 배열의 length 필드는 원소 개수이며 마지막 인덱스나 마지막 값이 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 배열의 length 필드는 원소 개수이며 마지막 인덱스나 마지막 값이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "배열의 length 필드는 원소 개수이며 마지막 인덱스나 마지막 값이 아니다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int[] values = {4,7,9};\nSystem.out.println(values.length);",
+    "language": "java"
+  },
+  {
+    "id": "java-035",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "짧은 논리 평가",
+    "prompt": "짧은 논리 평가: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. &&의 왼쪽이 false여서 오른쪽 증가 식이 실행되지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. &&의 왼쪽이 false여서 오른쪽 증가 식이 실행되지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "0",
+        "explanation": "&&의 왼쪽이 false여서 오른쪽 증가 식이 실행되지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "true",
+        "explanation": "이 조건에서 true는 성립하지 않는다. &&의 왼쪽이 false여서 오른쪽 증가 식이 실행되지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "&&의 왼쪽이 false여서 오른쪽 증가 식이 실행되지 않는다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = 0;\nboolean ok = false && (++n > 0);\nSystem.out.println(n);",
+    "language": "java"
+  },
+  {
+    "id": "java-036",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "문자열 문자 수",
+    "prompt": "문자열 길이 6을 얻는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "capacity",
+        "explanation": "이 조건에서 capacity는 성립하지 않는다. String은 length() 메서드로 UTF-16 코드 단위 수를 제공한다. 이 문자열은 ASCII 6글자다."
+      },
+      {
+        "id": "c2",
+        "text": "count",
+        "explanation": "이 조건에서 count는 성립하지 않는다. String은 length() 메서드로 UTF-16 코드 단위 수를 제공한다. 이 문자열은 ASCII 6글자다."
+      },
+      {
+        "id": "c1",
+        "text": "size",
+        "explanation": "이 조건에서 size는 성립하지 않는다. String은 length() 메서드로 UTF-16 코드 단위 수를 제공한다. 이 문자열은 ASCII 6글자다."
+      },
+      {
+        "id": "c0",
+        "text": "length",
+        "explanation": "String은 length() 메서드로 UTF-16 코드 단위 수를 제공한다. 이 문자열은 ASCII 6글자다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "String은 length() 메서드로 UTF-16 코드 단위 수를 제공한다. 이 문자열은 ASCII 6글자다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "String s = \"engine\";\nSystem.out.println(s.____());",
+    "language": "java"
+  },
+  {
+    "id": "java-037",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "ArrayList 항목 추가",
+    "prompt": "ArrayList에 7을 추가하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "put",
+        "explanation": "이 조건에서 put는 성립하지 않는다. List의 add가 요소를 추가한다. put은 Map의 키/값 연산이다."
+      },
+      {
+        "id": "c2",
+        "text": "append",
+        "explanation": "이 조건에서 append는 성립하지 않는다. List의 add가 요소를 추가한다. put은 Map의 키/값 연산이다."
+      },
+      {
+        "id": "c1",
+        "text": "push",
+        "explanation": "이 조건에서 push는 성립하지 않는다. List의 add가 요소를 추가한다. put은 Map의 키/값 연산이다."
+      },
+      {
+        "id": "c0",
+        "text": "add",
+        "explanation": "List의 add가 요소를 추가한다. put은 Map의 키/값 연산이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "List의 add가 요소를 추가한다. put은 Map의 키/값 연산이다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "ArrayList<Integer> values = new ArrayList<>();\nvalues.____(7);\nSystem.out.println(values.size());",
+    "language": "java"
+  },
+  {
+    "id": "java-038",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "문자열 내용 비교",
+    "prompt": "별개 String 객체의 같은 내용을 비교하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "compare",
+        "explanation": "이 조건에서 compare는 성립하지 않는다. String.equals는 내용을 비교한다. 참조 동일성을 검사하는 ==와 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "equals",
+        "explanation": "String.equals는 내용을 비교한다. 참조 동일성을 검사하는 ==와 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "hashCode",
+        "explanation": "이 조건에서 hashCode는 성립하지 않는다. String.equals는 내용을 비교한다. 참조 동일성을 검사하는 ==와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "containsKey",
+        "explanation": "이 조건에서 containsKey는 성립하지 않는다. String.equals는 내용을 비교한다. 참조 동일성을 검사하는 ==와 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "String.equals는 내용을 비교한다. 참조 동일성을 검사하는 ==와 다르다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "String a = new String(\"CS\");\nString b = new String(\"CS\");\nSystem.out.println(a.____(b));",
+    "language": "java"
+  },
+  {
+    "id": "java-039",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "배열 원소 반복",
+    "prompt": "향상된 for문으로 각 원소를 순회하는 구분자는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "in",
+        "explanation": "이 조건에서 in는 성립하지 않는다. Java 향상된 for의 문법은 for(타입 변수 : 배열/Iterable)이다."
+      },
+      {
+        "id": "c3",
+        "text": "->",
+        "explanation": "이 조건에서 ->는 성립하지 않는다. Java 향상된 for의 문법은 for(타입 변수 : 배열/Iterable)이다."
+      },
+      {
+        "id": "c0",
+        "text": ":",
+        "explanation": "Java 향상된 for의 문법은 for(타입 변수 : 배열/Iterable)이다."
+      },
+      {
+        "id": "c2",
+        "text": "of",
+        "explanation": "이 조건에서 of는 성립하지 않는다. Java 향상된 for의 문법은 for(타입 변수 : 배열/Iterable)이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Java 향상된 for의 문법은 for(타입 변수 : 배열/Iterable)이다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "int[] values = {2,3};\nint sum = 0;\nfor (int value ____ values) sum += value;\nSystem.out.println(sum);",
+    "language": "java"
+  },
+  {
+    "id": "java-040",
+    "subject": "java",
+    "difficulty": "easy",
+    "topic": "정수 텍스트 해석",
+    "prompt": "문자열을 int로 해석하는 정적 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "sum",
+        "explanation": "이 조건에서 sum는 성립하지 않는다. Integer.parseInt는 정수 텍스트를 int로 변환한다. toString은 반대 방향이다."
+      },
+      {
+        "id": "c2",
+        "text": "compare",
+        "explanation": "이 조건에서 compare는 성립하지 않는다. Integer.parseInt는 정수 텍스트를 int로 변환한다. toString은 반대 방향이다."
+      },
+      {
+        "id": "c1",
+        "text": "toString",
+        "explanation": "이 조건에서 toString는 성립하지 않는다. Integer.parseInt는 정수 텍스트를 int로 변환한다. toString은 반대 방향이다."
+      },
+      {
+        "id": "c0",
+        "text": "parseInt",
+        "explanation": "Integer.parseInt는 정수 텍스트를 int로 변환한다. toString은 반대 방향이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Integer.parseInt는 정수 텍스트를 int로 변환한다. toString은 반대 방향이다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "System.out.println(Integer.____(\"12\") + 1);",
+    "language": "java"
+  },
+  {
+    "id": "java-041",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Arrays.asList 배열 공유",
+    "prompt": "Arrays.asList 배열 공유: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "b",
+        "explanation": "이 조건에서 b는 성립하지 않는다. Arrays.asList는 원본 배열을 backing storage로 쓰는 고정 크기 리스트다. set은 가능하고 배열에도 반영된다."
+      },
+      {
+        "id": "c0",
+        "text": "x",
+        "explanation": "Arrays.asList는 원본 배열을 backing storage로 쓰는 고정 크기 리스트다. set은 가능하고 배열에도 반영된다."
+      },
+      {
+        "id": "c1",
+        "text": "a",
+        "explanation": "이 조건에서 a는 성립하지 않는다. Arrays.asList는 원본 배열을 backing storage로 쓰는 고정 크기 리스트다. set은 가능하고 배열에도 반영된다."
+      },
+      {
+        "id": "c3",
+        "text": "UnsupportedOperationException",
+        "explanation": "이 조건에서 UnsupportedOperationException는 성립하지 않는다. Arrays.asList는 원본 배열을 backing storage로 쓰는 고정 크기 리스트다. set은 가능하고 배열에도 반영된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Arrays.asList는 원본 배열을 backing storage로 쓰는 고정 크기 리스트다. set은 가능하고 배열에도 반영된다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "String[] raw = {\"a\",\"b\"};\nList<String> view = Arrays.asList(raw);\nview.set(0,\"x\");\nSystem.out.println(raw[0]);",
+    "language": "java"
+  },
+  {
+    "id": "java-042",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Integer remove 오버로드",
+    "prompt": "Integer remove 오버로드: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "[3, 7, 9]",
+        "explanation": "이 조건에서 [3, 7, 9]는 성립하지 않는다. int 인수 1은 remove(int index)를 선택해 인덱스 1의 값 7을 지운다."
+      },
+      {
+        "id": "c1",
+        "text": "[7, 9]",
+        "explanation": "이 조건에서 [7, 9]는 성립하지 않는다. int 인수 1은 remove(int index)를 선택해 인덱스 1의 값 7을 지운다."
+      },
+      {
+        "id": "c3",
+        "text": "[3, 7]",
+        "explanation": "이 조건에서 [3, 7]는 성립하지 않는다. int 인수 1은 remove(int index)를 선택해 인덱스 1의 값 7을 지운다."
+      },
+      {
+        "id": "c0",
+        "text": "[3, 9]",
+        "explanation": "int 인수 1은 remove(int index)를 선택해 인덱스 1의 값 7을 지운다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "int 인수 1은 remove(int index)를 선택해 인덱스 1의 값 7을 지운다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "List<Integer> values = new ArrayList<>(List.of(3,7,9));\nvalues.remove(1);\nSystem.out.println(values);",
+    "language": "java"
+  },
+  {
+    "id": "java-043",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Integer 값 remove",
+    "prompt": "Integer 값 remove: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "[7, 9]",
+        "explanation": "이 조건에서 [7, 9]는 성립하지 않는다. Integer 객체 인수는 remove(Object)를 선택하여 값 7인 항목을 제거한다."
+      },
+      {
+        "id": "c3",
+        "text": "IndexOutOfBoundsException",
+        "explanation": "이 조건에서 IndexOutOfBoundsException는 성립하지 않는다. Integer 객체 인수는 remove(Object)를 선택하여 값 7인 항목을 제거한다."
+      },
+      {
+        "id": "c0",
+        "text": "[3, 9]",
+        "explanation": "Integer 객체 인수는 remove(Object)를 선택하여 값 7인 항목을 제거한다."
+      },
+      {
+        "id": "c2",
+        "text": "[3, 7, 9]",
+        "explanation": "이 조건에서 [3, 7, 9]는 성립하지 않는다. Integer 객체 인수는 remove(Object)를 선택하여 값 7인 항목을 제거한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Integer 객체 인수는 remove(Object)를 선택하여 값 7인 항목을 제거한다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "List<Integer> values = new ArrayList<>(List.of(3,7,9));\nvalues.remove(Integer.valueOf(7));\nSystem.out.println(values);",
+    "language": "java"
+  },
+  {
+    "id": "java-044",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "HashMap 기존 키 갱신",
+    "prompt": "HashMap 기존 키 갱신: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "3 1",
+        "explanation": "put은 같은 키의 값을 교체하고 이전 값 3을 반환한다. 키 개수는 1이다."
+      },
+      {
+        "id": "c3",
+        "text": "3 2",
+        "explanation": "이 조건에서 3 2는 성립하지 않는다. put은 같은 키의 값을 교체하고 이전 값 3을 반환한다. 키 개수는 1이다."
+      },
+      {
+        "id": "c1",
+        "text": "8 2",
+        "explanation": "이 조건에서 8 2는 성립하지 않는다. put은 같은 키의 값을 교체하고 이전 값 3을 반환한다. 키 개수는 1이다."
+      },
+      {
+        "id": "c2",
+        "text": "null 2",
+        "explanation": "이 조건에서 null 2는 성립하지 않는다. put은 같은 키의 값을 교체하고 이전 값 3을 반환한다. 키 개수는 1이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "put은 같은 키의 값을 교체하고 이전 값 3을 반환한다. 키 개수는 1이다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "Map<String,Integer> scores = new HashMap<>();\nscores.put(\"a\",3);\nInteger old = scores.put(\"a\",8);\nSystem.out.println(old + \" \" + scores.size());",
+    "language": "java"
+  },
+  {
+    "id": "java-045",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "StringBuilder 수정",
+    "prompt": "StringBuilder 수정: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. StringBuilder는 가변 버퍼이며 append가 원본 빌더에 문자를 추가한다."
+      },
+      {
+        "id": "c2",
+        "text": "c",
+        "explanation": "이 조건에서 c는 성립하지 않는다. StringBuilder는 가변 버퍼이며 append가 원본 빌더에 문자를 추가한다."
+      },
+      {
+        "id": "c1",
+        "text": "ab",
+        "explanation": "이 조건에서 ab는 성립하지 않는다. StringBuilder는 가변 버퍼이며 append가 원본 빌더에 문자를 추가한다."
+      },
+      {
+        "id": "c0",
+        "text": "abc",
+        "explanation": "StringBuilder는 가변 버퍼이며 append가 원본 빌더에 문자를 추가한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "StringBuilder는 가변 버퍼이며 append가 원본 빌더에 문자를 추가한다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "StringBuilder s = new StringBuilder(\"ab\");\ns.append(\"c\");\nSystem.out.println(s);",
+    "language": "java"
+  },
+  {
+    "id": "java-046",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "전달된 참조의 재대입",
+    "prompt": "전달된 참조의 재대입: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 배열 내부 수정은 공유 객체에 반영된다. 매개변수 참조 재대입은 호출자의 a 바인딩을 바꾸지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 배열 내부 수정은 공유 객체에 반영된다. 매개변수 참조 재대입은 호출자의 a 바인딩을 바꾸지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. 배열 내부 수정은 공유 객체에 반영된다. 매개변수 참조 재대입은 호출자의 a 바인딩을 바꾸지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "8",
+        "explanation": "배열 내부 수정은 공유 객체에 반영된다. 매개변수 참조 재대입은 호출자의 a 바인딩을 바꾸지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "배열 내부 수정은 공유 객체에 반영된다. 매개변수 참조 재대입은 호출자의 a 바인딩을 바꾸지 않는다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "class Ops { static void change(int[] x) { x[0]=8; x=new int[]{9}; } }\nint[] a = {1};\nOps.change(a);\nSystem.out.println(a[0]);",
+    "language": "java"
+  },
+  {
+    "id": "java-047",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Stream 필터 조건",
+    "prompt": "짝수만 남겨 개수 2를 얻는 중간 연산은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "peek",
+        "explanation": "이 조건에서 peek는 성립하지 않는다. filter는 predicate가 true인 요소를 유지한다. map은 변환하므로 요소 개수는 바뀌지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "map",
+        "explanation": "이 조건에서 map는 성립하지 않는다. filter는 predicate가 true인 요소를 유지한다. map은 변환하므로 요소 개수는 바뀌지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "sorted",
+        "explanation": "이 조건에서 sorted는 성립하지 않는다. filter는 predicate가 true인 요소를 유지한다. map은 변환하므로 요소 개수는 바뀌지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "filter",
+        "explanation": "filter는 predicate가 true인 요소를 유지한다. map은 변환하므로 요소 개수는 바뀌지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "filter는 predicate가 true인 요소를 유지한다. map은 변환하므로 요소 개수는 바뀌지 않는다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "long count = List.of(1,2,3,4).stream()\n  .____(x -> x % 2 == 0).count();\nSystem.out.println(count);",
+    "language": "java"
+  },
+  {
+    "id": "java-048",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Stream 합산",
+    "prompt": "IntStream의 합 9를 얻는 종료 연산은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "max",
+        "explanation": "이 조건에서 max는 성립하지 않는다. IntStream.sum은 모든 int 요소의 합이다. count는 개수, min/max는 OptionalInt다."
+      },
+      {
+        "id": "c1",
+        "text": "count",
+        "explanation": "이 조건에서 count는 성립하지 않는다. IntStream.sum은 모든 int 요소의 합이다. count는 개수, min/max는 OptionalInt다."
+      },
+      {
+        "id": "c2",
+        "text": "min",
+        "explanation": "이 조건에서 min는 성립하지 않는다. IntStream.sum은 모든 int 요소의 합이다. count는 개수, min/max는 OptionalInt다."
+      },
+      {
+        "id": "c0",
+        "text": "sum",
+        "explanation": "IntStream.sum은 모든 int 요소의 합이다. count는 개수, min/max는 OptionalInt다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "IntStream.sum은 모든 int 요소의 합이다. count는 개수, min/max는 OptionalInt다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "int sum = List.of(2,3,4).stream()\n  .mapToInt(Integer::intValue).____();\nSystem.out.println(sum);",
+    "language": "java"
+  },
+  {
+    "id": "java-049",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Optional 기본값",
+    "prompt": "없는 Optional에 기본값 guest를 제공하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "orElse",
+        "explanation": "orElse는 값이 없으면 인수 기본값을 반환한다. get은 없는 값에서 예외를 던진다."
+      },
+      {
+        "id": "c2",
+        "text": "isPresent",
+        "explanation": "이 조건에서 isPresent는 성립하지 않는다. orElse는 값이 없으면 인수 기본값을 반환한다. get은 없는 값에서 예외를 던진다."
+      },
+      {
+        "id": "c1",
+        "text": "get",
+        "explanation": "이 조건에서 get는 성립하지 않는다. orElse는 값이 없으면 인수 기본값을 반환한다. get은 없는 값에서 예외를 던진다."
+      },
+      {
+        "id": "c3",
+        "text": "stream",
+        "explanation": "이 조건에서 stream는 성립하지 않는다. orElse는 값이 없으면 인수 기본값을 반환한다. get은 없는 값에서 예외를 던진다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "orElse는 값이 없으면 인수 기본값을 반환한다. get은 없는 값에서 예외를 던진다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "Optional<String> name = Optional.empty();\nSystem.out.println(name.____(\"guest\"));",
+    "language": "java"
+  },
+  {
+    "id": "java-050",
+    "subject": "java",
+    "difficulty": "medium",
+    "topic": "Set 중복 배제",
+    "prompt": "중복을 제거하는 Set 구현을 채우세요.",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "ArrayList",
+        "explanation": "이 조건에서 ArrayList는 성립하지 않는다. HashSet은 Set 구현으로 같은 정수 요소를 하나만 유지한다. 나머지는 Set 구현이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "HashSet",
+        "explanation": "HashSet은 Set 구현으로 같은 정수 요소를 하나만 유지한다. 나머지는 Set 구현이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "ArrayDeque",
+        "explanation": "이 조건에서 ArrayDeque는 성립하지 않는다. HashSet은 Set 구현으로 같은 정수 요소를 하나만 유지한다. 나머지는 Set 구현이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "HashMap",
+        "explanation": "이 조건에서 HashMap는 성립하지 않는다. HashSet은 Set 구현으로 같은 정수 요소를 하나만 유지한다. 나머지는 Set 구현이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "HashSet은 Set 구현으로 같은 정수 요소를 하나만 유지한다. 나머지는 Set 구현이 아니다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "Set<Integer> values = new ____<>();\nvalues.add(2); values.add(2);\nSystem.out.println(values.size());",
+    "language": "java"
+  },
+  {
+    "id": "java-051",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "finally 반환 우선",
+    "prompt": "finally 반환 우선: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "9",
+        "explanation": "finally의 return이 이전 return을 대체한다. 이런 코드는 예외와 반환을 숨길 수 있어 주의해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. finally의 return이 이전 return을 대체한다. 이런 코드는 예외와 반환을 숨길 수 있어 주의해야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "10",
+        "explanation": "이 조건에서 10는 성립하지 않는다. finally의 return이 이전 return을 대체한다. 이런 코드는 예외와 반환을 숨길 수 있어 주의해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. finally의 return이 이전 return을 대체한다. 이런 코드는 예외와 반환을 숨길 수 있어 주의해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "finally의 return이 이전 return을 대체한다. 이런 코드는 예외와 반환을 숨길 수 있어 주의해야 한다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "class Ops { static int f() { try { return 1; } finally { return 9; } } }\nSystem.out.println(Ops.f());",
+    "language": "java"
+  },
+  {
+    "id": "java-052",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "예외 catch 첫 일치",
+    "prompt": "예외 catch 첫 일치: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "runtime",
+        "explanation": "IllegalArgumentException은 RuntimeException 하위 타입이므로 먼저 일치한 첫 catch만 실행한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. IllegalArgumentException은 RuntimeException 하위 타입이므로 먼저 일치한 첫 catch만 실행한다."
+      },
+      {
+        "id": "c1",
+        "text": "exception",
+        "explanation": "이 조건에서 exception는 성립하지 않는다. IllegalArgumentException은 RuntimeException 하위 타입이므로 먼저 일치한 첫 catch만 실행한다."
+      },
+      {
+        "id": "c2",
+        "text": "runtime exception",
+        "explanation": "이 조건에서 runtime exception는 성립하지 않는다. IllegalArgumentException은 RuntimeException 하위 타입이므로 먼저 일치한 첫 catch만 실행한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "IllegalArgumentException은 RuntimeException 하위 타입이므로 먼저 일치한 첫 catch만 실행한다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "try { throw new IllegalArgumentException(); }\ncatch (RuntimeException ex) { System.out.println(\"runtime\"); }\ncatch (Exception ex) { System.out.println(\"exception\"); }",
+    "language": "java"
+  },
+  {
+    "id": "java-053",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "정적 메서드 숨김",
+    "prompt": "정적 메서드 숨김: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. static 메서드 선택은 참조의 정적 타입 Base를 따른다. 인스턴스 가상 재정의와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. static 메서드 선택은 참조의 정적 타입 Base를 따른다. 인스턴스 가상 재정의와 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. static 메서드 선택은 참조의 정적 타입 Base를 따른다. 인스턴스 가상 재정의와 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "1",
+        "explanation": "static 메서드 선택은 참조의 정적 타입 Base를 따른다. 인스턴스 가상 재정의와 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "static 메서드 선택은 참조의 정적 타입 Base를 따른다. 인스턴스 가상 재정의와 다르다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "class Base { static int f() { return 1; } }\nclass Child extends Base { static int f() { return 2; } }\nBase ref = new Child();\nSystem.out.println(ref.f());",
+    "language": "java"
+  },
+  {
+    "id": "java-054",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "equals와 HashSet",
+    "prompt": "equals와 HashSet: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. String의 equals와 hashCode는 내용 기반이다. 별개 참조라도 같은 내용은 Set에서 하나로 취급한다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. String의 equals와 hashCode는 내용 기반이다. 별개 참조라도 같은 내용은 Set에서 하나로 취급한다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. String의 equals와 hashCode는 내용 기반이다. 별개 참조라도 같은 내용은 Set에서 하나로 취급한다."
+      },
+      {
+        "id": "c0",
+        "text": "1",
+        "explanation": "String의 equals와 hashCode는 내용 기반이다. 별개 참조라도 같은 내용은 Set에서 하나로 취급한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "String의 equals와 hashCode는 내용 기반이다. 별개 참조라도 같은 내용은 Set에서 하나로 취급한다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "Set<String> values = new HashSet<>();\nvalues.add(new String(\"CS\"));\nvalues.add(new String(\"CS\"));\nSystem.out.println(values.size());",
+    "language": "java"
+  },
+  {
+    "id": "java-055",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "정수 overflow",
+    "prompt": "정수 overflow: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. Java int 산술 overflow는 하위 32비트를 유지한다. MAX_VALUE 다음은 MIN_VALUE이며 자동 예외가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "ArithmeticException",
+        "explanation": "이 조건에서 ArithmeticException는 성립하지 않는다. Java int 산술 overflow는 하위 32비트를 유지한다. MAX_VALUE 다음은 MIN_VALUE이며 자동 예외가 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "2147483648",
+        "explanation": "이 조건에서 2147483648는 성립하지 않는다. Java int 산술 overflow는 하위 32비트를 유지한다. MAX_VALUE 다음은 MIN_VALUE이며 자동 예외가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "-2147483648",
+        "explanation": "Java int 산술 overflow는 하위 32비트를 유지한다. MAX_VALUE 다음은 MIN_VALUE이며 자동 예외가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Java int 산술 overflow는 하위 32비트를 유지한다. MAX_VALUE 다음은 MIN_VALUE이며 자동 예외가 아니다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int n = Integer.MAX_VALUE;\nSystem.out.println(n + 1);",
+    "language": "java"
+  },
+  {
+    "id": "java-056",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "Optional 기본값 선평가",
+    "prompt": "Optional 기본값 선평가: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "F ok",
+        "explanation": "orElse의 인수 식은 메서드 호출 전에 평가된다. 값이 있어도 fallback이 먼저 실행된다."
+      },
+      {
+        "id": "c2",
+        "text": "F x",
+        "explanation": "이 조건에서 F x는 성립하지 않는다. orElse의 인수 식은 메서드 호출 전에 평가된다. 값이 있어도 fallback이 먼저 실행된다."
+      },
+      {
+        "id": "c3",
+        "text": "x",
+        "explanation": "이 조건에서 x는 성립하지 않는다. orElse의 인수 식은 메서드 호출 전에 평가된다. 값이 있어도 fallback이 먼저 실행된다."
+      },
+      {
+        "id": "c1",
+        "text": "ok",
+        "explanation": "이 조건에서 ok는 성립하지 않는다. orElse의 인수 식은 메서드 호출 전에 평가된다. 값이 있어도 fallback이 먼저 실행된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "orElse의 인수 식은 메서드 호출 전에 평가된다. 값이 있어도 fallback이 먼저 실행된다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "class Ops { static String fallback() { System.out.print(\"F \"); return \"x\"; } }\nString result = Optional.of(\"ok\").orElse(Ops.fallback());\nSystem.out.println(result);",
+    "language": "java"
+  },
+  {
+    "id": "java-057",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "Optional 공급자 지연",
+    "prompt": "Optional 공급자 지연: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "x",
+        "explanation": "이 조건에서 x는 성립하지 않는다. orElseGet은 Optional 값이 없을 때만 공급자를 호출한다. 존재하는 ok이면 F를 출력하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "F ok",
+        "explanation": "이 조건에서 F ok는 성립하지 않는다. orElseGet은 Optional 값이 없을 때만 공급자를 호출한다. 존재하는 ok이면 F를 출력하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "ok",
+        "explanation": "orElseGet은 Optional 값이 없을 때만 공급자를 호출한다. 존재하는 ok이면 F를 출력하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "F x",
+        "explanation": "이 조건에서 F x는 성립하지 않는다. orElseGet은 Optional 값이 없을 때만 공급자를 호출한다. 존재하는 ok이면 F를 출력하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "orElseGet은 Optional 값이 없을 때만 공급자를 호출한다. 존재하는 ok이면 F를 출력하지 않는다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "class Ops { static String fallback() { System.out.print(\"F \"); return \"x\"; } }\nString result = Optional.of(\"ok\").orElseGet(Ops::fallback);\nSystem.out.println(result);",
+    "language": "java"
+  },
+  {
+    "id": "java-058",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "checked 예외 선언",
+    "prompt": "메서드가 checked 예외를 호출자에게 전파하도록 선언하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "throws",
+        "explanation": "throws는 메서드 시그니처의 예외 선언이다. throw는 실제 예외를 던지는 문장이다."
+      },
+      {
+        "id": "c3",
+        "text": "finally",
+        "explanation": "이 조건에서 finally는 성립하지 않는다. throws는 메서드 시그니처의 예외 선언이다. throw는 실제 예외를 던지는 문장이다."
+      },
+      {
+        "id": "c1",
+        "text": "throw",
+        "explanation": "이 조건에서 throw는 성립하지 않는다. throws는 메서드 시그니처의 예외 선언이다. throw는 실제 예외를 던지는 문장이다."
+      },
+      {
+        "id": "c2",
+        "text": "catch",
+        "explanation": "이 조건에서 catch는 성립하지 않는다. throws는 메서드 시그니처의 예외 선언이다. throw는 실제 예외를 던지는 문장이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "throws는 메서드 시그니처의 예외 선언이다. throw는 실제 예외를 던지는 문장이다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. javac --release 21 및 JVM에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "class Ops { static void read() ____ java.io.IOException { throw new java.io.IOException(); } }\ntry { Ops.read(); } catch (java.io.IOException ex) { System.out.println(\"caught\"); }",
+    "language": "java"
+  },
+  {
+    "id": "java-059",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "제네릭 불공변성",
+    "prompt": "다음 대입이 실패하는 이유는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "List<Integer>는 List<Number>의 하위 타입이 아님",
+        "explanation": "제네릭 타입은 기본적으로 불공변이다. 읽기 전용 범위를 원하면 List<? extends Number>로 받을 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "ArrayList의 생성자는 항상 비공개",
+        "explanation": "이 조건에서 ArrayList의 생성자는 항상 비공개는 성립하지 않는다. 제네릭 타입은 기본적으로 불공변이다. 읽기 전용 범위를 원하면 List<? extends Number>로 받을 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "List에는 숫자를 저장할 수 없음",
+        "explanation": "이 조건에서 List에는 숫자를 저장할 수 없음는 성립하지 않는다. 제네릭 타입은 기본적으로 불공변이다. 읽기 전용 범위를 원하면 List<? extends Number>로 받을 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "Integer는 Number의 하위 타입이 아님",
+        "explanation": "이 조건에서 Integer는 Number의 하위 타입이 아님는 성립하지 않는다. 제네릭 타입은 기본적으로 불공변이다. 읽기 전용 범위를 원하면 List<? extends Number>로 받을 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "제네릭 타입은 기본적으로 불공변이다. 읽기 전용 범위를 원하면 List<? extends Number>로 받을 수 있다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "List<Integer> ints = new ArrayList<>();\nList<Number> numbers = ints;",
+    "language": "java"
+  },
+  {
+    "id": "java-060",
+    "subject": "java",
+    "difficulty": "hard",
+    "topic": "수정 불가 List.of",
+    "prompt": "다음 add 호출의 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "원래 리스트를 바꾸지 않고 새 리스트 반환",
+        "explanation": "이 조건에서 원래 리스트를 바꾸지 않고 새 리스트 반환는 성립하지 않는다. List.of는 수정 불가 리스트를 반환한다. add 메서드는 존재하지만 실행 시 UnsupportedOperationException을 던진다."
+      },
+      {
+        "id": "c2",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. List.of는 수정 불가 리스트를 반환한다. add 메서드는 존재하지만 실행 시 UnsupportedOperationException을 던진다."
+      },
+      {
+        "id": "c1",
+        "text": "원소 3이 정상 추가",
+        "explanation": "이 조건에서 원소 3이 정상 추가는 성립하지 않는다. List.of는 수정 불가 리스트를 반환한다. add 메서드는 존재하지만 실행 시 UnsupportedOperationException을 던진다."
+      },
+      {
+        "id": "c0",
+        "text": "UnsupportedOperationException 발생",
+        "explanation": "List.of는 수정 불가 리스트를 반환한다. add 메서드는 존재하지만 실행 시 UnsupportedOperationException을 던진다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "List.of는 수정 불가 리스트를 반환한다. add 메서드는 존재하지만 실행 시 UnsupportedOperationException을 던진다.",
+    "environment": "Java SE 21. java.util.*를 import한 main 내부 코드. preview 기능은 사용하지 않는다.",
+    "sources": [
+      {
+        "title": "java 공식 개념 근거",
+        "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html"
+      },
+      {
+        "title": "Java SE 21 API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "List<Integer> values = List.of(1,2);\nvalues.add(3);",
+    "language": "java"
   }
 ]
