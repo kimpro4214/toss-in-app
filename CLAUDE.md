@@ -144,21 +144,26 @@ MeshRenderer::Update() 또는 렌더링 코드 작성/수정 시 반드시 포�
 - Never add agent attribution, automatic agent signatures, or `Co-authored-by` trailers to commit messages.
 
 ## 3. Git Branch & PR (Critical)
-- `main` is the release branch and the repository's default branch.
-- `dev` is the integration branch for reviewed application and game changes.
-- Repository-wide maintenance, such as shared agent instructions and ignore rules, may be committed directly to `dev` when explicitly authorized by the user. New applications and games still require their own feature branches.
-- Develop each application or game on its own feature branch, such as `feat/cs-daily`.
-- Whenever starting a new application or game, create a new feature branch from the latest `dev`. Do not reuse another application's or game's branch, and do not start it from an unrelated feature branch.
-- Use the naming format `<type>/<lowercase-kebab-case-description>`. Use English letters, numbers, and hyphens in the description; do not use spaces, uppercase letters, or underscores.
-  - New application or game: `feat/<app-or-game-slug>`, for example `feat/cs-daily` or `feat/block-puzzle`.
-  - Follow-up feature: `feat/<app-or-game-slug>-<change>`, for example `feat/cs-daily-subject-filter`.
-  - Bug fix: `fix/<app-or-game-slug>-<issue>`, for example `fix/cs-daily-save-error`.
-  - Repository maintenance or documentation: `chore/<description>` or `docs/<description>`.
-- Keep each branch scoped to its application, game, or stated maintenance task.
-- Integrate feature branches through reviewed GitHub PRs targeting `dev`.
-- Release through a reviewed GitHub PR from `dev` to `main`.
-- Never push directly to `main`, and never merge into `main` locally. The one-time initial creation of `main`, `dev`, and `feat/cs-daily` was explicitly approved; it is not ongoing permission to push directly to `main`.
-- Before committing or pushing, verify the current branch, staged files, and commit messages.
+- `main` is the release branch and the repository's default branch. All application and game PRs target `main` directly.
+- There is no `dev` integration branch. Do not recreate it or introduce additional integration or release branches unless the user explicitly requests them.
+- Keep one reusable branch per application or game, named `feat/<app-or-game-slug>`, for example `feat/cs-daily` or `feat/block-puzzle`.
+- Create a branch from the latest `origin/main` only when starting a new application or game. Do not reuse another application's or game's branch or start from an unrelated app branch.
+- Continue adding features and fixes on the same app branch. Do not create a separate branch for every feature, bug fix, or PR unless the user explicitly asks for one. Keep the app branch after PR merges; do not delete it as routine cleanup.
+- Before the next development cycle, fetch and synchronize the app branch with `origin/main`. Prefer a fast-forward when possible; otherwise merge `origin/main` into the app branch while preserving published commits. Never reset or force-push published history without explicit authorization.
+- Use English lowercase letters, numbers, and hyphens in branch slugs; do not use spaces, uppercase letters, or underscores.
+- Keep each app branch scoped to its application or game. Explicitly requested shared repository maintenance, including `AGENTS.md`, `CLAUDE.md`, and ignore rules, may use the active app branch.
+- Keep commits small and focused. When a feature unit is ready and the user requests a PR, push the app branch and open a GitHub PR directly to `main`.
+- Never push directly to `main` or merge into `main` locally. A PR creation request does not authorize merging the PR; merge only when the user explicitly requests it.
+- Before committing or pushing, verify the current branch, staged files, outgoing commits, commit messages, and local-only exclusions.
+
+### PR Execution & Format
+- Treat a direct request such as "PR 날려줘" or "open a PR" as authorization to complete the required checks, commit the relevant changes, push the app branch, and create the PR without asking for another confirmation. Reuse and update an existing open PR for the same head branch and `main` base instead of creating a duplicate.
+- If the user asks only for a PR message, provide the title and body without creating a PR.
+- Use available GitHub tools, CLI, API, or authenticated browser access to create the PR. After creation, attach the PR to the current task and return its URL.
+- Keep PR titles concise, in Korean, with a conventional prefix such as `feat:`, `fix:`, or `chore:`.
+- Keep the agreed PR body format: a short opening paragraph describing the concrete problem and resulting behavior, followed by `### 변경사항` and `### 검증` with flat bullet lists.
+- Describe the final diff against `main`, including only changes relevant to a reviewer. State actual test results and material unverified items; distinguish development ad mocks from real Toss ad or device validation.
+- Do not add agent attribution, automatic signatures, or `Co-authored-by` trailers to PR text or commits.
 
 ## 4. GitHub Scope & Local-Only Documents (Critical)
 - GitHub is for the working application or game: source code, runtime assets, question/content data used by the app, build/runtime configuration, dependency manifests and lockfiles, and necessary development/test scripts.
