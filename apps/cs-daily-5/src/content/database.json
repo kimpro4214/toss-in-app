@@ -1408,5 +1408,1513 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "database-031",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "COUNT와 NULL",
+    "prompt": "COUNT와 NULL: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "2 2",
+        "explanation": "이 조건에서 2 2는 성립하지 않는다. COUNT(*)는 모든 행을 세고 COUNT(x)는 NULL이 아닌 값만 센다."
+      },
+      {
+        "id": "c0",
+        "text": "3 2",
+        "explanation": "COUNT(*)는 모든 행을 세고 COUNT(x)는 NULL이 아닌 값만 센다."
+      },
+      {
+        "id": "c1",
+        "text": "3 3",
+        "explanation": "이 조건에서 3 3는 성립하지 않는다. COUNT(*)는 모든 행을 세고 COUNT(x)는 NULL이 아닌 값만 센다."
+      },
+      {
+        "id": "c3",
+        "text": "2 3",
+        "explanation": "이 조건에서 2 3는 성립하지 않는다. COUNT(*)는 모든 행을 세고 COUNT(x)는 NULL이 아닌 값만 센다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "COUNT(*)는 모든 행을 세고 COUNT(x)는 NULL이 아닌 값만 센다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "WITH t(x) AS (VALUES (1), (NULL), (3))\nSELECT COUNT(*), COUNT(x) FROM t;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-032",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "SUM 집계",
+    "prompt": "SUM 집계: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "5",
+        "explanation": "SUM은 NULL을 제외한 2와 3을 더한다. NULL이 있다는 이유만으로 전체 결과가 NULL은 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. SUM은 NULL을 제외한 2와 3을 더한다. NULL이 있다는 이유만으로 전체 결과가 NULL은 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. SUM은 NULL을 제외한 2와 3을 더한다. NULL이 있다는 이유만으로 전체 결과가 NULL은 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "NULL",
+        "explanation": "이 조건에서 NULL는 성립하지 않는다. SUM은 NULL을 제외한 2와 3을 더한다. NULL이 있다는 이유만으로 전체 결과가 NULL은 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "SUM은 NULL을 제외한 2와 3을 더한다. NULL이 있다는 이유만으로 전체 결과가 NULL은 아니다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "WITH t(x) AS (VALUES (2), (3), (NULL))\nSELECT SUM(x) FROM t;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-033",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "WHERE 행 선택",
+    "prompt": "WHERE 행 선택: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. WHERE는 각 행을 필터링하여 3과 5 두 행만 남긴다."
+      },
+      {
+        "id": "c1",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. WHERE는 각 행을 필터링하여 3과 5 두 행만 남긴다."
+      },
+      {
+        "id": "c3",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. WHERE는 각 행을 필터링하여 3과 5 두 행만 남긴다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "WHERE는 각 행을 필터링하여 3과 5 두 행만 남긴다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "WHERE는 각 행을 필터링하여 3과 5 두 행만 남긴다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "WITH t(x) AS (VALUES (1), (3), (5))\nSELECT COUNT(*) FROM t WHERE x > 2;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-034",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "NULL 검사",
+    "prompt": "NULL 값이 들어 있는 한 행을 찾는 조건을 채우세요.",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "IS NOT NULL",
+        "explanation": "이 조건에서 IS NOT NULL는 성립하지 않는다. NULL 여부는 IS NULL로 검사한다. = NULL과 <> NULL은 unknown이어서 WHERE에서 참이 되지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "IS NULL",
+        "explanation": "NULL 여부는 IS NULL로 검사한다. = NULL과 <> NULL은 unknown이어서 WHERE에서 참이 되지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "<> NULL",
+        "explanation": "이 조건에서 <> NULL는 성립하지 않는다. NULL 여부는 IS NULL로 검사한다. = NULL과 <> NULL은 unknown이어서 WHERE에서 참이 되지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "= NULL",
+        "explanation": "이 조건에서 = NULL는 성립하지 않는다. NULL 여부는 IS NULL로 검사한다. = NULL과 <> NULL은 unknown이어서 WHERE에서 참이 되지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "NULL 여부는 IS NULL로 검사한다. = NULL과 <> NULL은 unknown이어서 WHERE에서 참이 되지 않는다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "WITH t(x) AS (VALUES (1), (NULL))\nSELECT COUNT(*) FROM t WHERE x ____;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-035",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "중복 제거 SELECT",
+    "prompt": "같은 값의 중복 행을 제거하는 키워드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "DISTINCT",
+        "explanation": "SELECT DISTINCT는 결과의 중복 행을 제거한다. ALL은 중복을 유지한다."
+      },
+      {
+        "id": "c2",
+        "text": "GROUP",
+        "explanation": "이 조건에서 GROUP는 성립하지 않는다. SELECT DISTINCT는 결과의 중복 행을 제거한다. ALL은 중복을 유지한다."
+      },
+      {
+        "id": "c1",
+        "text": "ALL",
+        "explanation": "이 조건에서 ALL는 성립하지 않는다. SELECT DISTINCT는 결과의 중복 행을 제거한다. ALL은 중복을 유지한다."
+      },
+      {
+        "id": "c3",
+        "text": "UNIQUE KEY",
+        "explanation": "이 조건에서 UNIQUE KEY는 성립하지 않는다. SELECT DISTINCT는 결과의 중복 행을 제거한다. ALL은 중복을 유지한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "SELECT DISTINCT는 결과의 중복 행을 제거한다. ALL은 중복을 유지한다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "fill-blank",
+    "code": "WITH t(x) AS (VALUES (1), (1), (2))\nSELECT ____ x FROM t ORDER BY x;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-036",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "내림차순 키워드",
+    "prompt": "가장 큰 값 5를 먼저 선택하는 정렬 방향은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "UP",
+        "explanation": "이 조건에서 UP는 성립하지 않는다. ORDER BY ... DESC가 내림차순이며 ASC는 오름차순이다."
+      },
+      {
+        "id": "c0",
+        "text": "DESC",
+        "explanation": "ORDER BY ... DESC가 내림차순이며 ASC는 오름차순이다."
+      },
+      {
+        "id": "c1",
+        "text": "ASC",
+        "explanation": "이 조건에서 ASC는 성립하지 않는다. ORDER BY ... DESC가 내림차순이며 ASC는 오름차순이다."
+      },
+      {
+        "id": "c3",
+        "text": "MAX",
+        "explanation": "이 조건에서 MAX는 성립하지 않는다. ORDER BY ... DESC가 내림차순이며 ASC는 오름차순이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "ORDER BY ... DESC가 내림차순이며 ASC는 오름차순이다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "WITH t(x) AS (VALUES (2), (5), (3))\nSELECT x FROM t ORDER BY x ____ LIMIT 1;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-037",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "후보 키 최소성",
+    "prompt": "후보 키를 슈퍼 키와 구분하는 추가 성질은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "NULL이 반드시 포함",
+        "explanation": "이 조건에서 NULL이 반드시 포함는 성립하지 않는다. 후보 키는 유일성뿐 아니라 불필요한 속성을 제거할 수 없는 최소성을 만족한다."
+      },
+      {
+        "id": "c1",
+        "text": "반드시 숫자 한 개",
+        "explanation": "이 조건에서 반드시 숫자 한 개는 성립하지 않는다. 후보 키는 유일성뿐 아니라 불필요한 속성을 제거할 수 없는 최소성을 만족한다."
+      },
+      {
+        "id": "c0",
+        "text": "유일성을 유지하는 최소 속성 집합",
+        "explanation": "후보 키는 유일성뿐 아니라 불필요한 속성을 제거할 수 없는 최소성을 만족한다."
+      },
+      {
+        "id": "c3",
+        "text": "행 삽입마다 값이 자동 증가",
+        "explanation": "이 조건에서 행 삽입마다 값이 자동 증가는 성립하지 않는다. 후보 키는 유일성뿐 아니라 불필요한 속성을 제거할 수 없는 최소성을 만족한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "후보 키는 유일성뿐 아니라 불필요한 속성을 제거할 수 없는 최소성을 만족한다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-038",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "외래 키 참조",
+    "prompt": "자식 테이블의 외래 키가 주로 보장하려는 무결성은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "참조 대상 키와의 관계 일관성",
+        "explanation": "외래 키는 자식 참조가 허용된 부모 키를 가리키도록 제한한다. 값 범위와 정렬은 다른 문제다."
+      },
+      {
+        "id": "c3",
+        "text": "결과 행 정렬",
+        "explanation": "이 조건에서 결과 행 정렬는 성립하지 않는다. 외래 키는 자식 참조가 허용된 부모 키를 가리키도록 제한한다. 값 범위와 정렬은 다른 문제다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 열이 암호화됨",
+        "explanation": "이 조건에서 모든 열이 암호화됨는 성립하지 않는다. 외래 키는 자식 참조가 허용된 부모 키를 가리키도록 제한한다. 값 범위와 정렬은 다른 문제다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 숫자가 양수",
+        "explanation": "이 조건에서 모든 숫자가 양수는 성립하지 않는다. 외래 키는 자식 참조가 허용된 부모 키를 가리키도록 제한한다. 값 범위와 정렬은 다른 문제다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "외래 키는 자식 참조가 허용된 부모 키를 가리키도록 제한한다. 값 범위와 정렬은 다른 문제다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-039",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "UPDATE 조건",
+    "prompt": "UPDATE accounts SET balance=0;에 WHERE가 없을 때 대상은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "마지막 삽입 행만",
+        "explanation": "이 조건에서 마지막 삽입 행만는 성립하지 않는다. WHERE 없는 UPDATE는 모든 대상 행에 적용된다. 한 행만 바꾸려면 식별 조건이 필요하다."
+      },
+      {
+        "id": "c2",
+        "text": "NULL인 행만",
+        "explanation": "이 조건에서 NULL인 행만는 성립하지 않는다. WHERE 없는 UPDATE는 모든 대상 행에 적용된다. 한 행만 바꾸려면 식별 조건이 필요하다."
+      },
+      {
+        "id": "c0",
+        "text": "테이블의 모든 행",
+        "explanation": "WHERE 없는 UPDATE는 모든 대상 행에 적용된다. 한 행만 바꾸려면 식별 조건이 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "첫 행만",
+        "explanation": "이 조건에서 첫 행만는 성립하지 않는다. WHERE 없는 UPDATE는 모든 대상 행에 적용된다. 한 행만 바꾸려면 식별 조건이 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "WHERE 없는 UPDATE는 모든 대상 행에 적용된다. 한 행만 바꾸려면 식별 조건이 필요하다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "code": "UPDATE accounts SET balance = 0;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-040",
+    "subject": "database",
+    "difficulty": "easy",
+    "topic": "트랜잭션 ROLLBACK",
+    "prompt": "아직 COMMIT하지 않은 트랜잭션의 변경을 취소하는 명령은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "ROLLBACK",
+        "explanation": "ROLLBACK은 해당 트랜잭션의 미확정 변경을 취소한다. 이미 별도로 COMMIT된 트랜잭션까지 되돌리는 명령은 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "ORDER BY",
+        "explanation": "이 조건에서 ORDER BY는 성립하지 않는다. ROLLBACK은 해당 트랜잭션의 미확정 변경을 취소한다. 이미 별도로 COMMIT된 트랜잭션까지 되돌리는 명령은 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "GRANT",
+        "explanation": "이 조건에서 GRANT는 성립하지 않는다. ROLLBACK은 해당 트랜잭션의 미확정 변경을 취소한다. 이미 별도로 COMMIT된 트랜잭션까지 되돌리는 명령은 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "SELECT",
+        "explanation": "이 조건에서 SELECT는 성립하지 않는다. ROLLBACK은 해당 트랜잭션의 미확정 변경을 취소한다. 이미 별도로 COMMIT된 트랜잭션까지 되돌리는 명령은 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "ROLLBACK은 해당 트랜잭션의 미확정 변경을 취소한다. 이미 별도로 COMMIT된 트랜잭션까지 되돌리는 명령은 아니다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-041",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "HAVING 그룹 선택",
+    "prompt": "HAVING 그룹 선택: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "행 없음",
+        "explanation": "이 조건에서 행 없음는 성립하지 않는다. a 그룹 합계는 5, b는 1이다. HAVING은 집계 후 그룹을 필터링한다."
+      },
+      {
+        "id": "c0",
+        "text": "a",
+        "explanation": "a 그룹 합계는 5, b는 1이다. HAVING은 집계 후 그룹을 필터링한다."
+      },
+      {
+        "id": "c2",
+        "text": "a와 b",
+        "explanation": "이 조건에서 a와 b는 성립하지 않는다. a 그룹 합계는 5, b는 1이다. HAVING은 집계 후 그룹을 필터링한다."
+      },
+      {
+        "id": "c1",
+        "text": "b",
+        "explanation": "이 조건에서 b는 성립하지 않는다. a 그룹 합계는 5, b는 1이다. HAVING은 집계 후 그룹을 필터링한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "a 그룹 합계는 5, b는 1이다. HAVING은 집계 후 그룹을 필터링한다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "WITH t(team,score) AS (VALUES ('a',2),('a',3),('b',1))\nSELECT team FROM t GROUP BY team\nHAVING SUM(score) >= 5;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-042",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "INNER JOIN 행 수",
+    "prompt": "INNER JOIN 행 수: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. a의 id=2 한 행이 b의 같은 키 두 행과 각각 결합되어 두 결과 행이 생긴다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "a의 id=2 한 행이 b의 같은 키 두 행과 각각 결합되어 두 결과 행이 생긴다."
+      },
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. a의 id=2 한 행이 b의 같은 키 두 행과 각각 결합되어 두 결과 행이 생긴다."
+      },
+      {
+        "id": "c3",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. a의 id=2 한 행이 b의 같은 키 두 행과 각각 결합되어 두 결과 행이 생긴다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "a의 id=2 한 행이 b의 같은 키 두 행과 각각 결합되어 두 결과 행이 생긴다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "WITH a(id) AS (VALUES (1),(2)),\n     b(id) AS (VALUES (2),(2),(3))\nSELECT COUNT(*) FROM a JOIN b ON a.id=b.id;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-043",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "LEFT JOIN 보존",
+    "prompt": "LEFT JOIN 보존: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "왼쪽 테이블의 두 행을 모두 유지하며 id=1에 대해 오른쪽 값은 NULL로 채운다."
+      },
+      {
+        "id": "c3",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 왼쪽 테이블의 두 행을 모두 유지하며 id=1에 대해 오른쪽 값은 NULL로 채운다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 왼쪽 테이블의 두 행을 모두 유지하며 id=1에 대해 오른쪽 값은 NULL로 채운다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 왼쪽 테이블의 두 행을 모두 유지하며 id=1에 대해 오른쪽 값은 NULL로 채운다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "왼쪽 테이블의 두 행을 모두 유지하며 id=1에 대해 오른쪽 값은 NULL로 채운다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "WITH a(id) AS (VALUES (1),(2)),\n     b(id) AS (VALUES (2))\nSELECT COUNT(*) FROM a LEFT JOIN b ON a.id=b.id;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-044",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "UNION 중복 제거",
+    "prompt": "UNION 중복 제거: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "값 1 한 행",
+        "explanation": "UNION은 결과 중복을 제거한다. UNION ALL이라면 두 행을 유지한다."
+      },
+      {
+        "id": "c1",
+        "text": "값 1 두 행",
+        "explanation": "이 조건에서 값 1 두 행는 성립하지 않는다. UNION은 결과 중복을 제거한다. UNION ALL이라면 두 행을 유지한다."
+      },
+      {
+        "id": "c3",
+        "text": "구문 오류",
+        "explanation": "이 조건에서 구문 오류는 성립하지 않는다. UNION은 결과 중복을 제거한다. UNION ALL이라면 두 행을 유지한다."
+      },
+      {
+        "id": "c2",
+        "text": "값 2 한 행",
+        "explanation": "이 조건에서 값 2 한 행는 성립하지 않는다. UNION은 결과 중복을 제거한다. UNION ALL이라면 두 행을 유지한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "UNION은 결과 중복을 제거한다. UNION ALL이라면 두 행을 유지한다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "SELECT 1 AS x UNION SELECT 1 AS x;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-045",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "COALESCE 첫 비NULL",
+    "prompt": "COALESCE 첫 비NULL: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "NULL",
+        "explanation": "이 조건에서 NULL는 성립하지 않는다. COALESCE는 왼쪽에서 첫 NULL 아닌 값을 고른다. 0은 유효한 비NULL 값이다."
+      },
+      {
+        "id": "c3",
+        "text": "구문 오류",
+        "explanation": "이 조건에서 구문 오류는 성립하지 않는다. COALESCE는 왼쪽에서 첫 NULL 아닌 값을 고른다. 0은 유효한 비NULL 값이다."
+      },
+      {
+        "id": "c0",
+        "text": "0",
+        "explanation": "COALESCE는 왼쪽에서 첫 NULL 아닌 값을 고른다. 0은 유효한 비NULL 값이다."
+      },
+      {
+        "id": "c1",
+        "text": "7",
+        "explanation": "이 조건에서 7는 성립하지 않는다. COALESCE는 왼쪽에서 첫 NULL 아닌 값을 고른다. 0은 유효한 비NULL 값이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "COALESCE는 왼쪽에서 첫 NULL 아닌 값을 고른다. 0은 유효한 비NULL 값이다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "SELECT COALESCE(NULL, 0, 7);",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-046",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "그룹별 집계",
+    "prompt": "team별로 행을 모아 집계하는 구문은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "GROUP BY",
+        "explanation": "GROUP BY는 같은 team 값을 그룹화한다. ORDER BY는 정렬이며 WHERE/HAVING은 필터다."
+      },
+      {
+        "id": "c1",
+        "text": "ORDER BY",
+        "explanation": "이 조건에서 ORDER BY는 성립하지 않는다. GROUP BY는 같은 team 값을 그룹화한다. ORDER BY는 정렬이며 WHERE/HAVING은 필터다."
+      },
+      {
+        "id": "c2",
+        "text": "WHERE",
+        "explanation": "이 조건에서 WHERE는 성립하지 않는다. GROUP BY는 같은 team 값을 그룹화한다. ORDER BY는 정렬이며 WHERE/HAVING은 필터다."
+      },
+      {
+        "id": "c3",
+        "text": "HAVING",
+        "explanation": "이 조건에서 HAVING는 성립하지 않는다. GROUP BY는 같은 team 값을 그룹화한다. ORDER BY는 정렬이며 WHERE/HAVING은 필터다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "GROUP BY는 같은 team 값을 그룹화한다. ORDER BY는 정렬이며 WHERE/HAVING은 필터다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "fill-blank",
+    "code": "WITH t(team) AS (VALUES ('a'),('a'),('b'))\nSELECT team,COUNT(*) FROM t ____ team;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-047",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "매칭 없는 왼쪽 행",
+    "prompt": "오른쪽에 매칭이 없는 id=1만 찾는 조건은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "= 2",
+        "explanation": "이 조건에서 = 2는 성립하지 않는다. LEFT JOIN에서 매칭 없는 행의 오른쪽 키가 NULL이므로 IS NULL로 선택한다. 오른쪽 id는 원래 NOT NULL인 데이터다."
+      },
+      {
+        "id": "c3",
+        "text": "> 0",
+        "explanation": "이 조건에서 > 0는 성립하지 않는다. LEFT JOIN에서 매칭 없는 행의 오른쪽 키가 NULL이므로 IS NULL로 선택한다. 오른쪽 id는 원래 NOT NULL인 데이터다."
+      },
+      {
+        "id": "c0",
+        "text": "IS NULL",
+        "explanation": "LEFT JOIN에서 매칭 없는 행의 오른쪽 키가 NULL이므로 IS NULL로 선택한다. 오른쪽 id는 원래 NOT NULL인 데이터다."
+      },
+      {
+        "id": "c1",
+        "text": "IS NOT NULL",
+        "explanation": "이 조건에서 IS NOT NULL는 성립하지 않는다. LEFT JOIN에서 매칭 없는 행의 오른쪽 키가 NULL이므로 IS NULL로 선택한다. 오른쪽 id는 원래 NOT NULL인 데이터다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "LEFT JOIN에서 매칭 없는 행의 오른쪽 키가 NULL이므로 IS NULL로 선택한다. 오른쪽 id는 원래 NOT NULL인 데이터다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "WITH a(id) AS (VALUES (1),(2)), b(id) AS (VALUES (2))\nSELECT a.id FROM a LEFT JOIN b ON a.id=b.id\nWHERE b.id ____;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-048",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "2정규형 부분 종속",
+    "prompt": "복합 후보 키 (student,course)에서 student만으로 결정되는 student_name이 같은 테이블에 있습니다. 어떤 문제인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "기본 키 유일성 위반이 반드시 발생",
+        "explanation": "이 조건에서 기본 키 유일성 위반이 반드시 발생는 성립하지 않는다. 비키 속성이 복합 키 전체가 아닌 일부 student에 종속되면 2정규형을 위반한다."
+      },
+      {
+        "id": "c0",
+        "text": "키 일부에 대한 부분 함수 종속",
+        "explanation": "비키 속성이 복합 키 전체가 아닌 일부 student에 종속되면 2정규형을 위반한다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 외래 키가 삭제됨",
+        "explanation": "이 조건에서 모든 외래 키가 삭제됨는 성립하지 않는다. 비키 속성이 복합 키 전체가 아닌 일부 student에 종속되면 2정규형을 위반한다."
+      },
+      {
+        "id": "c3",
+        "text": "무조건 4정규형 만족",
+        "explanation": "이 조건에서 무조건 4정규형 만족는 성립하지 않는다. 비키 속성이 복합 키 전체가 아닌 일부 student에 종속되면 2정규형을 위반한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "비키 속성이 복합 키 전체가 아닌 일부 student에 종속되면 2정규형을 위반한다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-049",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "인덱스 쓰기 비용",
+    "prompt": "조회 인덱스를 추가했을 때 쓰기 성능이 나빠질 수 있는 이유는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "인덱스는 모든 SELECT를 금지",
+        "explanation": "이 조건에서 인덱스는 모든 SELECT를 금지는 성립하지 않는다. 인덱스는 읽기를 도울 수 있지만 저장 공간과 변경 시 유지 비용이 추가된다."
+      },
+      {
+        "id": "c3",
+        "text": "트랜잭션이 항상 꺼짐",
+        "explanation": "이 조건에서 트랜잭션이 항상 꺼짐는 성립하지 않는다. 인덱스는 읽기를 도울 수 있지만 저장 공간과 변경 시 유지 비용이 추가된다."
+      },
+      {
+        "id": "c2",
+        "text": "행 내용이 자동으로 중복 삭제됨",
+        "explanation": "이 조건에서 행 내용이 자동으로 중복 삭제됨는 성립하지 않는다. 인덱스는 읽기를 도울 수 있지만 저장 공간과 변경 시 유지 비용이 추가된다."
+      },
+      {
+        "id": "c0",
+        "text": "삽입·수정 때 인덱스 구조도 유지해야 함",
+        "explanation": "인덱스는 읽기를 도울 수 있지만 저장 공간과 변경 시 유지 비용이 추가된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "인덱스는 읽기를 도울 수 있지만 저장 공간과 변경 시 유지 비용이 추가된다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-050",
+    "subject": "database",
+    "difficulty": "medium",
+    "topic": "DELETE와 TRUNCATE 선택",
+    "prompt": "조건에 맞는 일부 행만 삭제해야 할 때 적절한 SQL 방식은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "DROP TABLE",
+        "explanation": "이 조건에서 DROP TABLE는 성립하지 않는다. DELETE는 WHERE로 행을 선택한다. TRUNCATE는 테이블 전체 데이터 제거이며 일반적인 행 조건을 받지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "WHERE가 있는 DELETE",
+        "explanation": "DELETE는 WHERE로 행을 선택한다. TRUNCATE는 테이블 전체 데이터 제거이며 일반적인 행 조건을 받지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "CREATE INDEX",
+        "explanation": "이 조건에서 CREATE INDEX는 성립하지 않는다. DELETE는 WHERE로 행을 선택한다. TRUNCATE는 테이블 전체 데이터 제거이며 일반적인 행 조건을 받지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "TRUNCATE에 행 조건 추가",
+        "explanation": "이 조건에서 TRUNCATE에 행 조건 추가는 성립하지 않는다. DELETE는 WHERE로 행을 선택한다. TRUNCATE는 테이블 전체 데이터 제거이며 일반적인 행 조건을 받지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "DELETE는 WHERE로 행을 선택한다. TRUNCATE는 테이블 전체 데이터 제거이며 일반적인 행 조건을 받지 않는다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-051",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "NOT IN과 NULL",
+    "prompt": "NOT IN과 NULL: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 1은 false이고 2와 3은 NULL 때문에 비교 결과가 unknown이다. WHERE는 true인 행만 남겨 결과 0이다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 1은 false이고 2와 3은 NULL 때문에 비교 결과가 unknown이다. WHERE는 true인 행만 남겨 결과 0이다."
+      },
+      {
+        "id": "c0",
+        "text": "0",
+        "explanation": "1은 false이고 2와 3은 NULL 때문에 비교 결과가 unknown이다. WHERE는 true인 행만 남겨 결과 0이다."
+      },
+      {
+        "id": "c3",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 1은 false이고 2와 3은 NULL 때문에 비교 결과가 unknown이다. WHERE는 true인 행만 남겨 결과 0이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "1은 false이고 2와 3은 NULL 때문에 비교 결과가 unknown이다. WHERE는 true인 행만 남겨 결과 0이다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "WITH t(x) AS (VALUES (1),(2),(3))\nSELECT COUNT(*) FROM t WHERE x NOT IN (1, NULL);",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-052",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "LEFT JOIN 뒤 필터",
+    "prompt": "LEFT JOIN 뒤 필터: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 매칭 없는 행의 b.id는 NULL이어서 WHERE b.id=2에서 제거된다. 왼쪽 보존 효과가 이 조건으로 줄어든다."
+      },
+      {
+        "id": "c0",
+        "text": "1",
+        "explanation": "매칭 없는 행의 b.id는 NULL이어서 WHERE b.id=2에서 제거된다. 왼쪽 보존 효과가 이 조건으로 줄어든다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 매칭 없는 행의 b.id는 NULL이어서 WHERE b.id=2에서 제거된다. 왼쪽 보존 효과가 이 조건으로 줄어든다."
+      },
+      {
+        "id": "c3",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 매칭 없는 행의 b.id는 NULL이어서 WHERE b.id=2에서 제거된다. 왼쪽 보존 효과가 이 조건으로 줄어든다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "매칭 없는 행의 b.id는 NULL이어서 WHERE b.id=2에서 제거된다. 왼쪽 보존 효과가 이 조건으로 줄어든다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "WITH a(id) AS (VALUES (1),(2)), b(id) AS (VALUES (2))\nSELECT COUNT(*) FROM a LEFT JOIN b ON a.id=b.id\nWHERE b.id=2;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-053",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "윈도 함수 행 보존",
+    "prompt": "윈도 함수 행 보존: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "2 2 / 3 3 / 4 4",
+        "explanation": "이 조건에서 2 2 / 3 3 / 4 4는 성립하지 않는다. 빈 OVER()는 전체 파티션의 합 9를 각 행에 붙인다. GROUP BY처럼 행을 하나로 합치지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "2 2 / 3 5 / 4 9",
+        "explanation": "이 조건에서 2 2 / 3 5 / 4 9는 성립하지 않는다. 빈 OVER()는 전체 파티션의 합 9를 각 행에 붙인다. GROUP BY처럼 행을 하나로 합치지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "9 한 행",
+        "explanation": "이 조건에서 9 한 행는 성립하지 않는다. 빈 OVER()는 전체 파티션의 합 9를 각 행에 붙인다. GROUP BY처럼 행을 하나로 합치지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "2 9 / 3 9 / 4 9",
+        "explanation": "빈 OVER()는 전체 파티션의 합 9를 각 행에 붙인다. GROUP BY처럼 행을 하나로 합치지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "빈 OVER()는 전체 파티션의 합 9를 각 행에 붙인다. GROUP BY처럼 행을 하나로 합치지 않는다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "WITH t(x) AS (VALUES (2),(3),(4))\nSELECT x,SUM(x) OVER () AS total FROM t ORDER BY x;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-054",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "NULL 동등성 조건",
+    "prompt": "NULL 동등성 조건: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "other",
+        "explanation": "NULL = NULL도 unknown이다. CASE WHEN은 true일 때만 첫 분기를 선택해 ELSE를 실행한다."
+      },
+      {
+        "id": "c1",
+        "text": "same",
+        "explanation": "이 조건에서 same는 성립하지 않는다. NULL = NULL도 unknown이다. CASE WHEN은 true일 때만 첫 분기를 선택해 ELSE를 실행한다."
+      },
+      {
+        "id": "c2",
+        "text": "NULL",
+        "explanation": "이 조건에서 NULL는 성립하지 않는다. NULL = NULL도 unknown이다. CASE WHEN은 true일 때만 첫 분기를 선택해 ELSE를 실행한다."
+      },
+      {
+        "id": "c3",
+        "text": "구문 오류",
+        "explanation": "이 조건에서 구문 오류는 성립하지 않는다. NULL = NULL도 unknown이다. CASE WHEN은 true일 때만 첫 분기를 선택해 ELSE를 실행한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "NULL = NULL도 unknown이다. CASE WHEN은 true일 때만 첫 분기를 선택해 ELSE를 실행한다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. SQLite 공통 SQL 부분집합 실행 및 PostgreSQL 16 문서 대조에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "SELECT CASE WHEN NULL = NULL THEN 'same' ELSE 'other' END;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-055",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "명시적 누적 윈도",
+    "prompt": "첫 행부터 현재 행까지 누적하는 시작 경계를 채우세요.",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "UNBOUNDED PRECEDING",
+        "explanation": "UNBOUNDED PRECEDING은 파티션의 첫 행이다. CURRENT ROW까지의 ROWS 프레임이 누적 합을 만든다."
+      },
+      {
+        "id": "c3",
+        "text": "1 FOLLOWING",
+        "explanation": "이 조건에서 1 FOLLOWING는 성립하지 않는다. UNBOUNDED PRECEDING은 파티션의 첫 행이다. CURRENT ROW까지의 ROWS 프레임이 누적 합을 만든다."
+      },
+      {
+        "id": "c2",
+        "text": "CURRENT ROW",
+        "explanation": "이 조건에서 CURRENT ROW는 성립하지 않는다. UNBOUNDED PRECEDING은 파티션의 첫 행이다. CURRENT ROW까지의 ROWS 프레임이 누적 합을 만든다."
+      },
+      {
+        "id": "c1",
+        "text": "UNBOUNDED FOLLOWING",
+        "explanation": "이 조건에서 UNBOUNDED FOLLOWING는 성립하지 않는다. UNBOUNDED PRECEDING은 파티션의 첫 행이다. CURRENT ROW까지의 ROWS 프레임이 누적 합을 만든다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "UNBOUNDED PRECEDING은 파티션의 첫 행이다. CURRENT ROW까지의 ROWS 프레임이 누적 합을 만든다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "fill-blank",
+    "code": "WITH t(x) AS (VALUES (2),(3),(4))\nSELECT x,SUM(x) OVER (ORDER BY x\n  ROWS BETWEEN ____ AND CURRENT ROW) FROM t;",
+    "language": "sql",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-056",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "로스트 업데이트",
+    "prompt": "두 트랜잭션이 balance=100을 읽고 각자 10을 더한 110을 저장하여 최종 110이 되었습니다. 이 현상은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "더티 읽기가 반드시 발생",
+        "explanation": "이 조건에서 더티 읽기가 반드시 발생는 성립하지 않는다. 읽기-계산-쓰기의 경쟁에서 한 갱신이 다른 갱신을 덮었다. 원자적 UPDATE나 잠금 등으로 방지해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "갱신 분실",
+        "explanation": "읽기-계산-쓰기의 경쟁에서 한 갱신이 다른 갱신을 덮었다. 원자적 UPDATE나 잠금 등으로 방지해야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "정규화 완료",
+        "explanation": "이 조건에서 정규화 완료는 성립하지 않는다. 읽기-계산-쓰기의 경쟁에서 한 갱신이 다른 갱신을 덮었다. 원자적 UPDATE나 잠금 등으로 방지해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "인덱스 스캔",
+        "explanation": "이 조건에서 인덱스 스캔는 성립하지 않는다. 읽기-계산-쓰기의 경쟁에서 한 갱신이 다른 갱신을 덮었다. 원자적 UPDATE나 잠금 등으로 방지해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "읽기-계산-쓰기의 경쟁에서 한 갱신이 다른 갱신을 덮었다. 원자적 UPDATE나 잠금 등으로 방지해야 한다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-057",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "문장별 스냅샷",
+    "prompt": "PostgreSQL Read Committed에서 같은 트랜잭션의 두 SELECT 사이 다른 트랜잭션이 COMMIT하면 어떤 일이 가능한가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "두 SELECT가 서로 다른 확정 데이터를 봄",
+        "explanation": "Read Committed의 일반 SELECT는 문장마다 스냅샷을 얻는다. 두 문장 사이의 확정 변경이 다음 조회에 보일 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "트랜잭션 전체가 무조건 같은 스냅샷",
+        "explanation": "이 조건에서 트랜잭션 전체가 무조건 같은 스냅샷는 성립하지 않는다. Read Committed의 일반 SELECT는 문장마다 스냅샷을 얻는다. 두 문장 사이의 확정 변경이 다음 조회에 보일 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "커밋 전 더티 데이터를 항상 읽음",
+        "explanation": "이 조건에서 커밋 전 더티 데이터를 항상 읽음는 성립하지 않는다. Read Committed의 일반 SELECT는 문장마다 스냅샷을 얻는다. 두 문장 사이의 확정 변경이 다음 조회에 보일 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "두 번째 SELECT는 항상 오류",
+        "explanation": "이 조건에서 두 번째 SELECT는 항상 오류는 성립하지 않는다. Read Committed의 일반 SELECT는 문장마다 스냅샷을 얻는다. 두 문장 사이의 확정 변경이 다음 조회에 보일 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Read Committed의 일반 SELECT는 문장마다 스냅샷을 얻는다. 두 문장 사이의 확정 변경이 다음 조회에 보일 수 있다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-058",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "직렬화 실패 재시도",
+    "prompt": "Serializable 트랜잭션이 직렬화 실패로 중단되었을 때 일반적인 올바른 재시도 범위는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "업무 트랜잭션 전체를 새로 실행",
+        "explanation": "전체 읽기와 의사 결정의 전제가 무효가 될 수 있어 새 트랜잭션에서 업무 전체를 재평가해야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "COMMIT 명령만 무조건 반복",
+        "explanation": "이 조건에서 COMMIT 명령만 무조건 반복는 성립하지 않는다. 전체 읽기와 의사 결정의 전제가 무효가 될 수 있어 새 트랜잭션에서 업무 전체를 재평가해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "중간 캐시 값을 무조건 재사용",
+        "explanation": "이 조건에서 중간 캐시 값을 무조건 재사용는 성립하지 않는다. 전체 읽기와 의사 결정의 전제가 무효가 될 수 있어 새 트랜잭션에서 업무 전체를 재평가해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "실패한 마지막 SELECT만 반복",
+        "explanation": "이 조건에서 실패한 마지막 SELECT만 반복는 성립하지 않는다. 전체 읽기와 의사 결정의 전제가 무효가 될 수 있어 새 트랜잭션에서 업무 전체를 재평가해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "전체 읽기와 의사 결정의 전제가 무효가 될 수 있어 새 트랜잭션에서 업무 전체를 재평가해야 한다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-059",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "쓰기 편향",
+    "prompt": "각 트랜잭션이 서로 다른 행을 수정하더라도 여러 행에 걸친 불변식을 위반할 수 있는 현상은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "쓰기 편향",
+        "explanation": "write skew는 동일 스냅샷의 조건을 읽고 서로 다른 행을 변경해 전체 제약을 깨뜨릴 수 있다. 직렬화나 적절한 잠금이 필요하다."
+      },
+      {
+        "id": "c3",
+        "text": "인덱스 압축",
+        "explanation": "이 조건에서 인덱스 압축는 성립하지 않는다. write skew는 동일 스냅샷의 조건을 읽고 서로 다른 행을 변경해 전체 제약을 깨뜨릴 수 있다. 직렬화나 적절한 잠금이 필요하다."
+      },
+      {
+        "id": "c2",
+        "text": "단일 행 lost update만 가능",
+        "explanation": "이 조건에서 단일 행 lost update만 가능는 성립하지 않는다. write skew는 동일 스냅샷의 조건을 읽고 서로 다른 행을 변경해 전체 제약을 깨뜨릴 수 있다. 직렬화나 적절한 잠금이 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 기본 키 중복",
+        "explanation": "이 조건에서 항상 기본 키 중복는 성립하지 않는다. write skew는 동일 스냅샷의 조건을 읽고 서로 다른 행을 변경해 전체 제약을 깨뜨릴 수 있다. 직렬화나 적절한 잠금이 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "write skew는 동일 스냅샷의 조건을 읽고 서로 다른 행을 변경해 전체 제약을 깨뜨릴 수 있다. 직렬화나 적절한 잠금이 필요하다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "database-060",
+    "subject": "database",
+    "difficulty": "hard",
+    "topic": "매개변수 쿼리",
+    "prompt": "사용자 입력을 SQL 문자열에 직접 이어 붙이는 코드 대신 권장되는 방식은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "작은따옴표를 모두 제거하기만 함",
+        "explanation": "이 조건에서 작은따옴표를 모두 제거하기만 함는 성립하지 않는다. 매개변수 바인딩은 입력을 데이터로 전달해 SQL 명령 구조와 구분한다. 문자열 제거만으로 안전한 SQL 처리를 보장할 수 없다."
+      },
+      {
+        "id": "c2",
+        "text": "입력 길이를 늘림",
+        "explanation": "이 조건에서 입력 길이를 늘림는 성립하지 않는다. 매개변수 바인딩은 입력을 데이터로 전달해 SQL 명령 구조와 구분한다. 문자열 제거만으로 안전한 SQL 처리를 보장할 수 없다."
+      },
+      {
+        "id": "c0",
+        "text": "매개변수 바인딩으로 SQL 구조와 값 분리",
+        "explanation": "매개변수 바인딩은 입력을 데이터로 전달해 SQL 명령 구조와 구분한다. 문자열 제거만으로 안전한 SQL 처리를 보장할 수 없다."
+      },
+      {
+        "id": "c3",
+        "text": "SELECT를 소문자로 바꿈",
+        "explanation": "이 조건에서 SELECT를 소문자로 바꿈는 성립하지 않는다. 매개변수 바인딩은 입력을 데이터로 전달해 SQL 명령 구조와 구분한다. 문자열 제거만으로 안전한 SQL 처리를 보장할 수 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "매개변수 바인딩은 입력을 데이터로 전달해 SQL 명령 구조와 구분한다. 문자열 제거만으로 안전한 SQL 처리를 보장할 수 없다.",
+    "environment": "코드 문항은 PostgreSQL 16 SQL. 행과 NULL에 대한 조건은 문제에 명시한다.",
+    "sources": [
+      {
+        "title": "database 공식 개념 근거",
+        "url": "https://www.postgresql.org/docs/16/sql.html"
+      },
+      {
+        "title": "PostgreSQL 트랜잭션 격리",
+        "url": "https://www.postgresql.org/docs/16/transaction-iso.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
   }
 ]

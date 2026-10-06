@@ -17,8 +17,11 @@ export interface Question {
   diagram?: 'queue' | 'pipeline' | 'layers';
   area?: 'rendering' | 'engine';
   active?: boolean;
+  kind?: 'concept' | 'fill-blank' | 'output' | 'debug';
+  language?: string;
+  exam?: 'engineer-practice';
 }
-export interface Settings { mode: 'focus' | 'random'; subject: string; startLevel: Difficulty }
+export interface Settings { mode: 'focus' | 'random'; subject: string; startLevel: Difficulty; selectedSubjects?: string[] }
 export interface Answer { choiceId: string; correct: boolean; at: string }
 export interface Entry { questionId: string; review: boolean }
 export interface Session {
@@ -38,4 +41,5 @@ export interface State {
   firstAnswers: Record<string, Answer>;
   mistakes: Record<string, { lastReviewedAt?: string; solved: boolean }>;
   subjectLevels: Record<string, Difficulty>;
+  preferencesSet?: boolean;
 }

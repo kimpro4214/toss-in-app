@@ -1,5 +1,6 @@
 import { expect, it } from 'vitest';
 import { runInNewContext } from 'node:vm';
+import ts from 'typescript';
 import { bank } from '../src/bank';
 const text = (id: string) => {const q=bank.find(q=>q.id===id)!;return q.choices.find(c=>c.id===q.correctChoiceId)!.text};
 it('이진 표현·CPI·AMAT·Amdahl 계산을 확인한다',()=>{
@@ -19,4 +20,11 @@ it('Promise 반응과 동기 실행의 출력 순서를 확인한다',async()=>{
   const q=bank.find(q=>q.id==='javascript-021')!;const output:string[]=[];
   runInNewContext(q.code!,{console:{log:(v:string)=>output.push(v)}});
   await Promise.resolve();expect(output).toEqual(['A','C','B']);expect(text(q.id)).toBe('A C B');
+});
+it.each(bank.filter(q => q.kind === 'output' && ['javascript','typescript'].includes(q.language ?? '')))('$id 코드의 실제 출력을 정답과 비교한다', async q => {
+  const output: string[] = [];
+  const code = q.language === 'typescript' ? ts.transpileModule(q.code!, { compilerOptions: { target: ts.ScriptTarget.ES2022 } }).outputText : q.code!;
+  runInNewContext(code, { console: { log: (...values: unknown[]) => output.push(values.map(String).join(' ')) } }, { timeout: 1000 });
+  await new Promise(resolve => setImmediate(resolve));
+  expect(output.join('\n').trim()).toBe(text(q.id));
 });

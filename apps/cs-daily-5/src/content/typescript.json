@@ -1520,5 +1520,1504 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "typescript-031",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "타입 주석과 출력",
+    "prompt": "타입 주석과 출력: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "5",
+        "explanation": "number 주석은 값 계산을 바꾸지 않는다. 수치 4에 1을 더해 5다."
+      },
+      {
+        "id": "c2",
+        "text": "number",
+        "explanation": "이 조건에서 number는 성립하지 않는다. number 주석은 값 계산을 바꾸지 않는다. 수치 4에 1을 더해 5다."
+      },
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. number 주석은 값 계산을 바꾸지 않는다. 수치 4에 1을 더해 5다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. number 주석은 값 계산을 바꾸지 않는다. 수치 4에 1을 더해 5다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "number 주석은 값 계산을 바꾸지 않는다. 수치 4에 1을 더해 5다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const score: number = 4;\nconsole.log(score + 1);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-032",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "튜플 인덱스",
+    "prompt": "튜플 인덱스: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "cs",
+        "explanation": "이 조건에서 cs는 성립하지 않는다. 튜플의 두 번째 요소 인덱스 1에 number 값 3이 들어 있다."
+      },
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 튜플의 두 번째 요소 인덱스 1에 number 값 3이 들어 있다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "튜플의 두 번째 요소 인덱스 1에 number 값 3이 들어 있다."
+      },
+      {
+        "id": "c3",
+        "text": "undefined",
+        "explanation": "이 조건에서 undefined는 성립하지 않는다. 튜플의 두 번째 요소 인덱스 1에 number 값 3이 들어 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "튜플의 두 번째 요소 인덱스 1에 number 값 3이 들어 있다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const pair: [string, number] = [\"cs\", 3];\nconsole.log(pair[1]);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-033",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "문자열 리터럴 유니온",
+    "prompt": "문자열 리터럴 유니온: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "read | write",
+        "explanation": "이 조건에서 read | write는 성립하지 않는다. write는 선언된 유니온에 포함되어 재대입이 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "write",
+        "explanation": "write는 선언된 유니온에 포함되어 재대입이 가능하다."
+      },
+      {
+        "id": "c1",
+        "text": "read",
+        "explanation": "이 조건에서 read는 성립하지 않는다. write는 선언된 유니온에 포함되어 재대입이 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. write는 선언된 유니온에 포함되어 재대입이 가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "write는 선언된 유니온에 포함되어 재대입이 가능하다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "let mode: \"read\" | \"write\" = \"read\";\nmode = \"write\";\nconsole.log(mode);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-034",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "배열 타입과 map",
+    "prompt": "배열 타입과 map: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 배열 요소는 number로 추론되며 map이 3배 값을 만드는 배열을 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "3,6",
+        "explanation": "배열 요소는 number로 추론되며 map이 3배 값을 만드는 배열을 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "1,2",
+        "explanation": "이 조건에서 1,2는 성립하지 않는다. 배열 요소는 number로 추론되며 map이 3배 값을 만드는 배열을 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 배열 요소는 number로 추론되며 map이 3배 값을 만드는 배열을 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "배열 요소는 number로 추론되며 map이 3배 값을 만드는 배열을 반환한다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const xs: number[] = [1,2];\nconsole.log(xs.map(x => x*3).join(\",\"));",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-035",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "선택 속성 기본값",
+    "prompt": "선택 속성 기본값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "빈 문자열",
+        "explanation": "이 조건에서 빈 문자열는 성립하지 않는다. 선택 속성이 없으면 undefined라 ??의 기본값을 사용한다."
+      },
+      {
+        "id": "c0",
+        "text": "guest",
+        "explanation": "선택 속성이 없으면 undefined라 ??의 기본값을 사용한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 선택 속성이 없으면 undefined라 ??의 기본값을 사용한다."
+      },
+      {
+        "id": "c1",
+        "text": "undefined",
+        "explanation": "이 조건에서 undefined는 성립하지 않는다. 선택 속성이 없으면 undefined라 ??의 기본값을 사용한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "선택 속성이 없으면 undefined라 ??의 기본값을 사용한다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const user: {name?: string} = {};\nconsole.log(user.name ?? \"guest\");",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-036",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "number 주석",
+    "prompt": "정수와 소수 값을 나타내는 TypeScript 기본 타입은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "float",
+        "explanation": "이 조건에서 float는 성립하지 않는다. TypeScript의 숫자 기본 타입은 number이다. int와 float는 내장 타입 이름이 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "int",
+        "explanation": "이 조건에서 int는 성립하지 않는다. TypeScript의 숫자 기본 타입은 number이다. int와 float는 내장 타입 이름이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "number",
+        "explanation": "TypeScript의 숫자 기본 타입은 number이다. int와 float는 내장 타입 이름이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "NumberLiteral",
+        "explanation": "이 조건에서 NumberLiteral는 성립하지 않는다. TypeScript의 숫자 기본 타입은 number이다. int와 float는 내장 타입 이름이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "TypeScript의 숫자 기본 타입은 number이다. int와 float는 내장 타입 이름이 아니다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "const score: ____ = 7;\nconsole.log(score);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-037",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "배열 요소 타입",
+    "prompt": "문자열 배열의 요소 타입을 채우세요.",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "number",
+        "explanation": "이 조건에서 number는 성립하지 않는다. string[]은 문자열 요소를 갖는 배열이다. 다른 타입은 이 초기값과 맞지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "string",
+        "explanation": "string[]은 문자열 요소를 갖는 배열이다. 다른 타입은 이 초기값과 맞지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "never",
+        "explanation": "이 조건에서 never는 성립하지 않는다. string[]은 문자열 요소를 갖는 배열이다. 다른 타입은 이 초기값과 맞지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "boolean",
+        "explanation": "이 조건에서 boolean는 성립하지 않는다. string[]은 문자열 요소를 갖는 배열이다. 다른 타입은 이 초기값과 맞지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "string[]은 문자열 요소를 갖는 배열이다. 다른 타입은 이 초기값과 맞지 않는다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "const names: ____[] = [\"a\", \"b\"];\nconsole.log(names.length);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-038",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "리턴 타입",
+    "prompt": "숫자 결과를 반환하는 함수의 반환 타입은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "string",
+        "explanation": "이 조건에서 string는 성립하지 않는다. n*2의 타입은 number다. void는 사용 가능한 결과값을 표현하지 않는 반환 타입이다."
+      },
+      {
+        "id": "c1",
+        "text": "void",
+        "explanation": "이 조건에서 void는 성립하지 않는다. n*2의 타입은 number다. void는 사용 가능한 결과값을 표현하지 않는 반환 타입이다."
+      },
+      {
+        "id": "c3",
+        "text": "boolean",
+        "explanation": "이 조건에서 boolean는 성립하지 않는다. n*2의 타입은 number다. void는 사용 가능한 결과값을 표현하지 않는 반환 타입이다."
+      },
+      {
+        "id": "c0",
+        "text": "number",
+        "explanation": "n*2의 타입은 number다. void는 사용 가능한 결과값을 표현하지 않는 반환 타입이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "n*2의 타입은 number다. void는 사용 가능한 결과값을 표현하지 않는 반환 타입이다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "function twice(n: number): ____ { return n*2; }\nconsole.log(twice(3));",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-039",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "선택 속성 기호",
+    "prompt": "name 속성을 생략 가능하게 만드는 접미사는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "&",
+        "explanation": "이 조건에서 &는 성립하지 않는다. 속성명 뒤 ?는 선택 속성을 뜻한다. 값에는 undefined도 포함될 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "?",
+        "explanation": "속성명 뒤 ?는 선택 속성을 뜻한다. 값에는 undefined도 포함될 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "*",
+        "explanation": "이 조건에서 *는 성립하지 않는다. 속성명 뒤 ?는 선택 속성을 뜻한다. 값에는 undefined도 포함될 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "!",
+        "explanation": "이 조건에서 !는 성립하지 않는다. 속성명 뒤 ?는 선택 속성을 뜻한다. 값에는 undefined도 포함될 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "속성명 뒤 ?는 선택 속성을 뜻한다. 값에는 undefined도 포함될 수 있다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "type User = { name____: string };\nconst user: User = {};\nconsole.log(user.name ?? \"guest\");",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-040",
+    "subject": "typescript",
+    "difficulty": "easy",
+    "topic": "객체 형태 선언",
+    "prompt": "객체 속성 형태를 선언하는 키워드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "interface",
+        "explanation": "interface는 객체의 속성 계약을 선언한다. enum은 이 속성 문법으로 수치 필드를 정의하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "namespace",
+        "explanation": "이 조건에서 namespace는 성립하지 않는다. interface는 객체의 속성 계약을 선언한다. enum은 이 속성 문법으로 수치 필드를 정의하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "enum",
+        "explanation": "이 조건에서 enum는 성립하지 않는다. interface는 객체의 속성 계약을 선언한다. enum은 이 속성 문법으로 수치 필드를 정의하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "function",
+        "explanation": "이 조건에서 function는 성립하지 않는다. interface는 객체의 속성 계약을 선언한다. enum은 이 속성 문법으로 수치 필드를 정의하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "interface는 객체의 속성 계약을 선언한다. enum은 이 속성 문법으로 수치 필드를 정의하지 않는다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "____ Point { x: number; y: number; }\nconst p: Point = {x: 2, y: 3};\nconsole.log(p.x + p.y);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-041",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "제네릭 값 보존",
+    "prompt": "제네릭 값 보존: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. T는 호출 시 인수 타입으로 추론되어 값과 타입 관계를 보존한다. 런타임에는 값이 그대로 반환된다."
+      },
+      {
+        "id": "c0",
+        "text": "cs",
+        "explanation": "T는 호출 시 인수 타입으로 추론되어 값과 타입 관계를 보존한다. 런타임에는 값이 그대로 반환된다."
+      },
+      {
+        "id": "c2",
+        "text": "undefined",
+        "explanation": "이 조건에서 undefined는 성립하지 않는다. T는 호출 시 인수 타입으로 추론되어 값과 타입 관계를 보존한다. 런타임에는 값이 그대로 반환된다."
+      },
+      {
+        "id": "c1",
+        "text": "T",
+        "explanation": "이 조건에서 T는 성립하지 않는다. T는 호출 시 인수 타입으로 추론되어 값과 타입 관계를 보존한다. 런타임에는 값이 그대로 반환된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "T는 호출 시 인수 타입으로 추론되어 값과 타입 관계를 보존한다. 런타임에는 값이 그대로 반환된다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "function identity<T>(value: T): T { return value; }\nconsole.log(identity(\"cs\"));",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-042",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "태그 유니온 분기",
+    "prompt": "태그 유니온 분기: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "undefined",
+        "explanation": "이 조건에서 undefined는 성립하지 않는다. ok의 리터럴 태그로 좁히면 true 분기에서 value에 안전하게 접근할 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. ok의 리터럴 태그로 좁히면 true 분기에서 value에 안전하게 접근할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "7",
+        "explanation": "ok의 리터럴 태그로 좁히면 true 분기에서 value에 안전하게 접근할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "true",
+        "explanation": "이 조건에서 true는 성립하지 않는다. ok의 리터럴 태그로 좁히면 true 분기에서 value에 안전하게 접근할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "ok의 리터럴 태그로 좁히면 true 분기에서 value에 안전하게 접근할 수 있다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "type Result = {ok: true; value: number} | {ok: false; error: string};\nfunction show(r: Result) { return r.ok ? r.value : r.error; }\nconsole.log(show({ok:true, value:7}));",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-043",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "keyof 인덱스 조회",
+    "prompt": "keyof 인덱스 조회: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "7",
+        "explanation": "이 조건에서 7는 성립하지 않는다. keyof Item은 유효한 속성명 유니온이다. stock 키 조회 결과는 3이다."
+      },
+      {
+        "id": "c2",
+        "text": "stock",
+        "explanation": "이 조건에서 stock는 성립하지 않는다. keyof Item은 유효한 속성명 유니온이다. stock 키 조회 결과는 3이다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "keyof Item은 유효한 속성명 유니온이다. stock 키 조회 결과는 3이다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. keyof Item은 유효한 속성명 유니온이다. stock 키 조회 결과는 3이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "keyof Item은 유효한 속성명 유니온이다. stock 키 조회 결과는 3이다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "type Item = {price: number; stock: number};\nfunction read(item: Item, key: keyof Item) { return item[key]; }\nconsole.log(read({price:7,stock:3},\"stock\"));",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-044",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "교차 타입 속성",
+    "prompt": "교차 타입 속성: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. A & B는 두 타입의 요구 속성을 모두 갖는 값이다."
+      },
+      {
+        "id": "c0",
+        "text": "7",
+        "explanation": "A & B는 두 타입의 요구 속성을 모두 갖는 값이다."
+      },
+      {
+        "id": "c2",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. A & B는 두 타입의 요구 속성을 모두 갖는 값이다."
+      },
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. A & B는 두 타입의 요구 속성을 모두 갖는 값이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "A & B는 두 타입의 요구 속성을 모두 갖는 값이다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "type A = {x: number};\ntype B = {y: number};\nconst p: A & B = {x: 2, y: 5};\nconsole.log(p.x + p.y);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-045",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "타입 단언과 값 불변",
+    "prompt": "타입 단언과 값 불변: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "undefined",
+        "explanation": "이 조건에서 undefined는 성립하지 않는다. 단언은 타입 검사 관점에서 알려 주는 정보다. 이 실제 문자열의 length는 2다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "단언은 타입 검사 관점에서 알려 주는 정보다. 이 실제 문자열의 length는 2다."
+      },
+      {
+        "id": "c1",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 단언은 타입 검사 관점에서 알려 주는 정보다. 이 실제 문자열의 length는 2다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 단언은 타입 검사 관점에서 알려 주는 정보다. 이 실제 문자열의 length는 2다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "단언은 타입 검사 관점에서 알려 주는 정보다. 이 실제 문자열의 length는 2다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const value: unknown = \"cs\";\nconsole.log((value as string).length);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-046",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "typeof narrowing",
+    "prompt": "typeof narrowing: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "5 6",
+        "explanation": "typeof 조건이 문자열 분기와 숫자 분기를 구분한다. 각각 길이와 두 배를 계산한다."
+      },
+      {
+        "id": "c1",
+        "text": "hello 6",
+        "explanation": "이 조건에서 hello 6는 성립하지 않는다. typeof 조건이 문자열 분기와 숫자 분기를 구분한다. 각각 길이와 두 배를 계산한다."
+      },
+      {
+        "id": "c2",
+        "text": "5 3",
+        "explanation": "이 조건에서 5 3는 성립하지 않는다. typeof 조건이 문자열 분기와 숫자 분기를 구분한다. 각각 길이와 두 배를 계산한다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. typeof 조건이 문자열 분기와 숫자 분기를 구분한다. 각각 길이와 두 배를 계산한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "typeof 조건이 문자열 분기와 숫자 분기를 구분한다. 각각 길이와 두 배를 계산한다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "function show(x: string | number) {\n  return typeof x === \"string\" ? x.length : x*2;\n}\nconsole.log(show(\"hello\"), show(3));",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-047",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "키 유니온 타입",
+    "prompt": "타입 Item의 속성명 유니온을 얻는 연산자는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "keyof",
+        "explanation": "keyof는 타입의 속성명 유니온을 만든다. typeof Item은 타입 전용 이름을 값처럼 참조해 유효하지 않다."
+      },
+      {
+        "id": "c2",
+        "text": "readonly",
+        "explanation": "이 조건에서 readonly는 성립하지 않는다. keyof는 타입의 속성명 유니온을 만든다. typeof Item은 타입 전용 이름을 값처럼 참조해 유효하지 않다."
+      },
+      {
+        "id": "c1",
+        "text": "typeof",
+        "explanation": "이 조건에서 typeof는 성립하지 않는다. keyof는 타입의 속성명 유니온을 만든다. typeof Item은 타입 전용 이름을 값처럼 참조해 유효하지 않다."
+      },
+      {
+        "id": "c3",
+        "text": "infer",
+        "explanation": "이 조건에서 infer는 성립하지 않는다. keyof는 타입의 속성명 유니온을 만든다. typeof Item은 타입 전용 이름을 값처럼 참조해 유효하지 않다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "keyof는 타입의 속성명 유니온을 만든다. typeof Item은 타입 전용 이름을 값처럼 참조해 유효하지 않다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "type Item = {name: string; count: number};\nconst key: ____ Item = \"count\";\nconsole.log(key);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-048",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "Partial 유틸리티",
+    "prompt": "모든 속성을 선택 사항으로 바꾸는 유틸리티는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "Record",
+        "explanation": "이 조건에서 Record는 성립하지 않는다. Partial<T>는 T 속성을 모두 선택 사항으로 만든다. Required는 반대로 필수로 바꾼다."
+      },
+      {
+        "id": "c1",
+        "text": "Required",
+        "explanation": "이 조건에서 Required는 성립하지 않는다. Partial<T>는 T 속성을 모두 선택 사항으로 만든다. Required는 반대로 필수로 바꾼다."
+      },
+      {
+        "id": "c2",
+        "text": "Readonly",
+        "explanation": "이 조건에서 Readonly는 성립하지 않는다. Partial<T>는 T 속성을 모두 선택 사항으로 만든다. Required는 반대로 필수로 바꾼다."
+      },
+      {
+        "id": "c0",
+        "text": "Partial",
+        "explanation": "Partial<T>는 T 속성을 모두 선택 사항으로 만든다. Required는 반대로 필수로 바꾼다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Partial<T>는 T 속성을 모두 선택 사항으로 만든다. Required는 반대로 필수로 바꾼다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "type User = {name: string; age: number};\nconst patch: ____<User> = {age: 20};\nconsole.log(patch.age);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-049",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "Pick 속성 선택",
+    "prompt": "User에서 name 속성만 선택하는 유틸리티는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Omit",
+        "explanation": "이 조건에서 Omit는 성립하지 않는다. Pick<T,K>는 K로 선택한 속성만 유지한다. Omit은 해당 속성을 제거한다."
+      },
+      {
+        "id": "c3",
+        "text": "ReturnType",
+        "explanation": "이 조건에서 ReturnType는 성립하지 않는다. Pick<T,K>는 K로 선택한 속성만 유지한다. Omit은 해당 속성을 제거한다."
+      },
+      {
+        "id": "c0",
+        "text": "Pick",
+        "explanation": "Pick<T,K>는 K로 선택한 속성만 유지한다. Omit은 해당 속성을 제거한다."
+      },
+      {
+        "id": "c2",
+        "text": "Exclude",
+        "explanation": "이 조건에서 Exclude는 성립하지 않는다. Pick<T,K>는 K로 선택한 속성만 유지한다. Omit은 해당 속성을 제거한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Pick<T,K>는 K로 선택한 속성만 유지한다. Omit은 해당 속성을 제거한다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "type User = {name: string; age: number};\nconst name: ____<User, \"name\"> = {name: \"cs\"};\nconsole.log(name.name);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-050",
+    "subject": "typescript",
+    "difficulty": "medium",
+    "topic": "타입 전용 가져오기",
+    "prompt": "런타임 가져오기를 만들지 않고 타입만 가져오는 키워드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "readonly",
+        "explanation": "이 조건에서 readonly는 성립하지 않는다. import type은 타입 전용 가져오기이며 런타임 JavaScript 코드에서는 제거된다."
+      },
+      {
+        "id": "c1",
+        "text": "typeof",
+        "explanation": "이 조건에서 typeof는 성립하지 않는다. import type은 타입 전용 가져오기이며 런타임 JavaScript 코드에서는 제거된다."
+      },
+      {
+        "id": "c2",
+        "text": "interface",
+        "explanation": "이 조건에서 interface는 성립하지 않는다. import type은 타입 전용 가져오기이며 런타임 JavaScript 코드에서는 제거된다."
+      },
+      {
+        "id": "c0",
+        "text": "type",
+        "explanation": "import type은 타입 전용 가져오기이며 런타임 JavaScript 코드에서는 제거된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "import type은 타입 전용 가져오기이며 런타임 JavaScript 코드에서는 제거된다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "fill-blank",
+    "code": "import ____ { Question } from \"./types\";",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-051",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "단언은 숫자 변환 아님",
+    "prompt": "단언은 숫자 변환 아님: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 타입 단언은 런타임 값을 변환하지 않는다. 실제 값은 문자열 \"7\" 그대로이다."
+      },
+      {
+        "id": "c0",
+        "text": "string",
+        "explanation": "타입 단언은 런타임 값을 변환하지 않는다. 실제 값은 문자열 \"7\" 그대로이다."
+      },
+      {
+        "id": "c1",
+        "text": "number",
+        "explanation": "이 조건에서 number는 성립하지 않는다. 타입 단언은 런타임 값을 변환하지 않는다. 실제 값은 문자열 \"7\" 그대로이다."
+      },
+      {
+        "id": "c2",
+        "text": "unknown",
+        "explanation": "이 조건에서 unknown는 성립하지 않는다. 타입 단언은 런타임 값을 변환하지 않는다. 실제 값은 문자열 \"7\" 그대로이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "타입 단언은 런타임 값을 변환하지 않는다. 실제 값은 문자열 \"7\" 그대로이다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const value = \"7\" as unknown as number;\nconsole.log(typeof value);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-052",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "non-null 단언 소거",
+    "prompt": "non-null 단언 소거: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "null",
+        "explanation": "이 조건에서 null는 성립하지 않는다. ! 단언은 타입 검사에만 영향을 주며 실제 undefined를 다른 값으로 바꾸거나 검사하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. ! 단언은 타입 검사에만 영향을 주며 실제 undefined를 다른 값으로 바꾸거나 검사하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "undefined",
+        "explanation": "! 단언은 타입 검사에만 영향을 주며 실제 undefined를 다른 값으로 바꾸거나 검사하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "빈 문자열",
+        "explanation": "이 조건에서 빈 문자열는 성립하지 않는다. ! 단언은 타입 검사에만 영향을 주며 실제 undefined를 다른 값으로 바꾸거나 검사하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "! 단언은 타입 검사에만 영향을 주며 실제 undefined를 다른 값으로 바꾸거나 검사하지 않는다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const maybe: string | undefined = undefined;\nconsole.log(maybe!);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-053",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "readonly 런타임 객체",
+    "prompt": "readonly 런타임 객체: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. Readonly는 정적 제한이다. 객체를 freeze하지 않으므로 가변 별칭을 통한 수정이 같은 객체에 반영된다."
+      },
+      {
+        "id": "c3",
+        "text": "런타임 예외",
+        "explanation": "이 조건에서 런타임 예외는 성립하지 않는다. Readonly는 정적 제한이다. 객체를 freeze하지 않으므로 가변 별칭을 통한 수정이 같은 객체에 반영된다."
+      },
+      {
+        "id": "c2",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. Readonly는 정적 제한이다. 객체를 freeze하지 않으므로 가변 별칭을 통한 수정이 같은 객체에 반영된다."
+      },
+      {
+        "id": "c0",
+        "text": "8",
+        "explanation": "Readonly는 정적 제한이다. 객체를 freeze하지 않으므로 가변 별칭을 통한 수정이 같은 객체에 반영된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Readonly는 정적 제한이다. 객체를 freeze하지 않으므로 가변 별칭을 통한 수정이 같은 객체에 반영된다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const user: Readonly<{n:number}> = {n:1};\nconst alias = user as {n:number};\nalias.n = 8;\nconsole.log(user.n);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-054",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "as const와 런타임 freeze",
+    "prompt": "as const와 런타임 freeze: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. as const는 리터럴과 readonly 타입을 추론하도록 할 뿐 Object.freeze를 호출하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "true",
+        "explanation": "이 조건에서 true는 성립하지 않는다. as const는 리터럴과 readonly 타입을 추론하도록 할 뿐 Object.freeze를 호출하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. as const는 리터럴과 readonly 타입을 추론하도록 할 뿐 Object.freeze를 호출하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "false",
+        "explanation": "as const는 리터럴과 readonly 타입을 추론하도록 할 뿐 Object.freeze를 호출하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "as const는 리터럴과 readonly 타입을 추론하도록 할 뿐 Object.freeze를 호출하지 않는다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const data = {n: 1} as const;\nconsole.log(Object.isFrozen(data));",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-055",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "열거형 역방향 매핑",
+    "prompt": "열거형 역방향 매핑: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. 숫자 enum은 이름→수치와 수치→이름 매핑을 생성한다. Run=1이고 0의 이름은 Idle다."
+      },
+      {
+        "id": "c2",
+        "text": "0 Idle",
+        "explanation": "이 조건에서 0 Idle는 성립하지 않는다. 숫자 enum은 이름→수치와 수치→이름 매핑을 생성한다. Run=1이고 0의 이름은 Idle다."
+      },
+      {
+        "id": "c1",
+        "text": "1 Run",
+        "explanation": "이 조건에서 1 Run는 성립하지 않는다. 숫자 enum은 이름→수치와 수치→이름 매핑을 생성한다. Run=1이고 0의 이름은 Idle다."
+      },
+      {
+        "id": "c0",
+        "text": "1 Idle",
+        "explanation": "숫자 enum은 이름→수치와 수치→이름 매핑을 생성한다. Run=1이고 0의 이름은 Idle다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "숫자 enum은 이름→수치와 수치→이름 매핑을 생성한다. Run=1이고 0의 이름은 Idle다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "enum Mode {Idle, Run}\nconsole.log(Mode.Run, Mode[0]);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-056",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": " satisfies 리터럴 유지",
+    "prompt": " satisfies 리터럴 유지: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "fast",
+        "explanation": "satisfies는 대상 타입과의 호환성을 검사하며 실제 값 fast를 바꾸지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "safe",
+        "explanation": "이 조건에서 safe는 성립하지 않는다. satisfies는 대상 타입과의 호환성을 검사하며 실제 값 fast를 바꾸지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일 오류",
+        "explanation": "이 조건에서 컴파일 오류는 성립하지 않는다. satisfies는 대상 타입과의 호환성을 검사하며 실제 값 fast를 바꾸지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "fast | safe",
+        "explanation": "이 조건에서 fast | safe는 성립하지 않는다. satisfies는 대상 타입과의 호환성을 검사하며 실제 값 fast를 바꾸지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "satisfies는 대상 타입과의 호환성을 검사하며 실제 값 fast를 바꾸지 않는다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const config = {mode: \"fast\"} satisfies {mode: \"fast\" | \"safe\"};\nconsole.log(config.mode);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-057",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "조건부 타입 조건",
+    "prompt": "조건부 타입에서 할당 가능성을 검사하는 키워드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "as",
+        "explanation": "이 조건에서 as는 성립하지 않는다. T extends U ? A : B는 조건부 타입이다. number는 string에 할당 가능하지 않아 false를 선택한다."
+      },
+      {
+        "id": "c1",
+        "text": "implements",
+        "explanation": "이 조건에서 implements는 성립하지 않는다. T extends U ? A : B는 조건부 타입이다. number는 string에 할당 가능하지 않아 false를 선택한다."
+      },
+      {
+        "id": "c2",
+        "text": "in",
+        "explanation": "이 조건에서 in는 성립하지 않는다. T extends U ? A : B는 조건부 타입이다. number는 string에 할당 가능하지 않아 false를 선택한다."
+      },
+      {
+        "id": "c0",
+        "text": "extends",
+        "explanation": "T extends U ? A : B는 조건부 타입이다. number는 string에 할당 가능하지 않아 false를 선택한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "T extends U ? A : B는 조건부 타입이다. number는 string에 할당 가능하지 않아 false를 선택한다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. TypeScript 5.9 strict 타입 검사와 타입 소거 후 Node.js 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "type IsString<T> = T ____ string ? true : false;\nconst answer: IsString<number> = false;\nconsole.log(answer);",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-058",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "unknown 사용 전 좁히기",
+    "prompt": "다음 함수의 오류를 안전하게 고치는 방법은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "strict를 꺼야만 구현 가능",
+        "explanation": "이 조건에서 strict를 꺼야만 구현 가능는 성립하지 않는다. unknown 값은 사용 전에 타입을 좁혀야 한다. 검사 없는 단언으로 실제 값이 문자열임을 보장할 수는 없다."
+      },
+      {
+        "id": "c0",
+        "text": "typeof x === \"string\"을 검사한 분기에서 toUpperCase 호출",
+        "explanation": "unknown 값은 사용 전에 타입을 좁혀야 한다. 검사 없는 단언으로 실제 값이 문자열임을 보장할 수는 없다."
+      },
+      {
+        "id": "c3",
+        "text": "unknown에는 모든 메서드가 자동으로 존재",
+        "explanation": "이 조건에서 unknown에는 모든 메서드가 자동으로 존재는 성립하지 않는다. unknown 값은 사용 전에 타입을 좁혀야 한다. 검사 없는 단언으로 실제 값이 문자열임을 보장할 수는 없다."
+      },
+      {
+        "id": "c1",
+        "text": "unknown을 never로만 변경",
+        "explanation": "이 조건에서 unknown을 never로만 변경는 성립하지 않는다. unknown 값은 사용 전에 타입을 좁혀야 한다. 검사 없는 단언으로 실제 값이 문자열임을 보장할 수는 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "unknown 값은 사용 전에 타입을 좁혀야 한다. 검사 없는 단언으로 실제 값이 문자열임을 보장할 수는 없다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "function upper(x: unknown) {\n  return x.toUpperCase();\n}",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-059",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "배열 경계와 정적 타입",
+    "prompt": "noUncheckedIndexedAccess가 켜진 strict 프로젝트에서 다음 코드의 오류 원인은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "const 배열은 읽기도 금지",
+        "explanation": "이 조건에서 const 배열은 읽기도 금지는 성립하지 않는다. 빈 배열 인덱스 접근은 undefined일 수 있다. noUncheckedIndexedAccess는 그 가능성을 타입에 포함한다."
+      },
+      {
+        "id": "c1",
+        "text": "number 배열에는 length가 없음",
+        "explanation": "이 조건에서 number 배열에는 length가 없음는 성립하지 않는다. 빈 배열 인덱스 접근은 undefined일 수 있다. noUncheckedIndexedAccess는 그 가능성을 타입에 포함한다."
+      },
+      {
+        "id": "c0",
+        "text": "요소 조회 결과에 undefined가 포함될 수 있음",
+        "explanation": "빈 배열 인덱스 접근은 undefined일 수 있다. noUncheckedIndexedAccess는 그 가능성을 타입에 포함한다."
+      },
+      {
+        "id": "c2",
+        "text": "배열은 항상 1번 인덱스부터 시작",
+        "explanation": "이 조건에서 배열은 항상 1번 인덱스부터 시작는 성립하지 않는다. 빈 배열 인덱스 접근은 undefined일 수 있다. noUncheckedIndexedAccess는 그 가능성을 타입에 포함한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "빈 배열 인덱스 접근은 undefined일 수 있다. noUncheckedIndexedAccess는 그 가능성을 타입에 포함한다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "const values: number[] = [];\nconst n: number = values[0];",
+    "language": "typescript"
+  },
+  {
+    "id": "typescript-060",
+    "subject": "typescript",
+    "difficulty": "hard",
+    "topic": "never 전체 분기 검사",
+    "prompt": "태그 유니온을 처리하는 switch의 default에서 값에 never 타입을 요구하는 목적은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "유니온의 속성을 모두 optional로 변환",
+        "explanation": "이 조건에서 유니온의 속성을 모두 optional로 변환는 성립하지 않는다. 모든 대안이 좁혀져 사라졌다면 값은 never다. 대안이 추가되면 never 대입이 실패하여 누락 분기를 드러낸다."
+      },
+      {
+        "id": "c1",
+        "text": "런타임에 모든 오류를 자동 복구",
+        "explanation": "이 조건에서 런타임에 모든 오류를 자동 복구는 성립하지 않는다. 모든 대안이 좁혀져 사라졌다면 값은 never다. 대안이 추가되면 never 대입이 실패하여 누락 분기를 드러낸다."
+      },
+      {
+        "id": "c3",
+        "text": "실행 결과를 항상 undefined로 변환",
+        "explanation": "이 조건에서 실행 결과를 항상 undefined로 변환는 성립하지 않는다. 모든 대안이 좁혀져 사라졌다면 값은 never다. 대안이 추가되면 never 대입이 실패하여 누락 분기를 드러낸다."
+      },
+      {
+        "id": "c0",
+        "text": "처리하지 않은 새로운 대안을 타입 오류로 발견",
+        "explanation": "모든 대안이 좁혀져 사라졌다면 값은 never다. 대안이 추가되면 never 대입이 실패하여 누락 분기를 드러낸다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "모든 대안이 좁혀져 사라졌다면 값은 never다. 대안이 추가되면 never 대입이 실패하여 누락 분기를 드러낸다.",
+    "environment": "TypeScript 5.9, strict: true. 타입 검사 결과와 타입 소거 후 실행을 구분한다.",
+    "sources": [
+      {
+        "title": "typescript 공식 개념 근거",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      },
+      {
+        "title": "TypeScript 타입 좁히기",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "language": "typescript"
   }
 ]

@@ -1414,5 +1414,1385 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "javascript-031",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "엄격한 동등성",
+    "prompt": "엄격한 동등성: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "false true",
+        "explanation": "===는 타입 변환을 하지 않아 false이고 == 비교에서는 false가 0으로 변환된다."
+      },
+      {
+        "id": "c1",
+        "text": "true true",
+        "explanation": "이 조건에서 true true는 성립하지 않는다. ===는 타입 변환을 하지 않아 false이고 == 비교에서는 false가 0으로 변환된다."
+      },
+      {
+        "id": "c2",
+        "text": "false false",
+        "explanation": "이 조건에서 false false는 성립하지 않는다. ===는 타입 변환을 하지 않아 false이고 == 비교에서는 false가 0으로 변환된다."
+      },
+      {
+        "id": "c3",
+        "text": "true false",
+        "explanation": "이 조건에서 true false는 성립하지 않는다. ===는 타입 변환을 하지 않아 false이고 == 비교에서는 false가 0으로 변환된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "===는 타입 변환을 하지 않아 false이고 == 비교에서는 false가 0으로 변환된다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "console.log(0 === false, 0 == false);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-032",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "문자열 덧셈",
+    "prompt": "문자열 덧셈: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "42",
+        "explanation": "문자열과 +를 사용하면 숫자 덧셈 대신 문자열 연결이 수행된다."
+      },
+      {
+        "id": "c1",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 문자열과 +를 사용하면 숫자 덧셈 대신 문자열 연결이 수행된다."
+      },
+      {
+        "id": "c2",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 문자열과 +를 사용하면 숫자 덧셈 대신 문자열 연결이 수행된다."
+      },
+      {
+        "id": "c3",
+        "text": "NaN",
+        "explanation": "이 조건에서 NaN는 성립하지 않는다. 문자열과 +를 사용하면 숫자 덧셈 대신 문자열 연결이 수행된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "문자열과 +를 사용하면 숫자 덧셈 대신 문자열 연결이 수행된다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "console.log(\"4\" + 2);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-033",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "수치 변환",
+    "prompt": "수치 변환: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "6",
+        "explanation": "Number가 문자열을 수치 4로 변환하여 숫자 덧셈 결과 6을 얻는다."
+      },
+      {
+        "id": "c2",
+        "text": "NaN",
+        "explanation": "이 조건에서 NaN는 성립하지 않는다. Number가 문자열을 수치 4로 변환하여 숫자 덧셈 결과 6을 얻는다."
+      },
+      {
+        "id": "c1",
+        "text": "42",
+        "explanation": "이 조건에서 42는 성립하지 않는다. Number가 문자열을 수치 4로 변환하여 숫자 덧셈 결과 6을 얻는다."
+      },
+      {
+        "id": "c3",
+        "text": "undefined",
+        "explanation": "이 조건에서 undefined는 성립하지 않는다. Number가 문자열을 수치 4로 변환하여 숫자 덧셈 결과 6을 얻는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Number가 문자열을 수치 4로 변환하여 숫자 덧셈 결과 6을 얻는다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "console.log(Number(\"4\") + 2);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-034",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "배열 push 반환값",
+    "prompt": "배열 push 반환값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "undefined 2",
+        "explanation": "이 조건에서 undefined 2는 성립하지 않는다. push는 변경된 배열 길이를 반환한다. 추가한 값 3 자체가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "2 2",
+        "explanation": "push는 변경된 배열 길이를 반환한다. 추가한 값 3 자체가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "2 1",
+        "explanation": "이 조건에서 2 1는 성립하지 않는다. push는 변경된 배열 길이를 반환한다. 추가한 값 3 자체가 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "3 2",
+        "explanation": "이 조건에서 3 2는 성립하지 않는다. push는 변경된 배열 길이를 반환한다. 추가한 값 3 자체가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "push는 변경된 배열 길이를 반환한다. 추가한 값 3 자체가 아니다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const a = [1];\nconsole.log(a.push(3), a.length);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-035",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "slice 원본 보존",
+    "prompt": "slice 원본 보존: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "2,3 2",
+        "explanation": "이 조건에서 2,3 2는 성립하지 않는다. slice는 새 배열을 만들어 원본 길이를 유지한다. 시작 인덱스 1부터 끝까지 선택한다."
+      },
+      {
+        "id": "c2",
+        "text": "1,2 3",
+        "explanation": "이 조건에서 1,2 3는 성립하지 않는다. slice는 새 배열을 만들어 원본 길이를 유지한다. 시작 인덱스 1부터 끝까지 선택한다."
+      },
+      {
+        "id": "c0",
+        "text": "2,3 3",
+        "explanation": "slice는 새 배열을 만들어 원본 길이를 유지한다. 시작 인덱스 1부터 끝까지 선택한다."
+      },
+      {
+        "id": "c3",
+        "text": "1,2,3 0",
+        "explanation": "이 조건에서 1,2,3 0는 성립하지 않는다. slice는 새 배열을 만들어 원본 길이를 유지한다. 시작 인덱스 1부터 끝까지 선택한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "slice는 새 배열을 만들어 원본 길이를 유지한다. 시작 인덱스 1부터 끝까지 선택한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const a = [1,2,3];\nconsole.log(a.slice(1).join(\",\"), a.length);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-036",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "배열 합치기",
+    "prompt": "배열 요소를 펼쳐 1,2,3을 출력하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "&",
+        "explanation": "이 조건에서 &는 성립하지 않는다. 배열 리터럴의 spread 문법 ...는 iterable 원소를 펼친다."
+      },
+      {
+        "id": "c1",
+        "text": "**",
+        "explanation": "이 조건에서 **는 성립하지 않는다. 배열 리터럴의 spread 문법 ...는 iterable 원소를 펼친다."
+      },
+      {
+        "id": "c0",
+        "text": "...",
+        "explanation": "배열 리터럴의 spread 문법 ...는 iterable 원소를 펼친다."
+      },
+      {
+        "id": "c3",
+        "text": "++",
+        "explanation": "이 조건에서 ++는 성립하지 않는다. 배열 리터럴의 spread 문법 ...는 iterable 원소를 펼친다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "배열 리터럴의 spread 문법 ...는 iterable 원소를 펼친다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "const a = [1,2];\nconsole.log([____a, 3].join(\",\"));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-037",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "문자열 공백 제거",
+    "prompt": "양 끝 공백을 제거해 CS를 출력하는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "trim",
+        "explanation": "trim은 앞뒤 공백을 제거한 문자열을 반환하며 내부 공백까지 제거하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "repeat",
+        "explanation": "이 조건에서 repeat는 성립하지 않는다. trim은 앞뒤 공백을 제거한 문자열을 반환하며 내부 공백까지 제거하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "slice",
+        "explanation": "이 조건에서 slice는 성립하지 않는다. trim은 앞뒤 공백을 제거한 문자열을 반환하며 내부 공백까지 제거하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "split",
+        "explanation": "이 조건에서 split는 성립하지 않는다. trim은 앞뒤 공백을 제거한 문자열을 반환하며 내부 공백까지 제거하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "trim은 앞뒤 공백을 제거한 문자열을 반환하며 내부 공백까지 제거하지 않는다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "console.log(\"  CS  \".____());",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-038",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "배열 요소 포함",
+    "prompt": "배열에 값 4가 있는지 확인하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "join",
+        "explanation": "이 조건에서 join는 성립하지 않는다. includes는 지정 값 존재 여부를 boolean으로 반환한다."
+      },
+      {
+        "id": "c3",
+        "text": "map",
+        "explanation": "이 조건에서 map는 성립하지 않는다. includes는 지정 값 존재 여부를 boolean으로 반환한다."
+      },
+      {
+        "id": "c1",
+        "text": "push",
+        "explanation": "이 조건에서 push는 성립하지 않는다. includes는 지정 값 존재 여부를 boolean으로 반환한다."
+      },
+      {
+        "id": "c0",
+        "text": "includes",
+        "explanation": "includes는 지정 값 존재 여부를 boolean으로 반환한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "includes는 지정 값 존재 여부를 boolean으로 반환한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "console.log([2,4,6].____(4));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-039",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "문자열을 수치로",
+    "prompt": "문자열을 수치로 바꿔 13을 출력하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "Boolean",
+        "explanation": "이 조건에서 Boolean는 성립하지 않는다. Number는 수치 변환이다. String은 연결 결과, Boolean은 진릿값, Array는 배열 생성이다."
+      },
+      {
+        "id": "c3",
+        "text": "Array",
+        "explanation": "이 조건에서 Array는 성립하지 않는다. Number는 수치 변환이다. String은 연결 결과, Boolean은 진릿값, Array는 배열 생성이다."
+      },
+      {
+        "id": "c1",
+        "text": "String",
+        "explanation": "이 조건에서 String는 성립하지 않는다. Number는 수치 변환이다. String은 연결 결과, Boolean은 진릿값, Array는 배열 생성이다."
+      },
+      {
+        "id": "c0",
+        "text": "Number",
+        "explanation": "Number는 수치 변환이다. String은 연결 결과, Boolean은 진릿값, Array는 배열 생성이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Number는 수치 변환이다. String은 연결 결과, Boolean은 진릿값, Array는 배열 생성이다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "console.log(____(\"12\") + 1);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-040",
+    "subject": "javascript",
+    "difficulty": "easy",
+    "topic": "배열 마지막 삭제",
+    "prompt": "마지막 값 2를 제거하고 2 1을 출력하는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "push",
+        "explanation": "이 조건에서 push는 성립하지 않는다. pop은 마지막 요소를 제거하여 반환한다. shift는 첫 요소를 제거한다."
+      },
+      {
+        "id": "c3",
+        "text": "slice",
+        "explanation": "이 조건에서 slice는 성립하지 않는다. pop은 마지막 요소를 제거하여 반환한다. shift는 첫 요소를 제거한다."
+      },
+      {
+        "id": "c0",
+        "text": "pop",
+        "explanation": "pop은 마지막 요소를 제거하여 반환한다. shift는 첫 요소를 제거한다."
+      },
+      {
+        "id": "c1",
+        "text": "shift",
+        "explanation": "이 조건에서 shift는 성립하지 않는다. pop은 마지막 요소를 제거하여 반환한다. shift는 첫 요소를 제거한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "pop은 마지막 요소를 제거하여 반환한다. shift는 첫 요소를 제거한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "const a = [1,2];\nconsole.log(a.____(), a.length);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-041",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "기본 sort 문자열 비교",
+    "prompt": "기본 sort 문자열 비교: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "1,2,10",
+        "explanation": "이 조건에서 1,2,10는 성립하지 않는다. 비교자가 없는 sort는 기본적으로 문자열 비교를 하므로 10이 2보다 앞선다."
+      },
+      {
+        "id": "c2",
+        "text": "10,2,1",
+        "explanation": "이 조건에서 10,2,1는 성립하지 않는다. 비교자가 없는 sort는 기본적으로 문자열 비교를 하므로 10이 2보다 앞선다."
+      },
+      {
+        "id": "c3",
+        "text": "2,1,10",
+        "explanation": "이 조건에서 2,1,10는 성립하지 않는다. 비교자가 없는 sort는 기본적으로 문자열 비교를 하므로 10이 2보다 앞선다."
+      },
+      {
+        "id": "c0",
+        "text": "1,10,2",
+        "explanation": "비교자가 없는 sort는 기본적으로 문자열 비교를 하므로 10이 2보다 앞선다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "비교자가 없는 sort는 기본적으로 문자열 비교를 하므로 10이 2보다 앞선다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const a = [10,2,1];\na.sort();\nconsole.log(a.join(\",\"));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-042",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "map 변환",
+    "prompt": "map 변환: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. map은 각 요소에 함수를 적용한 결과 배열을 만들며 요소 수를 유지한다."
+      },
+      {
+        "id": "c0",
+        "text": "2,4,6",
+        "explanation": "map은 각 요소에 함수를 적용한 결과 배열을 만들며 요소 수를 유지한다."
+      },
+      {
+        "id": "c3",
+        "text": "1,4,9",
+        "explanation": "이 조건에서 1,4,9는 성립하지 않는다. map은 각 요소에 함수를 적용한 결과 배열을 만들며 요소 수를 유지한다."
+      },
+      {
+        "id": "c1",
+        "text": "1,2,3",
+        "explanation": "이 조건에서 1,2,3는 성립하지 않는다. map은 각 요소에 함수를 적용한 결과 배열을 만들며 요소 수를 유지한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "map은 각 요소에 함수를 적용한 결과 배열을 만들며 요소 수를 유지한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "console.log([1,2,3].map(x => x*2).join(\",\"));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-043",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "filter 선택",
+    "prompt": "filter 선택: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "1,3",
+        "explanation": "이 조건에서 1,3는 성립하지 않는다. filter는 조건이 참인 원소만 유지하며 boolean 배열을 만드는 map과 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "false,true,false,true",
+        "explanation": "이 조건에서 false,true,false,true는 성립하지 않는다. filter는 조건이 참인 원소만 유지하며 boolean 배열을 만드는 map과 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "1,2,3,4",
+        "explanation": "이 조건에서 1,2,3,4는 성립하지 않는다. filter는 조건이 참인 원소만 유지하며 boolean 배열을 만드는 map과 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "2,4",
+        "explanation": "filter는 조건이 참인 원소만 유지하며 boolean 배열을 만드는 map과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "filter는 조건이 참인 원소만 유지하며 boolean 배열을 만드는 map과 다르다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "console.log([1,2,3,4].filter(x => x%2 === 0).join(\",\"));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-044",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "reduce 초기값",
+    "prompt": "reduce 초기값: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "10",
+        "explanation": "이 조건에서 10는 성립하지 않는다. 누적 초기값 10에 2와 3을 차례로 더해 15가 된다."
+      },
+      {
+        "id": "c0",
+        "text": "15",
+        "explanation": "누적 초기값 10에 2와 3을 차례로 더해 15가 된다."
+      },
+      {
+        "id": "c1",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. 누적 초기값 10에 2와 3을 차례로 더해 15가 된다."
+      },
+      {
+        "id": "c3",
+        "text": "23",
+        "explanation": "이 조건에서 23는 성립하지 않는다. 누적 초기값 10에 2와 3을 차례로 더해 15가 된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "누적 초기값 10에 2와 3을 차례로 더해 15가 된다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "console.log([2,3].reduce((sum,x) => sum+x, 10));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-045",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "분해 기본값과 null",
+    "prompt": "분해 기본값과 null: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "undefined 8",
+        "explanation": "이 조건에서 undefined 8는 성립하지 않는다. 구조 분해 기본값은 undefined일 때만 적용된다. null은 명시적인 값으로 유지한다."
+      },
+      {
+        "id": "c0",
+        "text": "7 null",
+        "explanation": "구조 분해 기본값은 undefined일 때만 적용된다. null은 명시적인 값으로 유지한다."
+      },
+      {
+        "id": "c1",
+        "text": "7 8",
+        "explanation": "이 조건에서 7 8는 성립하지 않는다. 구조 분해 기본값은 undefined일 때만 적용된다. null은 명시적인 값으로 유지한다."
+      },
+      {
+        "id": "c2",
+        "text": "undefined null",
+        "explanation": "이 조건에서 undefined null는 성립하지 않는다. 구조 분해 기본값은 undefined일 때만 적용된다. null은 명시적인 값으로 유지한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "구조 분해 기본값은 undefined일 때만 적용된다. null은 명시적인 값으로 유지한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const {a = 7, b = 8} = {a: undefined, b: null};\nconsole.log(a, b);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-046",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "nullish와 OR",
+    "prompt": "nullish와 OR: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0 0",
+        "explanation": "이 조건에서 0 0는 성립하지 않는다. ||는 falsy인 0을 대체하지만 ??는 null 또는 undefined일 때만 대체한다."
+      },
+      {
+        "id": "c1",
+        "text": "9 9",
+        "explanation": "이 조건에서 9 9는 성립하지 않는다. ||는 falsy인 0을 대체하지만 ??는 null 또는 undefined일 때만 대체한다."
+      },
+      {
+        "id": "c3",
+        "text": "0 9",
+        "explanation": "이 조건에서 0 9는 성립하지 않는다. ||는 falsy인 0을 대체하지만 ??는 null 또는 undefined일 때만 대체한다."
+      },
+      {
+        "id": "c0",
+        "text": "9 0",
+        "explanation": "||는 falsy인 0을 대체하지만 ??는 null 또는 undefined일 때만 대체한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "||는 falsy인 0을 대체하지만 ??는 null 또는 undefined일 때만 대체한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "console.log(0 || 9, 0 ?? 9);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-047",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "숫자 오름차순",
+    "prompt": "숫자 오름차순 1,2,10이 되도록 비교식을 채우세요.",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "a + b",
+        "explanation": "이 조건에서 a + b는 성립하지 않는다. a-b는 a가 작으면 음수여서 앞에 둔다. b-a는 반대인 내림차순이다."
+      },
+      {
+        "id": "c1",
+        "text": "b - a",
+        "explanation": "이 조건에서 b - a는 성립하지 않는다. a-b는 a가 작으면 음수여서 앞에 둔다. b-a는 반대인 내림차순이다."
+      },
+      {
+        "id": "c3",
+        "text": "a === b",
+        "explanation": "이 조건에서 a === b는 성립하지 않는다. a-b는 a가 작으면 음수여서 앞에 둔다. b-a는 반대인 내림차순이다."
+      },
+      {
+        "id": "c0",
+        "text": "a - b",
+        "explanation": "a-b는 a가 작으면 음수여서 앞에 둔다. b-a는 반대인 내림차순이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "a-b는 a가 작으면 음수여서 앞에 둔다. b-a는 반대인 내림차순이다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "const values = [10,2,1];\nvalues.sort((a,b) => ____);\nconsole.log(values.join(\",\"));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-048",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "속성 직접 소유 검사",
+    "prompt": "프로토타입 속성을 제외하고 직접 소유한 속성을 검사하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "assign",
+        "explanation": "이 조건에서 assign는 성립하지 않는다. Object.hasOwn은 객체 자체의 속성인지 판별한다. keys/values는 배열, assign은 복사 연산이다."
+      },
+      {
+        "id": "c2",
+        "text": "values",
+        "explanation": "이 조건에서 values는 성립하지 않는다. Object.hasOwn은 객체 자체의 속성인지 판별한다. keys/values는 배열, assign은 복사 연산이다."
+      },
+      {
+        "id": "c1",
+        "text": "keys",
+        "explanation": "이 조건에서 keys는 성립하지 않는다. Object.hasOwn은 객체 자체의 속성인지 판별한다. keys/values는 배열, assign은 복사 연산이다."
+      },
+      {
+        "id": "c0",
+        "text": "hasOwn",
+        "explanation": "Object.hasOwn은 객체 자체의 속성인지 판별한다. keys/values는 배열, assign은 복사 연산이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Object.hasOwn은 객체 자체의 속성인지 판별한다. keys/values는 배열, assign은 복사 연산이다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "const o = {score: 3};\nconsole.log(Object.____(o, \"score\"));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-049",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "JSON 직렬화",
+    "prompt": "객체를 JSON 문자열로 변환하는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "stringify",
+        "explanation": "JSON.stringify가 객체를 JSON 텍스트로 변환한다. parse는 반대 방향이다."
+      },
+      {
+        "id": "c1",
+        "text": "parse",
+        "explanation": "이 조건에서 parse는 성립하지 않는다. JSON.stringify가 객체를 JSON 텍스트로 변환한다. parse는 반대 방향이다."
+      },
+      {
+        "id": "c3",
+        "text": "freeze",
+        "explanation": "이 조건에서 freeze는 성립하지 않는다. JSON.stringify가 객체를 JSON 텍스트로 변환한다. parse는 반대 방향이다."
+      },
+      {
+        "id": "c2",
+        "text": "assign",
+        "explanation": "이 조건에서 assign는 성립하지 않는다. JSON.stringify가 객체를 JSON 텍스트로 변환한다. parse는 반대 방향이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "JSON.stringify가 객체를 JSON 텍스트로 변환한다. parse는 반대 방향이다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "console.log(JSON.____({a: 1}));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-050",
+    "subject": "javascript",
+    "difficulty": "medium",
+    "topic": "배열 조건 첫 요소",
+    "prompt": "조건에 맞는 첫 요소 4를 반환하는 메서드는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "every",
+        "explanation": "이 조건에서 every는 성립하지 않는다. find는 첫 요소 자체를 반환한다. filter는 배열, every/some은 boolean이다."
+      },
+      {
+        "id": "c1",
+        "text": "filter",
+        "explanation": "이 조건에서 filter는 성립하지 않는다. find는 첫 요소 자체를 반환한다. filter는 배열, every/some은 boolean이다."
+      },
+      {
+        "id": "c3",
+        "text": "some",
+        "explanation": "이 조건에서 some는 성립하지 않는다. find는 첫 요소 자체를 반환한다. filter는 배열, every/some은 boolean이다."
+      },
+      {
+        "id": "c0",
+        "text": "find",
+        "explanation": "find는 첫 요소 자체를 반환한다. filter는 배열, every/some은 boolean이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "find는 첫 요소 자체를 반환한다. filter는 배열, every/some은 boolean이다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "console.log([1,4,6].____(x => x > 3));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-051",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "마이크로태스크 중첩 순서",
+    "prompt": "마이크로태스크 중첩 순서: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "A\nB\nC\nD",
+        "explanation": "동기 A 뒤 큐에 B와 C가 들어간다. B 실행 중 D가 큐 뒤에 추가되어 C 다음에 실행된다."
+      },
+      {
+        "id": "c3",
+        "text": "A\nC\nB\nD",
+        "explanation": "이 조건에서 A\nC\nB\nD는 성립하지 않는다. 동기 A 뒤 큐에 B와 C가 들어간다. B 실행 중 D가 큐 뒤에 추가되어 C 다음에 실행된다."
+      },
+      {
+        "id": "c2",
+        "text": "B\nC\nD\nA",
+        "explanation": "이 조건에서 B\nC\nD\nA는 성립하지 않는다. 동기 A 뒤 큐에 B와 C가 들어간다. B 실행 중 D가 큐 뒤에 추가되어 C 다음에 실행된다."
+      },
+      {
+        "id": "c1",
+        "text": "A\nB\nD\nC",
+        "explanation": "이 조건에서 A\nB\nD\nC는 성립하지 않는다. 동기 A 뒤 큐에 B와 C가 들어간다. B 실행 중 D가 큐 뒤에 추가되어 C 다음에 실행된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "동기 A 뒤 큐에 B와 C가 들어간다. B 실행 중 D가 큐 뒤에 추가되어 C 다음에 실행된다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "console.log(\"A\");\nPromise.resolve().then(() => {\n  console.log(\"B\");\n  Promise.resolve().then(() => console.log(\"D\"));\n});\nPromise.resolve().then(() => console.log(\"C\"));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-052",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "let 루프의 개별 바인딩",
+    "prompt": "let 루프의 개별 바인딩: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "0,1,2",
+        "explanation": "let 반복 변수는 반복마다 별도 바인딩을 만들어 각 클로저가 해당 값을 유지한다."
+      },
+      {
+        "id": "c3",
+        "text": "0,0,0",
+        "explanation": "이 조건에서 0,0,0는 성립하지 않는다. let 반복 변수는 반복마다 별도 바인딩을 만들어 각 클로저가 해당 값을 유지한다."
+      },
+      {
+        "id": "c2",
+        "text": "2,2,2",
+        "explanation": "이 조건에서 2,2,2는 성립하지 않는다. let 반복 변수는 반복마다 별도 바인딩을 만들어 각 클로저가 해당 값을 유지한다."
+      },
+      {
+        "id": "c1",
+        "text": "3,3,3",
+        "explanation": "이 조건에서 3,3,3는 성립하지 않는다. let 반복 변수는 반복마다 별도 바인딩을 만들어 각 클로저가 해당 값을 유지한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "let 반복 변수는 반복마다 별도 바인딩을 만들어 각 클로저가 해당 값을 유지한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const fs = [];\nfor (let i = 0; i < 3; ++i) fs.push(() => i);\nconsole.log(fs.map(f => f()).join(\",\"));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-053",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "var 루프의 공유 바인딩",
+    "prompt": "var 루프의 공유 바인딩: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "0,0,0",
+        "explanation": "이 조건에서 0,0,0는 성립하지 않는다. var의 하나의 바인딩을 모든 함수가 공유하며 호출할 때 반복은 끝나 i=3이다."
+      },
+      {
+        "id": "c2",
+        "text": "2,2,2",
+        "explanation": "이 조건에서 2,2,2는 성립하지 않는다. var의 하나의 바인딩을 모든 함수가 공유하며 호출할 때 반복은 끝나 i=3이다."
+      },
+      {
+        "id": "c1",
+        "text": "0,1,2",
+        "explanation": "이 조건에서 0,1,2는 성립하지 않는다. var의 하나의 바인딩을 모든 함수가 공유하며 호출할 때 반복은 끝나 i=3이다."
+      },
+      {
+        "id": "c0",
+        "text": "3,3,3",
+        "explanation": "var의 하나의 바인딩을 모든 함수가 공유하며 호출할 때 반복은 끝나 i=3이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "var의 하나의 바인딩을 모든 함수가 공유하며 호출할 때 반복은 끝나 i=3이다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const fs = [];\nfor (var i = 0; i < 3; ++i) fs.push(() => i);\nconsole.log(fs.map(f => f()).join(\",\"));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-054",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "얕은 객체 전개",
+    "prompt": "얕은 객체 전개: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "undefined",
+        "explanation": "이 조건에서 undefined는 성립하지 않는다. spread는 바깥 객체만 복사하며 nested 객체의 참조는 공유한다."
+      },
+      {
+        "id": "c3",
+        "text": "TypeError",
+        "explanation": "이 조건에서 TypeError는 성립하지 않는다. spread는 바깥 객체만 복사하며 nested 객체의 참조는 공유한다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. spread는 바깥 객체만 복사하며 nested 객체의 참조는 공유한다."
+      },
+      {
+        "id": "c0",
+        "text": "8",
+        "explanation": "spread는 바깥 객체만 복사하며 nested 객체의 참조는 공유한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "spread는 바깥 객체만 복사하며 nested 객체의 참조는 공유한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const a = {nested: {n: 1}};\nconst b = {...a};\nb.nested.n = 8;\nconsole.log(a.nested.n);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-055",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "Promise catch 복구",
+    "prompt": "Promise catch 복구: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "6",
+        "explanation": "catch가 정상 값 5를 반환하면 체인은 이행 상태로 복구되고 다음 then이 6을 출력한다."
+      },
+      {
+        "id": "c1",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. catch가 정상 값 5를 반환하면 체인은 이행 상태로 복구되고 다음 then이 6을 출력한다."
+      },
+      {
+        "id": "c2",
+        "text": "bad",
+        "explanation": "이 조건에서 bad는 성립하지 않는다. catch가 정상 값 5를 반환하면 체인은 이행 상태로 복구되고 다음 then이 6을 출력한다."
+      },
+      {
+        "id": "c3",
+        "text": "출력 없음",
+        "explanation": "이 조건에서 출력 없음는 성립하지 않는다. catch가 정상 값 5를 반환하면 체인은 이행 상태로 복구되고 다음 then이 6을 출력한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "catch가 정상 값 5를 반환하면 체인은 이행 상태로 복구되고 다음 then이 6을 출력한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "Promise.reject(\"bad\")\n  .catch(() => 5)\n  .then(x => console.log(x + 1));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-056",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "Set SameValueZero",
+    "prompt": "Set SameValueZero: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. Set은 SameValueZero 비교로 NaN을 같은 값으로, +0과 -0도 같은 값으로 취급한다."
+      },
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. Set은 SameValueZero 비교로 NaN을 같은 값으로, +0과 -0도 같은 값으로 취급한다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "Set은 SameValueZero 비교로 NaN을 같은 값으로, +0과 -0도 같은 값으로 취급한다."
+      },
+      {
+        "id": "c3",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. Set은 SameValueZero 비교로 NaN을 같은 값으로, +0과 -0도 같은 값으로 취급한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Set은 SameValueZero 비교로 NaN을 같은 값으로, +0과 -0도 같은 값으로 취급한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "const s = new Set([NaN, NaN, 0, -0]);\nconsole.log(s.size);",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-057",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "finally 반환의 영향",
+    "prompt": "finally 반환의 영향: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "finally가 정상 값을 반환해도 원래 이행값 2가 통과한다. 반환된 reject나 throw인 경우는 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "undefined",
+        "explanation": "이 조건에서 undefined는 성립하지 않는다. finally가 정상 값을 반환해도 원래 이행값 2가 통과한다. 반환된 reject나 throw인 경우는 다르다."
+      },
+      {
+        "id": "c1",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. finally가 정상 값을 반환해도 원래 이행값 2가 통과한다. 반환된 reject나 throw인 경우는 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "출력 없음",
+        "explanation": "이 조건에서 출력 없음는 성립하지 않는다. finally가 정상 값을 반환해도 원래 이행값 2가 통과한다. 반환된 reject나 throw인 경우는 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "finally가 정상 값을 반환해도 원래 이행값 2가 통과한다. 반환된 reject나 throw인 경우는 다르다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "Promise.resolve(2)\n  .finally(() => 9)\n  .then(x => console.log(x));",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-058",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "안전한 선택적 접근",
+    "prompt": "null인 객체 접근을 단락해 guest를 출력하는 빈칸은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": ".",
+        "explanation": "이 조건에서 .는 성립하지 않는다. optional chaining ?.는 nullish 수신자에서 undefined를 반환하고 ??가 기본 문자열을 선택한다."
+      },
+      {
+        "id": "c2",
+        "text": "!",
+        "explanation": "이 조건에서 !는 성립하지 않는다. optional chaining ?.는 nullish 수신자에서 undefined를 반환하고 ??가 기본 문자열을 선택한다."
+      },
+      {
+        "id": "c3",
+        "text": "&&",
+        "explanation": "이 조건에서 &&는 성립하지 않는다. optional chaining ?.는 nullish 수신자에서 undefined를 반환하고 ??가 기본 문자열을 선택한다."
+      },
+      {
+        "id": "c0",
+        "text": "?.",
+        "explanation": "optional chaining ?.는 nullish 수신자에서 undefined를 반환하고 ??가 기본 문자열을 선택한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "optional chaining ?.는 nullish 수신자에서 undefined를 반환하고 ??가 기본 문자열을 선택한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. Node.js ECMAScript 실행에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "const user = null;\nconsole.log(user____name ?? \"guest\");",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-059",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "const와 객체 내부 변경",
+    "prompt": "다음 코드에서 TypeError가 발생하는 문장은 어느 것인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "user.n = 2",
+        "explanation": "이 조건에서 user.n = 2는 성립하지 않는다. const는 바인딩 재대입을 막지만 객체 속성 수정을 막지 않는다. 두 번째 재대입만 실패한다."
+      },
+      {
+        "id": "c3",
+        "text": "두 문장 모두 오류",
+        "explanation": "이 조건에서 두 문장 모두 오류는 성립하지 않는다. const는 바인딩 재대입을 막지만 객체 속성 수정을 막지 않는다. 두 번째 재대입만 실패한다."
+      },
+      {
+        "id": "c2",
+        "text": "첫 번째 객체 선언",
+        "explanation": "이 조건에서 첫 번째 객체 선언는 성립하지 않는다. const는 바인딩 재대입을 막지만 객체 속성 수정을 막지 않는다. 두 번째 재대입만 실패한다."
+      },
+      {
+        "id": "c0",
+        "text": "user = {n: 3}",
+        "explanation": "const는 바인딩 재대입을 막지만 객체 속성 수정을 막지 않는다. 두 번째 재대입만 실패한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "const는 바인딩 재대입을 막지만 객체 속성 수정을 막지 않는다. 두 번째 재대입만 실패한다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "const user = {n: 1};\nuser.n = 2;\nuser = {n: 3};",
+    "language": "javascript"
+  },
+  {
+    "id": "javascript-060",
+    "subject": "javascript",
+    "difficulty": "hard",
+    "topic": "비동기 map 결과",
+    "prompt": "다음 result에서 완료된 숫자 배열을 얻으려면 무엇이 필요한가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "배열 길이만 읽기",
+        "explanation": "이 조건에서 배열 길이만 읽기는 성립하지 않는다. async 콜백의 반환값은 Promise이다. Promise.all로 모은 뒤 await해야 각 이행 값을 얻는다."
+      },
+      {
+        "id": "c1",
+        "text": "result를 JSON.stringify만 수행",
+        "explanation": "이 조건에서 result를 JSON.stringify만 수행는 성립하지 않는다. async 콜백의 반환값은 Promise이다. Promise.all로 모은 뒤 await해야 각 이행 값을 얻는다."
+      },
+      {
+        "id": "c0",
+        "text": "Promise.all(result)를 await",
+        "explanation": "async 콜백의 반환값은 Promise이다. Promise.all로 모은 뒤 await해야 각 이행 값을 얻는다."
+      },
+      {
+        "id": "c2",
+        "text": "map을 두 번 호출",
+        "explanation": "이 조건에서 map을 두 번 호출는 성립하지 않는다. async 콜백의 반환값은 Promise이다. Promise.all로 모은 뒤 await해야 각 이행 값을 얻는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "async 콜백의 반환값은 Promise이다. Promise.all로 모은 뒤 await해야 각 이행 값을 얻는다.",
+    "environment": "ECMAScript 2023. console.log 출력은 줄 순서로 읽으며 문자열의 따옴표는 출력하지 않는다.",
+    "sources": [
+      {
+        "title": "javascript 공식 개념 근거",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "debug",
+    "code": "const result = [1,2].map(async x => x*2);",
+    "language": "javascript"
   }
 ]

@@ -1,0 +1,14 @@
+.study-preferences fieldset { border: 0; padding: 0; margin: 0 0 24px; min-width: 0; }
+.study-preferences legend { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+.track-options, .subject-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.track-options button { padding: 10px 14px; border: 1px solid #dbe3ef; border-radius: 12px; background: white; color: #52677a; }
+.track-options button[aria-pressed="true"] { border-color: #3182f6; background: #edf4ff; color: #246dde; }
+.subject-options label { display: flex; align-items: center; gap: 8px; padding: 12px; border: 1px solid #dbe3ef; border-radius: 12px; font-size: 13px; cursor: pointer; }
+.subject-options label:has(input:checked) { background: #edf4ff; border-color: #3182f6; }
+.subject-options input { width: 17px; height: 17px; accent-color: #3182f6; }
+.study-preferences .section-head { gap: 8px; margin-bottom: 20px; }
+.study-preferences > .hint { margin-bottom: 24px; }
+.clear-selection { border: 0; background: none; padding: 8px 0; font-size: 12px; color: #246dde; white-space: nowrap; }
+.preference-summary p { font-size: 12px; color: #65748a; line-height: 1.8; }
+.question-meta { flex-wrap: wrap; }
+.code-blank { color: #ffe0a0; background: #45536b; border-bottom: 2px solid #ffe0a0; padding: 0 4px; }

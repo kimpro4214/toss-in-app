@@ -1288,5 +1288,1381 @@
       "date": "2026-10-05",
       "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
     }
+  },
+  {
+    "id": "algorithms-031",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "반복 누적 추적",
+    "prompt": "반복 누적 추적: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 1,2,3,4 네 값을 누적하면 10이다. 마지막 i 값만 출력하는 것이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "15",
+        "explanation": "이 조건에서 15는 성립하지 않는다. 1,2,3,4 네 값을 누적하면 10이다. 마지막 i 값만 출력하는 것이 아니다."
+      },
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. 1,2,3,4 네 값을 누적하면 10이다. 마지막 i 값만 출력하는 것이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "10",
+        "explanation": "1,2,3,4 네 값을 누적하면 10이다. 마지막 i 값만 출력하는 것이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "1,2,3,4 네 값을 누적하면 10이다. 마지막 i 값만 출력하는 것이 아니다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int sum = 0;\nfor (int i = 1; i <= 4; ++i) sum += i;\nstd::cout << sum;",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-032",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "조건 누적 추적",
+    "prompt": "조건 누적 추적: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 짝수 2와 6인 두 경우에만 카운터를 증가시킨다."
+      },
+      {
+        "id": "c1",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. 짝수 2와 6인 두 경우에만 카운터를 증가시킨다."
+      },
+      {
+        "id": "c3",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 짝수 2와 6인 두 경우에만 카운터를 증가시킨다."
+      },
+      {
+        "id": "c0",
+        "text": "2",
+        "explanation": "짝수 2와 6인 두 경우에만 카운터를 증가시킨다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "짝수 2와 6인 두 경우에만 카운터를 증가시킨다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int count = 0;\nfor (int n : {2,5,6,9}) if (n % 2 == 0) ++count;\nstd::cout << count;",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-033",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "최댓값 갱신",
+    "prompt": "최댓값 갱신: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "-100",
+        "explanation": "이 조건에서 -100는 성립하지 않는다. 현재 최대보다 큰 값을 만날 때만 갱신하여 음수 중 가장 큰 -2를 얻는다. 0은 입력에 없다."
+      },
+      {
+        "id": "c1",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 현재 최대보다 큰 값을 만날 때만 갱신하여 음수 중 가장 큰 -2를 얻는다. 0은 입력에 없다."
+      },
+      {
+        "id": "c0",
+        "text": "-2",
+        "explanation": "현재 최대보다 큰 값을 만날 때만 갱신하여 음수 중 가장 큰 -2를 얻는다. 0은 입력에 없다."
+      },
+      {
+        "id": "c2",
+        "text": "-7",
+        "explanation": "이 조건에서 -7는 성립하지 않는다. 현재 최대보다 큰 값을 만날 때만 갱신하여 음수 중 가장 큰 -2를 얻는다. 0은 입력에 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "현재 최대보다 큰 값을 만날 때만 갱신하여 음수 중 가장 큰 -2를 얻는다. 0은 입력에 없다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int best = -100;\nfor (int x : {-3,-7,-2}) if (x > best) best = x;\nstd::cout << best;",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-034",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "선형 탐색 조건",
+    "prompt": "값 8의 첫 인덱스 1을 찾는 비교 연산자는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "<",
+        "explanation": "이 조건에서 <는 성립하지 않는다. 탐색 대상과 같아지는 ==에서 위치를 저장하고 종료해야 한다. !=나 <는 첫 원소에서 종료한다."
+      },
+      {
+        "id": "c0",
+        "text": "==",
+        "explanation": "탐색 대상과 같아지는 ==에서 위치를 저장하고 종료해야 한다. !=나 <는 첫 원소에서 종료한다."
+      },
+      {
+        "id": "c3",
+        "text": ">",
+        "explanation": "이 조건에서 >는 성립하지 않는다. 탐색 대상과 같아지는 ==에서 위치를 저장하고 종료해야 한다. !=나 <는 첫 원소에서 종료한다."
+      },
+      {
+        "id": "c1",
+        "text": "!=",
+        "explanation": "이 조건에서 !=는 성립하지 않는다. 탐색 대상과 같아지는 ==에서 위치를 저장하고 종료해야 한다. !=나 <는 첫 원소에서 종료한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "탐색 대상과 같아지는 ==에서 위치를 저장하고 종료해야 한다. !=나 <는 첫 원소에서 종료한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::vector<int> a{4,8,6};\nint found = -1;\nfor (int i = 0; i < 3; ++i) {\n  if (a[i] ____ 8) { found = i; break; }\n}\nstd::cout << found;",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-035",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "짝수 필터 조건",
+    "prompt": "짝수만 더해 합계 6을 얻는 비교 연산자는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": ">",
+        "explanation": "이 조건에서 >는 성립하지 않는다. 나머지가 0인 정수가 짝수다. !=와 >는 여기서 홀수, >=는 모든 비음수 나머지를 선택한다."
+      },
+      {
+        "id": "c3",
+        "text": ">=",
+        "explanation": "이 조건에서 >=는 성립하지 않는다. 나머지가 0인 정수가 짝수다. !=와 >는 여기서 홀수, >=는 모든 비음수 나머지를 선택한다."
+      },
+      {
+        "id": "c1",
+        "text": "!=",
+        "explanation": "이 조건에서 !=는 성립하지 않는다. 나머지가 0인 정수가 짝수다. !=와 >는 여기서 홀수, >=는 모든 비음수 나머지를 선택한다."
+      },
+      {
+        "id": "c0",
+        "text": "==",
+        "explanation": "나머지가 0인 정수가 짝수다. !=와 >는 여기서 홀수, >=는 모든 비음수 나머지를 선택한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "나머지가 0인 정수가 짝수다. !=와 >는 여기서 홀수, >=는 모든 비음수 나머지를 선택한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "int sum = 0;\nfor (int x : {1,2,3,4}) if (x % 2 ____ 0) sum += x;\nstd::cout << sum;",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-036",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "정렬 후 중앙값",
+    "prompt": "서로 다른 정수 [9,1,5,3,7]을 정렬했을 때 중앙값은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "7",
+        "explanation": "이 조건에서 7는 성립하지 않는다. 정렬 결과 1,3,5,7,9의 가운데 세 번째 값이 5다."
+      },
+      {
+        "id": "c3",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. 정렬 결과 1,3,5,7,9의 가운데 세 번째 값이 5다."
+      },
+      {
+        "id": "c1",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 정렬 결과 1,3,5,7,9의 가운데 세 번째 값이 5다."
+      },
+      {
+        "id": "c0",
+        "text": "5",
+        "explanation": "정렬 결과 1,3,5,7,9의 가운데 세 번째 값이 5다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정렬 결과 1,3,5,7,9의 가운데 세 번째 값이 5다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-037",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "안정 정렬 의미",
+    "prompt": "동일 점수의 학생을 원래 입력 순서대로 유지해야 하는 정렬의 성질은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "내림차순",
+        "explanation": "이 조건에서 내림차순는 성립하지 않는다. 안정 정렬은 비교 키가 같은 원소의 상대적 순서를 유지한다. 메모리 비용이나 정렬 방향과 별개다."
+      },
+      {
+        "id": "c0",
+        "text": "안정성",
+        "explanation": "안정 정렬은 비교 키가 같은 원소의 상대적 순서를 유지한다. 메모리 비용이나 정렬 방향과 별개다."
+      },
+      {
+        "id": "c2",
+        "text": "무조건 O(1)",
+        "explanation": "이 조건에서 무조건 O(1)는 성립하지 않는다. 안정 정렬은 비교 키가 같은 원소의 상대적 순서를 유지한다. 메모리 비용이나 정렬 방향과 별개다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 제자리",
+        "explanation": "이 조건에서 항상 제자리는 성립하지 않는다. 안정 정렬은 비교 키가 같은 원소의 상대적 순서를 유지한다. 메모리 비용이나 정렬 방향과 별개다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "안정 정렬은 비교 키가 같은 원소의 상대적 순서를 유지한다. 메모리 비용이나 정렬 방향과 별개다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-038",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "탐색 반환 계약",
+    "prompt": "탐색 함수가 없는 값에 대해 -1을 반환하도록 약속했다면 호출자가 해야 할 검사는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "반환값에 1을 더하면 항상 유효",
+        "explanation": "이 조건에서 반환값에 1을 더하면 항상 유효는 성립하지 않는다. 실패 구분자인 -1은 유효 인덱스가 아니다. 성공 여부 확인이 우선이다."
+      },
+      {
+        "id": "c2",
+        "text": "값을 unsigned로 바로 변환",
+        "explanation": "이 조건에서 값을 unsigned로 바로 변환는 성립하지 않는다. 실패 구분자인 -1은 유효 인덱스가 아니다. 성공 여부 확인이 우선이다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 배열[-1] 접근",
+        "explanation": "이 조건에서 항상 배열[-1] 접근는 성립하지 않는다. 실패 구분자인 -1은 유효 인덱스가 아니다. 성공 여부 확인이 우선이다."
+      },
+      {
+        "id": "c0",
+        "text": "-1 여부를 확인한 뒤 인덱스로 사용",
+        "explanation": "실패 구분자인 -1은 유효 인덱스가 아니다. 성공 여부 확인이 우선이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "실패 구분자인 -1은 유효 인덱스가 아니다. 성공 여부 확인이 우선이다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-039",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "순열과 조합 구분",
+    "prompt": "서로 다른 5명 중 순서를 고려하지 않고 2명을 고르는 경우 수는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "25",
+        "explanation": "이 조건에서 25는 성립하지 않는다. 조합은 5*4/2!=10이다. 20은 두 명의 순서를 서로 다른 경우로 세는 순열이다."
+      },
+      {
+        "id": "c0",
+        "text": "10",
+        "explanation": "조합은 5*4/2!=10이다. 20은 두 명의 순서를 서로 다른 경우로 세는 순열이다."
+      },
+      {
+        "id": "c3",
+        "text": "5",
+        "explanation": "이 조건에서 5는 성립하지 않는다. 조합은 5*4/2!=10이다. 20은 두 명의 순서를 서로 다른 경우로 세는 순열이다."
+      },
+      {
+        "id": "c1",
+        "text": "20",
+        "explanation": "이 조건에서 20는 성립하지 않는다. 조합은 5*4/2!=10이다. 20은 두 명의 순서를 서로 다른 경우로 세는 순열이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "조합은 5*4/2!=10이다. 20은 두 명의 순서를 서로 다른 경우로 세는 순열이다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-040",
+    "subject": "algorithms",
+    "difficulty": "easy",
+    "topic": "최단 경로 간선 수",
+    "prompt": "가중치가 모두 같은 양수인 그래프에서 BFS가 최소화하는 경로 특성은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "총 방문 횟수만",
+        "explanation": "이 조건에서 총 방문 횟수만는 성립하지 않는다. BFS는 거리 레벨 순으로 방문하여 간선 수가 최소인 경로를 찾는다. 같은 가중치면 비용도 최소다."
+      },
+      {
+        "id": "c0",
+        "text": "출발점에서의 간선 개수",
+        "explanation": "BFS는 거리 레벨 순으로 방문하여 간선 수가 최소인 경로를 찾는다. 같은 가중치면 비용도 최소다."
+      },
+      {
+        "id": "c1",
+        "text": "가장 큰 정점 번호",
+        "explanation": "이 조건에서 가장 큰 정점 번호는 성립하지 않는다. BFS는 거리 레벨 순으로 방문하여 간선 수가 최소인 경로를 찾는다. 같은 가중치면 비용도 최소다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 가능한 경로의 수",
+        "explanation": "이 조건에서 모든 가능한 경로의 수는 성립하지 않는다. BFS는 거리 레벨 순으로 방문하여 간선 수가 최소인 경로를 찾는다. 같은 가중치면 비용도 최소다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "BFS는 거리 레벨 순으로 방문하여 간선 수가 최소인 경로를 찾는다. 같은 가중치면 비용도 최소다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-041",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "이진 탐색 구간 축소",
+    "prompt": "이진 탐색 구간 축소: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 중간 인덱스 2의 값 5보다 목표 7이 크므로 왼쪽 경계를 3으로 옮긴 뒤 목표를 찾는다."
+      },
+      {
+        "id": "c2",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. 중간 인덱스 2의 값 5보다 목표 7이 크므로 왼쪽 경계를 3으로 옮긴 뒤 목표를 찾는다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "중간 인덱스 2의 값 5보다 목표 7이 크므로 왼쪽 경계를 3으로 옮긴 뒤 목표를 찾는다."
+      },
+      {
+        "id": "c3",
+        "text": "-1",
+        "explanation": "이 조건에서 -1는 성립하지 않는다. 중간 인덱스 2의 값 5보다 목표 7이 크므로 왼쪽 경계를 3으로 옮긴 뒤 목표를 찾는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "중간 인덱스 2의 값 5보다 목표 7이 크므로 왼쪽 경계를 3으로 옮긴 뒤 목표를 찾는다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> a{1,3,5,7,9};\nint l = 0, r = 4, answer = -1;\nwhile (l <= r) {\n  int m = l + (r-l)/2;\n  if (a[m] == 7) { answer = m; break; }\n  if (a[m] < 7) l = m+1; else r = m-1;\n}\nstd::cout << answer;",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-042",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "유클리드 알고리즘",
+    "prompt": "유클리드 알고리즘: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "6",
+        "explanation": "나머지 상태는 (30,18)→(18,12)→(12,6)→(6,0)이며 최대공약수는 6이다."
+      },
+      {
+        "id": "c3",
+        "text": "30",
+        "explanation": "이 조건에서 30는 성립하지 않는다. 나머지 상태는 (30,18)→(18,12)→(12,6)→(6,0)이며 최대공약수는 6이다."
+      },
+      {
+        "id": "c1",
+        "text": "12",
+        "explanation": "이 조건에서 12는 성립하지 않는다. 나머지 상태는 (30,18)→(18,12)→(12,6)→(6,0)이며 최대공약수는 6이다."
+      },
+      {
+        "id": "c2",
+        "text": "18",
+        "explanation": "이 조건에서 18는 성립하지 않는다. 나머지 상태는 (30,18)→(18,12)→(12,6)→(6,0)이며 최대공약수는 6이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "나머지 상태는 (30,18)→(18,12)→(12,6)→(6,0)이며 최대공약수는 6이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "int a = 30, b = 18;\nwhile (b != 0) { int r = a % b; a = b; b = r; }\nstd::cout << a;",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-043",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "누적 합 구간 조회",
+    "prompt": "누적 합 구간 조회: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "12",
+        "explanation": "원본 [2,3,4,5]에서 인덱스 1부터 3까지 합은 p[4]-p[1]=3+4+5=12이다."
+      },
+      {
+        "id": "c2",
+        "text": "9",
+        "explanation": "이 조건에서 9는 성립하지 않는다. 원본 [2,3,4,5]에서 인덱스 1부터 3까지 합은 p[4]-p[1]=3+4+5=12이다."
+      },
+      {
+        "id": "c3",
+        "text": "7",
+        "explanation": "이 조건에서 7는 성립하지 않는다. 원본 [2,3,4,5]에서 인덱스 1부터 3까지 합은 p[4]-p[1]=3+4+5=12이다."
+      },
+      {
+        "id": "c1",
+        "text": "14",
+        "explanation": "이 조건에서 14는 성립하지 않는다. 원본 [2,3,4,5]에서 인덱스 1부터 3까지 합은 p[4]-p[1]=3+4+5=12이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "원본 [2,3,4,5]에서 인덱스 1부터 3까지 합은 p[4]-p[1]=3+4+5=12이다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> p{0,2,5,9,14};\nstd::cout << p[4] - p[1];",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-044",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "하한 탐색 이동",
+    "prompt": "3 이상인 첫 위치를 찾고 후보 m을 유지하는 경계 대입은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "m + 1",
+        "explanation": "이 조건에서 m + 1는 성립하지 않는다. 반열린 구간 하한 탐색에서 a[m]>=목표면 m 자체도 답 후보라 r=m으로 유지해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "m - 1",
+        "explanation": "이 조건에서 m - 1는 성립하지 않는다. 반열린 구간 하한 탐색에서 a[m]>=목표면 m 자체도 답 후보라 r=m으로 유지해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "m",
+        "explanation": "반열린 구간 하한 탐색에서 a[m]>=목표면 m 자체도 답 후보라 r=m으로 유지해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 반열린 구간 하한 탐색에서 a[m]>=목표면 m 자체도 답 후보라 r=m으로 유지해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "반열린 구간 하한 탐색에서 a[m]>=목표면 m 자체도 답 후보라 r=m으로 유지해야 한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::vector<int> a{1,3,3,5};\nint l = 0, r = a.size();\nwhile (l < r) {\n  int m = l + (r-l)/2;\n  if (a[m] < 3) l = m+1; else r = ____;\n}\nstd::cout << l;",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-045",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "슬라이딩 윈도 갱신",
+    "prompt": "길이 2인 창을 오른쪽 한 칸 옮겨 4+6=10을 얻는 제거 인덱스는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "2",
+        "explanation": "이 조건에서 2는 성립하지 않는다. 새 원소 인덱스 2를 더하고 창에서 빠지는 옛 첫 원소 인덱스 0을 뺀다."
+      },
+      {
+        "id": "c0",
+        "text": "0",
+        "explanation": "새 원소 인덱스 2를 더하고 창에서 빠지는 옛 첫 원소 인덱스 0을 뺀다."
+      },
+      {
+        "id": "c1",
+        "text": "1",
+        "explanation": "이 조건에서 1는 성립하지 않는다. 새 원소 인덱스 2를 더하고 창에서 빠지는 옛 첫 원소 인덱스 0을 뺀다."
+      },
+      {
+        "id": "c3",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 새 원소 인덱스 2를 더하고 창에서 빠지는 옛 첫 원소 인덱스 0을 뺀다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "새 원소 인덱스 2를 더하고 창에서 빠지는 옛 첫 원소 인덱스 0을 뺀다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "fill-blank",
+    "code": "std::vector<int> a{2,4,6};\nint sum = a[0]+a[1];\nsum += a[2] - a[____];\nstd::cout << sum;",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-046",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "반복 구간 불변식",
+    "prompt": "삽입 정렬에서 인덱스 i의 원소를 넣기 직전 유지되는 기본 불변식은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "앞쪽 [0,i) 구간이 정렬되어 있음",
+        "explanation": "삽입 정렬은 정렬된 접두 구간에 다음 원소를 적절히 삽입해 정렬된 범위를 한 원소씩 늘린다."
+      },
+      {
+        "id": "c2",
+        "text": "뒤쪽 구간이 항상 역순",
+        "explanation": "이 조건에서 뒤쪽 구간이 항상 역순는 성립하지 않는다. 삽입 정렬은 정렬된 접두 구간에 다음 원소를 적절히 삽입해 정렬된 범위를 한 원소씩 늘린다."
+      },
+      {
+        "id": "c3",
+        "text": "앞쪽 값들이 모두 같음",
+        "explanation": "이 조건에서 앞쪽 값들이 모두 같음는 성립하지 않는다. 삽입 정렬은 정렬된 접두 구간에 다음 원소를 적절히 삽입해 정렬된 범위를 한 원소씩 늘린다."
+      },
+      {
+        "id": "c1",
+        "text": "전체 배열이 이미 정렬됨",
+        "explanation": "이 조건에서 전체 배열이 이미 정렬됨는 성립하지 않는다. 삽입 정렬은 정렬된 접두 구간에 다음 원소를 적절히 삽입해 정렬된 범위를 한 원소씩 늘린다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "삽입 정렬은 정렬된 접두 구간에 다음 원소를 적절히 삽입해 정렬된 범위를 한 원소씩 늘린다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-047",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "메모이제이션 키",
+    "prompt": "같은 재귀 부분 문제의 결과를 재사용하려면 캐시 키에 무엇이 포함되어야 하나요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "호출 스택 깊이만",
+        "explanation": "이 조건에서 호출 스택 깊이만는 성립하지 않는다. 캐시 키가 서로 다른 상태를 구분하지 못하면 잘못된 결과를 재사용한다. 결과에 영향을 주는 상태를 표현해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "결과를 결정하는 모든 상태",
+        "explanation": "캐시 키가 서로 다른 상태를 구분하지 못하면 잘못된 결과를 재사용한다. 결과에 영향을 주는 상태를 표현해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "현재 시간만",
+        "explanation": "이 조건에서 현재 시간만는 성립하지 않는다. 캐시 키가 서로 다른 상태를 구분하지 못하면 잘못된 결과를 재사용한다. 결과에 영향을 주는 상태를 표현해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "반환값의 타입 이름만",
+        "explanation": "이 조건에서 반환값의 타입 이름만는 성립하지 않는다. 캐시 키가 서로 다른 상태를 구분하지 못하면 잘못된 결과를 재사용한다. 결과에 영향을 주는 상태를 표현해야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "캐시 키가 서로 다른 상태를 구분하지 못하면 잘못된 결과를 재사용한다. 결과에 영향을 주는 상태를 표현해야 한다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-048",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "동전 그리디 반례",
+    "prompt": "동전 {1,3,4}로 금액 6을 만들 때 큰 동전부터 고르는 방식의 문제는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "4+1+1보다 3+3이 더 적은 동전",
+        "explanation": "그리디는 세 개를 쓰지만 최적은 3+3 두 개다. 해의 존재와 최적성은 다른 조건이다."
+      },
+      {
+        "id": "c3",
+        "text": "1 동전이 있으면 항상 최적",
+        "explanation": "이 조건에서 1 동전이 있으면 항상 최적는 성립하지 않는다. 그리디는 세 개를 쓰지만 최적은 3+3 두 개다. 해의 존재와 최적성은 다른 조건이다."
+      },
+      {
+        "id": "c1",
+        "text": "그리디는 해를 전혀 만들 수 없음",
+        "explanation": "이 조건에서 그리디는 해를 전혀 만들 수 없음는 성립하지 않는다. 그리디는 세 개를 쓰지만 최적은 3+3 두 개다. 해의 존재와 최적성은 다른 조건이다."
+      },
+      {
+        "id": "c2",
+        "text": "6은 만들 수 없는 금액",
+        "explanation": "이 조건에서 6은 만들 수 없는 금액는 성립하지 않는다. 그리디는 세 개를 쓰지만 최적은 3+3 두 개다. 해의 존재와 최적성은 다른 조건이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "그리디는 세 개를 쓰지만 최적은 3+3 두 개다. 해의 존재와 최적성은 다른 조건이다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-049",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "작업 선택 그리디",
+    "prompt": "한 자원에서 겹치지 않는 구간 작업 개수를 최대로 고르는 문제의 대표적인 선택 기준은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 가장 긴 작업부터",
+        "explanation": "이 조건에서 항상 가장 긴 작업부터는 성립하지 않는다. 가장 일찍 끝나는 작업을 고르면 이후 작업을 위한 공간을 최대한 남긴다. 작업 가치가 다른 가중 문제와 구분한다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 시작 시각이 늦은 작업부터",
+        "explanation": "이 조건에서 항상 시작 시각이 늦은 작업부터는 성립하지 않는다. 가장 일찍 끝나는 작업을 고르면 이후 작업을 위한 공간을 최대한 남긴다. 작업 가치가 다른 가중 문제와 구분한다."
+      },
+      {
+        "id": "c3",
+        "text": "이름 가나다순",
+        "explanation": "이 조건에서 이름 가나다순는 성립하지 않는다. 가장 일찍 끝나는 작업을 고르면 이후 작업을 위한 공간을 최대한 남긴다. 작업 가치가 다른 가중 문제와 구분한다."
+      },
+      {
+        "id": "c0",
+        "text": "종료 시각이 가장 빠른 작업부터",
+        "explanation": "가장 일찍 끝나는 작업을 고르면 이후 작업을 위한 공간을 최대한 남긴다. 작업 가치가 다른 가중 문제와 구분한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "가장 일찍 끝나는 작업을 고르면 이후 작업을 위한 공간을 최대한 남긴다. 작업 가치가 다른 가중 문제와 구분한다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-050",
+    "subject": "algorithms",
+    "difficulty": "medium",
+    "topic": "방문 표시 시점",
+    "prompt": "BFS에서 정점을 큐에 넣을 때 방문 표시를 하면 얻는 이점은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "최단 거리가 반드시 음수",
+        "explanation": "이 조건에서 최단 거리가 반드시 음수는 성립하지 않는다. 다른 부모가 같은 정점을 다시 발견해도 이미 큐에 들어간 사실을 확인하여 중복 삽입을 피한다."
+      },
+      {
+        "id": "c0",
+        "text": "같은 정점의 중복 큐 삽입을 막음",
+        "explanation": "다른 부모가 같은 정점을 다시 발견해도 이미 큐에 들어간 사실을 확인하여 중복 삽입을 피한다."
+      },
+      {
+        "id": "c2",
+        "text": "큐가 스택으로 바뀜",
+        "explanation": "이 조건에서 큐가 스택으로 바뀜는 성립하지 않는다. 다른 부모가 같은 정점을 다시 발견해도 이미 큐에 들어간 사실을 확인하여 중복 삽입을 피한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 간선이 삭제됨",
+        "explanation": "이 조건에서 모든 간선이 삭제됨는 성립하지 않는다. 다른 부모가 같은 정점을 다시 발견해도 이미 큐에 들어간 사실을 확인하여 중복 삽입을 피한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "다른 부모가 같은 정점을 다시 발견해도 이미 큐에 들어간 사실을 확인하여 중복 삽입을 피한다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-051",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "0/1 배낭 잘못된 순회",
+    "prompt": "0/1 배낭 잘못된 순회: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "6",
+        "explanation": "용량을 오름차순으로 갱신하면 같은 물건으로 갱신한 dp[2]를 재사용하여 두 번 선택된다. 0/1 제한이면 내림차순이 필요하다."
+      },
+      {
+        "id": "c3",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. 용량을 오름차순으로 갱신하면 같은 물건으로 갱신한 dp[2]를 재사용하여 두 번 선택된다. 0/1 제한이면 내림차순이 필요하다."
+      },
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 용량을 오름차순으로 갱신하면 같은 물건으로 갱신한 dp[2]를 재사용하여 두 번 선택된다. 0/1 제한이면 내림차순이 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "3",
+        "explanation": "이 조건에서 3는 성립하지 않는다. 용량을 오름차순으로 갱신하면 같은 물건으로 갱신한 dp[2]를 재사용하여 두 번 선택된다. 0/1 제한이면 내림차순이 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "용량을 오름차순으로 갱신하면 같은 물건으로 갱신한 dp[2]를 재사용하여 두 번 선택된다. 0/1 제한이면 내림차순이 필요하다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> dp(5, 0);\nint weight = 2, value = 3;\nfor (int c = weight; c <= 4; ++c)\n  dp[c] = std::max(dp[c], dp[c-weight] + value);\nstd::cout << dp[4];",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-052",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "0/1 배낭 내림차순",
+    "prompt": "0/1 배낭 내림차순: 다음 코드의 출력 결과는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. 용량을 내림차순으로 방문하면 dp[c-weight]는 이 물건을 처리하기 전 상태라 한 번만 선택한다."
+      },
+      {
+        "id": "c0",
+        "text": "3",
+        "explanation": "용량을 내림차순으로 방문하면 dp[c-weight]는 이 물건을 처리하기 전 상태라 한 번만 선택한다."
+      },
+      {
+        "id": "c3",
+        "text": "4",
+        "explanation": "이 조건에서 4는 성립하지 않는다. 용량을 내림차순으로 방문하면 dp[c-weight]는 이 물건을 처리하기 전 상태라 한 번만 선택한다."
+      },
+      {
+        "id": "c1",
+        "text": "6",
+        "explanation": "이 조건에서 6는 성립하지 않는다. 용량을 내림차순으로 방문하면 dp[c-weight]는 이 물건을 처리하기 전 상태라 한 번만 선택한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "용량을 내림차순으로 방문하면 dp[c-weight]는 이 물건을 처리하기 전 상태라 한 번만 선택한다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 및 공식 근거 대조. MSVC C++20에서 코드 또는 정답을 채운 빈칸 코드를 실행해 출력 검증."
+    },
+    "kind": "output",
+    "code": "std::vector<int> dp(5, 0);\nint weight = 2, value = 3;\nfor (int c = 4; c >= weight; --c)\n  dp[c] = std::max(dp[c], dp[c-weight] + value);\nstd::cout << dp[4];",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-053",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "이진 탐색 단조 조건",
+    "prompt": "최초 true를 찾을 때 false인 m을 제외하고 종료를 보장하는 갱신은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "m",
+        "explanation": "이 조건에서 m는 성립하지 않는다. false인 m은 답이 아니므로 l=m+1로 제외한다. l=m은 경계 차이 1일 때 진전하지 않을 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "0",
+        "explanation": "이 조건에서 0는 성립하지 않는다. false인 m은 답이 아니므로 l=m+1로 제외한다. l=m은 경계 차이 1일 때 진전하지 않을 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "m + 1",
+        "explanation": "false인 m은 답이 아니므로 l=m+1로 제외한다. l=m은 경계 차이 1일 때 진전하지 않을 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "m - 1",
+        "explanation": "이 조건에서 m - 1는 성립하지 않는다. false인 m은 답이 아니므로 l=m+1로 제외한다. l=m은 경계 차이 1일 때 진전하지 않을 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "false인 m은 답이 아니므로 l=m+1로 제외한다. l=m은 경계 차이 1일 때 진전하지 않을 수 있다.",
+    "environment": "C++20. 필요한 표준 헤더와 main 내부 문맥은 준비되어 있다. 조건 판별 함수는 문제에 주어진 정의를 따른다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "fill-blank",
+    "code": "// can(x): x 이상이면 항상 true인 단조 조건\nint l = 0, r = 10;\nwhile (l < r) {\n  int m = l + (r-l)/2;\n  if (can(m)) r = m; else l = ____;\n}",
+    "language": "cpp",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-054",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "Dijkstra 음수 간선",
+    "prompt": "Dijkstra의 방문 확정 논리를 일반적으로 깨뜨릴 수 있는 조건은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "정점이 정수 ID",
+        "explanation": "이 조건에서 정점이 정수 ID는 성립하지 않는다. 음수 간선은 나중 경로가 이미 확정한 거리를 줄일 수 있어 가장 짧은 미방문 정점 확정 논리의 전제를 깨뜨린다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 간선이 양수",
+        "explanation": "이 조건에서 모든 간선이 양수는 성립하지 않는다. 음수 간선은 나중 경로가 이미 확정한 거리를 줄일 수 있어 가장 짧은 미방문 정점 확정 논리의 전제를 깨뜨린다."
+      },
+      {
+        "id": "c3",
+        "text": "인접 리스트 사용",
+        "explanation": "이 조건에서 인접 리스트 사용는 성립하지 않는다. 음수 간선은 나중 경로가 이미 확정한 거리를 줄일 수 있어 가장 짧은 미방문 정점 확정 논리의 전제를 깨뜨린다."
+      },
+      {
+        "id": "c0",
+        "text": "음수 간선이 존재",
+        "explanation": "음수 간선은 나중 경로가 이미 확정한 거리를 줄일 수 있어 가장 짧은 미방문 정점 확정 논리의 전제를 깨뜨린다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "음수 간선은 나중 경로가 이미 확정한 거리를 줄일 수 있어 가장 짧은 미방문 정점 확정 논리의 전제를 깨뜨린다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-055",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "위상 정렬 실패 판정",
+    "prompt": "Kahn 알고리즘으로 처리한 정점 수가 전체 정점 수보다 작을 때 유향 그래프에 대해 알 수 있는 것은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 연결되어 있음",
+        "explanation": "이 조건에서 항상 연결되어 있음는 성립하지 않는다. 진입 차수 0인 정점 제거가 더 진행되지 않고 정점이 남으면 사이클 때문에 남은 진입 차수를 없앨 수 없는 상태다."
+      },
+      {
+        "id": "c0",
+        "text": "유향 사이클이 존재",
+        "explanation": "진입 차수 0인 정점 제거가 더 진행되지 않고 정점이 남으면 사이클 때문에 남은 진입 차수를 없앨 수 없는 상태다."
+      },
+      {
+        "id": "c2",
+        "text": "간선이 하나도 없음",
+        "explanation": "이 조건에서 간선이 하나도 없음는 성립하지 않는다. 진입 차수 0인 정점 제거가 더 진행되지 않고 정점이 남으면 사이클 때문에 남은 진입 차수를 없앨 수 없는 상태다."
+      },
+      {
+        "id": "c3",
+        "text": "최단 거리가 0",
+        "explanation": "이 조건에서 최단 거리가 0는 성립하지 않는다. 진입 차수 0인 정점 제거가 더 진행되지 않고 정점이 남으면 사이클 때문에 남은 진입 차수를 없앨 수 없는 상태다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "진입 차수 0인 정점 제거가 더 진행되지 않고 정점이 남으면 사이클 때문에 남은 진입 차수를 없앨 수 없는 상태다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-056",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "상각과 단일 비용",
+    "prompt": "동적 배열의 용량을 두 배씩 늘릴 때 뒤에 요소 n개를 추가하는 전체 복사 비용의 점근적 크기는 무엇인가요?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "O(log n)",
+        "explanation": "이 조건에서 O(log n)는 성립하지 않는다. 확장 시 복사량은 1+2+4+...로 누적되어 마지막 규모의 상수배 이하 O(n)이다. 한 번의 확장은 O(n)일 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "O(n)",
+        "explanation": "확장 시 복사량은 1+2+4+...로 누적되어 마지막 규모의 상수배 이하 O(n)이다. 한 번의 확장은 O(n)일 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "O(n²)",
+        "explanation": "이 조건에서 O(n²)는 성립하지 않는다. 확장 시 복사량은 1+2+4+...로 누적되어 마지막 규모의 상수배 이하 O(n)이다. 한 번의 확장은 O(n)일 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "O(1) 전체",
+        "explanation": "이 조건에서 O(1) 전체는 성립하지 않는다. 확장 시 복사량은 1+2+4+...로 누적되어 마지막 규모의 상수배 이하 O(n)이다. 한 번의 확장은 O(n)일 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "확장 시 복사량은 1+2+4+...로 누적되어 마지막 규모의 상수배 이하 O(n)이다. 한 번의 확장은 O(n)일 수 있다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-057",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "DP 상태 압축 순서",
+    "prompt": "2차원 DP를 1차원으로 줄일 때 갱신 방향을 결정하는 핵심은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "이전 단계 값과 현재 단계 값 중 어느 것을 읽어야 하는지",
+        "explanation": "원래 점화식이 참조하는 단계의 값을 덮어쓰지 않아야 한다. 0/1 배낭과 무제한 배낭은 요구 순서가 다를 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "메모리 주소가 짝수인지",
+        "explanation": "이 조건에서 메모리 주소가 짝수인지는 성립하지 않는다. 원래 점화식이 참조하는 단계의 값을 덮어쓰지 않아야 한다. 0/1 배낭과 무제한 배낭은 요구 순서가 다를 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 내림차순이어야 함",
+        "explanation": "이 조건에서 항상 내림차순이어야 함는 성립하지 않는다. 원래 점화식이 참조하는 단계의 값을 덮어쓰지 않아야 한다. 0/1 배낭과 무제한 배낭은 요구 순서가 다를 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 오름차순이어야 함",
+        "explanation": "이 조건에서 항상 오름차순이어야 함는 성립하지 않는다. 원래 점화식이 참조하는 단계의 값을 덮어쓰지 않아야 한다. 0/1 배낭과 무제한 배낭은 요구 순서가 다를 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "원래 점화식이 참조하는 단계의 값을 덮어쓰지 않아야 한다. 0/1 배낭과 무제한 배낭은 요구 순서가 다를 수 있다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-058",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "A* 최적성 조건",
+    "prompt": "비음수 비용 그래프에서 일관적인 휴리스틱과 적절한 종료 규칙을 쓰는 A*의 휴리스틱 조건은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "휴리스틱이 음수면 무조건 더 빠름",
+        "explanation": "이 조건에서 휴리스틱이 음수면 무조건 더 빠름는 성립하지 않는다. 일관성은 간선 비용과 휴리스틱의 삼각 부등식 조건이다. 탐색 경로의 f값 비감소에 도움을 준다."
+      },
+      {
+        "id": "c2",
+        "text": "h는 정점 번호와 같아야 함",
+        "explanation": "이 조건에서 h는 정점 번호와 같아야 함는 성립하지 않는다. 일관성은 간선 비용과 휴리스틱의 삼각 부등식 조건이다. 탐색 경로의 f값 비감소에 도움을 준다."
+      },
+      {
+        "id": "c0",
+        "text": "간선 u→v에서 h(u) ≤ cost(u,v)+h(v)",
+        "explanation": "일관성은 간선 비용과 휴리스틱의 삼각 부등식 조건이다. 탐색 경로의 f값 비감소에 도움을 준다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 h가 실제 비용보다 커야 함",
+        "explanation": "이 조건에서 모든 h가 실제 비용보다 커야 함는 성립하지 않는다. 일관성은 간선 비용과 휴리스틱의 삼각 부등식 조건이다. 탐색 경로의 f값 비감소에 도움을 준다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "일관성은 간선 비용과 휴리스틱의 삼각 부등식 조건이다. 탐색 경로의 f값 비감소에 도움을 준다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "Poole·Mackworth 휴리스틱 탐색",
+        "url": "https://artint.info/3e/html/ArtInt3e.Ch3.S6.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-059",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "해시 최악 비용",
+    "prompt": "균등 해시를 기대하는 해시 테이블의 평균 O(1) 조회에 대해 반드시 구분할 점은 무엇인가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "정렬되지 않으면 조회 불가",
+        "explanation": "이 조건에서 정렬되지 않으면 조회 불가는 성립하지 않는다. 평균 기대 비용과 최악 보장은 다르다. 많은 키가 같은 버킷에 몰리면 탐색 비용이 증가할 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "충돌이 편중되면 최악 O(n)이 될 수 있음",
+        "explanation": "평균 기대 비용과 최악 보장은 다르다. 많은 키가 같은 버킷에 몰리면 탐색 비용이 증가할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 입력에서 최악 O(1) 보장",
+        "explanation": "이 조건에서 모든 입력에서 최악 O(1) 보장는 성립하지 않는다. 평균 기대 비용과 최악 보장은 다르다. 많은 키가 같은 버킷에 몰리면 탐색 비용이 증가할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "메모리가 필요 없음",
+        "explanation": "이 조건에서 메모리가 필요 없음는 성립하지 않는다. 평균 기대 비용과 최악 보장은 다르다. 많은 키가 같은 버킷에 몰리면 탐색 비용이 증가할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "평균 기대 비용과 최악 보장은 다르다. 많은 키가 같은 버킷에 몰리면 탐색 비용이 증가할 수 있다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
+  },
+  {
+    "id": "algorithms-060",
+    "subject": "algorithms",
+    "difficulty": "hard",
+    "topic": "증명 없는 그리디",
+    "prompt": "몇 개 예제에서 잘 작동한 그리디를 전체 입력에 대한 최적 알고리즘이라고 주장하려면 무엇이 더 필요한가요?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "재귀를 반복문으로 바꾸기만 함",
+        "explanation": "이 조건에서 재귀를 반복문으로 바꾸기만 함는 성립하지 않는다. 유한한 예제 통과는 모든 입력의 최적성을 보장하지 않는다. 탐욕 선택 속성을 보이는 논증이나 반례 검토가 필요하다."
+      },
+      {
+        "id": "c0",
+        "text": "문제 전제에 대한 교환 논증 등 최적성 증명",
+        "explanation": "유한한 예제 통과는 모든 입력의 최적성을 보장하지 않는다. 탐욕 선택 속성을 보이는 논증이나 반례 검토가 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "변수 이름을 더 짧게 변경",
+        "explanation": "이 조건에서 변수 이름을 더 짧게 변경는 성립하지 않는다. 유한한 예제 통과는 모든 입력의 최적성을 보장하지 않는다. 탐욕 선택 속성을 보이는 논증이나 반례 검토가 필요하다."
+      },
+      {
+        "id": "c2",
+        "text": "테스트 입력을 모두 정렬",
+        "explanation": "이 조건에서 테스트 입력을 모두 정렬는 성립하지 않는다. 유한한 예제 통과는 모든 입력의 최적성을 보장하지 않는다. 탐욕 선택 속성을 보이는 논증이나 반례 검토가 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "유한한 예제 통과는 모든 입력의 최적성을 보장하지 않는다. 탐욕 선택 속성을 보이는 논증이나 반례 검토가 필요하다.",
+    "environment": "입력 크기 n의 복잡도. 코드 언어가 명시되지 않으면 의사 코드로 읽는다.",
+    "sources": [
+      {
+        "title": "algorithms 공식 개념 근거",
+        "url": "https://opendsa.org/OpenDSA/Books/Catalog/html/index.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-06",
+      "method": "독립 작성 후 명세의 적용 조건 대조. 실행 검증 가능한 코드는 별도 검증 목록에 연결."
+    },
+    "kind": "concept",
+    "exam": "engineer-practice"
   }
 ]
