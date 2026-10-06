@@ -1,14 +1,15 @@
-# AGENTS.md — Core Craft Engine
+# AGENTS.md — Toss App & Game Development Guide
 
 > Behavioral guidelines + project-specific rules.
-> 일반 행동 원칙(영문) 아래에 Core Craft 엔진 전용 규칙을 둔다.
+> General working principles and Apps in Toss rules for this repository.
 > **Strict compliance required.** 사소한 작업은 판단에 맡기되, 기본은 신중함 우선.
 
 ---
 
 ## Project Context
-- **Role:** Senior C++ Engine Programmer
-- **Goal:** Custom DX11 Game Engine for "Core Craft" (Palworld style)
+- **Role:** Apps in Toss Web App & Game Developer
+- **Goal:** Build, release, and improve Toss mini apps and games using actual usage and monetization data.
+- **Repository:** `toss-game`; each app or game has its own project directory.
 - **Chat & Comments:** 한국어로 작성
 
 ---
@@ -67,7 +68,7 @@ When your changes create orphans:
 The test: Every changed line should trace directly to the user's request.
 > 모든 변경 라인은 요청과 직접 연결되어야 한다.
 
-> **Note (엔진 작업 시):** 대규모 refactoring은 코드부터 건드리지 말고
+> **Note (앱·게임 구조 변경 시):** 대규모 refactoring은 코드부터 건드리지 말고
 > 먼저 설계 방향을 제안하고 승인을 받는다. (Part 3. Workflow 참조)
 
 ## 4. Goal-Driven Execution
@@ -89,52 +90,65 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
-> **Note (렌더링/엔진 검증):** 자동 테스트가 어려운 렌더 코드는
-> 성공 기준을 "화면 출력 확인 / 커스텀 로그 출력 / 특정 프레임 동작"처럼
-> 구체적으로 정의한다. Part 2의 DX11 체크리스트를 검증 기준으로 활용.
+> **Note (모바일·게임 검증):** 자동 테스트가 어려운 터치·사운드·게임 화면은
+> 성공 기준을 "실기기 화면 확인 / 한 판 완료 / 백그라운드 복귀 / 광고 후 복원"처럼
+> 구체적으로 정의한다. Part 2의 토스 검증 기준을 함께 적용한다.
 
 ---
 
-# Part 2. C++ & DX11 Engine Rules
+# Part 2. Apps in Toss App & Game Rules
 
-## 1. C++ & Architecture
-- Target Architecture: Unreal Engine style (UObject -> AActor -> UActorComponent)
-- Separate .h & .cpp
-- Use Forward Declaration 적극 활용 (include 최소화)
-- Use Modern C++ (auto, constexpr, enum class, lambda)
+## 1. Project Structure & Technology
+- Keep each application or game in an independent project directory with its own package manifest, lockfile, runtime assets, and Toss configuration. The current CS app lives in `apps/cs-daily-5`.
+- Follow the existing project's technology and style. The CS app uses React, TypeScript, Vite, and TDS; choose game technology according to the actual gameplay requirements.
+- Extract shared code only after multiple projects actually need it. Avoid speculative frameworks and dependencies.
+- Check current official Apps in Toss documentation and installed SDK types before adding platform integrations. Keep configuration and compatible dependency versions consistent with that project's SDK; do not upgrade unrelated dependencies.
 
-## 2. Memory & Resource (Critical)
-- Prevent memory leak
-- Avoid raw new/delete. Use std::unique_ptr (소유권 명확), std::shared_ptr (공유)
-- DX11 Resources: ID3D11... 객체는 반드시 Microsoft::WRL::ComPtr 사용. 생 포인터 절대 금지
+## 2. Mobile UX & Accessibility
+- Design for touch, small screens, Safe Area, and Android/iOS navigation. Make primary actions and back/close behavior clear.
+- Use TDS for standard app screens where appropriate. Give games a suitable play area and orientation without forcing game-specific UI onto non-game apps.
+- Keep code blocks horizontally scrollable within their container; avoid page-wide overflow. Provide readable text, visible focus states, and accessible labels.
+- Preserve ongoing learning or play when changing settings. Keep permission-denied and unsupported-SDK paths usable for features that do not require that capability.
 
-## 3. Performance
-- Optimize for open-world: Data Locality 최우선. SoA 구조나 연속된 std::vector 사용
-- No memory allocation (new) or 무거운 string 연산 in Tick/Update loop
-- Minimize State Change in Rendering Pipeline
+## 3. State, Storage & Content
+- Separate testable learning/game logic from UI and native integration. Keep stable content IDs and versioned persisted state.
+- Use SDK Storage in Toss and a browser fallback for local development when appropriate. Separate user records and preserve existing answers, rewards, and unfinished sessions during updates.
+- Treat a save as successful only after persistence succeeds. Prevent duplicate submissions and reward grants; allow safe retries after failure.
+- Write original questions, explanations, and game assets. Verify technical answers with authoritative sources, execute relevant code/calculation examples, and keep runtime content in structured files.
 
-## 3-1. DX11 렌더링 필수 체크리스트 (Critical)
-MeshRenderer::Update() 또는 렌더링 코드 작성/수정 시 반드시 포함:
-- `DC->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST)` — 누락 시 하드웨어마다 다르게 동작(point/line 렌더링)
-- `DC->IASetVertexBuffers(...)` — stride/offset 포함
-- `DC->IASetIndexBuffer(...)` — DXGI_FORMAT_R32_UINT
-- 셰이더 VS에서 `worldPosition`은 반드시 W 변환 후, VP 변환 전에 저장
-  ```hlsl
-  output.position = mul(input.position, W);
-  output.worldPosition = output.position.xyz; // 반드시 여기서 저장
-  output.position = mul(output.position, VP);
-  ```
-- `CameraPosition()`은 `-V._41_42_43` 아닌 `mul(float3(-V._41,-V._42,-V._43), (float3x3)V)` 사용
-- `D3D11CreateDeviceAndSwapChain` 호출 시 Feature Level 명시: `D3D_FEATURE_LEVEL_11_0`
+## 4. Game Lifecycle & Performance
+- Keep initial loading, asset sizes, memory use, and touch responsiveness suitable for mobile webviews. Measure on real devices before declaring release readiness.
+- Pause timers and audio appropriately when backgrounded or showing an ad; restore gameplay deliberately when returning.
+- Clean up animation frames, timers, subscriptions, and media resources. Avoid unnecessary allocations and React renders in active game loops.
+- Define observable game checks, such as scoring, round completion, restart, save/restore, and ad return behavior. Do not rely only on a successful build.
+
+## 5. Monetization & Measurement
+- Validate retention and revenue with actual console data. Do not describe estimates, competitor claims, or a launch itself as proven profit.
+- Keep rewarded ads optional and explain the reward before display. Preload ads and grant a reward only on the SDK's `userEarnedReward` event, once per eligible reward.
+- Keep basic learning/play usable when an ad is unavailable, cancelled, or fails. Development ad mocks must not be present in production bundles.
+- Use real console app identifiers and ad-group values for release configuration. Keep secrets local and report missing values or unverified real-ad behavior accurately.
+
+## 6. Verification & Release
+- Run checks relevant to the change: content validation, TypeScript, logic/reward tests, browser flows, web build, and `.ait` packaging when applicable. For documentation-only changes, check the diff and instruction consistency instead of rerunning app tests.
+- Browser mocks verify local flows; they do not prove native SDK behavior. Verify navigation, Safe Area, persistence, and ad return/rewards in Android/iOS Toss before claiming those checks passed.
+- For SDK 3 projects, use the console QR flow for Toss testing as documented. Verify the current game launch-time requirement; the official checklist currently requires the first screen within 10 seconds.
+- Prepare review assets and accurate app descriptions, then submit through the console only when requested. Distinguish successful packaging, review submission, review approval, and public release.
+
+## Official References
+- [Apps in Toss SDK 3](https://developers-apps-in-toss.toss.im/documentation/sdk/v3)
+- [Apps in Toss game release checklist](https://developers-apps-in-toss.toss.im/checklist/app-game)
+- [Apps in Toss rewarded ad API](https://developers-apps-in-toss.toss.im/documentation/common/monetization/iaa/interstitial-rewarded-ad)
 
 ---
 
 # Part 3. Workflow & Git
 
 ## 1. Workflow
-- 대규모 refactoring 전 설계 방향 ask & get approval
-- Add Custom Log/macro for instant debugging
-- Chat & Comments in Korean
+- Keep user-facing updates and code comments in Korean. Keep shared Git policies in English.
+- Read the target app's package scripts, SDK setup, and existing flows before editing. Use the local `toss-game-guide.md` for context when available, while verifying current platform requirements against official documentation.
+- For major architecture changes, explain the design and obtain approval before refactoring. Resolve routine implementation choices within the user's authorized scope without repeated confirmations.
+- Use focused development logs for learning, game, storage, and ad events; avoid sensitive data and noisy per-frame logging.
+- Report the final behavior, relevant verification, and material remaining limitations. Never claim real device, real ad, or release validation from browser mocks alone.
 
 ## 2. Git Commit
 - Keep commits small and focused on one responsibility, such as configuration, content, learning logic, UI, integration, tests, or documentation.
