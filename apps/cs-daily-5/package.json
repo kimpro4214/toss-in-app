@@ -7,7 +7,7 @@
     "dev": "vite --host 127.0.0.1",
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
-    "validate:content": "tsx scripts/validate-content.ts",
+    "validate:content": "tsx scripts/validate-content.ts && tsx scripts/validate-interview.ts",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "build:web": "npm run validate:content && npm run typecheck && vite build",

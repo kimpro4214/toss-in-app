@@ -20,8 +20,12 @@ export interface Question {
   kind?: 'concept' | 'fill-blank' | 'output' | 'debug';
   language?: string;
   exam?: 'engineer-practice';
+  interview?: {
+    courseId: 'game-client-14'; day: number; oralPrompt: string; answerOutline: string[];
+    followUps: { question: string; answer: string }[]; topicReference: string;
+  };
 }
-export interface Settings { mode: 'focus' | 'random'; subject: string; startLevel: Difficulty; selectedSubjects?: string[] }
+export interface Settings { mode: 'focus' | 'random'; subject: string; startLevel: Difficulty; selectedSubjects?: string[]; courseId?: 'game-client-14' }
 export interface Answer { choiceId: string; correct: boolean; at: string }
 export interface Entry { questionId: string; review: boolean }
 export interface Session {
@@ -32,6 +36,7 @@ export interface Session {
   entries: Entry[];
   answers: Record<string, Answer>;
   rewardGranted?: boolean;
+  interviewDay?: number;
 }
 export interface State {
   schemaVersion: 1;
