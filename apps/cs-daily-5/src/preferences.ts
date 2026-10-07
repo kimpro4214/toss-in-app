@@ -15,7 +15,7 @@ export function selectedSubjects(settings: Settings): string[] {
 }
 export function eligibleQuestions(settings: Settings, questions: Question[]): Question[] {
   const selected = selectedSubjects(settings);
-  return questions.filter(q => q.active !== false
+  return questions.filter(q => q.active !== false && !q.interview
     && (settings.mode === 'focus' ? q.subject === settings.subject : selected.includes(q.subject))
     && (!q.language || !languageIds.includes(q.language) || selected.includes(q.language)));
 }

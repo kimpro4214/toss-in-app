@@ -1,6 +1,7 @@
 import { levels, type State, type Settings, type Question, type Session, type Entry } from './types';
 import { subjects } from './subjects';
 import { eligibleQuestions, selectedSubjects } from './preferences';
+import { interviewQuestions, interviewProgress } from './interview';
 
 export function koreaDate(now = new Date()): string {
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
@@ -11,6 +12,7 @@ export function initialState(bankVersion: string): State {
 export const isComplete = (s: Session) => s.entries.every(e => !!s.answers[e.questionId]);
 export const score = (s: Session) => Object.values(s.answers).filter(a => a.correct).length;
 export function updateSettings(state: State, settings: Settings): State {
+  if (settings.courseId !== undefined && settings.courseId !== 'game-client-14') throw new Error('면접 코스를 확인해 주세요.');
   if (settings.selectedSubjects && (!settings.selectedSubjects.length || new Set(settings.selectedSubjects).size !== settings.selectedSubjects.length || settings.selectedSubjects.some(id => !subjects.some(s => s.id === id)))) throw new Error('학습할 과목을 하나 이상 선택해 주세요.');
   return { ...state, settings, subjectLevels: settings.startLevel === state.settings.startLevel ? state.subjectLevels : {} };
 }
@@ -67,9 +69,18 @@ export function selectEntries(state: State, questions: Question[], count: number
 export function createDailySession(state: State, questions: Question[], date = koreaDate(), random = Math.random): { state: State; session: Session } {
   const existing = state.sessions.find(s => s.date === date && s.kind === 'daily');
   if (existing) return { state, session: existing };
-  const entries = selectEntries(state, questions, 5, false, random);
+  let interviewDay: number | undefined;
+  let entries: Entry[];
+  if (state.settings.courseId === 'game-client-14') {
+    const progress = interviewProgress(state);
+    if (!progress.nextDay) throw new Error('14일 면접 코스를 완주했어요. 면접 질문 복습이나 일반 학습을 선택해 주세요.');
+    const pending = progress.sessions.find(s => s.interviewDay === progress.nextDay);
+    if (pending) return { state, session: pending };
+    interviewDay = progress.nextDay;
+    entries = interviewQuestions.filter(q => q.interview?.day === interviewDay).map(q => ({ questionId: q.id, review: false }));
+  } else entries = selectEntries(state, questions, 5, false, random);
   if (entries.length !== 5) throw new Error('배정할 문제가 부족합니다. 먼저 진행 중인 학습을 완료해 주세요.');
-  const session: Session = { id: `daily:${date}`, date, kind: 'daily', settings: { ...state.settings, selectedSubjects: state.settings.selectedSubjects?.slice() }, entries, answers: {} };
+  const session: Session = { id: `daily:${date}`, date, kind: 'daily', settings: { ...state.settings, selectedSubjects: state.settings.selectedSubjects?.slice() }, entries, answers: {}, ...(interviewDay ? { interviewDay } : {}) };
   return { state: { ...state, sessions: [...state.sessions, session] }, session };
 }
 export function submitAnswer(state: State, questions: Question[], sessionId: string, questionId: string, choiceId: string, at = new Date().toISOString()): State {
@@ -90,7 +101,7 @@ export function submitAnswer(state: State, questions: Question[], sessionId: str
     if (!tier.length || !tier.every(x => !!firstAnswers[x.id])) break;
     i++;
   }
-  subjectLevels[q.subject] = levels[i];
+  if (!q.interview) subjectLevels[q.subject] = levels[i];
   return { ...state, firstAnswers, mistakes, subjectLevels, sessions: state.sessions.map(s => s.id === sessionId ? { ...s, answers: { ...s.answers, [q.id]: answer } } : s) };
 }
 export function reviewAnswer(state: State, question: Question, choiceId: string, at = new Date().toISOString()): State {
