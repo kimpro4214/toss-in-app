@@ -16,9 +16,13 @@ export function parseState(raw: string | null): State {
   const record = (v: unknown) => v !== null && typeof v === 'object' && !Array.isArray(v);
   const valid = record(value) && value.schemaVersion === 1 && Array.isArray(value.sessions) && record(value.firstAnswers) && record(value.mistakes) && record(value.subjectLevels) && record(value.settings)
     && ['random','focus'].includes(value.settings.mode) && subjects.some(s => s.id === value.settings.subject) && levels.includes(value.settings.startLevel)
+    && (value.settings.courseId === undefined || value.settings.courseId === 'game-client-14')
     && (value.preferencesSet === undefined || typeof value.preferencesSet === 'boolean')
     && (value.settings.selectedSubjects === undefined || (Array.isArray(value.settings.selectedSubjects) && value.settings.selectedSubjects.length > 0 && new Set(value.settings.selectedSubjects).size === value.settings.selectedSubjects.length && value.settings.selectedSubjects.every((id: unknown) => subjects.some(s => s.id === id))))
-    && value.sessions.every((s: State['sessions'][number]) => record(s) && typeof s.id === 'string' && typeof s.date === 'string' && ['daily','bonus'].includes(s.kind) && record(s.settings) && Array.isArray(s.entries) && s.entries.length === (s.kind === 'daily' ? 5 : 3) && s.entries.every(e => typeof e.questionId === 'string' && typeof e.review === 'boolean') && record(s.answers))
+    && value.sessions.every((s: State['sessions'][number]) => record(s) && typeof s.id === 'string' && typeof s.date === 'string' && ['daily','bonus'].includes(s.kind) && record(s.settings)
+      && (s.settings.courseId === undefined || s.settings.courseId === 'game-client-14')
+      && (s.kind === 'daily' && s.settings.courseId ? Number.isInteger(s.interviewDay) && s.interviewDay! >= 1 && s.interviewDay! <= 14 : s.interviewDay === undefined)
+      && Array.isArray(s.entries) && s.entries.length === (s.kind === 'daily' ? 5 : 3) && s.entries.every(e => typeof e.questionId === 'string' && typeof e.review === 'boolean') && record(s.answers))
     && Object.values(value.firstAnswers).every((a: unknown) => record(a) && typeof (a as {choiceId:unknown}).choiceId === 'string' && typeof (a as {correct:unknown}).correct === 'boolean')
     && Object.values(value.subjectLevels).every((l: unknown) => levels.includes(l as typeof levels[number]));
   if (!valid) throw new Error('저장된 기록을 읽을 수 없습니다. 기존 기록은 덮어쓰지 않았습니다.');
