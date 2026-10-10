@@ -144,7 +144,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 # Part 3. Workflow & Git
 
 ## 1. Workflow
-- Keep user-facing updates and code comments in Korean. Keep shared Git policies in English.
+- Keep user-facing updates and code comments in Korean. Write new or updated instructions in `AGENTS.md` and `CLAUDE.md` in English, including shared Git policies.
 - Read the target app's package scripts, SDK setup, and existing flows before editing. Use the local `toss-game-guide.md` for context when available, while verifying current platform requirements against official documentation.
 - For major architecture changes, explain the design and obtain approval before refactoring. Resolve routine implementation choices within the user's authorized scope without repeated confirmations.
 - Use focused development logs for learning, game, storage, and ad events; avoid sensitive data and noisy per-frame logging.
@@ -191,6 +191,14 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 - Before pushing, verify the staged changes and outgoing commits for local-only documents and other excluded files.
 - If an excluded document is already tracked, remove it from Git tracking while preserving the local file. Commit that removal before the next push. Do not rewrite published history unless the user explicitly requests it.
 - If an excluded document was accidentally added to an unpublished commit, stop the push and remove it from the outgoing history without deleting the local document.
+
+---
+
+## 5. Console Submission Preparation
+- The user prefers to copy and paste console text themselves. Provide ready-to-paste text for each field, and operate the console UI only when explicitly asked to enter it.
+- When release materials are requested, prepare the required text, logos, and screenshots together. Enforce these character limits: detailed description 500, memo 100, Korean app name 10, English app name 15, and subtitle 20. Count actual characters, including spaces and line breaks. Use updated limits if the console changes.
+- Prepare app logos at 600x600px. By default, provide at least three portrait screenshots at 636x1048px. If landscape format is selected, provide at least one screenshot at 1504x741px; do not require both formats. Verify pixel dimensions and visible content, then provide absolute-path links to each file.
+- Read the local `toss-console-submission.md` before preparing release materials. Keep console copy, generated screenshots, and verification reports local-only. Store logos used by the running app in that app's runtime asset directory, such as `public`.
 
 ---
 
