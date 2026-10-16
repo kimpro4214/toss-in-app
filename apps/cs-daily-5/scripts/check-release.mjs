@@ -9,6 +9,10 @@ if(!name||name==='cs-daily-5')errors.push('콘솔 등록 appName을 설정하세
 if(!ad)errors.push('콘솔의 보상형 광고 그룹 ID를 설정하세요.');
 const dist=new URL('../dist/assets/',import.meta.url);
 if(!existsSync(dist))errors.push('웹 빌드를 먼저 실행하세요.');
-else for(const f of readdirSync(dist).filter(f=>f.endsWith('.js'))){const code=readFileSync(new URL(f,dist),'utf8');if(code.includes('devAd')||code.includes('createDevAd')||code.includes('개발 테스트: 광고'))errors.push('출시 번들에 개발 광고 코드가 있습니다.');if(ad&&!code.includes(ad))errors.push('설정한 광고 ID가 번들에 없습니다. 설정 후 재빌드하세요.');}
+else {
+  const bundles=readdirSync(dist).filter(f=>f.endsWith('.js')).map(f=>readFileSync(new URL(f,dist),'utf8'));
+  if(bundles.some(code=>code.includes('devAd')||code.includes('createDevAd')||code.includes('개발 테스트: 광고')))errors.push('출시 번들에 개발 광고 코드가 있습니다.');
+  if(ad&&!bundles.some(code=>code.includes(ad)))errors.push('설정한 광고 ID가 번들에 없습니다. 설정 후 재빌드하세요.');
+}
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
 console.log('출시 설정 검사 통과. 실제 광고 지급·Android/iOS QR·콘솔 심사는 별도 검증해야 합니다.');
