@@ -1,8 +1,9 @@
-import { describe, expect, it } from 'vitest';
-import { bank, allQuestions, BANK_VERSION, questionById } from '../src/bank';
+import { beforeAll, describe, expect, it } from 'vitest';
+import { bank, allQuestions, archivedQuestions, loadQuestionHistory, BANK_VERSION, questionById } from '../src/bank';
 import { interviewProgress, interviewQuestions } from '../src/interview';
 import { initialState, updateSettings, createDailySession, submitAnswer, bonusEntries, grantBonus, isComplete, selectEntries, reviewAnswer } from '../src/engine';
 import type { State } from '../src/types';
+beforeAll(() => loadQuestionHistory(['interview-game-client-01-1']));
 
 const courseState = () => updateSettings(initialState(BANK_VERSION), { mode: 'random', subject: 'cpp', selectedSubjects: ['cpp'], startLevel: 'hard', courseId: 'game-client-14' });
 function finish(state: State, id: string, correct = true) {
@@ -13,6 +14,18 @@ function finish(state: State, id: string, correct = true) {
   return state;
 }
 describe('14일 면접 코스', () => {
+  it('이전 면접 코스의 미완료 일차를 복원하고 다음 일차부터 새 원고를 제공한다', () => {
+    const state = courseState();
+    const old = archivedQuestions.filter(q=>q.interview?.day===1);
+    state.sessions = [{id:'daily:2026-10-01',date:'2026-10-01',kind:'daily',settings:{...state.settings},interviewDay:1,entries:old.map(q=>({questionId:q.id,review:false})),answers:{}}];
+    const restored = JSON.parse(JSON.stringify(state)) as State;
+    expect(createDailySession(restored,bank,'2026-10-02').session).toEqual(state.sessions[0]);
+    const completed = finish(restored,state.sessions[0].id);
+    const next = createDailySession(completed,bank,'2026-10-02');
+    expect(next.session.interviewDay).toBe(2);
+    expect(next.session.entries.every(e=>questionById[e.questionId].active)).toBe(true);
+    expect(next.state.sessions[0]).toEqual(completed.sessions[0]);
+  });
   it('선택 난이도와 무관하게 14일의 고정 70문항을 순서대로 완료한다', () => {
     let state = courseState();
     const ids: string[] = [];

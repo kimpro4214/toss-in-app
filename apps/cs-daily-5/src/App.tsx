@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '@toss/tds-mobile';
-import { bank, allQuestions, questionById } from './bank';
+import { bank, allQuestions, questionById, loadQuestionHistory } from './bank';
 import { subjects, subjectName } from './subjects';
 import { levels, levelLabel, type State, type Session, type Entry, type Question } from './types';
 import { koreaDate, isComplete, score, createDailySession, submitAnswer, updateSettings, reviewAnswer, bonusEntries, grantBonus } from './engine';
@@ -26,7 +26,7 @@ export function App() {
   const [loadAttempt, setLoadAttempt] = useState(0);
   useEffect(() => {
     let active = true;
-    createStore().then(async s => { const data = await s.load(); if (active) { store.current = s; current.current = data; setState(data); setError(''); track('screen', { name: 'home' }); } }).catch(e => { if (active) setError(`기록 준비 실패: ${e.message}. 다시 시도하거나 토스 앱을 업데이트해 주세요.`); });
+    createStore().then(async s => { const data = await s.load(); await loadQuestionHistory([...Object.keys(data.firstAnswers), ...Object.keys(data.mistakes), ...data.sessions.flatMap(session => session.entries.map(entry => entry.questionId))]); if (active) { store.current = s; current.current = data; setState(data); setError(''); track('screen', { name: 'home' }); } }).catch(e => { if (active) setError(`기록 준비 실패: ${e.message}. 다시 시도하거나 토스 앱을 업데이트해 주세요.`); });
     return () => { active = false; };
   }, [loadAttempt]);
   const go = (next: View) => { setView(next); window.scrollTo({ top: 0 }); track('screen', { name: next.type }); };
@@ -74,7 +74,7 @@ export function App() {
     {error && <div className="error" role="alert">{error}</div>}
     {view.type === 'home' && <>
       <section className="hero"><div className="eyebrow">작은 습관, 단단한 기본기</div><h1>오늘도 다섯 문제.<br/><span>개발자의 감각을 쌓아요.</span></h1><p>CS부터 언어, 그래픽스와 설계까지.<br/>짧게 풀고, 이유까지 이해해 보세요.</p><div className="hero-stamp" aria-hidden="true"><span>5</span><small>DAILY</small></div></section>
-      <div className="stats"><div><strong>{Object.keys(state.firstAnswers).length}<small> / {allQuestions.length}</small></strong><span>풀어본 문제</span></div><div><strong>{state.sessions.filter(s => s.kind === 'daily' && isComplete(s)).length}<small>일</small></strong><span>완료한 학습</span></div><div><strong>{wrongCount}<small>개</small></strong><span>다시 볼 개념</span></div></div>
+      <div className="stats"><div><strong>{Object.keys(state.firstAnswers).length}</strong><span>풀어본 문제</span></div><div><strong>{state.sessions.filter(s => s.kind === 'daily' && isComplete(s)).length}<small>일</small></strong><span>완료한 학습</span></div><div><strong>{wrongCount}<small>개</small></strong><span>다시 볼 개념</span></div></div>
       <section className="card preference-summary"><div className="section-head"><h2>내 학습 범위</h2><button className="clear-selection" onClick={() => go({ type: 'preferences' })}>학습 과목 변경</button></div><p>{selected.map(subjectName).join(' · ')}</p></section>
       <section className="card daily-card"><div className="section-head"><h2>오늘의 학습</h2><span className="date-chip">{today.slice(5).replace('-', '. ')}</span></div>
         {state.settings.courseId ? <><h3>14일 게임 클라이언트 면접 준비</h3><p className="hint">{course.nextDay ? `${course.nextDay}일차 · ${interviewCourse.days[course.nextDay - 1].title}` : '14일 코스 완주'}<br/>C++·CS·그래픽스·Unreal 엔진을 순서대로 공부해요.</p><p className="course-home-progress">{course.completed.size}/14일 완료</p><button className="text-button" disabled={busy} onClick={() => void commit(d => updateSettings(d, { ...d.settings, courseId: undefined }))}>일반 학습으로 변경</button></> : <>
@@ -118,6 +118,7 @@ function QuestionView({ question: q, number, total, busy, answer, onSubmit, onNe
   const submitted = answer || reviewedAnswer;
   const correct = submitted === q.correctChoiceId;
   return <article className="question-view" data-question-id={q.id}>
+    {q.active === false && <p className="hint">이전에 풀던 문제예요. 새 학습에는 개선된 문제를 제공해요.</p>}
     <div className="question-meta"><span>{subjectName(q.subject)}</span><span className={`level ${q.difficulty}`}>{levelLabel[q.difficulty]}</span>{q.kind && q.kind !== 'concept' && <span className="review-badge">{{ 'fill-blank': '코드 빈칸', output: '실행 결과', debug: '오류 분석' }[q.kind]}</span>}{q.exam && <span className="review-badge">기사 범위 연습</span>}{review && <span className="review-badge">복습</span>}{number && <b>{number} / {total}</b>}</div>
     {number && <div className="progress-track"><i style={{ width: `${number / total! * 100}%` }}/></div>}
     <div className="question-title"><div className="eyebrow">{q.topic}</div><h1>{q.prompt}</h1></div>

@@ -1,8 +1,9 @@
-import { expect, it } from 'vitest';
-import { bank, BANK_VERSION } from '../src/bank';
+import { beforeAll, expect, it } from 'vitest';
+import { bank, archivedQuestions, loadQuestionHistory, BANK_VERSION } from '../src/bank';
 import { initialState, updateSettings, createDailySession, submitAnswer, selectEntries, bonusEntries, grantBonus } from '../src/engine';
 import { eligibleQuestions, studyTracks } from '../src/preferences';
 import type { State } from '../src/types';
+beforeAll(() => loadQuestionHistory(['cpp-001']));
 
 function selected(ids: string[]) {
   return updateSettings(initialState(BANK_VERSION), { mode: 'random', subject: ids[0], startLevel: 'easy', selectedSubjects: ids });
@@ -31,10 +32,11 @@ it('선택한 다섯 과목이 있으면 과목을 중복 배정하지 않는다
   expect(new Set(entries.map(e => question(e.questionId).subject))).toEqual(new Set(ids));
 });
 it('알고리즘을 골라도 공부하지 않는 C++ 코드는 제외한다', () => {
-  const scope = eligibleQuestions(selected(['python', 'algorithms']).settings, bank);
+  const withCode = [...bank, { ...bank.find(q => q.subject === 'algorithms')!, id: 'algorithm-code-fixture', language: 'cpp' }];
+  const scope = eligibleQuestions(selected(['python', 'algorithms']).settings, withCode);
   expect(scope.some(q => q.subject === 'algorithms')).toBe(true);
   expect(scope.some(q => q.language === 'cpp')).toBe(false);
-  expect(eligibleQuestions(selected(['cpp', 'algorithms']).settings, bank).some(q => q.subject === 'algorithms' && q.language === 'cpp')).toBe(true);
+  expect(eligibleQuestions(selected(['cpp', 'algorithms']).settings, withCode).some(q => q.subject === 'algorithms' && q.language === 'cpp')).toBe(true);
 });
 it('소진 후 복습과 진행 중인 다음 날 세트도 선택 범위 안에 있다', () => {
   const state = selected(['cpp']);
@@ -55,19 +57,17 @@ it('선택을 바꿔도 기존 세트와 보상은 시작 당시 범위를 유�
   expect(grantBonus(changed, a.session.id, entries, bank).sessions[1].entries).toEqual(entries);
   expect(createDailySession(changed, bank, '2026-10-07').session.entries.every(e => question(e.questionId).subject === 'java')).toBe(true);
 });
-it('C++ 단계는 늘어난 40문제를 제출한 뒤에만 다음 단계로 간다', () => {
+it('C++ 단계는 현재 단계의 검수 문항을 마치면 다음 단계로 간다', () => {
   let state = selected(['cpp']);
-  for (let day = 1; day <= 8; day++) {
-    const a = createDailySession(state, bank, `2026-11-${String(day).padStart(2, '0')}`, () => 0);
-    state = finish(a.state, a.session.id);
-    expect(state.subjectLevels.cpp).toBe(day < 8 ? 'easy' : 'medium');
-  }
+  const a = createDailySession(state, bank, '2026-11-01', () => 0);
+  state = finish(a.state, a.session.id);
+  expect(state.subjectLevels.cpp).toBe('medium');
   expect(selectEntries(state, bank, 5).every(e => question(e.questionId).difficulty === 'medium')).toBe(true);
 });
 it('기존 단계 기록이 높아도 새로 추가한 이전 단계 문제를 빠뜨리지 않는다', () => {
   const state = selected(['cpp']);
   state.subjectLevels.cpp = 'hard';
-  for (const q of bank.filter(q => q.subject === 'cpp' && Number(q.id.slice(-3)) <= 30)) state.firstAnswers[q.id] = { choiceId: q.correctChoiceId, correct: true, at: '2026-10-05T00:00:00Z' };
+  for (const q of archivedQuestions.filter(q => q.subject === 'cpp' && !q.interview)) state.firstAnswers[q.id] = { choiceId: q.correctChoiceId, correct: true, at: '2026-10-05T00:00:00Z' };
   const entries = selectEntries(state, bank, 5);
   expect(entries.every(e => question(e.questionId).difficulty === 'easy' && !state.firstAnswers[e.questionId])).toBe(true);
 });

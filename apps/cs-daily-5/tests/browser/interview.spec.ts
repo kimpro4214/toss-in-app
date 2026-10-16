@@ -35,7 +35,7 @@ test('면접 질문·꼬리질문과 5문제 퀴즈·저장·결과·복습', as
   await page.getByRole('button', { name: '오늘의 5문제 시작', exact: true }).click();
   for (let i = 0; i < 5; i++) {
     const id = await page.locator('.question-view').getAttribute('data-question-id');
-    expect(id).toBe(`interview-game-client-01-${i + 1}`);
+    expect(id).toBe(`interview-game-client-v2-01-${i + 1}`);
     const q = questions.find(q => q.id === id)!;
     await page.locator('.choice').nth(q.choices.findIndex(c => i === 0 ? c.id !== q.correctChoiceId : c.id === q.correctChoiceId)).click();
     await page.getByRole('button', { name: '답 제출', exact: true }).click();
@@ -81,7 +81,7 @@ test('다음 날짜에 미완료 코스를 복원하고 지원하지 않는 코�
   await page.locator('.choice').first().click(); await page.getByRole('button', { name: '답 제출', exact: true }).click();
   await page.evaluate(k => { const state = JSON.parse(localStorage.getItem(k)!); state.sessions[0].date = '2000-01-01'; state.sessions[0].id = 'daily:2000-01-01'; localStorage.setItem(k, JSON.stringify(state)); }, key);
   await page.reload(); await page.getByRole('button', { name: '오늘의 5문제 시작', exact: true }).click();
-  await expect(page.locator('.question-view')).toHaveAttribute('data-question-id', 'interview-game-client-01-2');
+  await expect(page.locator('.question-view')).toHaveAttribute('data-question-id', 'interview-game-client-v2-01-2');
   expect(await page.evaluate(k => JSON.parse(localStorage.getItem(k)!).sessions.length, key)).toBe(1);
   await page.evaluate(k => { const state = JSON.parse(localStorage.getItem(k)!); state.settings.courseId = 'unknown-course'; localStorage.setItem(k, JSON.stringify(state)); }, key);
   await page.reload(); await expect(page.getByRole('alert')).toContainText('기존 기록은 덮어쓰지 않았습니다');

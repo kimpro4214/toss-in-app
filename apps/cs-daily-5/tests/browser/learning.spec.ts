@@ -4,6 +4,13 @@ import type { Question } from '../../src/types';
 const key='cs-daily-5:v1:browser';
 const directory=new URL('../../src/content/',import.meta.url);
 const questions=readdirSync(directory).filter(f=>f.endsWith('.json')).flatMap(f=>JSON.parse(readFileSync(new URL(f,directory),'utf8')) as Question[]);
+const previousQuestions = JSON.parse(readFileSync(new URL('../../src/content-archive/architecture.json',import.meta.url),'utf8')) as Question[];
+test('첫 방문에는 이전 기록용 문제를 내려받지 않는다',async({page})=>{
+  const historicalRequests:string[]=[];
+  page.on('request',request=>{if(/content-archive|game-client-14-legacy/.test(request.url()))historicalRequests.push(request.url());});
+  await page.goto('/');await expect(page.getByRole('heading',{name:'무엇을 공부하고 있나요?'})).toBeVisible();
+  expect(historicalRequests).toEqual([]);
+});
 async function configureAll(page: Page) {
   await page.getByRole('button',{name:'전체 과목',exact:true}).click();
   await page.getByRole('button',{name:'선택한 과목으로 시작하기',exact:true}).click();
@@ -123,4 +130,29 @@ test('이전 버전 기록은 과목 선택 이후에도 그대로 남는다',as
   const after=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);
   expect(after.sessions).toEqual(before.sessions);expect(after.firstAnswers).toEqual(before.firstAnswers);expect(after.bankVersion).not.toBe(before.bankVersion);
   expect(after.settings.selectedSubjects).toContain('cpp');expect(after.settings.selectedSubjects).not.toContain('csharp');
+});
+
+test('검수 전 미완료 문제와 보상을 보존하고 이전 문항임을 안내한다',async({page})=>{
+  const old = previousQuestions.slice(0,5);
+  const first = {choiceId:old[0].correctChoiceId,correct:true,at:'2026-10-01T00:00:00Z'};
+  await page.addInitScript(({key,old,first,bonusIds})=>{
+    const date = new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+    const settings = {mode:'focus',subject:'architecture',startLevel:'easy',selectedSubjects:['architecture']};
+    localStorage.setItem(key,JSON.stringify({schemaVersion:1,bankVersion:'2026-10-07.1',settings,preferencesSet:true,firstAnswers:{[old[0].id]:first},mistakes:{},subjectLevels:{},sessions:[
+      {id:`daily:${date}`,date,kind:'daily',settings,entries:old.map(q=>({questionId:q.id,review:false})),answers:{[old[0].id]:first}},
+      {id:'bonus:2026-10-01',date:'2026-10-01',kind:'bonus',settings,entries:bonusIds.map(questionId=>({questionId,review:false})),answers:{},rewardGranted:true},
+    ]}));
+  },{key,old,first,bonusIds:previousQuestions.slice(5,8).map(q=>q.id)});
+  await page.goto('/');
+  await page.getByRole('button',{name:/이어서 풀기 · 1\/5/}).click();
+  await expect(page.getByText('이전에 풀던 문제예요. 새 학습에는 개선된 문제를 제공해요.')).toBeVisible();
+  await expect(page.locator('.question-view')).toHaveAttribute('data-question-id',old[1].id);
+  await page.locator('.choice').nth(old[1].choices.findIndex(c=>c.id===old[1].correctChoiceId)).click();
+  await page.getByRole('button',{name:'답 제출',exact:true}).click();
+  await expect(page.locator('.explanation')).toBeVisible();
+  const after=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);
+  expect(after.sessions[0].entries.map((e:{questionId:string})=>e.questionId)).toEqual(old.map(q=>q.id));
+  expect(after.sessions[0].answers[old[0].id]).toEqual(first);
+  expect(after.sessions[1].rewardGranted).toBe(true);
+  expect(after.bankVersion).toBe('2026-10-16.2');
 });
