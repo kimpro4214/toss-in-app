@@ -18,7 +18,7 @@ for (const s of subjects) {
 }
 for (const q of bank) {
   check(subjects.some(s => s.id === q.subject), `${q.id}: 없는 과목`);
-  check(new RegExp(`^${q.subject}-\\d{3}$`).test(q.id), `${q.id}: ID 형식`);
+  check(new RegExp(`^${q.subject}-v2-\\d{3}$`).test(q.id), `${q.id}: ID 형식`);
   check(levels.includes(q.difficulty), `${q.id}: 난이도`);
   check(q.choices.length === 4 && new Set(q.choices.map(c => c.id)).size === 4 && new Set(q.choices.map(c => c.text)).size === 4, `${q.id}: 선택지 4개/중복`);
   check(q.choices.filter(c => c.id === q.correctChoiceId).length === 1, `${q.id}: 정답 하나 필요`);
@@ -26,6 +26,8 @@ for (const q of bank) {
   check(q.prompt.length > 10 && q.topic.length && q.explanation.length > 10 && q.environment.length > 10, `${q.id}: 내용 누락`);
   check(q.sources.length && q.sources.every(s => s.title.length && /^https:\/\//.test(s.url)), `${q.id}: 출처 누락`);
   check(q.review.status === 'source-checked' && /^\d{4}-\d{2}-\d{2}$/.test(q.review.date) && q.review.method.length, `${q.id}: 검수 기록`);
+  check(q.active === true && q.review.editorialVersion === 2, `${q.id}: 편집 검수 완료 필요`);
+  check(!q.choices.some(c => c.explanation.startsWith('이 조건에서')), `${q.id}: 선택지별 해설 필요`);
   check(!q.kind || ['concept','fill-blank','output','debug'].includes(q.kind), `${q.id}: 문제 유형`);
   check(!q.language || [...subjects.filter(s => s.group === '언어').map(s => s.id), 'sql', 'pseudocode'].includes(q.language), `${q.id}: 코드 언어`);
   check(!q.kind || q.kind === 'concept' || !!q.code, `${q.id}: 코드 누락`);
@@ -33,8 +35,6 @@ for (const q of bank) {
   check(!q.exam || q.exam === 'engineer-practice', `${q.id}: 시험 범위 태그`);
 }
 const graphics = bank.filter(q => q.subject === 'graphics');
-check(graphics.filter(q => q.area === 'rendering').length === 20 && graphics.filter(q => q.area === 'engine').length === 10, '그래픽스 20/엔진 10 필요');
-const patterns = ['Factory Method','Abstract Factory','Builder','Prototype','Singleton','Adapter','Bridge','Composite','Decorator','Facade','Flyweight','Proxy','Chain of Responsibility','Command','Interpreter','Iterator','Mediator','Memento','Observer','State','Strategy','Template Method','Visitor'];
-for (const p of patterns) check(bank.some(q => q.subject === 'gof' && q.topic === p), `GoF ${p} 누락`);
+check(graphics.some(q => q.area === 'rendering') && graphics.some(q => q.area === 'engine'), '그래픽스/엔진 문항 필요');
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
-console.log(`콘텐츠 통과: ${bank.length}문제 / ${subjects.length}과목 / C++ ${contentTargets.cpp}개 / 코드 빈칸 ${bank.filter(q => q.kind === 'fill-blank').length}개 / GoF 23개`);
+console.log(`콘텐츠 통과: 검수 ${bank.length}문제 / ${subjects.length}과목 / 과목·난이도별 5문항 / 코드 빈칸 ${bank.filter(q => q.kind === 'fill-blank').length}개`);

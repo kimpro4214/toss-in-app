@@ -1,0 +1,1548 @@
+[
+  {
+    "id": "oop-001",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "캡슐화",
+    "prompt": "잔액을 private로 두고 입금·출금 메서드로 바꾸는 목적은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "메모리 압축만",
+        "explanation": "상태 규칙 보호 목적이다."
+      },
+      {
+        "id": "c0",
+        "text": "상태 변경 규칙을 한곳에서 지킨다",
+        "explanation": "단순 숨김보다 허용된 조작으로 불변식을 유지하는 것이 핵심이다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 필드를 public으로",
+        "explanation": "외부 임의 변경을 열어 규칙 유지가 어렵다."
+      },
+      {
+        "id": "c2",
+        "text": "객체를 전역으로 이동",
+        "explanation": "접근 범위와 전역 수명은 별개이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "단순 숨김보다 허용된 조작으로 불변식을 유지하는 것이 핵심이다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-002",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "추상화",
+    "prompt": "외부에 결제 성공·실패 계약을 보이고 내부 통신은 숨기는 것은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "구체 클래스 이름 전부 노출",
+        "explanation": "세부와 결합될 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 상속 깊이 증가",
+        "explanation": "추상화가 깊은 상속을 요구하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "필요한 의미를 드러내고 세부를 감춘다",
+        "explanation": "사용자는 구현 방식보다 사용 계약에 의존한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 기능 삭제",
+        "explanation": "필요한 기능은 제공한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "사용자는 구현 방식보다 사용 계약에 의존한다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-003",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "다형성",
+    "prompt": "공통 Renderer 계약으로 여러 구현을 호출하는 장점은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 구현이 같은 결과만 허용",
+        "explanation": "계약 범위에서 구현은 다를 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "객체가 자동 복제",
+        "explanation": "호출 인터페이스의 성질이다."
+      },
+      {
+        "id": "c3",
+        "text": "동시 실행 자동 보장",
+        "explanation": "다형성과 동시성은 별개이다."
+      },
+      {
+        "id": "c0",
+        "text": "구현 차이를 공통 호출로 다룬다",
+        "explanation": "클라이언트가 개별 타입 분기 없이 같은 계약을 사용할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "클라이언트가 개별 타입 분기 없이 같은 계약을 사용할 수 있다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-004",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "상속 관계",
+    "prompt": "상속을 설계할 때 최소한 확인해야 할 관계는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "기반 계약을 파생이 만족하는가",
+        "explanation": "외형이 비슷한 것만으로 안전한 치환 관계가 되지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "필드 이름이 일부 같다",
+        "explanation": "계약 충족이 더 중요하다."
+      },
+      {
+        "id": "c2",
+        "text": "파일이 같은 폴더이다",
+        "explanation": "타입 관계 기준이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "항상 코드가 짧아진다",
+        "explanation": "코드 분량만으로 판단하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "외형이 비슷한 것만으로 안전한 치환 관계가 되지 않는다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      },
+      {
+        "title": "Liskov·Wing: Behavioral Subtyping 원 논문",
+        "url": "https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-005",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "합성",
+    "prompt": "Player가 Inventory 객체를 보유하는 관계는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "항상 전역 변수",
+        "explanation": "보유 객체는 지역 수명을 가질 수 있다."
+      },
+      {
+        "id": "c0",
+        "text": "합성으로 기능을 구성",
+        "explanation": "Player 자체가 Inventory인 관계가 아니라 기능을 가진 관계이다."
+      },
+      {
+        "id": "c1",
+        "text": "반드시 상속",
+        "explanation": "보유 관계는 is-a와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "다중 상속만",
+        "explanation": "객체 멤버로 구성할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "Player 자체가 Inventory인 관계가 아니라 기능을 가진 관계이다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-006",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "인터페이스 계약",
+    "prompt": "인터페이스를 구현했다고 안전한 사용이 보장되려면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "반환 값 타입은 무관",
+        "explanation": "타입 및 의미 계약 모두 필요하다."
+      },
+      {
+        "id": "c3",
+        "text": "예외를 항상 삼켜야 함",
+        "explanation": "오류 계약을 명시하고 지켜야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "명시한 의미와 전제 조건도 지킨다",
+        "explanation": "시그니처 일치만으로 동작의 의미가 올바름을 증명하지 못한다."
+      },
+      {
+        "id": "c1",
+        "text": "메서드 이름만 같으면 충분",
+        "explanation": "동작 계약이 깨질 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "시그니처 일치만으로 동작의 의미가 올바름을 증명하지 못한다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-007",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "객체와 클래스",
+    "prompt": "클래스와 인스턴스의 관계는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "항상 같은 메모리 객체",
+        "explanation": "여러 인스턴스를 만들 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "인스턴스가 소스 파일",
+        "explanation": "실행 객체와 파일은 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "클래스는 반드시 전역 상태",
+        "explanation": "인스턴스별 상태가 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "타입 정의와 실제 객체",
+        "explanation": "클래스는 구조·행동 정의이며 인스턴스는 상태를 가진 실제 객체이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "클래스는 구조·행동 정의이며 인스턴스는 상태를 가진 실제 객체이다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-008",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "책임",
+    "prompt": "주문 객체의 책임을 설명하는 데 적절한 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "주문 상태와 허용된 전이를 관리",
+        "explanation": "객체가 어떤 규칙과 행동을 책임지는지 표현한다."
+      },
+      {
+        "id": "c1",
+        "text": "전 프로그램 함수 전부 수행",
+        "explanation": "책임이 과도하게 모인다."
+      },
+      {
+        "id": "c2",
+        "text": "이름 길이를 관리",
+        "explanation": "도메인 역할과 무관하다."
+      },
+      {
+        "id": "c3",
+        "text": "UI 픽셀까지 항상 책임",
+        "explanation": "별도 표현 책임을 섞을 필요가 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "객체가 어떤 규칙과 행동을 책임지는지 표현한다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-009",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "불변 객체",
+    "prompt": "생성 이후 관찰 가능한 상태가 바뀌지 않는 객체는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "메서드 호출 금지",
+        "explanation": "조회나 새 값 생성 메서드는 가능하다."
+      },
+      {
+        "id": "c0",
+        "text": "불변 객체",
+        "explanation": "상태 변경을 허용하지 않는 수명 계약을 가진다."
+      },
+      {
+        "id": "c1",
+        "text": "인스턴스가 한 개뿐",
+        "explanation": "Singleton과 불변은 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "멤버 수가 0",
+        "explanation": "값을 가진 불변 객체가 가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "상태 변경을 허용하지 않는 수명 계약을 가진다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-010",
+    "subject": "oop",
+    "difficulty": "easy",
+    "topic": "정보 은닉",
+    "prompt": "설계에서 숨길 대상으로 가장 적절한 것은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "공개 API 문서",
+        "explanation": "사용 계약은 명확해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "사용자의 모든 결과",
+        "explanation": "필요한 결과는 제공해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "자주 바뀔 내부 결정",
+        "explanation": "표현·알고리즘 등을 외부 계약에서 분리하면 변경 영향을 제한할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 오류 사실",
+        "explanation": "오류 계약은 사용자가 알아야 할 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "표현·알고리즘 등을 외부 계약에서 분리하면 변경 영향을 제한할 수 있다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-011",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "SRP",
+    "prompt": "계산 정책과 보고서 출력 정책을 다른 팀이 자주 독립 변경한다. 적절한 경계는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 함수를 하나에 유지",
+        "explanation": "독립 변경이 서로 영향을 줄 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "메서드마다 무조건 클래스",
+        "explanation": "책임 단위이지 함수 개수 규칙이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "파일 크기만 제한",
+        "explanation": "변경 이유를 직접 반영하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "계산과 출력 책임을 분리",
+        "explanation": "서로 다른 변경 이유를 분리해 영향 범위를 줄인다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "서로 다른 변경 이유를 분리해 영향 범위를 줄인다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-012",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "OCP",
+    "prompt": "할인 정책이 자주 추가되지만 주문 흐름은 안정적이다. 적절한 방법은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "할인 계약 뒤에 구현을 추가",
+        "explanation": "안정된 흐름에 변경 가능한 정책의 확장 지점을 둔다."
+      },
+      {
+        "id": "c1",
+        "text": "주문 흐름에 모든 할인 분기 추가",
+        "explanation": "변경이 계속 중심 코드로 퍼진다."
+      },
+      {
+        "id": "c2",
+        "text": "기존 코드를 절대 수정 불가",
+        "explanation": "원칙은 모든 수정 금지가 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "정책을 문자열로만 숨김",
+        "explanation": "타입 계약과 동작 분리는 별도이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "안정된 흐름에 변경 가능한 정책의 확장 지점을 둔다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-013",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "LSP",
+    "prompt": "기반 저장소가 모든 유효 키 읽기를 허용하는데 파생이 일부 키를 금지하면?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "상속하면 자동 해결",
+        "explanation": "언어 상속이 의미 계약을 증명하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "전제 조건을 강화하여 치환을 깨뜨린다",
+        "explanation": "기반을 기대한 호출자에게 새 제한을 부과한다."
+      },
+      {
+        "id": "c1",
+        "text": "항상 좋은 보안 설계",
+        "explanation": "보안 요구가 있어도 기존 계약 변경을 명시해야 한다."
+      },
+      {
+        "id": "c2",
+        "text": "메서드 이름이 같아 안전",
+        "explanation": "동작 전제 조건이 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "기반을 기대한 호출자에게 새 제한을 부과한다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      },
+      {
+        "title": "Liskov·Wing: Behavioral Subtyping 원 논문",
+        "url": "https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-014",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "ISP",
+    "prompt": "읽기 전용 사용자가 쓰기·삭제 인터페이스까지 의존하지 않도록 하려면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "인터페이스 하나당 메서드 한 개 무조건",
+        "explanation": "역할 단위 계약이지 개수 법칙이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "코드 문서를 없애기",
+        "explanation": "의존 분리와 관계없다."
+      },
+      {
+        "id": "c0",
+        "text": "사용자 역할에 맞는 계약 분리",
+        "explanation": "필요하지 않은 기능의 변경과 구현 부담을 줄인다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 사용자가 모든 메서드 구현",
+        "explanation": "불필요한 의존을 늘린다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "필요하지 않은 기능의 변경과 구현 부담을 줄인다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-015",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "DIP",
+    "prompt": "정책이 특정 파일 저장 구현에 직접 의존하지 않게 하려면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "정책이 모든 구현 클래스를 직접 생성",
+        "explanation": "구체 세부와 결합된다."
+      },
+      {
+        "id": "c2",
+        "text": "인터페이스 이름만 바꿈",
+        "explanation": "의존 방향을 바꾸지 못한다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 호출을 전역 함수화",
+        "explanation": "추상 계약에 대한 의존과 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "정책 측 추상 계약에 구현이 맞추도록 한다",
+        "explanation": "정책과 세부의 의존 방향을 안정된 추상으로 향하게 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "정책과 세부의 의존 방향을 안정된 추상으로 향하게 한다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-016",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "위임",
+    "prompt": "객체가 자신의 요청 일부를 보유한 다른 객체에 맡기는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "위임",
+        "explanation": "행동을 협력 객체가 수행하도록 전달한다."
+      },
+      {
+        "id": "c1",
+        "text": "객체 전체 복제",
+        "explanation": "호출 전달과 복사는 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "클래스 삭제",
+        "explanation": "협력 관계이다."
+      },
+      {
+        "id": "c3",
+        "text": "컴파일러 옵션",
+        "explanation": "객체 설계 기법이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "행동을 협력 객체가 수행하도록 전달한다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-017",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "값 객체",
+    "prompt": "통화 단위와 금액 값이 같은 두 Money를 같다고 보려면?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "생성 시각만 비교",
+        "explanation": "금액 값 계약과 맞지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "값 기반 동등성을 정의",
+        "explanation": "고유 식별자가 아닌 의미 값으로 비교하는 값 객체 계약이다."
+      },
+      {
+        "id": "c1",
+        "text": "메모리 주소만 비교",
+        "explanation": "같은 값의 별개 객체를 다르게 본다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 객체 이름만",
+        "explanation": "의미 값과 무관하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "고유 식별자가 아닌 의미 값으로 비교하는 값 객체 계약이다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-018",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "도메인 엔티티",
+    "prompt": "사용자의 이름이 바뀌어도 같은 사용자로 추적하려면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "모든 필드 완전 동일만",
+        "explanation": "상태 변경 후도 같은 엔티티일 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "메모리 주소 영구 저장",
+        "explanation": "프로세스 재시작에 안정적이지 않다."
+      },
+      {
+        "id": "c0",
+        "text": "안정된 식별자를 기준으로 한다",
+        "explanation": "엔티티 동일성은 변경 가능한 속성만으로 결정하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "이름 문자열만 비교",
+        "explanation": "동명이인과 이름 변경을 구분하기 어렵다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "엔티티 동일성은 변경 가능한 속성만으로 결정하지 않는다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-019",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "Tell Don't Ask",
+    "prompt": "객체 내부를 꺼내 외부에서 규칙을 검사하는 대신 권할 방식은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 getter 무조건 삭제",
+        "explanation": "조회가 필요한 계약도 있다."
+      },
+      {
+        "id": "c2",
+        "text": "외부에서 필드 직접 수정",
+        "explanation": "규칙이 분산된다."
+      },
+      {
+        "id": "c3",
+        "text": "메서드 이름만 ask에서 tell로",
+        "explanation": "이름보다 책임 위치가 중요하다."
+      },
+      {
+        "id": "c0",
+        "text": "객체에 의미 있는 행동을 요청",
+        "explanation": "규칙과 상태를 책임지는 곳에 행동을 모을 수 있다. 모든 조회를 금지하는 뜻은 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "규칙과 상태를 책임지는 곳에 행동을 모을 수 있다. 모든 조회를 금지하는 뜻은 아니다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-020",
+    "subject": "oop",
+    "difficulty": "medium",
+    "topic": "상속과 합성 선택",
+    "prompt": "실행 중 이동 방식을 교체해야 한다. 적절한 선택은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "이동 동작 객체를 합성하여 교체",
+        "explanation": "인스턴스의 협력 객체를 바꾸면 런타임 정책을 교체하기 쉽다."
+      },
+      {
+        "id": "c1",
+        "text": "타입마다 깊은 상속만 추가",
+        "explanation": "실행 중 개별 인스턴스 정책 변경이 어렵다."
+      },
+      {
+        "id": "c2",
+        "text": "전역 플래그 하나로 모든 객체 제어",
+        "explanation": "객체별 독립 정책 요구와 맞지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 동작을 고정",
+        "explanation": "교체 요구를 만족하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "인스턴스의 협력 객체를 바꾸면 런타임 정책을 교체하기 쉽다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-021",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "불변식 누출",
+    "prompt": "private 리스트를 getter가 그대로 반환하면 어떤 문제가 가능한가?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "getter는 언제나 안전",
+        "explanation": "반환값의 가변성과 별칭을 검토해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "외부가 리스트를 바꿔 불변식을 깨뜨린다",
+        "explanation": "필드 접근 제한만으로 참조한 가변 객체를 보호하지 못한다."
+      },
+      {
+        "id": "c1",
+        "text": "private이면 절대 불가",
+        "explanation": "반환 참조로 수정할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "리스트는 자동 깊은 복사",
+        "explanation": "참조 반환 조건이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "필드 접근 제한만으로 참조한 가변 객체를 보호하지 못한다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-022",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "강화된 후조건",
+    "prompt": "기반 메서드가 정렬 결과를 보장하는데 파생이 임의 순서를 반환하면?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "항상 성능 개선이라 허용",
+        "explanation": "성능이 후조건 위반을 정당화하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "전제 조건만 검토하면 됨",
+        "explanation": "결과 조건도 검토해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "후조건을 약화해 치환을 깨뜨린다",
+        "explanation": "호출자의 기존 결과 보장을 만족하지 못한다."
+      },
+      {
+        "id": "c1",
+        "text": "타입만 같아 문제없음",
+        "explanation": "동작 의미 계약이 중요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "호출자의 기존 결과 보장을 만족하지 못한다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      },
+      {
+        "title": "Liskov·Wing: Behavioral Subtyping 원 논문",
+        "url": "https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-023",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "지원하지 않는 메서드",
+    "prompt": "읽기 전용 목록을 쓰기 가능한 목록의 파생으로 두고 add가 항상 실패하면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "상속하면 자동 add 성공",
+        "explanation": "구현이 실패한다는 조건이다."
+      },
+      {
+        "id": "c2",
+        "text": "메서드 존재만으로 충분",
+        "explanation": "의미 있는 행동 가능 여부가 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "예외는 항상 계약 무관",
+        "explanation": "허용된 실패 조건을 계약에서 다뤄야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "기존 add 계약과 충돌할 수 있다",
+        "explanation": "읽기 전용 계약을 별도로 두어 허용 행동을 명확히 하는 편이 안전하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "읽기 전용 계약을 별도로 두어 허용 행동을 명확히 하는 편이 안전하다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      },
+      {
+        "title": "Liskov·Wing: Behavioral Subtyping 원 논문",
+        "url": "https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-024",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "생성 중 다형 호출",
+    "prompt": "기반 생성자가 재정의 가능 메서드를 호출할 때 일반 설계 위험은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "파생 상태 초기화 시점과 엮인다",
+        "explanation": "언어별 호출 규칙이 달라 불완전 상태 접근을 피하는 설계가 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 언어에서 같은 결과",
+        "explanation": "C++와 Java 등의 생성 중 디스패치 규칙은 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "생성자가 언제나 멀티스레드",
+        "explanation": "동시성 여부와 별개이다."
+      },
+      {
+        "id": "c3",
+        "text": "객체가 자동 완전 초기화",
+        "explanation": "파생 초기화가 남아 있을 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "언어별 호출 규칙이 달라 불완전 상태 접근을 피하는 설계가 필요하다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-025",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "불변과 별칭",
+    "prompt": "겉 객체의 쓰기를 막아도 내부 가변 참조가 공유되면?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "읽기 자체가 금지",
+        "explanation": "쓰기 제한과 읽기는 별개이다."
+      },
+      {
+        "id": "c0",
+        "text": "깊은 불변이 보장되지 않는다",
+        "explanation": "참조한 객체의 변화가 관찰 가능한 상태를 바꿀 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 내부 객체 자동 동결",
+        "explanation": "얕은 쓰기 제한의 보장이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "별칭은 항상 안전",
+        "explanation": "공유 가변 상태 규칙이 필요하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "참조한 객체의 변화가 관찰 가능한 상태를 바꿀 수 있다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-026",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "동등성과 해시",
+    "prompt": "값 기반 동등성을 정의한 해시 키에 필요한 계약은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "매 조회마다 무작위 해시",
+        "explanation": "키 조회 계약이 깨진다."
+      },
+      {
+        "id": "c3",
+        "text": "주소만으로 해시해야 함",
+        "explanation": "값 기반 동등성과 일치하도록 설계해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "동등한 값이면 같은 해시",
+        "explanation": "해시 충돌은 가능하지만 동등한 값의 해시 일치는 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "다른 값은 반드시 다른 해시",
+        "explanation": "충돌이 가능하다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "해시 충돌은 가능하지만 동등한 값의 해시 일치는 필요하다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-027",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "상속 변경 영향",
+    "prompt": "하위 클래스가 기반 클래스 내부 호출 순서에 의존하면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "private 멤버면 모든 문제 제거",
+        "explanation": "보호된 호출 훅 등의 의존도 존재할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "상속은 모든 내부 순서 보장",
+        "explanation": "계약에서 명시하지 않으면 보장하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "파일 분리로 자동 해결",
+        "explanation": "의미 의존은 그대로이다."
+      },
+      {
+        "id": "c0",
+        "text": "기반의 내부 변경으로 동작이 깨질 수 있다",
+        "explanation": "공개 계약 밖의 구현 의존은 취약한 기반 클래스 문제를 만든다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "공개 계약 밖의 구현 의존은 취약한 기반 클래스 문제를 만든다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-028",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "객체 수명과 협력",
+    "prompt": "일시 UI가 장수명 서비스를 구독한다. 필요한 객체지향 계약은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "구독 해제 시점과 소유권 명시",
+        "explanation": "협력 관계가 의도치 않은 생존·종료 후 호출을 만들지 않도록 한다."
+      },
+      {
+        "id": "c1",
+        "text": "참조를 모두 전역 저장",
+        "explanation": "수명을 더 늘릴 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "클래스 이름만 변경",
+        "explanation": "수명 계약을 바꾸지 못한다."
+      },
+      {
+        "id": "c3",
+        "text": "다형성이 자동 해제",
+        "explanation": "디스패치와 소유권은 별개이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "협력 관계가 의도치 않은 생존·종료 후 호출을 만들지 않도록 한다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-029",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "빈약한 도메인 판단",
+    "prompt": "여러 서비스가 동일 객체 상태 전이 규칙을 중복 구현한다. 개선 지점은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "규칙 검사 제거",
+        "explanation": "불변식이 무너진다."
+      },
+      {
+        "id": "c0",
+        "text": "공통 도메인 규칙의 책임을 모은다",
+        "explanation": "상태와 불변식을 소유하는 곳에 일관된 행동을 두면 중복을 줄인다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 DTO를 반드시 행동 클래스로",
+        "explanation": "단순 전달 데이터는 행동이 필요 없을 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "서비스를 전부 하나로 합침",
+        "explanation": "관련 없는 책임까지 모일 수 있다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "상태와 불변식을 소유하는 곳에 일관된 행동을 두면 중복을 줄인다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "oop-030",
+    "subject": "oop",
+    "difficulty": "hard",
+    "topic": "합성의 한계",
+    "prompt": "합성으로 바꿨는데 호출 경로와 객체 수가 급증했다. 올바른 판단은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "상속은 절대 사용 금지",
+        "explanation": "계약이 맞는 상속도 가능하다."
+      },
+      {
+        "id": "c3",
+        "text": "테스트만 없애면 단순해짐",
+        "explanation": "설계의 실제 간접성이 남는다."
+      },
+      {
+        "id": "c0",
+        "text": "변경 이점과 간접 비용을 측정해 조정",
+        "explanation": "합성은 선택 도구이며 항상 단순성·성능 개선을 보장하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "합성은 무조건 최고라 유지",
+        "explanation": "관찰한 비용을 무시한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "합성은 선택 도구이며 항상 단순성·성능 개선을 보장하지 않는다.",
+    "environment": "언어 문법보다 객체의 계약·책임을 다룬다. 설계 판단은 문제에 제시한 요구 기준.",
+    "sources": [
+      {
+        "title": "Microsoft 아키텍처 원칙",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles"
+      },
+      {
+        "title": "객체지향과 추상화",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/"
+      },
+      {
+        "title": "의존성과 책임 — 저자 공개 교재",
+        "url": "https://gameprogrammingpatterns.com/architecture-performance-and-games.html"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  }
+]

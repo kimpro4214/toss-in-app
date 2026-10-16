@@ -1,34 +1,34 @@
 [
   {
-    "id": "graphics-001",
+    "id": "graphics-v2-001",
     "subject": "graphics",
     "difficulty": "easy",
     "topic": "정점 셰이더",
-    "prompt": "DX11 정점 셰이더의 대표 역할은?",
+    "prompt": "Direct3D 11에서 입력 정점의 위치를 변환하고 clip-space 위치를 출력하는 셰이더 단계는?",
     "choices": [
       {
-        "id": "c0",
-        "text": "입력 정점의 위치와 속성을 변환",
-        "explanation": "정점별 처리를 수행하여 이후 파이프라인에 출력한다."
-      },
-      {
         "id": "c1",
-        "text": "최종 픽셀만 합성",
-        "explanation": "픽셀 처리·출력 병합 단계와 다르다."
+        "text": "픽셀 셰이더",
+        "explanation": "주로 래스터화된 fragment의 색 등 출력을 계산한다. 입력 정점의 변환을 맡는 단계가 아니다."
       },
       {
         "id": "c2",
-        "text": "CPU 파일 로딩",
-        "explanation": "GPU 셰이더의 역할이 아니다."
+        "text": "출력 병합 단계",
+        "explanation": "깊이·스텐실 검사와 블렌딩 등 최종 출력 결합에 관여한다."
       },
       {
         "id": "c3",
-        "text": "모든 물리 시뮬레이션 자동 실행",
-        "explanation": "일반 렌더링 파이프라인이 게임 물리를 자동 수행하지 않는다."
+        "text": "입력 조립 단계",
+        "explanation": "정점과 인덱스 버퍼에서 도형 입력을 구성한다. 사용자 정점 변환 코드를 실행하는 셰이더 단계와 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "정점 셰이더",
+        "explanation": "정점 셰이더는 정점별 입력을 처리하고 후속 단계에 위치와 속성을 전달한다. 래스터화된 픽셀의 색 계산과 구분한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "정점별 처리를 수행하여 이후 파이프라인에 출력한다.",
+    "explanation": "정점 셰이더는 정점별 입력을 처리하고 후속 단계에 위치와 속성을 전달한다. 래스터화된 픽셀의 색 계산과 구분한다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -42,42 +42,44 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
     "area": "rendering",
-    "diagram": "pipeline"
+    "diagram": "pipeline",
+    "active": true
   },
   {
-    "id": "graphics-002",
+    "id": "graphics-v2-002",
     "subject": "graphics",
     "difficulty": "easy",
     "topic": "좌표 공간",
-    "prompt": "로컬 정점을 월드 공간으로 옮기는 변환은?",
+    "prompt": "모델 원점 기준의 로컬 정점을 장면 속 위치로 옮기려 한다. 필요한 변환은?",
     "choices": [
       {
+        "id": "c2",
+        "text": "투영 변환",
+        "explanation": "카메라 공간의 점을 투영해 clip 공간으로 보내는 역할이다."
+      },
+      {
         "id": "c3",
-        "text": "텍스처 필터링",
-        "explanation": "색 샘플링 과정이다."
+        "text": "뷰포트 변환",
+        "explanation": "투영 이후 화면 영역의 좌표로 매핑하는 단계다. 로컬 모델 배치 변환이 아니다."
       },
       {
         "id": "c0",
         "text": "월드 변환",
-        "explanation": "모델의 배치·회전·크기를 세계 좌표계에 적용한다."
+        "explanation": "모델의 로컬 좌표를 월드 좌표로 옮기는 변환이다. 카메라 기준으로 옮기는 뷰 변환과 구분한다."
       },
       {
         "id": "c1",
-        "text": "뷰 변환만",
-        "explanation": "뷰는 세계를 카메라 공간으로 옮긴다."
-      },
-      {
-        "id": "c2",
-        "text": "투영만",
-        "explanation": "투영은 카메라 좌표의 클립 변환이다."
+        "text": "뷰 변환",
+        "explanation": "월드 좌표를 카메라 기준 좌표로 옮긴다. 모델 로컬에서 월드로 가는 단계와 다르다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "모델의 배치·회전·크기를 세계 좌표계에 적용한다.",
+    "explanation": "모델의 로컬 좌표를 월드 좌표로 옮기는 변환이다. 카메라 기준으로 옮기는 뷰 변환과 구분한다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -91,41 +93,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-003",
+    "id": "graphics-v2-003",
     "subject": "graphics",
     "difficulty": "easy",
     "topic": "벡터 내적",
-    "prompt": "단위 벡터 두 개의 내적이 1이면?",
+    "prompt": "길이가 1인 두 벡터의 내적이 1이다. 두 벡터의 방향 관계는?",
     "choices": [
       {
-        "id": "c2",
-        "text": "정반대",
-        "explanation": "반대 방향이면 -1이다."
-      },
-      {
         "id": "c3",
-        "text": "길이를 알 수 없다",
-        "explanation": "단위 벡터라는 조건이 주어졌다."
+        "text": "45도 차이",
+        "explanation": "45도의 코사인은 1보다 작다. 단위 벡터 조건에서 내적 1과 맞지 않는다."
       },
       {
         "id": "c0",
-        "text": "두 방향이 같다",
-        "explanation": "단위 벡터 내적은 사이각의 코사인이며 1은 0도이다."
+        "text": "같은 방향",
+        "explanation": "단위 벡터의 내적은 두 방향 사이 각도의 코사인이다. 1이면 각도 0이므로 같은 방향이다."
       },
       {
         "id": "c1",
-        "text": "서로 수직",
-        "explanation": "수직이면 0이다."
+        "text": "수직 방향",
+        "explanation": "수직이면 내적이 0이다."
+      },
+      {
+        "id": "c2",
+        "text": "반대 방향",
+        "explanation": "정반대이면 코사인이 -1이므로 내적도 -1이다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "단위 벡터 내적은 사이각의 코사인이며 1은 0도이다.",
+    "explanation": "단위 벡터의 내적은 두 방향 사이 각도의 코사인이다. 1이면 각도 0이므로 같은 방향이다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -139,137 +143,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-004",
-    "subject": "graphics",
-    "difficulty": "easy",
-    "topic": "동차 좌표",
-    "prompt": "아핀 변환에서 점의 w=1, 방향의 w=0을 쓰는 이유는?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "방향도 항상 평행이동",
-        "explanation": "벡터는 위치가 아니다."
-      },
-      {
-        "id": "c2",
-        "text": "정규화를 대신한다",
-        "explanation": "w 설정은 길이 정규화가 아니다."
-      },
-      {
-        "id": "c3",
-        "text": "색을 표현한다",
-        "explanation": "위치·방향 변환 조건이다."
-      },
-      {
-        "id": "c0",
-        "text": "평행이동 적용 여부를 구분",
-        "explanation": "방향 벡터에는 위치 이동을 적용하지 않는다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "방향 벡터에는 위치 이동을 적용하지 않는다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "Direct3D 11 그래픽스 파이프라인",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
-      },
-      {
-        "title": "DirectXMath 행렬과 벡터 규약",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/dxmath/pg-xnamath-getting-started"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "rendering"
-  },
-  {
-    "id": "graphics-005",
+    "id": "graphics-v2-005",
     "subject": "graphics",
     "difficulty": "easy",
     "topic": "삼각형 토폴로지",
-    "prompt": "독립 삼각형을 인덱스 셋씩 그릴 IA 설정은?",
+    "prompt": "Direct3D 11에서 서로 독립적인 삼각형마다 인덱스 3개를 지정했다. 사용할 토폴로지는?",
     "choices": [
       {
-        "id": "c0",
-        "text": "TRIANGLELIST",
-        "explanation": "각 세 정점이 독립 삼각형을 구성한다."
-      },
-      {
         "id": "c1",
-        "text": "POINTLIST",
-        "explanation": "점 목록이다."
+        "text": "TRIANGLESTRIP",
+        "explanation": "초기 삼각형 뒤의 정점들을 이어 삼각형 띠를 만든다. 독립적인 세 인덱스 묶음과 다른 규칙이다."
       },
       {
         "id": "c2",
         "text": "LINELIST",
-        "explanation": "두 정점으로 선분을 구성한다."
+        "explanation": "인덱스 두 개씩 선분을 구성한다. 삼각형 세 꼭짓점 입력과 맞지 않는다."
       },
       {
         "id": "c3",
-        "text": "TRIANGLESTRIP",
-        "explanation": "인접 삼각형이 정점을 공유하는 스트립 규칙이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "각 세 정점이 독립 삼각형을 구성한다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "Direct3D 11 그래픽스 파이프라인",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
-      },
-      {
-        "title": "DirectXMath 행렬과 벡터 규약",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/dxmath/pg-xnamath-getting-started"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "rendering"
-  },
-  {
-    "id": "graphics-006",
-    "subject": "graphics",
-    "difficulty": "easy",
-    "topic": "깊이 검사",
-    "prompt": "기본적인 깊이 검사의 목적은?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "음원 거리 계산",
-        "explanation": "렌더 깊이 검사이다."
+        "text": "POINTLIST",
+        "explanation": "각 정점을 점으로 처리한다. 삼각형 조립을 하지 않는다."
       },
       {
         "id": "c0",
-        "text": "더 가까운 표면이 뒤 표면을 가리게 한다",
-        "explanation": "깊이 값을 비교하여 가려진 프래그먼트의 기록을 제한한다."
-      },
-      {
-        "id": "c1",
-        "text": "모든 픽셀 색을 밝게 함",
-        "explanation": "색 보정이 아니다."
-      },
-      {
-        "id": "c2",
-        "text": "정점 개수 증가",
-        "explanation": "테셀레이션 역할과 다르다."
+        "text": "TRIANGLELIST",
+        "explanation": "인덱스 셋마다 독립적인 삼각형을 구성한다. 앞 삼각형과 정점을 이어 쓰는 strip 방식과 구분한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "깊이 값을 비교하여 가려진 프래그먼트의 기록을 제한한다.",
+    "explanation": "인덱스 셋마다 독립적인 삼각형을 구성한다. 앞 삼각형과 정점을 이어 쓰는 strip 방식과 구분한다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -283,89 +193,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-007",
-    "subject": "graphics",
-    "difficulty": "easy",
-    "topic": "래스터화",
-    "prompt": "래스터라이저가 삼각형에 대해 만드는 것은?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "압축된 모델 파일",
-        "explanation": "파일 직렬화가 아니다."
-      },
-      {
-        "id": "c3",
-        "text": "항상 한 픽셀만",
-        "explanation": "삼각형은 여러 화면 샘플을 덮을 수 있다."
-      },
-      {
-        "id": "c0",
-        "text": "화면 샘플의 커버리지와 보간 입력",
-        "explanation": "투영된 기하를 픽셀 처리에 필요한 샘플로 바꾼다."
-      },
-      {
-        "id": "c1",
-        "text": "게임 Actor 클래스",
-        "explanation": "CPU 엔진 객체와 다르다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "투영된 기하를 픽셀 처리에 필요한 샘플로 바꾼다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "Direct3D 11 그래픽스 파이프라인",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
-      },
-      {
-        "title": "DirectXMath 행렬과 벡터 규약",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/dxmath/pg-xnamath-getting-started"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "rendering"
-  },
-  {
-    "id": "graphics-008",
+    "id": "graphics-v2-008",
     "subject": "graphics",
     "difficulty": "easy",
     "topic": "텍스처 샘플링",
-    "prompt": "텍스처의 UV는 주로 무엇을 나타내나?",
+    "prompt": "정점 속성의 UV 좌표가 텍스처 샘플링에서 나타내는 것은?",
     "choices": [
       {
+        "id": "c0",
+        "text": "텍스처를 읽을 위치",
+        "explanation": "UV는 텍스처 영역에서 샘플할 위치를 표현한다. 정규화 범위 밖의 처리는 sampler의 주소 모드 등에 따라 달라진다."
+      },
+      {
         "id": "c1",
-        "text": "정점의 월드 속도",
-        "explanation": "텍스처 좌표와 다르다."
+        "text": "정점의 월드 위치",
+        "explanation": "모델·월드 좌표와 텍스처 좌표는 목적이 다른 속성이다."
       },
       {
         "id": "c2",
-        "text": "GPU 메모리 주소 자체",
-        "explanation": "샘플러가 좌표와 리소스를 처리한다."
+        "text": "화면의 픽셀 주소",
+        "explanation": "UV를 직접 화면 픽셀의 메모리 주소로 해석하지 않는다."
       },
       {
         "id": "c3",
-        "text": "광원 개수",
-        "explanation": "조명 데이터와 별개이다."
-      },
-      {
-        "id": "c0",
-        "text": "텍스처를 읽을 좌표",
-        "explanation": "표면 위치에서 텍스처의 어느 부분을 샘플할지 지정한다."
+        "text": "표면의 법선 방향",
+        "explanation": "법선은 조명 등에 사용하는 방향 정보이며 UV는 텍스처 위치다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "표면 위치에서 텍스처의 어느 부분을 샘플할지 지정한다.",
+    "explanation": "UV는 텍스처 영역에서 샘플할 위치를 표현한다. 정규화 범위 밖의 처리는 sampler의 주소 모드 등에 따라 달라진다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -379,189 +243,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-009",
-    "subject": "graphics",
-    "difficulty": "easy",
-    "topic": "뷰 변환",
-    "prompt": "월드 공간을 카메라 기준 공간으로 변환하는 것은?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "뷰 행렬",
-        "explanation": "카메라 자세의 역변환으로 세계를 카메라 기준에 놓는다."
-      },
-      {
-        "id": "c1",
-        "text": "월드 행렬만",
-        "explanation": "개별 객체 로컬에서 월드 변환이다."
-      },
-      {
-        "id": "c2",
-        "text": "알파 블렌드 설정",
-        "explanation": "색 합성 단계이다."
-      },
-      {
-        "id": "c3",
-        "text": "텍스처 mipmap",
-        "explanation": "축소 샘플링 데이터이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "카메라 자세의 역변환으로 세계를 카메라 기준에 놓는다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "Direct3D 11 그래픽스 파이프라인",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
-      },
-      {
-        "title": "DirectXMath 행렬과 벡터 규약",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/dxmath/pg-xnamath-getting-started"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "rendering"
-  },
-  {
-    "id": "graphics-010",
-    "subject": "graphics",
-    "difficulty": "easy",
-    "topic": "게임 루프",
-    "prompt": "입력·시뮬레이션·렌더링을 반복하는 기본 구조는?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "가비지 수집만",
-        "explanation": "메모리 정리는 루프 전체가 아니다."
-      },
-      {
-        "id": "c0",
-        "text": "게임 루프",
-        "explanation": "프레임마다 시스템을 진행하며 시간과 입력을 처리한다."
-      },
-      {
-        "id": "c1",
-        "text": "빌드 루프",
-        "explanation": "컴파일 반복과 다르다."
-      },
-      {
-        "id": "c2",
-        "text": "셰이더 한 번 실행",
-        "explanation": "전체 게임 진행을 포함하지 않는다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "프레임마다 시스템을 진행하며 시간과 입력을 처리한다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "게임 루프 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/game-loop.html"
-      },
-      {
-        "title": "컴포넌트 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/component.html"
-      },
-      {
-        "title": "데이터 지역성 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/data-locality.html"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "engine"
-  },
-  {
-    "id": "graphics-011",
+    "id": "graphics-v2-011",
     "subject": "graphics",
     "difficulty": "medium",
     "topic": "변환 순서",
-    "prompt": "행벡터 p에 로컬→월드→뷰→투영을 적용할 식은?",
+    "prompt": "행벡터 p에 월드 W, 뷰 V, 투영 P 순서로 적용한다. 올바른 식은?",
     "choices": [
       {
-        "id": "c2",
-        "text": "W V P p",
-        "explanation": "열벡터 규약 표현과 섞었다."
-      },
-      {
         "id": "c3",
-        "text": "p W만",
-        "explanation": "뷰와 투영이 빠졌다."
+        "text": "p V W P",
+        "explanation": "뷰와 월드의 순서를 바꿨다. 일반적으로 행렬 곱은 교환되지 않는다."
       },
       {
         "id": "c0",
         "text": "p W V P",
-        "explanation": "행벡터를 왼쪽에 놓는 규약에서는 순서대로 오른쪽에 행렬을 곱한다."
+        "explanation": "행벡터를 오른쪽에서 변환하는 규약에서는 적용 순서대로 곱한다. 열벡터 규약과 혼용하지 않아야 한다."
       },
       {
         "id": "c1",
         "text": "p P V W",
-        "explanation": "투영부터 적용하면 공간 순서가 다르다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "행벡터를 왼쪽에 놓는 규약에서는 순서대로 오른쪽에 행렬을 곱한다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "Direct3D 11 그래픽스 파이프라인",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
-      },
-      {
-        "title": "DirectXMath 행렬과 벡터 규약",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/dxmath/pg-xnamath-getting-started"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "rendering"
-  },
-  {
-    "id": "graphics-012",
-    "subject": "graphics",
-    "difficulty": "medium",
-    "topic": "알파 합성",
-    "prompt": "선형 공간의 straight alpha 색 C, 배경 B, 알파 a의 source-over RGB는?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "C+B",
-        "explanation": "알파 가중치가 없다."
+        "explanation": "행벡터 규약에서 투영을 먼저 적용하는 반대 순서다."
       },
       {
         "id": "c2",
-        "text": "C (1-a)+B a",
-        "explanation": "소스와 배경 가중치가 바뀌었다."
-      },
-      {
-        "id": "c3",
-        "text": "C a B",
-        "explanation": "일반 source-over 합성 식이 아니다."
-      },
-      {
-        "id": "c0",
-        "text": "C a + B (1-a)",
-        "explanation": "소스 기여와 남은 배경 기여를 더한다."
+        "text": "W V P p",
+        "explanation": "열벡터 형태와 섞은 식이다. 주어진 행벡터 규약에 맞지 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "소스 기여와 남은 배경 기여를 더한다.",
+    "explanation": "행벡터를 오른쪽에서 변환하는 규약에서는 적용 순서대로 곱한다. 열벡터 규약과 혼용하지 않아야 한다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -575,41 +293,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-013",
+    "id": "graphics-v2-013",
     "subject": "graphics",
     "difficulty": "medium",
     "topic": "밉맵",
-    "prompt": "멀리 있는 텍스처에 mipmap이 유용한 이유는?",
+    "prompt": "멀리 있는 텍스처가 픽셀보다 촘촘해 깜빡임이 보인다. mipmap을 사용하는 목적은?",
     "choices": [
       {
-        "id": "c0",
-        "text": "축소 시 앨리어싱을 줄인다",
-        "explanation": "미리 축소한 레벨로 큰 영역의 샘플을 안정적으로 대표한다."
-      },
-      {
         "id": "c1",
-        "text": "정점 수를 항상 줄임",
-        "explanation": "텍스처 필터링 기법이다."
+        "text": "모델의 정점 개수 자동 감소",
+        "explanation": "텍스처의 mip 레벨과 메시 LOD는 서로 다른 최적화다."
       },
       {
         "id": "c2",
-        "text": "모든 LOD를 동일하게 유지",
-        "explanation": "적절한 레벨을 선택한다."
+        "text": "가장 높은 해상도만 계속 유지",
+        "explanation": "축소 상황에 맞는 더 낮은 해상도 레벨을 사용하는 것이 핵심이다."
       },
       {
         "id": "c3",
-        "text": "최대 해상도만 강제",
-        "explanation": "축소된 레벨을 제공한다."
+        "text": "텍스처의 색 공간 자동 변경",
+        "explanation": "mipmap의 주된 목적은 해상도별 필터링이다. 색 공간 처리는 별도 규칙을 확인해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "축소 샘플링의 앨리어싱 완화",
+        "explanation": "미리 필터링한 저해상도 레벨로 넓은 텍스처 영역을 표현해 축소 시 고주파 변화에 의한 흔들림을 줄인다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "미리 축소한 레벨로 큰 영역의 샘플을 안정적으로 대표한다.",
+    "explanation": "미리 필터링한 저해상도 레벨로 넓은 텍스처 영역을 표현해 축소 시 고주파 변화에 의한 흔들림을 줄인다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -623,141 +343,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-014",
-    "subject": "graphics",
-    "difficulty": "medium",
-    "topic": "컬링과 권선",
-    "prompt": "같은 메시에 front face 규약만 뒤집으면?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "물리 중력 반전",
-        "explanation": "래스터라이저 설정이 물리에 적용되지 않는다."
-      },
-      {
-        "id": "c0",
-        "text": "앞·뒤 판정이 바뀔 수 있다",
-        "explanation": "삼각형의 권선 순서와 rasterizer front 설정이 컬링에 영향을 준다."
-      },
-      {
-        "id": "c1",
-        "text": "UV가 자동 재작성",
-        "explanation": "컬링은 텍스처 좌표 변경이 아니다."
-      },
-      {
-        "id": "c2",
-        "text": "객체 수명이 변경",
-        "explanation": "렌더 상태와 객체 수명은 별개이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "삼각형의 권선 순서와 rasterizer front 설정이 컬링에 영향을 준다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "Direct3D 11 그래픽스 파이프라인",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
-      },
-      {
-        "title": "DirectXMath 행렬과 벡터 규약",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/dxmath/pg-xnamath-getting-started"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "rendering"
-  },
-  {
-    "id": "graphics-015",
-    "subject": "graphics",
-    "difficulty": "medium",
-    "topic": "고정 스텝",
-    "prompt": "물리 업데이트에 고정 시간 간격을 쓰는 주목적은?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "GPU 부하가 항상 0",
-        "explanation": "렌더링 비용은 남는다."
-      },
-      {
-        "id": "c3",
-        "text": "실제 시간을 무시",
-        "explanation": "누적 시간에 맞춰 업데이트한다."
-      },
-      {
-        "id": "c0",
-        "text": "프레임 변동과 시뮬레이션 간격을 분리",
-        "explanation": "누적 시간으로 일정 단위 업데이트하고 렌더링은 별도로 진행할 수 있다."
-      },
-      {
-        "id": "c1",
-        "text": "모든 기기에서 자동 결정론",
-        "explanation": "입력 순서·연산 조건 등 추가 조건이 필요하다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "누적 시간으로 일정 단위 업데이트하고 렌더링은 별도로 진행할 수 있다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "게임 루프 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/game-loop.html"
-      },
-      {
-        "title": "컴포넌트 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/component.html"
-      },
-      {
-        "title": "데이터 지역성 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/data-locality.html"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "engine"
-  },
-  {
-    "id": "graphics-016",
+    "id": "graphics-v2-016",
     "subject": "graphics",
     "difficulty": "medium",
     "topic": "월드 위치 보존",
-    "prompt": "HLSL 행벡터 규약에서 worldPosition을 저장할 지점은?",
+    "prompt": "행벡터 규약에서 라이팅에 쓸 월드 위치를 저장하려 한다. p W V P 중 어느 단계의 값을 쓰는가?",
     "choices": [
       {
+        "id": "c0",
+        "text": "p W",
+        "explanation": "로컬 위치 p에 월드 변환 W를 적용한 값이 월드 위치다. 이후 V와 P를 적용하면 뷰·clip 공간으로 바뀐다."
+      },
+      {
         "id": "c1",
-        "text": "VP 적용 후 xyz만",
-        "explanation": "클립 xyz는 월드 좌표가 아니다."
+        "text": "p V",
+        "explanation": "로컬 위치에 월드 변환 없이 뷰 변환만 적용하면 일반적인 모델 배치가 반영되지 않는다."
       },
       {
         "id": "c2",
-        "text": "로컬 위치 그대로",
-        "explanation": "객체 배치를 반영하지 않는다."
+        "text": "p W V",
+        "explanation": "카메라 기준의 뷰 공간 위치다. 월드 공간 조명 데이터와 섞으면 안 된다."
       },
       {
         "id": "c3",
-        "text": "픽셀 색을 대입",
-        "explanation": "좌표 정보가 아니다."
-      },
-      {
-        "id": "c0",
-        "text": "W 적용 후 VP 적용 전",
-        "explanation": "라이팅에 사용할 위치는 클립 좌표로 바뀌기 전 월드 공간 값이어야 한다."
+        "text": "p W V P",
+        "explanation": "clip 공간 값이다. xyz만 꺼낸다고 월드 위치가 되는 것은 아니다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "라이팅에 사용할 위치는 클립 좌표로 바뀌기 전 월드 공간 값이어야 한다.",
+    "explanation": "로컬 위치 p에 월드 변환 W를 적용한 값이 월드 위치다. 이후 V와 P를 적용하면 뷰·clip 공간으로 바뀐다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -771,93 +393,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-017",
-    "subject": "graphics",
-    "difficulty": "medium",
-    "topic": "씬 계층",
-    "prompt": "자식 로컬 변환을 부모 월드와 합성하는 목적은?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "부모의 이동이 자식 배치에 반영되게 한다",
-        "explanation": "계층 변환으로 자식의 상대 배치를 월드로 변환한다."
-      },
-      {
-        "id": "c1",
-        "text": "모든 자식을 같은 위치로 복사",
-        "explanation": "자식 로컬 변환을 유지한다."
-      },
-      {
-        "id": "c2",
-        "text": "부모의 메모리 크기를 줄임",
-        "explanation": "좌표 합성 목적이 아니다."
-      },
-      {
-        "id": "c3",
-        "text": "자식의 컴포넌트 삭제",
-        "explanation": "계층 변환은 삭제 연산이 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "계층 변환으로 자식의 상대 배치를 월드로 변환한다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "게임 루프 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/game-loop.html"
-      },
-      {
-        "title": "컴포넌트 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/component.html"
-      },
-      {
-        "title": "데이터 지역성 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/data-locality.html"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "engine"
-  },
-  {
-    "id": "graphics-018",
+    "id": "graphics-v2-018",
     "subject": "graphics",
     "difficulty": "medium",
     "topic": "컴포넌트 역할",
-    "prompt": "렌더링·충돌·이동 기능을 Actor에 조합하는 장점은?",
+    "prompt": "Actor의 이동·충돌·렌더링 기능을 컴포넌트로 조합한다. 직접적인 설계 이점은?",
     "choices": [
       {
+        "id": "c2",
+        "text": "객체 수와 간접 호출 비용 자동 제거",
+        "explanation": "컴포넌트를 추가하면 오히려 객체와 호출 비용이 늘 수도 있다."
+      },
+      {
         "id": "c3",
-        "text": "메모리 비용 무조건 감소",
-        "explanation": "간접 참조 등 비용을 검토해야 한다."
+        "text": "기능 간 데이터 의존성 완전 제거",
+        "explanation": "컴포넌트들이 같은 Actor 상태를 사용할 수 있으므로 의존성 계약은 계속 필요하다."
       },
       {
         "id": "c0",
-        "text": "기능을 별도 책임으로 구성",
-        "explanation": "기능별 컴포넌트를 조합하여 상속 조합의 폭발을 줄일 수 있다."
+        "text": "기능별 책임을 조합해 구성",
+        "explanation": "기능의 교체와 재사용 경계를 만들 수 있다. 컴포넌트화 자체가 메모리 절감이나 스레드 안전을 보장하지는 않는다."
       },
       {
         "id": "c1",
-        "text": "모든 데이터 경쟁 제거",
-        "explanation": "실행·동기화 정책은 별도이다."
-      },
-      {
-        "id": "c2",
-        "text": "상속이 항상 금지됨",
-        "explanation": "구성 선택이지 언어 상속 금지가 아니다."
+        "text": "모든 컴포넌트의 동시 수정 자동 보호",
+        "explanation": "공유 상태 동기화는 별도의 책임이다. 컴포넌트라고 경쟁이 사라지지 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "기능별 컴포넌트를 조합하여 상속 조합의 폭발을 줄일 수 있다.",
+    "explanation": "기능의 교체와 재사용 경계를 만들 수 있다. 컴포넌트화 자체가 메모리 절감이나 스레드 안전을 보장하지는 않는다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -875,93 +447,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "engine"
+    "area": "engine",
+    "active": true
   },
   {
-    "id": "graphics-019",
-    "subject": "graphics",
-    "difficulty": "medium",
-    "topic": "프레임 중 삭제",
-    "prompt": "시스템이 Actor 목록을 순회하는 동안 삭제 요청을 안전하게 처리하는 방법은?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "영원히 삭제하지 않음",
-        "explanation": "자원 유지 문제가 남는다."
-      },
-      {
-        "id": "c3",
-        "text": "포인터 이름만 변경",
-        "explanation": "실제 수명 문제를 해결하지 못한다."
-      },
-      {
-        "id": "c0",
-        "text": "삭제를 표시하고 정해진 단계에서 반영",
-        "explanation": "반복자 무효화와 다른 시스템의 참조 사용 시점을 조정한다."
-      },
-      {
-        "id": "c1",
-        "text": "즉시 원소 제거 후 같은 반복자 사용",
-        "explanation": "컨테이너 무효화 위험이 있다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "반복자 무효화와 다른 시스템의 참조 사용 시점을 조정한다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "게임 루프 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/game-loop.html"
-      },
-      {
-        "title": "컴포넌트 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/component.html"
-      },
-      {
-        "title": "데이터 지역성 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/data-locality.html"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "engine"
-  },
-  {
-    "id": "graphics-020",
+    "id": "graphics-v2-020",
     "subject": "graphics",
     "difficulty": "medium",
     "topic": "GPU 프로파일",
-    "prompt": "CPU는 빠른데 GPU 프레임 시간이 긴 상황의 첫 판단은?",
+    "prompt": "CPU 프레임 시간은 짧고 GPU 시간이 길다. 최적화 대상을 정할 첫 단계는?",
     "choices": [
       {
+        "id": "c0",
+        "text": "GPU 패스별 시간을 측정",
+        "explanation": "GPU 병목 안에서도 픽셀 처리, 지오메트리, 대역폭 등 원인이 다르다. 측정으로 비용이 큰 구간을 먼저 찾는다."
+      },
+      {
         "id": "c1",
-        "text": "CPU 함수 이름만 바꿈",
-        "explanation": "측정 및 GPU 비용에 영향이 없다."
+        "text": "CPU 함수를 전부 인라인화",
+        "explanation": "제시된 병목은 GPU다. CPU 호출 비용만 줄여도 프레임 시간이 개선되지 않을 수 있다."
       },
       {
         "id": "c2",
-        "text": "무조건 모든 드로우 합침",
-        "explanation": "원인과 관계없이 효과를 보장하지 못한다."
+        "text": "렌더 타깃 해상도를 먼저 무조건 낮춘다",
+        "explanation": "픽셀 비용이 원인일 때는 도움이 되지만 다른 병목일 수 있다. 먼저 측정해 가설을 확인해야 한다."
       },
       {
         "id": "c3",
-        "text": "평균 FPS 숫자만 확인",
-        "explanation": "구체 GPU 단계 병목을 식별하기 어렵다."
-      },
-      {
-        "id": "c0",
-        "text": "GPU 작업별 시간을 측정해 병목을 찾는다",
-        "explanation": "픽셀 비용·대역폭·기하 처리 등 원인을 나눠 확인해야 한다."
+        "text": "모든 오브젝트를 하나의 드로우로 합친다",
+        "explanation": "드로우 감소가 GPU의 모든 병목을 해결하지 않는다. 컬링이나 재질 등의 비용도 달라질 수 있다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "픽셀 비용·대역폭·기하 처리 등 원인을 나눠 확인해야 한다.",
+    "explanation": "GPU 병목 안에서도 픽셀 처리, 지오메트리, 대역폭 등 원인이 다르다. 측정으로 비용이 큰 구간을 먼저 찾는다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -979,41 +501,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "engine"
+    "area": "engine",
+    "active": true
   },
   {
-    "id": "graphics-021",
+    "id": "graphics-v2-021",
     "subject": "graphics",
     "difficulty": "hard",
     "topic": "법선 변환",
-    "prompt": "비균일 스케일이 포함된 가역 선형 변환 M의 법선은?",
+    "prompt": "비균일 스케일을 포함하는 가역 선형 변환 M을 표면에 적용한다. 법선의 직교성을 유지할 변환은?",
     "choices": [
       {
-        "id": "c0",
-        "text": "M의 역전치로 변환 후 정규화",
-        "explanation": "접선과 법선의 수직 관계를 보존한다. 행·열 규약에 맞춰 곱해야 한다."
-      },
-      {
         "id": "c1",
-        "text": "위치와 같은 M만 사용",
-        "explanation": "비균일 스케일에서 수직 관계가 깨질 수 있다."
+        "text": "위치와 동일한 M 적용 후 정규화",
+        "explanation": "비균일 스케일에서는 정규화만으로 잘못 바뀐 방향을 보정할 수 없다."
       },
       {
         "id": "c2",
-        "text": "평행이동만 적용",
-        "explanation": "법선은 방향이다."
+        "text": "M의 전치만 적용 후 정규화",
+        "explanation": "역행렬이 빠졌다. 일반적인 비균일 변환의 법선 처리와 맞지 않는다."
       },
       {
         "id": "c3",
-        "text": "UV를 그대로 사용",
-        "explanation": "텍스처 좌표는 법선이 아니다."
+        "text": "M의 역행렬만 적용 후 정규화",
+        "explanation": "일반적인 법선 변환은 역전치다. 사용하는 벡터 규약과 행렬 구현을 일관되게 해석해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "M의 역전치 적용 후 정규화",
+        "explanation": "법선이 변환된 접선과 수직을 유지하려면 선형 변환의 역전치를 사용한다. 행·열벡터 규약에 맞는 구현이 필요하다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "접선과 법선의 수직 관계를 보존한다. 행·열 규약에 맞춰 곱해야 한다.",
+    "explanation": "법선이 변환된 접선과 수직을 유지하려면 선형 변환의 역전치를 사용한다. 행·열벡터 규약에 맞는 구현이 필요하다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -1023,89 +547,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-022",
-    "subject": "graphics",
-    "difficulty": "hard",
-    "topic": "깊이 정밀도",
-    "prompt": "일반적인 원근 깊이에서 near를 지나치게 작게 잡으면?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "near가 색 공간을 바꿈",
-        "explanation": "깊이 투영과 색 변환은 별개이다."
-      },
-      {
-        "id": "c0",
-        "text": "원거리 깊이 정밀도가 악화될 수 있다",
-        "explanation": "원근 깊이 분포와 near/far 비율 때문에 z-fighting 위험이 커진다."
-      },
-      {
-        "id": "c1",
-        "text": "항상 균등 정밀도",
-        "explanation": "원근 깊이는 선형 분포가 아니다."
-      },
-      {
-        "id": "c2",
-        "text": "깊이 버퍼가 자동 64비트",
-        "explanation": "형식은 별도로 정한다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "원근 깊이 분포와 near/far 비율 때문에 z-fighting 위험이 커진다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "Direct3D 11 그래픽스 파이프라인",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
-      },
-      {
-        "title": "DirectXMath 행렬과 벡터 규약",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/dxmath/pg-xnamath-getting-started"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "rendering"
-  },
-  {
-    "id": "graphics-023",
+    "id": "graphics-v2-023",
     "subject": "graphics",
     "difficulty": "hard",
     "topic": "색 공간",
-    "prompt": "sRGB 텍스처 색을 조명 계산하기 전 필요한 것은?",
+    "prompt": "sRGB로 저장한 색 텍스처를 물리적인 조명 곱셈에 사용한다. 먼저 필요한 처리는?",
     "choices": [
       {
-        "id": "c2",
-        "text": "항상 색 채널 반전",
-        "explanation": "색 공간 변환과 다르다."
-      },
-      {
         "id": "c3",
-        "text": "알파도 무조건 sRGB 디코딩",
-        "explanation": "sRGB 리소스의 알파는 일반적으로 선형 취급한다."
+        "text": "조명 계산 후 입력 색을 먼저 인코딩",
+        "explanation": "입력 색을 선형으로 바꾼 뒤 계산하고 표시 단계에서 적절히 인코딩해야 한다. 순서가 반대다."
       },
       {
         "id": "c0",
-        "text": "선형 색 공간으로 디코딩",
-        "explanation": "물리적 색 연산은 선형 값으로 하고 표시 저장 시 적절히 인코딩한다."
+        "text": "선형 색 값으로 디코딩",
+        "explanation": "조명 연산은 선형 공간에서 수행한다. sRGB 리소스 형식이 자동 디코딩하는지 확인해 중복 변환을 피해야 한다."
       },
       {
         "id": "c1",
-        "text": "sRGB 값 그대로 곱하기",
-        "explanation": "감마 인코딩 값의 곱셈은 선형 조명과 다르다."
+        "text": "sRGB 채널 값을 그대로 곱하기",
+        "explanation": "감마 인코딩된 수치를 그대로 조명에 사용하면 밝기 혼합이 부정확해질 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "모든 색과 알파 채널을 반전",
+        "explanation": "채널 반전은 색 공간 디코딩이 아니다. 알파도 일반적으로 sRGB 색 채널과 같은 변환을 하지 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "물리적 색 연산은 선형 값으로 하고 표시 저장 시 적절히 인코딩한다.",
+    "explanation": "조명 연산은 선형 공간에서 수행한다. sRGB 리소스 형식이 자동 디코딩하는지 확인해 중복 변환을 피해야 한다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -1115,85 +593,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-024",
-    "subject": "graphics",
-    "difficulty": "hard",
-    "topic": "리소스 충돌",
-    "prompt": "DX11 같은 서브리소스를 RTV와 SRV로 동시에 읽고 쓰려 하면?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "항상 자동 복제",
-        "explanation": "API가 원하는 과거 값을 복제해 주지 않는다."
-      },
-      {
-        "id": "c2",
-        "text": "ComPtr이면 충돌 해소",
-        "explanation": "소유권과 GPU 바인딩은 별개이다."
-      },
-      {
-        "id": "c3",
-        "text": "뷰 이름이 다르면 안전",
-        "explanation": "기저 서브리소스 중첩이 기준이다."
-      },
-      {
-        "id": "c0",
-        "text": "겹치는 바인딩을 분리해야 한다",
-        "explanation": "입력·출력 충돌을 피하도록 뷰를 해제하고 패스를 분리한다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "입력·출력 충돌을 피하도록 뷰를 해제하고 패스를 분리한다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "DX11 PSSetShaderResources 리소스 충돌",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshaderresources"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "rendering"
-  },
-  {
-    "id": "graphics-025",
+    "id": "graphics-v2-025",
     "subject": "graphics",
     "difficulty": "hard",
     "topic": "투명 정렬",
-    "prompt": "깊이 쓰기를 끈 일반 알파 블렌드 투명 물체를 그릴 때는?",
+    "prompt": "일반적인 source-over 알파 블렌딩이고 투명 물체의 깊이 쓰기는 껐다. 단순한 겹침에서 통상적인 그리기 순서는?",
     "choices": [
       {
-        "id": "c0",
-        "text": "보통 뒤에서 앞으로 정렬",
-        "explanation": "source-over 블렌딩은 순서 의존적이다. 교차하는 기하는 객체 정렬만으로 완전 해결되지 않는다."
-      },
-      {
         "id": "c1",
-        "text": "앞에서 뒤로 항상 정확",
-        "explanation": "일반 알파 합성의 순서와 다르다."
+        "text": "앞에서 뒤로",
+        "explanation": "불투명 렌더링의 overdraw 감소 전략과 다르다. 일반 알파 블렌딩에서는 뒤의 기여가 잘못 섞일 수 있다."
       },
       {
         "id": "c2",
-        "text": "임의 순서가 항상 동일",
-        "explanation": "합성 연산은 일반적으로 교환 가능하지 않다."
+        "text": "알파 값이 작은 것부터",
+        "explanation": "투명도만으로 공간상의 앞뒤 관계를 알 수 없다."
       },
       {
         "id": "c3",
-        "text": "깊이 쓰기만 켜면 완전 해결",
-        "explanation": "뒤 투명면을 가릴 수 있다."
+        "text": "재질 이름의 사전순",
+        "explanation": "공간 관계와 무관한 순서는 올바른 블렌딩을 보장하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "뒤에서 앞으로",
+        "explanation": "알파 블렌딩은 순서에 의존한다. 일반적으로 뒤쪽을 먼저 그리지만 교차 형상 등은 단일 오브젝트 정렬만으로 해결되지 않을 수 있다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "source-over 블렌딩은 순서 의존적이다. 교차하는 기하는 객체 정렬만으로 완전 해결되지 않는다.",
+    "explanation": "알파 블렌딩은 순서에 의존한다. 일반적으로 뒤쪽을 먼저 그리지만 교차 형상 등은 단일 오브젝트 정렬만으로 해결되지 않을 수 있다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -1207,245 +643,89 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "rendering"
+    "area": "rendering",
+    "active": true
   },
   {
-    "id": "graphics-026",
-    "subject": "graphics",
-    "difficulty": "hard",
-    "topic": "카메라 위치 복원",
-    "prompt": "행벡터 강체 뷰 V에서 월드 카메라 위치를 복원하려면?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "법선의 역전치만 사용",
-        "explanation": "방향 변환과 위치 복원은 다르다."
-      },
-      {
-        "id": "c0",
-        "text": "음의 뷰 평행이동에 회전 역관계를 적용",
-        "explanation": "행벡터 규약에서는 mul(float3(-V._41,-V._42,-V._43),(float3x3)V)로 강체 카메라 위치를 얻는다."
-      },
-      {
-        "id": "c1",
-        "text": "-V 평행이동만 반환",
-        "explanation": "회전된 카메라에서는 월드 위치가 아니다."
-      },
-      {
-        "id": "c2",
-        "text": "투영 행렬의 마지막 행",
-        "explanation": "투영은 카메라 월드 위치가 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "행벡터 규약에서는 mul(float3(-V._41,-V._42,-V._43),(float3x3)V)로 강체 카메라 위치를 얻는다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "Direct3D 11 그래픽스 파이프라인",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
-      },
-      {
-        "title": "DirectXMath 행렬과 벡터 규약",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/dxmath/pg-xnamath-getting-started"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "rendering"
-  },
-  {
-    "id": "graphics-027",
-    "subject": "graphics",
-    "difficulty": "hard",
-    "topic": "배칭의 제약",
-    "prompt": "같은 재질의 드로우를 묶되 투명 순서를 유지해야 하는 이유는?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "같은 재질은 깊이 동일",
-        "explanation": "재질과 위치는 별개이다."
-      },
-      {
-        "id": "c3",
-        "text": "배칭은 CPU 비용을 항상 증가",
-        "explanation": "비용은 병목·구현에 따라 다르다."
-      },
-      {
-        "id": "c0",
-        "text": "상태 비용과 시각적 순서가 함께 제약이다",
-        "explanation": "상태 변경 감소만 최적화하면 투명 합성 결과를 바꿀 수 있다."
-      },
-      {
-        "id": "c1",
-        "text": "배칭이면 모든 순서 무관",
-        "explanation": "블렌딩 순서는 결과에 영향을 준다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "상태 변경 감소만 최적화하면 투명 합성 결과를 바꿀 수 있다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "게임 루프 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/game-loop.html"
-      },
-      {
-        "title": "컴포넌트 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/component.html"
-      },
-      {
-        "title": "데이터 지역성 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/data-locality.html"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "engine"
-  },
-  {
-    "id": "graphics-028",
+    "id": "graphics-v2-028",
     "subject": "graphics",
     "difficulty": "hard",
     "topic": "비동기 로딩 수명",
-    "prompt": "백그라운드 로드 완료 전에 씬이 닫힐 수 있다. 필요한 정책은?",
+    "prompt": "씬의 비동기 로드 중 화면이 닫혔다. 뒤늦은 완료 콜백이 파괴된 씬을 바꾸지 않게 할 정책은?",
     "choices": [
       {
+        "id": "c0",
+        "text": "수명 확인과 취소·결과 반영 경계",
+        "explanation": "요청의 소유 수명을 추적하고 완료 시 살아 있는 대상인지 확인해야 한다. 렌더 상태 반영은 엔진의 스레드 계약도 지켜야 한다."
+      },
+      {
         "id": "c1",
-        "text": "씬 raw pointer만 캡처",
-        "explanation": "소멸 후 접근 위험이 있다."
+        "text": "씬 raw pointer만 캡처해 보관",
+        "explanation": "포인터 값 보관은 대상 수명을 연장하지 않는다. 이미 파괴된 씬을 접근할 수 있다."
       },
       {
         "id": "c2",
-        "text": "완료 시 무조건 모든 씬 변경",
-        "explanation": "현재 대상 수명과 일치하지 않을 수 있다."
+        "text": "완료 콜백에서 현재 씬을 무조건 교체",
+        "explanation": "이전 요청의 결과가 새 화면을 덮는 문제를 만들 수 있다."
       },
       {
         "id": "c3",
-        "text": "워커에서 모든 렌더 상태 수정",
-        "explanation": "스레드·컨텍스트 사용 계약을 고려해야 한다."
-      },
-      {
-        "id": "c0",
-        "text": "수명 확인·취소와 메인 단계 반영",
-        "explanation": "완료 콜백이 소멸한 씬을 사용하지 않도록 소유권 및 적용 시점을 관리한다."
+        "text": "워커가 씬 상태를 즉시 직접 수정",
+        "explanation": "대상의 수명과 엔진 API의 스레드 제한을 모두 확인하지 않은 접근이다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "완료 콜백이 소멸한 씬을 사용하지 않도록 소유권 및 적용 시점을 관리한다.",
+    "explanation": "요청의 소유 수명을 추적하고 완료 시 살아 있는 대상인지 확인해야 한다. 렌더 상태 반영은 엔진의 스레드 계약도 지켜야 한다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
-        "title": "게임 루프 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/game-loop.html"
-      },
-      {
-        "title": "컴포넌트 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/component.html"
-      },
-      {
-        "title": "데이터 지역성 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/data-locality.html"
+        "title": "C++ Core Guidelines: 비지역 람다 캡처와 수명",
+        "url": "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-capture-vs-reference"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "engine"
+    "area": "engine",
+    "active": true
   },
   {
-    "id": "graphics-029",
-    "subject": "graphics",
-    "difficulty": "hard",
-    "topic": "SoA 선택",
-    "prompt": "위치만 연속 갱신하는 대규모 객체 시스템에서 SoA의 이점은?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "필요한 위치 데이터의 지역성을 높일 수 있다",
-        "explanation": "불필요 필드를 함께 읽는 비용을 줄일 수 있다. 모든 접근 패턴에서 항상 유리한 것은 아니다."
-      },
-      {
-        "id": "c1",
-        "text": "포인터 추적을 반드시 늘림",
-        "explanation": "연속 필드 배열을 사용할 수 있다."
-      },
-      {
-        "id": "c2",
-        "text": "캐시 미스가 항상 0",
-        "explanation": "캐시 용량·접근 패턴 영향을 받는다."
-      },
-      {
-        "id": "c3",
-        "text": "객체 개수가 자동 줄어듦",
-        "explanation": "배치 변경이지 개수 변경이 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "불필요 필드를 함께 읽는 비용을 줄일 수 있다. 모든 접근 패턴에서 항상 유리한 것은 아니다.",
-    "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
-    "sources": [
-      {
-        "title": "게임 루프 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/game-loop.html"
-      },
-      {
-        "title": "컴포넌트 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/component.html"
-      },
-      {
-        "title": "데이터 지역성 — 저자 공개 교재",
-        "url": "https://gameprogrammingpatterns.com/data-locality.html"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    },
-    "area": "engine"
-  },
-  {
-    "id": "graphics-030",
+    "id": "graphics-v2-030",
     "subject": "graphics",
     "difficulty": "hard",
     "topic": "오브젝트 풀",
-    "prompt": "일시 객체 풀을 재사용할 때 꼭 필요한 수명 정책은?",
+    "prompt": "풀에서 반환된 객체가 재사용됐다. 이전 사용자가 가진 핸들을 안전하게 판별하려면?",
     "choices": [
       {
+        "id": "c2",
+        "text": "풀에 반환한 뒤에도 모든 콜백을 계속 실행",
+        "explanation": "이전 사용의 콜백이 새 객체 상태를 수정할 수 있다. 반납 시 등록 정리와 유효성 확인이 필요하다."
+      },
+      {
         "id": "c3",
-        "text": "최대 개수 무한 자동 확장",
-        "explanation": "풀도 용량·실패 정책이 필요하다."
+        "text": "객체를 만들 때 한 번 초기화하면 충분",
+        "explanation": "대여 간 이전 타깃·타이머·등록 상태가 남을 수 있다. 재사용 수명마다 초기화할 범위를 정해야 한다."
       },
       {
         "id": "c0",
-        "text": "상태 초기화와 오래된 참조 식별",
-        "explanation": "재사용한 슬롯을 예전 객체로 오인하지 않도록 세대 핸들 등 정책을 둘 수 있다."
+        "text": "재사용 세대를 확인한다",
+        "explanation": "같은 슬롯·주소가 다른 논리 객체로 재사용될 수 있다. 세대 번호 등으로 오래된 참조를 판별하고 상태 초기화 계약도 둬야 한다."
       },
       {
         "id": "c1",
-        "text": "풀 반환 후 모든 참조 유효",
-        "explanation": "슬롯이 다른 객체로 재사용될 수 있다."
-      },
-      {
-        "id": "c2",
-        "text": "소멸·정리를 항상 생략",
-        "explanation": "보유 자원 정리를 검토해야 한다."
+        "text": "같은 메모리 주소면 이전 참조도 유효",
+        "explanation": "주소가 같아도 이미 다른 논리 객체가 사용 중일 수 있다. 주소 재사용이 오래된 핸들의 안전을 보장하지 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "재사용한 슬롯을 예전 객체로 오인하지 않도록 세대 핸들 등 정책을 둘 수 있다.",
+    "explanation": "같은 슬롯·주소가 다른 논리 객체로 재사용될 수 있다. 세대 번호 등으로 오래된 참조를 판별하고 상태 초기화 계약도 둬야 한다.",
     "environment": "DX11/HLSL. 행벡터 mul(p,M), 로컬→월드→뷰→투영. API 좌표·수학 규약은 해당 문제의 조건을 우선한다.",
     "sources": [
       {
@@ -1455,9 +735,11 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "area": "engine"
+    "area": "engine",
+    "active": true
   }
 ]

@@ -1,77 +1,79 @@
 [
   {
-    "id": "gof-001",
+    "id": "gof-v2-001",
     "subject": "gof",
     "difficulty": "easy",
     "topic": "Factory Method",
-    "prompt": "상위 클래스의 생성 지점을 재정의하여 구체 제품을 결정하는 패턴은?",
+    "prompt": "상위 클래스의 처리 흐름은 유지하되, 사용할 구체 제품의 생성만 하위 클래스가 재정의한다. 패턴은?",
     "choices": [
-      {
-        "id": "c3",
-        "text": "Memento",
-        "explanation": "상태 저장·복원의 패턴이다."
-      },
       {
         "id": "c0",
         "text": "Factory Method",
-        "explanation": "제품 생성을 하위 클래스의 재정의 지점에 맡긴다."
+        "explanation": "상위 흐름이 제품 인터페이스를 사용하고 생성 지점의 재정의로 구체 제품을 선택하는 구조다. 제품군 전체를 공급하는 Abstract Factory와 구분한다."
       },
       {
         "id": "c1",
-        "text": "Observer",
-        "explanation": "상태 변화 통지 패턴이다."
+        "text": "Abstract Factory",
+        "explanation": "서로 관련된 제품군을 함께 만드는 인터페이스가 핵심이다. 여기서는 상속을 통한 생성 메서드 재정의가 중심이다."
       },
       {
         "id": "c2",
-        "text": "Composite",
-        "explanation": "부분과 전체의 트리 구조이다."
+        "text": "Builder",
+        "explanation": "복잡한 결과물을 여러 단계로 조립하는 패턴이다. 생성 지점을 하위 클래스가 재정의하는 요구와 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "Prototype",
+        "explanation": "기존 인스턴스를 복제해 새 객체를 만드는 패턴이다. 제시된 방식은 복제 기반이 아니다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "제품 생성을 하위 클래스의 재정의 지점에 맡긴다.",
+    "explanation": "상위 흐름이 제품 인터페이스를 사용하고 생성 지점의 재정의로 구체 제품을 선택하는 구조다. 제품군 전체를 공급하는 Abstract Factory와 구분한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF Factory Method 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat3cfs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat3c.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-002",
+    "id": "gof-v2-002",
     "subject": "gof",
     "difficulty": "easy",
     "topic": "Abstract Factory",
-    "prompt": "서로 호환되는 저장소와 인코더의 제품군을 함께 교체하려면?",
+    "prompt": "운영체제 테마마다 서로 맞는 버튼·입력창 제품군을 함께 교체한다. 적합한 생성 패턴은?",
     "choices": [
       {
+        "id": "c1",
+        "text": "Factory Method",
+        "explanation": "하나의 생성 지점을 재정의할 수 있지만, 제시된 요구의 중심은 관련 제품군 전체의 일관된 교체다."
+      },
+      {
         "id": "c2",
-        "text": "Decorator",
-        "explanation": "개별 객체에 동작을 덧붙인다."
+        "text": "Builder",
+        "explanation": "여러 단계를 통해 한 결과물을 조립하는 방식이 중심이다. 서로 호환되는 제품군 공급과는 초점이 다르다."
       },
       {
         "id": "c3",
-        "text": "Chain of Responsibility",
-        "explanation": "요청 처리자를 연결한다."
+        "text": "Prototype",
+        "explanation": "기존 객체의 복제로 생성한다. 제품군 인터페이스를 함께 교체한다는 요구를 직접 표현하지 않는다."
       },
       {
         "id": "c0",
         "text": "Abstract Factory",
-        "explanation": "관련 제품들의 생성 인터페이스를 한 제품군으로 제공한다."
-      },
-      {
-        "id": "c1",
-        "text": "Iterator",
-        "explanation": "순회 방식 제공이다."
+        "explanation": "관련 제품들을 일관된 제품군으로 제공하는 생성 인터페이스가 필요하다. 한 제품의 생성 방법만 바꾸는 경우와 구분한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "관련 제품들의 생성 인터페이스를 한 제품군으로 제공한다.",
+    "explanation": "관련 제품들을 일관된 제품군으로 제공하는 생성 인터페이스가 필요하다. 한 제품의 생성 방법만 바꾸는 경우와 구분한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
@@ -81,470 +83,222 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-003",
+    "id": "gof-v2-003",
     "subject": "gof",
     "difficulty": "easy",
     "topic": "Builder",
-    "prompt": "복잡한 결과물을 단계별로 조립하고 표현을 바꾸는 패턴은?",
+    "prompt": "문서를 제목·본문·부록 순서로 조립하되 같은 조립 절차로 다른 표현을 만든다. 패턴은?",
     "choices": [
       {
-        "id": "c1",
-        "text": "Proxy",
-        "explanation": "대상 접근을 대리한다."
-      },
-      {
         "id": "c2",
-        "text": "Observer",
-        "explanation": "관찰자에 알린다."
+        "text": "Prototype",
+        "explanation": "복제할 원형 객체를 사용하는 방식이다. 단계별 조립이라는 조건과 다르다."
       },
       {
         "id": "c3",
-        "text": "Flyweight",
-        "explanation": "공유 가능한 내재 상태를 재사용한다."
+        "text": "Factory Method",
+        "explanation": "생성 메서드의 재정의가 중심이다. 여러 단계의 조립 절차를 분리하는 패턴과 구분한다."
       },
       {
         "id": "c0",
         "text": "Builder",
-        "explanation": "조립 과정과 결과 표현을 분리한다."
+        "explanation": "조립 과정과 결과 표현을 분리해 단계별 구성을 제공한다."
+      },
+      {
+        "id": "c1",
+        "text": "Abstract Factory",
+        "explanation": "관련 제품군 생성을 다루지만 한 결과물의 조립 단계와 표현 분리가 주된 초점은 아니다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "조립 과정과 결과 표현을 분리한다.",
+    "explanation": "조립 과정과 결과 표현을 분리해 단계별 구성을 제공한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF Builder 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat3bfs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat3b.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-004",
-    "subject": "gof",
-    "difficulty": "easy",
-    "topic": "Prototype",
-    "prompt": "등록된 원형 객체의 복제로 새 객체를 만드는 패턴은?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "Prototype",
-        "explanation": "구체 클래스 생성 지식 대신 복제 계약을 사용한다."
-      },
-      {
-        "id": "c1",
-        "text": "Facade",
-        "explanation": "하위 시스템의 간편 인터페이스이다."
-      },
-      {
-        "id": "c2",
-        "text": "State",
-        "explanation": "상태에 따른 동작을 분리한다."
-      },
-      {
-        "id": "c3",
-        "text": "Visitor",
-        "explanation": "구조의 원소에 연산을 적용한다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "구체 클래스 생성 지식 대신 복제 계약을 사용한다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Prototype 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat3dfs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-005",
+    "id": "gof-v2-005",
     "subject": "gof",
     "difficulty": "easy",
     "topic": "Singleton",
-    "prompt": "인스턴스를 하나로 제한하고 접근 지점을 제공하는 패턴은?",
+    "prompt": "클래스의 인스턴스 수를 하나로 제한하고 그 접근 지점을 제공하는 패턴은?",
     "choices": [
-      {
-        "id": "c3",
-        "text": "Bridge",
-        "explanation": "추상과 구현 계층을 분리한다."
-      },
       {
         "id": "c0",
         "text": "Singleton",
-        "explanation": "단일 인스턴스 관리와 접근을 제공한다. 전역 의존 비용은 별도 검토해야 한다."
+        "explanation": "인스턴스 하나와 접근 제어가 핵심 의도다. 전역 가변 상태나 초기화·동시성 문제를 자동 해결한다는 뜻은 아니다."
       },
       {
         "id": "c1",
-        "text": "Adapter",
-        "explanation": "인터페이스를 변환한다."
+        "text": "Flyweight",
+        "explanation": "공유 가능한 공통 상태를 재사용해 객체 비용을 줄인다. 클래스 인스턴스 수를 하나로 제한하는 목적은 아니다."
       },
       {
         "id": "c2",
-        "text": "Command",
-        "explanation": "요청을 객체로 만든다."
+        "text": "Prototype",
+        "explanation": "기존 객체 복제로 생성한다. 생성 수를 하나로 제한하는 계약이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "Facade",
+        "explanation": "복잡한 하위 시스템에 간단한 인터페이스를 제공한다. 인스턴스 수 제한과는 별개다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "단일 인스턴스 관리와 접근을 제공한다. 전역 의존 비용은 별도 검토해야 한다.",
+    "explanation": "인스턴스 하나와 접근 제어가 핵심 의도다. 전역 가변 상태나 초기화·동시성 문제를 자동 해결한다는 뜻은 아니다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF Singleton 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat3efs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat3e.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-006",
-    "subject": "gof",
-    "difficulty": "easy",
-    "topic": "Adapter",
-    "prompt": "기존 로그 라이브러리를 원하는 인터페이스에 맞춰 연결하려면?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "Interpreter",
-        "explanation": "문법과 해석이다."
-      },
-      {
-        "id": "c3",
-        "text": "Iterator",
-        "explanation": "순회 접근이다."
-      },
-      {
-        "id": "c0",
-        "text": "Adapter",
-        "explanation": "클라이언트가 기대하는 계약으로 기존 인터페이스를 변환한다."
-      },
-      {
-        "id": "c1",
-        "text": "Memento",
-        "explanation": "상태 복원이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "클라이언트가 기대하는 계약으로 기존 인터페이스를 변환한다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF 저자 공개 발췌: Adapter",
-        "url": "https://www.informit.com/articles/article.aspx?p=1398600"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-007",
-    "subject": "gof",
-    "difficulty": "easy",
-    "topic": "Bridge",
-    "prompt": "도형 종류와 렌더 백엔드를 독립적으로 확장하려는 패턴은?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "Singleton",
-        "explanation": "단일 인스턴스 관리이다."
-      },
-      {
-        "id": "c2",
-        "text": "Observer",
-        "explanation": "통지 관계이다."
-      },
-      {
-        "id": "c3",
-        "text": "Prototype",
-        "explanation": "객체 복제이다."
-      },
-      {
-        "id": "c0",
-        "text": "Bridge",
-        "explanation": "추상 계층과 구현 계층을 분리해 두 축의 변화가 독립적이게 한다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "추상 계층과 구현 계층을 분리해 두 축의 변화가 독립적이게 한다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Bridge 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat4bfs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-008",
+    "id": "gof-v2-008",
     "subject": "gof",
     "difficulty": "easy",
     "topic": "Composite",
-    "prompt": "개별 노드와 자식 노드 묶음을 같은 인터페이스로 처리하려면?",
+    "prompt": "파일과 폴더를 같은 인터페이스로 다루고 폴더가 자식을 재귀적으로 포함한다. 패턴은?",
     "choices": [
+      {
+        "id": "c3",
+        "text": "Adapter",
+        "explanation": "맞지 않는 인터페이스를 변환한다. 파일과 폴더에 공통 인터페이스를 주는 재귀 조합과 다르다."
+      },
       {
         "id": "c0",
         "text": "Composite",
-        "explanation": "부분·전체 계층을 재귀적으로 구성한다."
+        "explanation": "개별 객체와 객체 집합을 같은 계약으로 다뤄 부분·전체의 트리 구조를 표현한다."
       },
       {
         "id": "c1",
-        "text": "Strategy",
-        "explanation": "알고리즘 교체이다."
+        "text": "Decorator",
+        "explanation": "같은 인터페이스로 감싸 책임을 더하지만, 제시된 핵심은 여러 자식을 담는 재귀적 트리다."
       },
       {
         "id": "c2",
         "text": "Proxy",
-        "explanation": "접근 대리이다."
-      },
-      {
-        "id": "c3",
-        "text": "Abstract Factory",
-        "explanation": "관련 제품 생성이다."
+        "explanation": "접근 제어·지연 로딩 등 대리 객체의 목적이다. 부분·전체 트리 조합과 구분한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "부분·전체 계층을 재귀적으로 구성한다.",
+    "explanation": "개별 객체와 객체 집합을 같은 계약으로 다뤄 부분·전체의 트리 구조를 표현한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF Composite 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat4cfs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat4c.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-009",
-    "subject": "gof",
-    "difficulty": "easy",
-    "topic": "Decorator",
-    "prompt": "같은 인터페이스를 유지하며 객체에 기능을 겹쳐 붙이는 패턴은?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "Template Method",
-        "explanation": "상속으로 단계 재정의를 제공한다."
-      },
-      {
-        "id": "c0",
-        "text": "Decorator",
-        "explanation": "래퍼 구성을 통해 책임을 동적으로 더한다."
-      },
-      {
-        "id": "c1",
-        "text": "Builder",
-        "explanation": "객체 조립 과정이다."
-      },
-      {
-        "id": "c2",
-        "text": "Mediator",
-        "explanation": "상호작용을 중재한다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "래퍼 구성을 통해 책임을 동적으로 더한다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Decorator 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat4dfs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-010",
-    "subject": "gof",
-    "difficulty": "easy",
-    "topic": "Facade",
-    "prompt": "여러 하위 시스템을 단순한 진입 API로 제공하려면?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "Visitor",
-        "explanation": "원소별 연산을 분리한다."
-      },
-      {
-        "id": "c3",
-        "text": "State",
-        "explanation": "상태별 동작이다."
-      },
-      {
-        "id": "c0",
-        "text": "Facade",
-        "explanation": "하위 시스템의 사용 복잡도를 줄이는 상위 인터페이스를 둔다."
-      },
-      {
-        "id": "c1",
-        "text": "Flyweight",
-        "explanation": "공유 객체로 저장 비용을 줄인다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "하위 시스템의 사용 복잡도를 줄이는 상위 인터페이스를 둔다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Facade 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat4efs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-011",
+    "id": "gof-v2-011",
     "subject": "gof",
     "difficulty": "medium",
     "topic": "Flyweight",
-    "prompt": "수많은 글리프의 공통 모양을 공유하고 위치는 외부에서 전달하려면?",
+    "prompt": "수많은 글리프가 같은 글자 모양을 공유하고 위치는 호출 때 전달한다. 패턴은?",
     "choices": [
       {
-        "id": "c1",
-        "text": "Prototype",
-        "explanation": "각 객체를 복제하며 공유를 목표로 하지 않는다."
-      },
-      {
         "id": "c2",
-        "text": "Command",
-        "explanation": "요청을 캡슐화한다."
+        "text": "Singleton",
+        "explanation": "모든 글리프를 한 인스턴스로 제한하는 요구가 아니다. 서로 다른 공유 모양이 여러 개 있을 수 있다."
       },
       {
         "id": "c3",
         "text": "Memento",
-        "explanation": "복원 상태를 저장한다."
+        "explanation": "과거 상태를 보관하고 복원하는 목적이다. 중복 모양 데이터 공유와는 다르다."
       },
       {
         "id": "c0",
         "text": "Flyweight",
-        "explanation": "공유 내재 상태와 문맥별 외재 상태를 분리한다."
+        "explanation": "공유 가능한 내재 상태와 문맥별 외재 상태를 분리해 공통 데이터를 재사용한다."
+      },
+      {
+        "id": "c1",
+        "text": "Prototype",
+        "explanation": "기존 글리프를 복제하면 공통 상태 공유라는 핵심 의도가 직접 드러나지 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "공유 내재 상태와 문맥별 외재 상태를 분리한다.",
+    "explanation": "공유 가능한 내재 상태와 문맥별 외재 상태를 분리해 공통 데이터를 재사용한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF Flyweight 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat4ffs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat4f.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-012",
-    "subject": "gof",
-    "difficulty": "medium",
-    "topic": "Proxy",
-    "prompt": "큰 리소스 로딩을 늦추면서 같은 API로 접근을 대리하려면?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "Proxy",
-        "explanation": "대상과 같은 계약으로 접근을 제어하거나 지연한다."
-      },
-      {
-        "id": "c1",
-        "text": "Adapter",
-        "explanation": "서로 다른 인터페이스를 변환하는 의도이다."
-      },
-      {
-        "id": "c2",
-        "text": "Builder",
-        "explanation": "단계별 조립이다."
-      },
-      {
-        "id": "c3",
-        "text": "Composite",
-        "explanation": "부분·전체 트리이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "대상과 같은 계약으로 접근을 제어하거나 지연한다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Proxy 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat4gfs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-013",
+    "id": "gof-v2-013",
     "subject": "gof",
     "difficulty": "medium",
     "topic": "Chain of Responsibility",
-    "prompt": "요청을 받을 여러 후보를 연결해 순서대로 처리 가능성을 확인하려면?",
+    "prompt": "요청 처리 후보를 연결하고, 처리하지 못한 요청을 다음 후보로 넘긴다. 패턴은?",
     "choices": [
-      {
-        "id": "c3",
-        "text": "Bridge",
-        "explanation": "두 확장 계층 분리이다."
-      },
       {
         "id": "c0",
         "text": "Chain of Responsibility",
-        "explanation": "발신자와 처리자 결합을 줄이고 연결된 후보에게 요청을 전달한다."
+        "explanation": "수신 후보들을 체인으로 연결해 요청 처리 책임을 순차 전달한다. 모든 구독자에게 방송하는 구조와 구분한다."
       },
       {
         "id": "c1",
         "text": "Observer",
-        "explanation": "등록된 관찰자들에게 변화를 알린다."
+        "explanation": "한 주체의 변화를 여러 구독자에게 통지한다. 미처리 요청을 다음 후보로 넘기는 방식과 다르다."
       },
       {
         "id": "c2",
-        "text": "Singleton",
-        "explanation": "인스턴스 수 제한이다."
+        "text": "Command",
+        "explanation": "요청 자체를 객체로 캡슐화한다. 처리 후보 체인의 구성은 별도다."
+      },
+      {
+        "id": "c3",
+        "text": "Mediator",
+        "explanation": "여러 객체의 상호작용을 중재자에 모은다. 제시된 핵심은 후보 간 책임 전달이다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "발신자와 처리자 결합을 줄이고 연결된 후보에게 요청을 전달한다.",
+    "explanation": "수신 후보들을 체인으로 연결해 요청 처리 책임을 순차 전달한다. 모든 구독자에게 방송하는 구조와 구분한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
@@ -554,513 +308,267 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-014",
-    "subject": "gof",
-    "difficulty": "medium",
-    "topic": "Command",
-    "prompt": "실행 요청을 저장·큐잉·재실행할 객체로 만들려면?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "Flyweight",
-        "explanation": "상태 공유이다."
-      },
-      {
-        "id": "c3",
-        "text": "Iterator",
-        "explanation": "순회 추상화이다."
-      },
-      {
-        "id": "c0",
-        "text": "Command",
-        "explanation": "요청을 객체로 표현하여 실행 시점과 전달을 분리한다."
-      },
-      {
-        "id": "c1",
-        "text": "Facade",
-        "explanation": "하위 시스템 단순화이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "요청을 객체로 표현하여 실행 시점과 전달을 분리한다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Command 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5bfs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-015",
-    "subject": "gof",
-    "difficulty": "medium",
-    "topic": "Interpreter",
-    "prompt": "작은 규칙 언어의 문법 노드마다 해석 동작을 제공하려면?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "Proxy",
-        "explanation": "접근 대리이다."
-      },
-      {
-        "id": "c2",
-        "text": "Abstract Factory",
-        "explanation": "제품군 생성이다."
-      },
-      {
-        "id": "c3",
-        "text": "Decorator",
-        "explanation": "책임을 겹친다."
-      },
-      {
-        "id": "c0",
-        "text": "Interpreter",
-        "explanation": "문법 표현을 객체로 구성하고 문장을 해석한다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "문법 표현을 객체로 구성하고 문장을 해석한다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Interpreter 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5cfs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-016",
+    "id": "gof-v2-016",
     "subject": "gof",
     "difficulty": "medium",
     "topic": "Iterator",
-    "prompt": "컨테이너 내부 표현을 드러내지 않고 원소를 차례로 접근하려면?",
+    "prompt": "컬렉션의 내부 저장 방식을 노출하지 않고 원소를 차례로 읽는 접근 객체는?",
     "choices": [
+      {
+        "id": "c3",
+        "text": "Proxy",
+        "explanation": "대상 접근을 대리하지만 순회 상태와 다음 원소 접근이라는 의도가 중심은 아니다."
+      },
       {
         "id": "c0",
         "text": "Iterator",
-        "explanation": "순회 상태와 원소 접근 인터페이스를 제공한다."
+        "explanation": "순회 상태와 접근 인터페이스를 컬렉션의 구체 표현과 분리한다."
       },
       {
         "id": "c1",
-        "text": "Builder",
-        "explanation": "객체 조립이다."
+        "text": "Visitor",
+        "explanation": "여러 타입 원소에 새 연산을 추가하는 구조다. 원소 순회 인터페이스 자체와는 다른 책임이다."
       },
       {
         "id": "c2",
-        "text": "Observer",
-        "explanation": "상태 통지이다."
-      },
-      {
-        "id": "c3",
-        "text": "State",
-        "explanation": "상태별 행동이다."
+        "text": "Memento",
+        "explanation": "객체 상태를 복원용으로 보관한다. 컬렉션 원소 접근 방식과 구분한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "순회 상태와 원소 접근 인터페이스를 제공한다.",
+    "explanation": "순회 상태와 접근 인터페이스를 컬렉션의 구체 표현과 분리한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF Iterator 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5dfs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat5d.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-017",
-    "subject": "gof",
-    "difficulty": "medium",
-    "topic": "Mediator",
-    "prompt": "여러 UI 부품이 서로 직접 아는 대신 중재 객체에 협력을 맡기려면?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "Flyweight",
-        "explanation": "공유 상태이다."
-      },
-      {
-        "id": "c0",
-        "text": "Mediator",
-        "explanation": "복잡한 다대다 상호작용을 한 중재 지점으로 옮긴다."
-      },
-      {
-        "id": "c1",
-        "text": "Prototype",
-        "explanation": "복제 계약이다."
-      },
-      {
-        "id": "c2",
-        "text": "Visitor",
-        "explanation": "구조별 연산이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "복잡한 다대다 상호작용을 한 중재 지점으로 옮긴다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Mediator 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5efs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-018",
+    "id": "gof-v2-018",
     "subject": "gof",
     "difficulty": "medium",
     "topic": "Memento",
-    "prompt": "객체 내부를 노출하지 않고 과거 상태를 복원용으로 보관하려면?",
+    "prompt": "객체의 캡슐화를 지키면서 나중에 되돌릴 상태를 보관한다. 패턴은?",
     "choices": [
       {
+        "id": "c1",
+        "text": "Prototype",
+        "explanation": "새 객체 생성용 복제와 되돌리기용 상태 보관의 의도가 다르다."
+      },
+      {
         "id": "c2",
-        "text": "Adapter",
-        "explanation": "계약 변환이다."
+        "text": "Command",
+        "explanation": "요청을 객체로 만들고 실행 취소를 지원할 수 있지만, 상태 스냅샷 보관 자체는 Memento의 의도다."
       },
       {
         "id": "c3",
-        "text": "Factory Method",
-        "explanation": "생성 재정의이다."
+        "text": "State",
+        "explanation": "현재 상태별 행동과 전이를 분리한다. 과거 상태 복원용 저장과는 초점이 다르다."
       },
       {
         "id": "c0",
         "text": "Memento",
-        "explanation": "원래 객체가 복원 가능한 상태를 만들고 보관자가 내부를 몰라도 된다."
-      },
-      {
-        "id": "c1",
-        "text": "Bridge",
-        "explanation": "독립 계층이다."
+        "explanation": "원본 객체의 내부를 외부가 임의 해석하지 않도록 하며 복원에 필요한 상태를 보관한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "원래 객체가 복원 가능한 상태를 만들고 보관자가 내부를 몰라도 된다.",
+    "explanation": "원본 객체의 내부를 외부가 임의 해석하지 않도록 하며 복원에 필요한 상태를 보관한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF Memento 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5ffs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat5f.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-019",
-    "subject": "gof",
-    "difficulty": "medium",
-    "topic": "Observer",
-    "prompt": "점수 변경에 여러 화면이 반응하도록 구독시키려면?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "Singleton",
-        "explanation": "단일 객체이다."
-      },
-      {
-        "id": "c2",
-        "text": "Interpreter",
-        "explanation": "문법 해석이다."
-      },
-      {
-        "id": "c3",
-        "text": "Builder",
-        "explanation": "조립이다."
-      },
-      {
-        "id": "c0",
-        "text": "Observer",
-        "explanation": "대상의 변경을 등록한 관찰자에게 알리는 의존 관계이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "대상의 변경을 등록한 관찰자에게 알리는 의존 관계이다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Observer 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5gfs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-020",
+    "id": "gof-v2-020",
     "subject": "gof",
     "difficulty": "medium",
     "topic": "State",
-    "prompt": "연결 상태에 따라 같은 send 요청의 행동과 전이를 분리하려면?",
+    "prompt": "연결의 현재 상태에 따라 send 동작과 다음 상태 전이가 달라진다. 상태별 행동을 분리할 패턴은?",
     "choices": [
+      {
+        "id": "c3",
+        "text": "Command",
+        "explanation": "요청 캡슐화가 중심이다. 현재 상태에 따른 행동과 전이 모델을 직접 나타내지는 않는다."
+      },
       {
         "id": "c0",
         "text": "State",
-        "explanation": "상태 객체가 문맥의 상태별 동작을 담당한다."
+        "explanation": "컨텍스트의 현재 상태를 별도 객체로 표현해 상태별 행동과 전이를 다룬다. 호출자가 알고리즘을 고르는 Strategy와 구분한다."
       },
       {
         "id": "c1",
-        "text": "Flyweight",
-        "explanation": "공유 상태 메모리 최적화가 주목적이다."
+        "text": "Strategy",
+        "explanation": "교체 가능한 알고리즘 선택이 중심이다. 여기서는 객체의 내부 상태에 따른 행동과 전이가 핵심이다."
       },
       {
         "id": "c2",
-        "text": "Facade",
-        "explanation": "복잡한 API의 간소화이다."
-      },
-      {
-        "id": "c3",
-        "text": "Prototype",
-        "explanation": "복제이다."
+        "text": "Observer",
+        "explanation": "상태 변경 통지에 쓸 수 있지만 상태별 send 동작을 분리하는 직접 목적은 아니다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "상태 객체가 문맥의 상태별 동작을 담당한다.",
+    "explanation": "컨텍스트의 현재 상태를 별도 객체로 표현해 상태별 행동과 전이를 다룬다. 호출자가 알고리즘을 고르는 Strategy와 구분한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF State 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5hfs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat5h.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-021",
+    "id": "gof-v2-021",
     "subject": "gof",
     "difficulty": "hard",
     "topic": "Strategy",
-    "prompt": "정렬 기준 알고리즘을 호출자가 런타임에 선택해 교체하려면?",
+    "prompt": "호출자가 정렬 알고리즘을 실행 중 선택·교체하도록 분리한다. 패턴은?",
     "choices": [
-      {
-        "id": "c3",
-        "text": "Singleton",
-        "explanation": "개수 제한이다."
-      },
       {
         "id": "c0",
         "text": "Strategy",
-        "explanation": "알고리즘을 공통 계약 뒤에 분리해 교환한다."
+        "explanation": "동일 계약의 알고리즘 군을 캡슐화해 교환 가능하게 한다. 상태 전이보다 알고리즘 선택이 중심이다."
       },
       {
         "id": "c1",
         "text": "State",
-        "explanation": "상태 변화에 따른 문맥 행동이 주목적이다."
+        "explanation": "컨텍스트의 현재 상태가 행동과 전이를 결정하는 구조와 구분한다."
       },
       {
         "id": "c2",
-        "text": "Memento",
-        "explanation": "상태 저장이다."
+        "text": "Template Method",
+        "explanation": "상속으로 알고리즘 골격의 일부 단계를 바꾼다. 교환 가능한 알고리즘 객체 합성과는 다른 방식이다."
+      },
+      {
+        "id": "c3",
+        "text": "Visitor",
+        "explanation": "안정된 원소 타입들에 연산을 추가하는 패턴이다. 정렬 알고리즘 교체가 핵심 요구는 아니다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "알고리즘을 공통 계약 뒤에 분리해 교환한다.",
+    "explanation": "동일 계약의 알고리즘 군을 캡슐화해 교환 가능하게 한다. 상태 전이보다 알고리즘 선택이 중심이다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF Strategy 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5ifs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat5i.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-022",
-    "subject": "gof",
-    "difficulty": "hard",
-    "topic": "Template Method",
-    "prompt": "상위 클래스가 절차 순서를 고정하고 일부 단계를 하위 클래스에 맡기려면?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "Adapter",
-        "explanation": "계약 변환이다."
-      },
-      {
-        "id": "c3",
-        "text": "Proxy",
-        "explanation": "접근 대리이다."
-      },
-      {
-        "id": "c0",
-        "text": "Template Method",
-        "explanation": "알고리즘 뼈대와 재정의 가능한 단계를 분리한다."
-      },
-      {
-        "id": "c1",
-        "text": "Strategy",
-        "explanation": "구성 객체 교체 중심이며 상속 뼈대 요구와 다르다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "알고리즘 뼈대와 재정의 가능한 단계를 분리한다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF Template Method 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5jfs.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-023",
+    "id": "gof-v2-023",
     "subject": "gof",
     "difficulty": "hard",
     "topic": "Visitor",
-    "prompt": "원소 종류는 안정적이고 타입별 새 연산을 자주 추가할 구조라면?",
+    "prompt": "원소 타입 계층은 안정적이고 타입별 새 연산을 자주 추가한다. Visitor를 검토하는 주된 이유는?",
     "choices": [
       {
-        "id": "c1",
-        "text": "Singleton",
-        "explanation": "연산 확장 목적이 아니다."
-      },
-      {
         "id": "c2",
-        "text": "Builder",
-        "explanation": "제품 조립이다."
+        "text": "모든 원소를 같은 타입으로 변환",
+        "explanation": "타입별 방문 연산을 제공하는 것이며 원소 타입을 하나로 바꾸는 패턴이 아니다."
       },
       {
         "id": "c3",
-        "text": "Flyweight",
-        "explanation": "원소 저장 공유이다."
+        "text": "모든 연산을 컴파일 없이 런타임 생성",
+        "explanation": "일반적인 Visitor가 임의 연산 코드를 런타임에 자동 생성하는 것은 아니다."
       },
       {
         "id": "c0",
-        "text": "Visitor",
-        "explanation": "원소별 연산을 방문자에 모아 새 연산 추가를 돕는다. 새 원소 타입 추가 비용은 커질 수 있다."
+        "text": "원소와 별도로 새 연산을 추가",
+        "explanation": "Visitor는 타입별 동작을 방문자에 모을 수 있다. 반대로 원소 타입이 자주 늘면 방문자 수정 부담이 커질 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "새 원소 타입을 수정 없이 무제한 추가",
+        "explanation": "Visitor는 새 원소 타입 추가 시 방문자 계약들의 변경 비용이 생길 수 있다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "원소별 연산을 방문자에 모아 새 연산 추가를 돕는다. 새 원소 타입 추가 비용은 커질 수 있다.",
+    "explanation": "Visitor는 타입별 동작을 방문자에 모을 수 있다. 반대로 원소 타입이 자주 늘면 방문자 수정 부담이 커질 수 있다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
         "title": "GoF Visitor 원문 — MIT 공개 자료",
-        "url": "https://people.csail.mit.edu/addy/pattern/pat5kfs.htm"
+        "url": "https://people.csail.mit.edu/addy/pattern/pat5k.htm"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-024",
-    "subject": "gof",
-    "difficulty": "hard",
-    "topic": "생성·구조·행동",
-    "prompt": "Abstract Factory, Adapter, Observer의 분류 순서는?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "생성·구조·행동",
-        "explanation": "각각 객체 생성, 인터페이스 구성, 상호작용에 초점을 둔다."
-      },
-      {
-        "id": "c1",
-        "text": "행동·생성·구조",
-        "explanation": "각 패턴의 의도와 맞지 않는다."
-      },
-      {
-        "id": "c2",
-        "text": "구조·행동·생성",
-        "explanation": "역할 분류가 뒤섞였다."
-      },
-      {
-        "id": "c3",
-        "text": "모두 생성",
-        "explanation": "후자 둘은 생성 패턴이 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "각각 객체 생성, 인터페이스 구성, 상호작용에 초점을 둔다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF 분류와 패턴 선택 — MIT 공개 원문",
-        "url": "https://people.csail.mit.edu/addy/pattern/chap1.htm"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-025",
+    "id": "gof-v2-025",
     "subject": "gof",
     "difficulty": "hard",
     "topic": "Adapter와 Decorator",
-    "prompt": "기존 API를 바꾸려는 래퍼와 같은 API에 책임을 더하는 래퍼의 구분은?",
+    "prompt": "외부 API를 기대하는 인터페이스로 바꾸는 래퍼와, 같은 인터페이스에 기능을 더하는 래퍼의 조합은?",
     "choices": [
       {
-        "id": "c3",
-        "text": "항상 패턴 없음",
-        "explanation": "명시된 두 요구는 해당 의도에 대응한다."
-      },
-      {
         "id": "c0",
-        "text": "앞은 Adapter, 뒤는 Decorator",
-        "explanation": "래퍼 모양보다 인터페이스 변환인지 기능 확장인지 의도를 본다."
+        "text": "Adapter, Decorator",
+        "explanation": "Adapter는 인터페이스 호환을, Decorator는 같은 계약을 유지하며 책임 추가를 의도한다. 겉모양보다 의도로 구분한다."
       },
       {
         "id": "c1",
-        "text": "모두 Singleton",
-        "explanation": "래퍼 사용이 단일 인스턴스 의도가 아니다."
+        "text": "Decorator, Adapter",
+        "explanation": "두 의도를 반대로 대응했다."
       },
       {
         "id": "c2",
-        "text": "앞은 Decorator, 뒤는 Adapter",
-        "explanation": "두 의도를 거꾸로 보았다."
+        "text": "Proxy, Composite",
+        "explanation": "Proxy의 접근 대리와 Composite의 부분·전체 구조는 제시된 두 의도와 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "Facade, Prototype",
+        "explanation": "하위 시스템의 간단한 입구와 객체 복제는 인터페이스 적응·책임 추가와 다른 목적이다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "래퍼 모양보다 인터페이스 변환인지 기능 확장인지 의도를 본다.",
+    "explanation": "Adapter는 인터페이스 호환을, Decorator는 같은 계약을 유지하며 책임 추가를 의도한다. 겉모양보다 의도로 구분한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
@@ -1074,134 +582,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-026",
-    "subject": "gof",
-    "difficulty": "hard",
-    "topic": "Factory와 Builder",
-    "prompt": "제품군의 종류 교체와 복잡 객체의 단계 조립을 구분하면?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "항상 Singleton 하나",
-        "explanation": "생성 요구를 인스턴스 제한만으로 해결하지 못한다."
-      },
-      {
-        "id": "c3",
-        "text": "Observer와 Proxy",
-        "explanation": "통지·접근 대리와 다르다."
-      },
-      {
-        "id": "c0",
-        "text": "Abstract Factory와 Builder",
-        "explanation": "전자는 관련 생성 묶음, 후자는 조립 과정과 표현 분리이다."
-      },
-      {
-        "id": "c1",
-        "text": "둘 다 Iterator",
-        "explanation": "순회 요구가 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "전자는 관련 생성 묶음, 후자는 조립 과정과 표현 분리이다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF 원서 출판사: 패턴 구성과 공개 발췌",
-        "url": "https://www.informit.com/store/design-patterns-elements-of-reusable-object-oriented-software-9780201633610"
-      },
-      {
-        "title": "GoF 저자 공개 인터뷰: 패턴의 적용과 변화",
-        "url": "https://www.informit.com/articles/article.aspx?p=1404056"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-027",
-    "subject": "gof",
-    "difficulty": "hard",
-    "topic": "Observer 수명",
-    "prompt": "단수명 관찰자가 장수명 대상에 등록될 때 필요한 추가 정책은?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "등록하면 영구 생존 허용",
-        "explanation": "의도하지 않은 참조 유지 위험이 있다."
-      },
-      {
-        "id": "c2",
-        "text": "통지 중 목록 변경 항상 안전",
-        "explanation": "순회 규칙을 설계해야 한다."
-      },
-      {
-        "id": "c3",
-        "text": "패턴 자체가 모든 락 제공",
-        "explanation": "동기화는 구현 책임이다."
-      },
-      {
-        "id": "c0",
-        "text": "구독 해제와 통지 중 변경 처리",
-        "explanation": "패턴만으로 소유권·삭제 시점·재진입이 안전해지는 것은 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "패턴만으로 소유권·삭제 시점·재진입이 안전해지는 것은 아니다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF 원서 출판사: 패턴 구성과 공개 발췌",
-        "url": "https://www.informit.com/store/design-patterns-elements-of-reusable-object-oriented-software-9780201633610"
-      },
-      {
-        "title": "GoF 저자 공개 인터뷰: 패턴의 적용과 변화",
-        "url": "https://www.informit.com/articles/article.aspx?p=1404056"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-028",
+    "id": "gof-v2-028",
     "subject": "gof",
     "difficulty": "hard",
     "topic": "Command 취소",
-    "prompt": "모든 Command에 undo를 기계적으로 만들 수 없는 이유는?",
+    "prompt": "Command로 이메일 발송을 캡슐화했다. execute의 정확한 역연산을 항상 만들 수 없는 이유는?",
     "choices": [
       {
+        "id": "c3",
+        "text": "큐가 모든 부작용을 자동 취소한다",
+        "explanation": "큐는 요청 순서를 관리할 수 있지만 실제 외부 효과의 역연산을 자동 만들지 않는다."
+      },
+      {
         "id": "c0",
-        "text": "외부 부작용은 정확히 역연산하기 어려울 수 있다",
-        "explanation": "상태 저장·보상 동작·실행 가능 조건을 별도로 설계해야 한다."
+        "text": "외부 부작용을 원상복구하기 어렵다",
+        "explanation": "상대가 이미 읽은 이메일은 내부 상태 복사만으로 없앨 수 없다. 실행 취소 가능 범위나 보상 동작을 명시해야 한다."
       },
       {
         "id": "c1",
-        "text": "Command는 상태를 절대 저장 못함",
-        "explanation": "수신자·인자·이전 상태를 저장할 수 있다."
+        "text": "Command는 실행 전 상태를 저장할 수 없다",
+        "explanation": "상태 저장은 가능하다. 저장만으로 되돌릴 수 없는 외부 효과가 문제다."
       },
       {
         "id": "c2",
-        "text": "undo는 항상 같은 execute 호출",
-        "explanation": "재실행과 역연산은 다르다."
-      },
-      {
-        "id": "c3",
-        "text": "큐가 자동 역연산 생성",
-        "explanation": "큐는 역연산 의미를 모른다."
+        "text": "undo는 execute를 한 번 더 부르는 규칙이다",
+        "explanation": "실행 취소의 일반 규칙이 아니다. 한 번 더 보내면 부작용이 늘어난다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "상태 저장·보상 동작·실행 가능 조건을 별도로 설계해야 한다.",
+    "explanation": "상대가 이미 읽은 이메일은 내부 상태 복사만으로 없앨 수 없다. 실행 취소 가능 범위나 보상 동작을 명시해야 한다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
@@ -1215,87 +631,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "gof-029",
-    "subject": "gof",
-    "difficulty": "hard",
-    "topic": "Singleton 테스트",
-    "prompt": "테스트들이 같은 가변 Singleton 설정을 바꾸면 어떤 문제가 생기나?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "객체가 자동 불변",
-        "explanation": "인스턴스 수 제한과 불변은 다르다."
-      },
-      {
-        "id": "c0",
-        "text": "테스트 순서에 따라 상태가 영향을 준다",
-        "explanation": "전역 공유 수명과 숨은 의존이 독립성을 해칠 수 있어 초기화·주입 정책이 필요하다."
-      },
-      {
-        "id": "c1",
-        "text": "컴파일러가 자동 초기화",
-        "explanation": "매 테스트 상태를 자동 되돌리지 않는다."
-      },
-      {
-        "id": "c2",
-        "text": "인스턴스 하나면 경쟁 불가능",
-        "explanation": "여러 호출자가 공유할 수 있다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "전역 공유 수명과 숨은 의존이 독립성을 해칠 수 있어 초기화·주입 정책이 필요하다.",
-    "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
-    "sources": [
-      {
-        "title": "GoF 원서 출판사: 패턴 구성과 공개 발췌",
-        "url": "https://www.informit.com/store/design-patterns-elements-of-reusable-object-oriented-software-9780201633610"
-      },
-      {
-        "title": "GoF 저자 공개 인터뷰: 패턴의 적용과 변화",
-        "url": "https://www.informit.com/articles/article.aspx?p=1404056"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "gof-030",
+    "id": "gof-v2-030",
     "subject": "gof",
     "difficulty": "hard",
     "topic": "패턴 적용 판단",
-    "prompt": "변경 축이 없는 단순 로직에 여러 패턴 계층을 미리 넣는 주된 비용은?",
+    "prompt": "바뀌는 요구가 없는 짧은 로직에 여러 패턴 계층을 미리 추가했다. 우선 확인할 비용은?",
     "choices": [
       {
+        "id": "c1",
+        "text": "패턴을 쓰면 사라지는 모든 실행 비용",
+        "explanation": "패턴 적용이 실행 비용을 자동 제거하지 않는다."
+      },
+      {
         "id": "c2",
-        "text": "패턴 이름이 곧 정답 보장",
-        "explanation": "조건과 결과가 중요하다."
+        "text": "자동으로 증명되는 비즈니스 정확성",
+        "explanation": "패턴 이름이 도메인 규칙의 올바름을 증명하지 않는다."
       },
       {
         "id": "c3",
-        "text": "모든 설계 패턴을 삭제해야 함",
-        "explanation": "유용한 상황에서는 적용할 수 있다."
+        "text": "항상 0이 되는 테스트 작성 비용",
+        "explanation": "구조가 늘면 오히려 검증할 경계와 조합이 늘 수 있다."
       },
       {
         "id": "c0",
-        "text": "추가 간접성과 이해·유지 비용",
-        "explanation": "구체 요구와 예상 변화가 정당화하는 범위에서 적용한다."
-      },
-      {
-        "id": "c1",
-        "text": "반드시 성능과 이해도 모두 향상",
-        "explanation": "추상화 비용과 복잡성을 평가해야 한다."
+        "text": "간접 호출과 이해·유지 부담",
+        "explanation": "패턴은 특정 변경 문제를 푸는 도구다. 실제 변화가 없는 곳에 층을 추가하면 이점보다 추적과 유지 비용이 커질 수 있다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "구체 요구와 예상 변화가 정당화하는 범위에서 적용한다.",
+    "explanation": "패턴은 특정 변경 문제를 푸는 도구다. 실제 변화가 없는 곳에 층을 추가하면 이점보다 추적과 유지 비용이 커질 수 있다.",
     "environment": "GoF 패턴의 의도 기준. 아래 상황의 요구를 우선하며 패턴이 항상 최선이라고 가정하지 않는다.",
     "sources": [
       {
@@ -1309,8 +680,10 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   }
 ]

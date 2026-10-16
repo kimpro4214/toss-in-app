@@ -1,8 +1,10 @@
-import { describe, expect, it } from 'vitest';
-import { bank, BANK_VERSION } from '../src/bank';
+import { beforeAll, describe, expect, it } from 'vitest';
+import { bank, allQuestions, archivedQuestions, questionById, loadQuestionHistory, BANK_VERSION } from '../src/bank';
+import { subjects } from '../src/subjects';
 import { initialState, updateSettings, createDailySession, submitAnswer, isComplete, score, koreaDate, reviewAnswer, bonusEntries, grantBonus, selectEntries } from '../src/engine';
 import type { State } from '../src/types';
 const fixed = () => .15;
+beforeAll(() => loadQuestionHistory([...subjects.map(s=>`${s.id}-001`), 'interview-game-client-01-1']));
 function focus(level: 'easy'|'medium'|'hard' = 'easy') { const s = initialState(BANK_VERSION); return updateSettings(s,{mode:'focus',subject:'architecture',startLevel:level}); }
 function finish(state: State, id: string, correct = true) {
   for (const e of state.sessions.find(s => s.id === id)!.entries) {
@@ -12,7 +14,12 @@ function finish(state: State, id: string, correct = true) {
   return state;
 }
 describe('출제와 진행', () => {
-  it('870개의 실제 은행을 사용한다',()=>expect(bank).toHaveLength(870));
+  it('편집 검수한 255문항만 새 일반 학습에 사용한다',()=>{
+    expect(bank).toHaveLength(255);
+    expect(bank.every(q=>q.active && q.review.editorialVersion===2)).toBe(true);
+    expect(archivedQuestions).toHaveLength(940);
+    expect(selectEntries(focus(),allQuestions,5).every(e=>questionById[e.questionId].active)).toBe(true);
+  });
   it('랜덤은 서로 다른 5과목이고 쉬움으로 시작한다',()=>{
     const {session}=createDailySession(initialState(BANK_VERSION),bank,'2026-10-05',fixed);
     expect(new Set(session.entries.map(e=>bank.find(q=>q.id===e.questionId)!.subject)).size).toBe(5);
@@ -40,15 +47,16 @@ describe('출제와 진행', () => {
     const c=createDailySession(b.state,bank,'2026-10-07',fixed);
     const ids=[...a.session.entries,...b.session.entries,...c.session.entries].map(e=>e.questionId);
     expect(new Set(ids).size).toBe(15);
-    expect(c.session.entries.every(e=>bank.find(q=>q.id===e.questionId)!.difficulty==='medium')).toBe(true);
+    expect(b.session.entries.every(e=>bank.find(q=>q.id===e.questionId)!.difficulty==='medium')).toBe(true);
+    expect(c.session.entries.every(e=>bank.find(q=>q.id===e.questionId)!.difficulty==='hard')).toBe(true);
     expect(c.state.sessions[0]).toEqual(a.session);
   });
-  it('오답이어도 단계 10개를 제출하면 다음 단계로 간다',()=>{
+  it('오답이어도 해당 단계의 검수 문항을 제출하면 다음 단계로 간다',()=>{
     let s=focus();
-    for(let i=0;i<2;i++){const a=createDailySession(s,bank,`2026-10-0${i+5}`,fixed);s=finish(a.state,a.session.id,false)}
+    const a=createDailySession(s,bank,'2026-10-05',fixed);s=finish(a.state,a.session.id,false);
     expect(s.subjectLevels.architecture).toBe('medium');
     expect(selectEntries(s,bank,5).every(e=>bank.find(q=>q.id===e.questionId)!.difficulty==='medium')).toBe(true);
-    expect(Object.keys(s.mistakes)).toHaveLength(10);
+    expect(Object.keys(s.mistakes)).toHaveLength(5);
   });
   it('시작 난이도 변경 후 옛 세트 제출이 새 설정을 덮어쓰지 않는다',()=>{
     const a=createDailySession(focus('hard'),bank,'2026-10-05',fixed);
@@ -62,8 +70,21 @@ describe('출제와 진행', () => {
     const end=finish(a.state,a.session.id);expect(bonusEntries(end,bank,end.sessions.at(-1)!)).toEqual([]);
   });
   it('철회 문항은 보존할 수 있으나 새 출제에서 제외한다',()=>{
-    const qs=bank.map(q=>q.id==='architecture-001'?{...q,active:false}:q);
-    expect(selectEntries(focus(),qs,5,false,()=>0).some(e=>e.questionId==='architecture-001')).toBe(false);
+    const qs=bank.map(q=>q.id==='architecture-v2-001'?{...q,active:false}:q);
+    expect(selectEntries(focus(),qs,5,false,()=>0).some(e=>e.questionId==='architecture-v2-001')).toBe(false);
+  });
+  it('이전 문항의 미완료 세트와 답안을 보존하고 새 날짜에만 검수 문항을 배정한다',()=>{
+    const old = archivedQuestions.filter(q=>q.subject==='architecture'&&!q.interview).slice(0,5);
+    const state = focus();
+    state.bankVersion = '2026-10-07.1';
+    state.sessions = [{id:'daily:2026-10-15',date:'2026-10-15',kind:'daily',settings:{...state.settings},entries:old.map(q=>({questionId:q.id,review:false})),answers:{}}];
+    const answered = submitAnswer(state,allQuestions,state.sessions[0].id,old[0].id,old[0].correctChoiceId);
+    const restored = JSON.parse(JSON.stringify(answered)) as State;
+    expect(createDailySession(restored,bank,'2026-10-15').session).toEqual(answered.sessions[0]);
+    const resumed = submitAnswer(restored,allQuestions,restored.sessions[0].id,old[1].id,old[1].correctChoiceId);
+    expect(resumed.firstAnswers[old[0].id]).toEqual(answered.firstAnswers[old[0].id]);
+    expect(resumed.sessions[0].entries).toEqual(state.sessions[0].entries);
+    expect(createDailySession(resumed,bank,'2026-10-16').session.entries.every(e=>questionById[e.questionId].active)).toBe(true);
   });
 });
 describe('제출·복습·보상',()=>{
@@ -95,7 +116,7 @@ describe('제출·복습·보상',()=>{
     expect(JSON.parse(JSON.stringify(granted)).sessions[1].entries).toEqual(entries);
   });
   it('3개 미만의 새 문제가 남으면 광고를 사용할 수 없다',()=>{
-    const a=createDailySession(focus('hard'),bank,'2026-10-05',fixed);const s=finish(a.state,a.session.id);
+    const a=createDailySession(focus('medium'),bank,'2026-10-05',fixed);const s=finish(a.state,a.session.id);
     const remain=bank.filter(q=>q.subject==='architecture'&&q.difficulty==='hard'&&!s.firstAnswers[q.id]);
     for(const q of remain.slice(0,3))s.firstAnswers[q.id]={choiceId:q.correctChoiceId,correct:true,at:'2026-10-05'};
     expect(bonusEntries(s,bank,s.sessions[0])).toHaveLength(2);
@@ -109,7 +130,7 @@ describe('제출·복습·보상',()=>{
   it('설정 변경 중에도 추가 세트가 기본 세트의 시작 난이도보다 낮아지지 않는다',()=>{
     const a=createDailySession(focus('medium'),bank,'2026-10-05',fixed);
     const s=finish(updateSettings(a.state,{...a.state.settings,startLevel:'easy'}),a.session.id);
-    expect(bonusEntries(s,bank,s.sessions[0],fixed).every(e=>bank.find(q=>q.id===e.questionId)!.difficulty==='medium')).toBe(true);
+    expect(bonusEntries(s,bank,s.sessions[0],fixed).every(e=>bank.find(q=>q.id===e.questionId)!.difficulty!=='easy')).toBe(true);
   });
   it('문제은행 버전 변경 후 ID 기반 최초 기록이 유지된다',()=>{
     const a=createDailySession(focus(),bank,'2026-10-05',fixed);const s=finish(a.state,a.session.id);const updated={...s,bankVersion:'2026-11-01.1'};
