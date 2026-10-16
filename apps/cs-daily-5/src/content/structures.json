@@ -1,34 +1,34 @@
 [
   {
-    "id": "structures-001",
+    "id": "structures-v2-001",
     "subject": "structures",
     "difficulty": "easy",
     "topic": "배열",
-    "prompt": "일반적인 연속 배열에서 인덱스로 요소 위치를 찾는 방식은?",
+    "prompt": "요소 크기가 일정한 연속 배열에서 i번째 요소의 주소를 구하는 방식은?",
     "choices": [
       {
-        "id": "c2",
-        "text": "항상 이진 탐색한다",
-        "explanation": "값 탐색과 인덱스 접근은 다르다."
-      },
-      {
         "id": "c3",
-        "text": "항상 해시 함수를 계산한다",
-        "explanation": "연속 배열 인덱싱의 필수 조건이 아니다."
+        "text": "중간 요소와 비교해 구간을 줄인다",
+        "explanation": "정렬 배열에서 값을 찾는 이진 탐색과 혼동했다. 이미 주어진 인덱스의 주소 계산은 탐색이 아니다."
       },
       {
         "id": "c0",
-        "text": "시작 주소와 인덱스·요소 크기로 계산한다",
-        "explanation": "고정 크기 요소는 시작 주소에 인덱스 × 크기를 더해 위치를 구한다."
+        "text": "시작 주소 + i × 요소 크기",
+        "explanation": "요소가 일정한 간격으로 연속 배치되므로 0부터 시작하는 인덱스로 주소를 직접 계산할 수 있다."
       },
       {
         "id": "c1",
-        "text": "항상 모든 앞 요소를 순회한다",
-        "explanation": "연결 리스트와 달리 위치를 직접 계산할 수 있다."
+        "text": "첫 노드부터 i번 링크를 따라간다",
+        "explanation": "연결 리스트의 접근 방식이다. 연속 배열은 앞 요소를 차례로 방문할 필요가 없다."
+      },
+      {
+        "id": "c2",
+        "text": "요소 값을 해시한 뒤 버킷을 찾는다",
+        "explanation": "해시 테이블의 키 조회 방식이다. 배열 인덱스 접근에는 요소 값의 해시가 필요하지 않다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "고정 크기 요소는 시작 주소에 인덱스 × 크기를 더해 위치를 구한다.",
+    "explanation": "요소가 일정한 간격으로 연속 배치되므로 0부터 시작하는 인덱스로 주소를 직접 계산할 수 있다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -38,40 +38,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-002",
+    "id": "structures-v2-002",
     "subject": "structures",
     "difficulty": "easy",
     "topic": "연결 리스트",
-    "prompt": "단일 연결 리스트의 노드가 다음 요소와 연결되는 방식은?",
+    "prompt": "단일 연결 리스트에서 순회 중 현재 노드 다음의 노드를 찾는 정보는?",
     "choices": [
       {
+        "id": "c0",
+        "text": "현재 노드에 저장된 다음 참조",
+        "explanation": "단일 연결 리스트는 각 노드가 다음 노드를 가리키는 연결을 가진다. 노드들이 연속 메모리에 있을 필요는 없다."
+      },
+      {
         "id": "c1",
-        "text": "모든 노드가 반드시 연속 주소다",
-        "explanation": "연결 리스트는 연속 배치를 요구하지 않는다."
+        "text": "현재 주소에 요소 크기를 더한 값",
+        "explanation": "연속 배열의 주소 계산 방식이다. 연결 리스트의 다음 노드가 바로 뒤 주소에 있다는 보장은 없다."
       },
       {
         "id": "c2",
-        "text": "항상 정렬된 값을 보관한다",
-        "explanation": "연결 구조와 정렬 여부는 다르다."
+        "text": "현재 값에 1을 더해 계산한 값",
+        "explanation": "저장된 데이터 값과 다음 노드의 위치는 별개다. 연결 참조를 따라가야 한다."
       },
       {
         "id": "c3",
-        "text": "인덱스 접근이 반드시 O(1)이다",
-        "explanation": "일반적으로 연결을 따라가야 한다."
-      },
-      {
-        "id": "c0",
-        "text": "다음 노드의 참조를 보관한다",
-        "explanation": "노드가 다음 노드로의 연결을 유지한다."
+        "text": "리스트 길이를 현재 주소에 더한 값",
+        "explanation": "길이는 노드 수다. 다음 노드가 놓인 주소를 계산해 주지 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "노드가 다음 노드로의 연결을 유지한다.",
+    "explanation": "단일 연결 리스트는 각 노드가 다음 노드를 가리키는 연결을 가진다. 노드들이 연속 메모리에 있을 필요는 없다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -81,40 +83,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-003",
+    "id": "structures-v2-003",
     "subject": "structures",
     "difficulty": "easy",
     "topic": "스택",
-    "prompt": "스택에서 마지막으로 넣은 요소를 먼저 꺼내는 규칙은?",
+    "prompt": "스택에 A, B, C를 순서대로 push한 뒤 pop을 두 번 했다. 꺼내는 순서는?",
     "choices": [
       {
-        "id": "c0",
-        "text": "LIFO",
-        "explanation": "Last In First Out은 가장 최근 넣은 요소를 먼저 꺼낸다."
-      },
-      {
         "id": "c1",
-        "text": "FIFO",
-        "explanation": "먼저 넣은 것을 먼저 꺼내는 큐 규칙이다."
+        "text": "A, B",
+        "explanation": "먼저 넣은 것을 먼저 꺼내는 FIFO 큐의 순서다."
       },
       {
         "id": "c2",
-        "text": "오름차순",
-        "explanation": "입력 순서가 아니라 값의 정렬 기준이다."
+        "text": "C, A",
+        "explanation": "C 다음에는 B가 맨 위에 남는다. 중간 항목을 건너뛰어 꺼내지 않는다."
       },
       {
         "id": "c3",
-        "text": "무작위 추출",
-        "explanation": "스택은 추출 순서가 정해져 있다."
+        "text": "A, C",
+        "explanation": "스택의 top에서 꺼내는 규칙을 따르지 않는다. 먼저 나오는 값은 마지막에 넣은 C다."
+      },
+      {
+        "id": "c0",
+        "text": "C, B",
+        "explanation": "스택은 나중에 넣은 것을 먼저 꺼내는 LIFO다. 맨 위의 C를 꺼낸 뒤 B가 맨 위가 된다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "Last In First Out은 가장 최근 넣은 요소를 먼저 꺼낸다.",
+    "explanation": "스택은 나중에 넣은 것을 먼저 꺼내는 LIFO다. 맨 위의 C를 꺼낸 뒤 B가 맨 위가 된다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -124,40 +128,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-004",
+    "id": "structures-v2-004",
     "subject": "structures",
     "difficulty": "easy",
     "topic": "큐",
-    "prompt": "빈 FIFO 큐에 A·B·C를 넣고 하나를 꺼내면?",
+    "prompt": "빈 FIFO 큐에 A, B를 넣고 하나를 꺼냈다. C를 넣은 뒤 다시 하나를 꺼내면?",
     "choices": [
       {
+        "id": "c2",
+        "text": "C",
+        "explanation": "나중에 들어온 C보다 먼저 기다리던 B가 먼저 나온다."
+      },
+      {
         "id": "c3",
-        "text": "세 값이 동시에 나온다",
-        "explanation": "단일 dequeue는 한 요소를 꺼낸다."
+        "text": "B와 C 동시",
+        "explanation": "일반적인 단일 dequeue는 한 항목을 반환한다. 큐의 두 항목을 묶어 꺼내는 연산이 아니다."
       },
       {
         "id": "c0",
-        "text": "A",
-        "explanation": "먼저 넣은 A가 먼저 나온다."
+        "text": "B",
+        "explanation": "첫 인출에서 A가 나갔고 B가 남아 있다. C는 B 뒤에 들어가므로 다음 값은 B다."
       },
       {
         "id": "c1",
-        "text": "C",
-        "explanation": "마지막 입력을 꺼내는 스택 규칙이다."
-      },
-      {
-        "id": "c2",
-        "text": "B",
-        "explanation": "앞에 A가 먼저 대기하고 있다."
+        "text": "A",
+        "explanation": "A는 이미 첫 인출에서 제거됐다. 큐에 다시 넣었다는 조건이 없다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "먼저 넣은 A가 먼저 나온다.",
+    "explanation": "첫 인출에서 A가 나갔고 B가 남아 있다. C는 B 뒤에 들어가므로 다음 값은 B다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -167,41 +173,43 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
     },
-    "diagram": "queue"
+    "diagram": "queue",
+    "active": true
   },
   {
-    "id": "structures-005",
+    "id": "structures-v2-005",
     "subject": "structures",
     "difficulty": "easy",
     "topic": "덱",
-    "prompt": "deque가 허용하는 대표 연산은?",
+    "prompt": "앞뒤 양쪽에서 항목을 넣고 빼야 한다. 이 연산을 직접 제공하는 추상 자료형은?",
     "choices": [
       {
-        "id": "c2",
-        "text": "항상 정렬 삽입만",
-        "explanation": "순서 기준이 아닌 양 끝 연산 구조다."
-      },
-      {
         "id": "c3",
-        "text": "읽기만 가능",
-        "explanation": "변경 연산을 제공한다."
+        "text": "priority queue",
+        "explanation": "우선순위 큐는 우선순위에 따라 꺼낸다. 양 끝 위치를 기준으로 넣고 빼는 구조가 아니다."
       },
       {
         "id": "c0",
-        "text": "양쪽 끝의 삽입·삭제",
-        "explanation": "double-ended queue는 앞과 뒤에서 연산할 수 있다."
+        "text": "deque",
+        "explanation": "deque는 양쪽 끝의 삽입과 삭제를 지원한다. 내부 구현에 따라 임의 위치 접근 등 추가 성질은 다를 수 있다."
       },
       {
         "id": "c1",
-        "text": "가운데만 삭제",
-        "explanation": "가운데 삭제만을 정의하는 자료구조가 아니다."
+        "text": "stack",
+        "explanation": "스택의 기본 인터페이스는 한쪽 top에서 넣고 빼는 것이다. 양끝 조작 요구와 다르다."
+      },
+      {
+        "id": "c2",
+        "text": "FIFO queue",
+        "explanation": "일반 큐는 뒤로 넣고 앞으로 꺼낸다. 앞에 삽입하거나 뒤에서 꺼내는 양방향 인터페이스와 구분한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "double-ended queue는 앞과 뒤에서 연산할 수 있다.",
+    "explanation": "deque는 양쪽 끝의 삽입과 삭제를 지원한다. 내부 구현에 따라 임의 위치 접근 등 추가 성질은 다를 수 있다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -211,255 +219,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-006",
-    "subject": "structures",
-    "difficulty": "easy",
-    "topic": "집합",
-    "prompt": "집합 ADT의 대표 성질은?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "항상 삽입 순서를 보존한다",
-        "explanation": "집합 구현마다 순서 보장이 다르다."
-      },
-      {
-        "id": "c2",
-        "text": "모든 요소가 같은 값이다",
-        "explanation": "서로 다른 값들도 포함할 수 있다."
-      },
-      {
-        "id": "c3",
-        "text": "항상 연속 메모리다",
-        "explanation": "여러 구현이 가능하다."
-      },
-      {
-        "id": "c0",
-        "text": "동일 요소의 중복을 허용하지 않는다",
-        "explanation": "집합은 요소의 포함 여부를 다루고 중복을 구분하지 않는다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "집합은 요소의 포함 여부를 다루고 중복을 구분하지 않는다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-007",
-    "subject": "structures",
-    "difficulty": "easy",
-    "topic": "맵",
-    "prompt": "맵 또는 사전 ADT에서 조회의 기준은?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "키",
-        "explanation": "키를 이용해 연결된 값을 찾는다."
-      },
-      {
-        "id": "c1",
-        "text": "항상 삽입 위치 번호",
-        "explanation": "키와 배열 인덱스를 혼동했다."
-      },
-      {
-        "id": "c2",
-        "text": "항상 가장 작은 값",
-        "explanation": "일반 맵 조회의 의미가 아니다."
-      },
-      {
-        "id": "c3",
-        "text": "무조건 메모리 주소",
-        "explanation": "응용에서 정의한 키를 사용할 수 있다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "키를 이용해 연결된 값을 찾는다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-008",
-    "subject": "structures",
-    "difficulty": "easy",
-    "topic": "트리",
-    "prompt": "트리 구조에서 부모가 없는 최상위 노드는?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "형제",
-        "explanation": "같은 부모를 가진 노드 관계다."
-      },
-      {
-        "id": "c0",
-        "text": "루트",
-        "explanation": "뿌리 역할을 하는 최상위 노드를 루트라고 한다."
-      },
-      {
-        "id": "c1",
-        "text": "리프",
-        "explanation": "자식이 없는 노드다."
-      },
-      {
-        "id": "c2",
-        "text": "간선",
-        "explanation": "노드 사이 연결이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "뿌리 역할을 하는 최상위 노드를 루트라고 한다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-009",
-    "subject": "structures",
-    "difficulty": "easy",
-    "topic": "그래프",
-    "prompt": "그래프의 기본 구성은?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "행과 열만",
-        "explanation": "표나 행렬 표현이며 그래프 자체의 정의는 아니다."
-      },
-      {
-        "id": "c3",
-        "text": "프로세스와 스레드만",
-        "explanation": "그래프의 응용일 수 있지만 일반 정의가 아니다."
-      },
-      {
-        "id": "c0",
-        "text": "정점과 간선",
-        "explanation": "정점은 대상, 간선은 연결 관계를 표현한다."
-      },
-      {
-        "id": "c1",
-        "text": "키와 값만",
-        "explanation": "맵의 대표 모델이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "정점은 대상, 간선은 연결 관계를 표현한다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-010",
-    "subject": "structures",
-    "difficulty": "easy",
-    "topic": "최소 힙",
-    "prompt": "최소 힙의 루트에 오는 값은?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "최댓값",
-        "explanation": "최대 힙의 루트 성질이다."
-      },
-      {
-        "id": "c2",
-        "text": "가장 최근 삽입한 값",
-        "explanation": "입력 시점만으로 결정되지 않는다."
-      },
-      {
-        "id": "c3",
-        "text": "항상 중앙값",
-        "explanation": "힙 성질은 중앙값을 보장하지 않는다."
-      },
-      {
-        "id": "c0",
-        "text": "힙 전체의 최솟값",
-        "explanation": "각 부모가 자식 이하인 힙 성질 때문에 루트가 최소다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "각 부모가 자식 이하인 힙 성질 때문에 루트가 최소다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-011",
+    "id": "structures-v2-011",
     "subject": "structures",
     "difficulty": "medium",
     "topic": "배열 삽입",
-    "prompt": "길이 n인 연속 배열 맨 앞에 삽입하면서 순서를 유지한다. 일반적인 비용은?",
+    "prompt": "길이 n인 연속 배열 맨 앞에 새 값을 넣고 기존 순서를 유지한다. 기존 요소 이동 비용은?",
     "choices": [
       {
-        "id": "c0",
-        "text": "O(n)",
-        "explanation": "뒤 요소들을 이동해야 하므로 n에 비례하는 비용이 든다."
-      },
-      {
         "id": "c1",
-        "text": "항상 O(1)",
-        "explanation": "순서 보존을 위한 이동을 무시했다."
+        "text": "O(1)",
+        "explanation": "끝에 넣는 경우의 상각 비용과 혼동했다. 맨 앞 삽입은 뒤 요소들의 이동이 필요하다."
       },
       {
         "id": "c2",
         "text": "O(log n)",
-        "explanation": "이진 탐색이 요소 이동을 없애지 않는다."
+        "explanation": "이진 탐색은 삽입 위치 찾기를 줄일 수 있지만, 실제 요소를 옮기는 비용을 줄이지는 않는다."
       },
       {
         "id": "c3",
-        "text": "O(n!)",
-        "explanation": "선형 이동에는 순열 열거가 필요 없다."
+        "text": "O(n log n)",
+        "explanation": "정렬을 새로 하는 상황이 아니다. 원래 순서를 유지하며 한 칸씩 이동하면 선형 비용이다."
+      },
+      {
+        "id": "c0",
+        "text": "O(n)",
+        "explanation": "기존 n개 요소를 한 칸씩 옮겨야 한다. 여유 용량이 있어 재할당하지 않아도 앞 삽입의 이동 비용은 남는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "뒤 요소들을 이동해야 하므로 n에 비례하는 비용이 든다.",
+    "explanation": "기존 n개 요소를 한 칸씩 옮겨야 한다. 여유 용량이 있어 재할당하지 않아도 앞 삽입의 이동 비용은 남는다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -469,40 +264,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-012",
+    "id": "structures-v2-012",
     "subject": "structures",
     "difficulty": "medium",
     "topic": "리스트 삭제",
-    "prompt": "단일 연결 리스트에서 이전 노드 참조를 이미 알고 있는 노드를 삭제하는 연결 수정 비용은?",
+    "prompt": "단일 연결 리스트에서 삭제할 노드와 그 이전 노드를 이미 안다. 링크를 바꾸는 비용은?",
     "choices": [
+      {
+        "id": "c2",
+        "text": "O(n)",
+        "explanation": "이전 노드를 찾기 위해 처음부터 순회할 때의 비용이다. 이 문제는 이미 이전 노드를 안다."
+      },
       {
         "id": "c3",
         "text": "O(n²)",
-        "explanation": "전체 노드 쌍을 처리하지 않는다."
+        "explanation": "여러 중첩 순회가 필요한 작업이 아니다. 고정된 수의 참조를 수정한다."
       },
       {
         "id": "c0",
         "text": "O(1)",
-        "explanation": "이전 노드의 next를 다음 노드로 바꾸면 된다."
+        "explanation": "이전 노드의 다음 참조를 삭제 노드의 다음 참조로 바꾸면 된다. 이전 노드를 찾는 순회 비용은 조건에서 제외됐다."
       },
       {
         "id": "c1",
-        "text": "항상 O(n)",
-        "explanation": "이전 노드를 찾는 비용은 문제에서 제외했다."
-      },
-      {
-        "id": "c2",
         "text": "O(log n)",
-        "explanation": "트리 탐색이 필요하지 않다."
+        "explanation": "균형 탐색 트리의 높이 비용과 다르다. 필요한 링크가 이미 주어졌다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "이전 노드의 next를 다음 노드로 바꾸면 된다.",
+    "explanation": "이전 노드의 다음 참조를 삭제 노드의 다음 참조로 바꾸면 된다. 이전 노드를 찾는 순회 비용은 조건에서 제외됐다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -512,83 +309,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-013",
-    "subject": "structures",
-    "difficulty": "medium",
-    "topic": "해시 충돌",
-    "prompt": "서로 다른 키가 같은 해시 버킷에 배정되는 현상은?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "정렬이 완료됨",
-        "explanation": "버킷 매핑은 정렬 완료가 아니다."
-      },
-      {
-        "id": "c3",
-        "text": "메모리 누수와 동일",
-        "explanation": "충돌은 정상적으로 처리할 수 있는 상황이다."
-      },
-      {
-        "id": "c0",
-        "text": "충돌",
-        "explanation": "충돌은 다른 키가 같은 저장 후보 위치로 매핑되는 일이다."
-      },
-      {
-        "id": "c1",
-        "text": "키의 동등성이 보장됨",
-        "explanation": "같은 해시가 같은 키를 뜻하지 않는다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "충돌은 다른 키가 같은 저장 후보 위치로 매핑되는 일이다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-014",
+    "id": "structures-v2-014",
     "subject": "structures",
     "difficulty": "medium",
     "topic": "이진 탐색 트리",
-    "prompt": "BST에서 어떤 노드 왼쪽 부분 트리의 키는 보통?",
+    "prompt": "중복 키가 없는 이진 탐색 트리에서 노드의 키가 40이다. 왼쪽 부분 트리에 들어갈 수 있는 키는?",
     "choices": [
       {
+        "id": "c0",
+        "text": "35",
+        "explanation": "왼쪽 부분 트리의 모든 키는 해당 노드보다 작아야 한다. 자식 하나뿐 아니라 부분 트리 전체에 적용된다."
+      },
+      {
         "id": "c1",
-        "text": "그 노드 키보다 크다",
-        "explanation": "오른쪽 부분 트리의 규칙이다."
+        "text": "40",
+        "explanation": "중복 키를 허용하지 않는다는 조건과 맞지 않는다."
       },
       {
         "id": "c2",
-        "text": "항상 모두 동일하다",
-        "explanation": "일반 BST 순서 규칙이 아니다."
+        "text": "45",
+        "explanation": "40보다 크므로 해당 노드의 오른쪽 부분 트리에 배치해야 한다."
       },
       {
         "id": "c3",
-        "text": "아무 제한이 없다",
-        "explanation": "탐색을 가능하게 하는 순서 조건이 있다."
-      },
-      {
-        "id": "c0",
-        "text": "그 노드 키보다 작다",
-        "explanation": "키 중복 처리 정책을 별도로 정했을 때 BST의 순서 불변식이다."
+        "text": "50",
+        "explanation": "왼쪽 부분 트리 조건을 어긴다. 트리의 아래쪽에 있어도 조상 40보다 작아야 한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "키 중복 처리 정책을 별도로 정했을 때 BST의 순서 불변식이다.",
+    "explanation": "왼쪽 부분 트리의 모든 키는 해당 노드보다 작아야 한다. 자식 하나뿐 아니라 부분 트리 전체에 적용된다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -598,169 +354,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-015",
-    "subject": "structures",
-    "difficulty": "medium",
-    "topic": "중위 순회",
-    "prompt": "중복 없는 BST를 중위 순회하면 키의 순서는?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "오름차순",
-        "explanation": "왼쪽·노드·오른쪽 순서가 BST의 키 순서를 따른다."
-      },
-      {
-        "id": "c1",
-        "text": "삽입 순서",
-        "explanation": "트리 모양과 삽입 순서가 그대로 반환되지 않는다."
-      },
-      {
-        "id": "c2",
-        "text": "내림차순",
-        "explanation": "오른쪽·노드·왼쪽 순서가 내림차순이다."
-      },
-      {
-        "id": "c3",
-        "text": "높이가 작은 순서",
-        "explanation": "중위 순회는 레벨 순회가 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "왼쪽·노드·오른쪽 순서가 BST의 키 순서를 따른다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-016",
-    "subject": "structures",
-    "difficulty": "medium",
-    "topic": "우선순위 큐",
-    "prompt": "작업 중 우선순위가 가장 높은 것을 반복 선택하려 한다. 적합한 ADT는?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "일반 집합만",
-        "explanation": "우선순위 추출 연산의 보장이 없다."
-      },
-      {
-        "id": "c0",
-        "text": "우선순위 큐",
-        "explanation": "삽입 시점 대신 우선순위 기준으로 다음 항목을 선택한다."
-      },
-      {
-        "id": "c1",
-        "text": "FIFO 큐만",
-        "explanation": "들어온 순서와 우선순위 순서가 다를 수 있다."
-      },
-      {
-        "id": "c2",
-        "text": "스택만",
-        "explanation": "최근 삽입 순서가 선택 기준이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "삽입 시점 대신 우선순위 기준으로 다음 항목을 선택한다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-017",
+    "id": "structures-v2-017",
     "subject": "structures",
     "difficulty": "medium",
     "topic": "힙 삭제",
-    "prompt": "이진 최소 힙에서 최소값을 삭제하고 힙 성질을 복구하는 일반 비용은?",
+    "prompt": "원소 n개의 이진 최소 힙에서 최소값을 제거하고 힙을 복구하는 최악 시간은?",
     "choices": [
       {
-        "id": "c2",
-        "text": "O(n²)",
-        "explanation": "모든 쌍 비교가 필요하지 않다."
-      },
-      {
         "id": "c3",
-        "text": "O(n!)",
-        "explanation": "순열 탐색을 하지 않는다."
+        "text": "O(n log n)",
+        "explanation": "모든 원소를 차례로 꺼내 정렬할 때의 규모다. 여기서는 최소값 하나를 삭제한다."
       },
       {
         "id": "c0",
         "text": "O(log n)",
-        "explanation": "높이에 비례해 내려가며 힙을 복구한다."
+        "explanation": "마지막 원소를 루트로 옮긴 뒤 아래로 내려가며 복구한다. 완전 이진 트리의 높이가 로그 규모다."
       },
       {
         "id": "c1",
-        "text": "항상 O(1)",
-        "explanation": "루트 교체 뒤 복구 비용을 빼먹었다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "높이에 비례해 내려가며 힙을 복구한다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-018",
-    "subject": "structures",
-    "difficulty": "medium",
-    "topic": "인접 리스트",
-    "prompt": "정점 V·간선 E인 희소 그래프의 인접 리스트 공간 비용은?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "항상 O(V²)",
-        "explanation": "인접 행렬의 대표 공간 비용이다."
+        "text": "O(1)",
+        "explanation": "루트 값을 읽는 비용은 상수지만 삭제 후 힙 성질을 복구하는 비용이 추가된다."
       },
       {
         "id": "c2",
-        "text": "O(1)",
-        "explanation": "그래프 크기만큼 저장이 필요하다."
-      },
-      {
-        "id": "c3",
-        "text": "O(E!)",
-        "explanation": "간선 순열을 저장하지 않는다."
-      },
-      {
-        "id": "c0",
-        "text": "O(V + E)",
-        "explanation": "정점별 목록과 각 간선을 저장한다."
+        "text": "O(n)",
+        "explanation": "일반 배열에서 최소값을 찾아 지우는 방식과 다르다. 힙은 최소값이 이미 루트에 있다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "정점별 목록과 각 간선을 저장한다.",
+    "explanation": "마지막 원소를 루트로 옮긴 뒤 아래로 내려가며 복구한다. 완전 이진 트리의 높이가 로그 규모다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -770,83 +399,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-019",
-    "subject": "structures",
-    "difficulty": "medium",
-    "topic": "인접 행렬",
-    "prompt": "인접 행렬에서 두 정점의 연결 여부 조회 비용은?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "O(1)",
-        "explanation": "해당 행·열의 칸을 직접 읽는다."
-      },
-      {
-        "id": "c1",
-        "text": "항상 O(V)",
-        "explanation": "연결 목록을 순회하는 방식과 다르다."
-      },
-      {
-        "id": "c2",
-        "text": "O(log E)",
-        "explanation": "이진 탐색을 할 필요가 없다."
-      },
-      {
-        "id": "c3",
-        "text": "공간도 반드시 O(1)",
-        "explanation": "조회 시간과 저장 공간은 다르다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "해당 행·열의 칸을 직접 읽는다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-020",
+    "id": "structures-v2-020",
     "subject": "structures",
     "difficulty": "medium",
     "topic": "링 버퍼",
-    "prompt": "고정 용량 링 버퍼의 끝에 도달한 인덱스는 어떻게 관리하는가?",
+    "prompt": "용량 8의 링 버퍼에서 쓰기 인덱스가 7이었다. 한 칸 전진한 인덱스는?",
     "choices": [
       {
+        "id": "c2",
+        "text": "8",
+        "explanation": "배열 범위 밖이다. 링 버퍼에서는 끝 다음을 시작으로 연결한다."
+      },
+      {
         "id": "c3",
-        "text": "음수 주소로 이동한다",
-        "explanation": "논리 인덱스를 순환시키는 것이다."
+        "text": "1",
+        "explanation": "0번 칸을 한 번 건너뛴 값이다. 한 칸 전진이므로 0이 된다."
       },
       {
         "id": "c0",
-        "text": "용량을 기준으로 순환시킨다",
-        "explanation": "끝 다음을 처음으로 돌아가게 관리하므로 이미 배정한 공간을 재사용한다."
+        "text": "0",
+        "explanation": "0부터 7까지 사용하므로 (7+1) mod 8은 0이다. 비어 있음과 가득 참의 구분은 별도 상태로 관리할 수 있다."
       },
       {
         "id": "c1",
-        "text": "매번 전체 배열을 정렬한다",
-        "explanation": "순환 인덱스 관리와 무관하다."
-      },
-      {
-        "id": "c2",
-        "text": "항상 메모리를 두 배 늘린다",
-        "explanation": "고정 용량이라는 조건과 다르다."
+        "text": "7",
+        "explanation": "인덱스를 움직이지 않으면 같은 칸을 계속 가리킨다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "끝 다음을 처음으로 돌아가게 관리하므로 이미 배정한 공간을 재사용한다.",
+    "explanation": "0부터 7까지 사용하므로 (7+1) mod 8은 0이다. 비어 있음과 가득 참의 구분은 별도 상태로 관리할 수 있다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -856,83 +444,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-021",
+    "id": "structures-v2-021",
     "subject": "structures",
     "difficulty": "hard",
     "topic": "해시 최악",
-    "prompt": "균형 조건이 없는 단순 체이닝 해시에서 모든 키가 한 버킷에 모였다. 조회 최악 비용은?",
+    "prompt": "키 n개가 단순 연결 리스트 체이닝 해시의 한 버킷에 모였다. 존재하지 않는 키 조회의 최악 시간은?",
     "choices": [
       {
-        "id": "c2",
-        "text": "반드시 O(log n)",
-        "explanation": "버킷이 균형 트리라는 조건이 없다."
-      },
-      {
         "id": "c3",
-        "text": "O(n!)",
-        "explanation": "선형 목록 조회는 순열을 탐색하지 않는다."
+        "text": "O(n log n)",
+        "explanation": "조회 과정에서 버킷을 정렬할 필요는 없다. 리스트를 한 번 순회하면 된다."
       },
       {
         "id": "c0",
         "text": "O(n)",
-        "explanation": "충돌 목록을 모두 탐색해야 할 수 있다."
+        "explanation": "해당 버킷의 n개 키를 모두 비교할 수 있다. 좋은 분포에서 기대하는 평균 상수 시간과 최악을 구분한다."
       },
       {
         "id": "c1",
-        "text": "반드시 O(1)",
-        "explanation": "평균 성능 가정이 깨졌다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "충돌 목록을 모두 탐색해야 할 수 있다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-022",
-    "subject": "structures",
-    "difficulty": "hard",
-    "topic": "균형 트리",
-    "prompt": "정렬된 키를 일반 BST에 순서대로 넣어 편향 트리가 되었다. 개선 방향은?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "노드 이름만 바꾼다",
-        "explanation": "구조의 높이가 바뀌지 않는다."
+        "text": "O(1)",
+        "explanation": "버킷 선택은 상수 시간이어도 그 안의 키 비교가 남는다."
       },
       {
         "id": "c2",
-        "text": "비교 연산을 제거한다",
-        "explanation": "키 순서 탐색을 유지하기 어렵다."
-      },
-      {
-        "id": "c3",
-        "text": "루트 값만 암호화한다",
-        "explanation": "편향 구조를 해결하지 않는다."
-      },
-      {
-        "id": "c0",
-        "text": "균형 트리로 높이를 제어한다",
-        "explanation": "탐색 비용은 트리 높이에 영향을 받으므로 균형을 유지하는 방식이 유리하다."
+        "text": "O(log n)",
+        "explanation": "버킷을 균형 트리로 바꿨다는 조건이 없다. 단순 연결 리스트 체이닝이다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "탐색 비용은 트리 높이에 영향을 받으므로 균형을 유지하는 방식이 유리하다.",
+    "explanation": "해당 버킷의 n개 키를 모두 비교할 수 있다. 좋은 분포에서 기대하는 평균 상수 시간과 최악을 구분한다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -942,40 +489,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-023",
+    "id": "structures-v2-023",
     "subject": "structures",
     "difficulty": "hard",
     "topic": "동적 배열",
-    "prompt": "용량이 부족할 때 두 배 확장하는 동적 배열의 연속 append 상각 비용은?",
+    "prompt": "용량이 부족하면 두 배로 늘리는 동적 배열에 n번 append한다. 한 번당 상각 시간은?",
     "choices": [
+      {
+        "id": "c1",
+        "text": "O(log n)",
+        "explanation": "확장 횟수는 로그 규모지만, 전체 비용을 n번에 나눈 한 연산의 상각 비용은 상수다."
+      },
+      {
+        "id": "c2",
+        "text": "O(n)",
+        "explanation": "재할당이 일어난 한 번의 최악 비용과 모든 append의 상각 비용을 혼동했다."
+      },
+      {
+        "id": "c3",
+        "text": "O(n log n)",
+        "explanation": "각 append마다 전체 배열을 정렬하거나 복사하지 않는다. 용량을 두 배씩 늘린다는 조건이 중요하다."
+      },
       {
         "id": "c0",
         "text": "O(1)",
-        "explanation": "비싼 복사가 드물게 발생해 전체 n회 추가 비용을 O(n)으로 제한할 수 있다."
-      },
-      {
-        "id": "c1",
-        "text": "각 추가가 최악도 O(1)",
-        "explanation": "확장 시 전체 복사가 필요하다."
-      },
-      {
-        "id": "c2",
-        "text": "항상 O(n²)",
-        "explanation": "기하급수적 확장의 총 복사량을 과대평가했다."
-      },
-      {
-        "id": "c3",
-        "text": "O(log n)만 가능",
-        "explanation": "표준 두 배 확장의 상각 비용은 상수다."
+        "explanation": "복사 비용이 드는 확장은 드물고 이전 복사량의 합이 선형 규모다. 개별 append의 최악 시간은 O(n)일 수 있다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "비싼 복사가 드물게 발생해 전체 n회 추가 비용을 O(n)으로 제한할 수 있다.",
+    "explanation": "복사 비용이 드는 확장은 드물고 이전 복사량의 합이 선형 규모다. 개별 append의 최악 시간은 O(n)일 수 있다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -985,83 +534,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-024",
-    "subject": "structures",
-    "difficulty": "hard",
-    "topic": "삭제 표시",
-    "prompt": "개방 주소 해시에서 삭제 슬롯을 단순 빈 슬롯으로 바꾸면 생길 수 있는 문제는?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "해시 함수가 컴파일되지 않는다",
-        "explanation": "런타임 탐사 불변식의 문제다."
-      },
-      {
-        "id": "c0",
-        "text": "탐사 경로가 끊겨 뒤의 키를 못 찾을 수 있다",
-        "explanation": "삭제 표시 또는 적절한 재배치로 기존 탐사 연결을 유지해야 한다."
-      },
-      {
-        "id": "c1",
-        "text": "모든 키가 같은 값으로 바뀐다",
-        "explanation": "탐색 종료 조건의 문제다."
-      },
-      {
-        "id": "c2",
-        "text": "버킷 수가 무한히 증가한다",
-        "explanation": "슬롯 표시만으로 용량이 늘지 않는다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "삭제 표시 또는 적절한 재배치로 기존 탐사 연결을 유지해야 한다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-025",
+    "id": "structures-v2-025",
     "subject": "structures",
     "difficulty": "hard",
     "topic": "키 변경",
-    "prompt": "해시 맵에 들어간 키의 해시에 쓰이는 필드를 변경하면?",
+    "prompt": "해시 맵에 넣은 키 객체의 해시 계산 필드를 나중에 바꿨다. 키를 다시 찾지 못할 수 있는 이유는?",
     "choices": [
       {
-        "id": "c2",
-        "text": "모든 값이 즉시 정렬된다",
-        "explanation": "해시 맵은 정렬 보장이 아니다."
-      },
-      {
         "id": "c3",
-        "text": "참조 타입은 키가 될 수 없다",
-        "explanation": "안정적 해시·동등성만 충족하면 가능하다."
+        "text": "키 필드가 바뀌면 맵이 자동 재배치",
+        "explanation": "일반적인 맵은 키 객체 내부 필드 수정을 자동 감지해 재삽입하지 않는다."
       },
       {
         "id": "c0",
-        "text": "원래 저장 위치와 새 조회 위치가 달라질 수 있다",
-        "explanation": "키의 동등성과 해시가 저장 동안 안정적이어야 올바르게 찾을 수 있다."
+        "text": "새 해시가 다른 버킷을 가리킨다",
+        "explanation": "저장 당시의 해시로 선택한 버킷과 변경 후 조회 버킷이 달라질 수 있다. 저장 중 키의 해시·동등성 관련 값이 안정적이어야 한다."
       },
       {
         "id": "c1",
-        "text": "맵이 반드시 자동 재해시한다",
-        "explanation": "일반적으로 내부 키 변경을 감지하지 않는다."
+        "text": "객체 주소가 같으므로 해시 변경은 무관",
+        "explanation": "객체 참조가 같아도 맵이 새 해시로 다른 버킷을 찾을 수 있다. 동일 주소가 키 계약 위반을 복구하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "equals가 참이면 모든 버킷을 항상 검색",
+        "explanation": "해시 맵은 보통 해시로 버킷을 좁힌 뒤 비교한다. 매 조회마다 전체 버킷을 검사한다고 가정할 수 없다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "키의 동등성과 해시가 저장 동안 안정적이어야 올바르게 찾을 수 있다.",
+    "explanation": "저장 당시의 해시로 선택한 버킷과 변경 후 조회 버킷이 달라질 수 있다. 저장 중 키의 해시·동등성 관련 값이 안정적이어야 한다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -1071,126 +579,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-026",
-    "subject": "structures",
-    "difficulty": "hard",
-    "topic": "회전",
-    "prompt": "AVL·red-black 같은 BST에서 회전을 적용할 때 보존해야 하는 것은?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "노드의 화면 위치",
-        "explanation": "시각적 배치는 자료구조 규칙이 아니다."
-      },
-      {
-        "id": "c2",
-        "text": "모든 노드의 깊이",
-        "explanation": "회전은 깊이를 바꾸는 연산이다."
-      },
-      {
-        "id": "c3",
-        "text": "삽입 시각 순서",
-        "explanation": "BST 키 순서는 삽입 시각과 다르다."
-      },
-      {
-        "id": "c0",
-        "text": "키의 중위 순서",
-        "explanation": "부분 트리를 재배치해도 BST 키 순서 불변식이 유지되어야 한다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "부분 트리를 재배치해도 BST 키 순서 불변식이 유지되어야 한다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-027",
-    "subject": "structures",
-    "difficulty": "hard",
-    "topic": "Trie",
-    "prompt": "문자열 집합에서 접두사 기반 탐색에 적합한 구조는?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "Trie",
-        "explanation": "문자 경로를 공유해 접두사 탐색을 수행한다."
-      },
-      {
-        "id": "c1",
-        "text": "스택 하나만",
-        "explanation": "접두사별 분기를 직접 표현하지 못한다."
-      },
-      {
-        "id": "c2",
-        "text": "정수 최소 힙만",
-        "explanation": "최소값 추출이 주된 연산이다."
-      },
-      {
-        "id": "c3",
-        "text": "무순서 파일 목록만",
-        "explanation": "접두사 탐색 비용을 구조적으로 줄이지 못한다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "문자 경로를 공유해 접두사 탐색을 수행한다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-028",
+    "id": "structures-v2-028",
     "subject": "structures",
     "difficulty": "hard",
     "topic": "Union-Find",
-    "prompt": "동적 무방향 연결 관계에서 두 원소가 같은 집합인지 자주 묻는다. 적합한 구조는?",
+    "prompt": "간선을 추가하기만 하는 무방향 그래프에서 두 정점의 연결 여부를 반복 확인한다. 적합한 자료구조는?",
     "choices": [
       {
+        "id": "c2",
+        "text": "최소 힙",
+        "explanation": "가장 작은 키의 조회·추출에 적합하다. 두 정점의 연결성을 표현하지 않는다."
+      },
+      {
         "id": "c3",
-        "text": "정렬 배열의 인덱스만",
-        "explanation": "연결 관계의 병합을 관리하지 않는다."
+        "text": "접미사 배열",
+        "explanation": "문자열 접미사의 정렬 순서와 검색을 위한 구조다. 동적 연결 요소 관리와는 목적이 다르다."
       },
       {
         "id": "c0",
-        "text": "Disjoint-set union",
-        "explanation": "union과 find로 서로소 집합의 연결성을 관리한다."
+        "text": "Union-Find",
+        "explanation": "같은 연결 요소인지 find로 확인하고 간선 추가 시 union으로 집합을 합칠 수 있다. 간선 삭제를 직접 지원하는 구조는 아니다."
       },
       {
         "id": "c1",
-        "text": "문자열 스택",
-        "explanation": "집합 병합과 대표 조회를 제공하지 않는다."
-      },
-      {
-        "id": "c2",
         "text": "우선순위 큐",
-        "explanation": "우선순위 추출과 연결성 판정은 다르다."
+        "explanation": "우선순위가 높은 원소를 꺼내는 구조다. 연결 요소를 합치고 조회하는 연산을 직접 제공하지 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "union과 find로 서로소 집합의 연결성을 관리한다.",
+    "explanation": "같은 연결 요소인지 find로 확인하고 간선 추가 시 union으로 집합을 합칠 수 있다. 간선 삭제를 직접 지원하는 구조는 아니다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -1200,83 +624,42 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "structures-029",
-    "subject": "structures",
-    "difficulty": "hard",
-    "topic": "힙과 BST",
-    "prompt": "최소 힙에 대해 잘못 가정하기 쉬운 것은 무엇인가?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "부모가 자식 이하라는 사실",
-        "explanation": "최소 힙의 불변식이다."
-      },
-      {
-        "id": "c3",
-        "text": "삭제 후 복구가 필요하다는 사실",
-        "explanation": "변경 뒤 힙 성질을 유지해야 한다."
-      },
-      {
-        "id": "c0",
-        "text": "힙 전체가 정렬되어 있다는 가정",
-        "explanation": "힙은 부모·자식의 부분 순서만 보장하며 형제·부분 트리 사이 완전 순서는 없다."
-      },
-      {
-        "id": "c1",
-        "text": "루트가 최솟값이라는 사실",
-        "explanation": "최소 힙에서 올바른 성질이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "힙은 부모·자식의 부분 순서만 보장하며 형제·부분 트리 사이 완전 순서는 없다.",
-    "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
-    "sources": [
-      {
-        "title": "Sedgewick·Wayne: Algorithms, 4th Edition",
-        "url": "https://algs4.cs.princeton.edu/home/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "structures-030",
+    "id": "structures-v2-030",
     "subject": "structures",
     "difficulty": "hard",
     "topic": "자료구조 선택",
-    "prompt": "인덱스 조회가 잦고 가운데 삽입은 거의 없는 데이터를 저장한다. 우선 검토할 것은?",
+    "prompt": "요소 수는 거의 변하지 않고 인덱스로 읽는 일이 많다. 순차 접근의 지역성도 중요한 경우 우선 검토할 구조는?",
     "choices": [
-      {
-        "id": "c1",
-        "text": "연결 리스트가 항상 최적",
-        "explanation": "인덱스 접근에 순회가 필요하다."
-      },
-      {
-        "id": "c2",
-        "text": "힙이 항상 정렬 조회를 제공",
-        "explanation": "힙은 임의 인덱스의 정렬 순서를 보장하지 않는다."
-      },
-      {
-        "id": "c3",
-        "text": "자료 크기와 접근 패턴을 무시",
-        "explanation": "비용은 실제 연산과 규모에 달려 있다."
-      },
       {
         "id": "c0",
         "text": "연속 배열",
-        "explanation": "직접 인덱스 접근과 지역성을 활용하기 좋으며 드문 삽입 비용을 감수할 수 있다."
+        "explanation": "인덱스 위치를 직접 계산할 수 있고 인접 요소가 가까이 배치된다. 이 조건에서는 중간 삽입의 이동 비용이 자주 발생하지 않는다."
+      },
+      {
+        "id": "c1",
+        "text": "단일 연결 리스트",
+        "explanation": "인덱스로 읽으려면 앞 노드부터 링크를 따라가야 한다. 노드가 흩어질 수 있어 지역성에도 불리할 수 있다."
+      },
+      {
+        "id": "c2",
+        "text": "이진 최소 힙",
+        "explanation": "최솟값 관리에는 적합하지만 인덱스 번호가 사용자가 원하는 순서의 의미를 갖지는 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "연결 리스트 체이닝 해시",
+        "explanation": "키 조회에는 적합할 수 있지만 순번으로 읽는 인터페이스와 연속 배치 요구를 직접 만족하지 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "직접 인덱스 접근과 지역성을 활용하기 좋으며 드문 삽입 비용을 감수할 수 있다.",
+    "explanation": "인덱스 위치를 직접 계산할 수 있고 인접 요소가 가까이 배치된다. 이 조건에서는 중간 삽입의 이동 비용이 자주 발생하지 않는다.",
     "environment": "추상 자료구조의 의미를 기준으로 하며 구현·균형·해시 조건은 문항에 명시.",
     "sources": [
       {
@@ -1286,8 +669,10 @@
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   }
 ]

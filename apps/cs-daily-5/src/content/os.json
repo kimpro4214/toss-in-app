@@ -1,1292 +1,681 @@
 [
   {
-    "id": "os-001",
+    "id": "os-v2-001",
     "subject": "os",
     "difficulty": "easy",
     "topic": "프로세스",
-    "prompt": "프로세스에 대한 설명으로 가장 알맞은 것은?",
+    "prompt": "같은 실행 파일로 앱을 두 번 실행했다. 각각의 실행 상태와 주소 공간을 관리하는 단위는?",
     "choices": [
       {
-        "id": "c2",
-        "text": "항상 CPU 코어 하나",
-        "explanation": "프로세스와 물리 코어는 다른 단위다."
-      },
-      {
         "id": "c3",
-        "text": "네트워크 케이블",
-        "explanation": "실행 환경과 무관하다."
+        "text": "CPU 코어",
+        "explanation": "코어는 명령을 실행하는 하드웨어다. 한 코어가 여러 프로세스의 실행을 번갈아 맡을 수도 있다."
       },
       {
         "id": "c0",
-        "text": "실행 중인 프로그램을 위한 실행 환경",
-        "explanation": "프로세스는 주소 공간과 실행 상태·자원 등을 갖는다."
+        "text": "프로세스",
+        "explanation": "프로세스는 실행 중인 프로그램의 주소 공간과 레지스터 상태, 열린 자원 등을 관리하는 단위다. 같은 실행 파일에서도 여러 프로세스가 만들어질 수 있다."
       },
       {
         "id": "c1",
-        "text": "소스 파일의 다른 이름",
-        "explanation": "소스 파일은 실행 상태 자체가 아니다."
+        "text": "스레드",
+        "explanation": "스레드는 프로세스 안의 실행 흐름이다. 별도로 실행한 두 앱의 독립된 주소 공간을 설명하는 단위와 구분한다."
+      },
+      {
+        "id": "c2",
+        "text": "실행 파일",
+        "explanation": "실행 파일은 실행할 코드와 데이터를 담지만, 실행 중의 레지스터나 주소 공간 자체는 아니다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "프로세스는 주소 공간과 실행 상태·자원 등을 갖는다.",
+    "explanation": "프로세스는 실행 중인 프로그램의 주소 공간과 레지스터 상태, 열린 자원 등을 관리하는 단위다. 같은 실행 파일에서도 여러 프로세스가 만들어질 수 있다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: cpu-intro",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-002",
+    "id": "os-v2-002",
     "subject": "os",
     "difficulty": "easy",
     "topic": "스레드",
-    "prompt": "같은 프로세스의 스레드들이 일반적으로 공유하는 것은?",
+    "prompt": "같은 프로세스의 두 스레드가 별도의 동기화 없이도 함께 접근할 수 있는 영역은?",
     "choices": [
       {
+        "id": "c0",
+        "text": "프로세스의 힙 영역",
+        "explanation": "두 스레드는 같은 주소 공간을 사용하므로 힙 객체에 함께 접근할 수 있다. 접근 가능하다는 사실이 동시 수정의 안전성을 보장하지는 않는다."
+      },
+      {
         "id": "c1",
-        "text": "프로그램 카운터의 동일한 값",
-        "explanation": "각 스레드는 별도의 실행 위치를 갖는다."
+        "text": "각 스레드의 레지스터 상태",
+        "explanation": "레지스터 상태는 실행 문맥의 일부로 스레드마다 보존된다. 힙처럼 공동으로 사용하는 저장 영역이 아니다."
       },
       {
         "id": "c2",
-        "text": "하나의 스택 포인터",
-        "explanation": "스레드마다 실행 문맥이 다르다."
+        "text": "각 스레드의 프로그램 카운터",
+        "explanation": "두 스레드는 서로 다른 명령을 실행할 수 있으므로 다음 실행 위치도 각각 가진다."
       },
       {
         "id": "c3",
-        "text": "항상 같은 스레드 ID",
-        "explanation": "식별자는 각각 다르다."
-      },
-      {
-        "id": "c0",
-        "text": "프로세스의 주소 공간",
-        "explanation": "스레드는 주소 공간을 공유하면서 각자의 실행 문맥을 유지한다."
+        "text": "각 스레드의 스택 포인터",
+        "explanation": "스택 포인터는 각 스레드의 호출 스택 위치를 나타내는 실행 문맥이다. 다른 스택에 포인터로 접근 가능한 것과 혼동하지 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "스레드는 주소 공간을 공유하면서 각자의 실행 문맥을 유지한다.",
+    "explanation": "두 스레드는 같은 주소 공간을 사용하므로 힙 객체에 함께 접근할 수 있다. 접근 가능하다는 사실이 동시 수정의 안전성을 보장하지는 않는다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: threads-intro",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-003",
+    "id": "os-v2-003",
     "subject": "os",
     "difficulty": "easy",
     "topic": "문맥 교환",
-    "prompt": "문맥 교환에서 필요한 작업은?",
+    "prompt": "한 CPU 코어가 스레드 A를 멈추고 B를 실행한 뒤, 나중에 A를 이어 실행하려 한다. A에서 보존해야 할 정보는?",
     "choices": [
       {
-        "id": "c0",
-        "text": "이전 실행 상태를 저장하고 다른 실행 상태를 복원한다",
-        "explanation": "스케줄링 대상의 레지스터 등 실행 문맥을 전환한다."
-      },
-      {
         "id": "c1",
-        "text": "모든 소스 코드를 다시 작성한다",
-        "explanation": "실행 문맥 전환에 코드 재작성은 필요 없다."
+        "text": "힙 전체의 별도 복사본",
+        "explanation": "스레드 전환 때마다 힙 전체를 복사하지 않는다. 주소 공간을 공유하는 두 스레드라면 같은 힙을 계속 사용한다."
       },
       {
         "id": "c2",
-        "text": "모든 파일을 삭제한다",
-        "explanation": "문맥 교환은 파일 삭제 작업이 아니다."
+        "text": "실행 파일의 재컴파일 결과",
+        "explanation": "이미 실행 중인 프로그램의 문맥 교환에는 재컴파일이 필요하지 않다. 재개에 필요한 것은 현재 실행 상태다."
       },
       {
         "id": "c3",
-        "text": "CPU 전원을 매번 끈다",
-        "explanation": "전원 종료와 다른 작업이다."
+        "text": "열린 파일의 전체 내용",
+        "explanation": "열린 자원에 대한 관리 정보는 유지하지만 파일 내용 전체를 문맥 교환마다 복사하는 것은 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "레지스터와 다음 실행 위치",
+        "explanation": "문맥 교환은 중단한 실행을 재개할 수 있도록 레지스터와 프로그램 카운터 등 실행 문맥을 저장하고 다른 문맥을 복원한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "스케줄링 대상의 레지스터 등 실행 문맥을 전환한다.",
+    "explanation": "문맥 교환은 중단한 실행을 재개할 수 있도록 레지스터와 프로그램 카운터 등 실행 문맥을 저장하고 다른 문맥을 복원한다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: cpu-mechanisms",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-004",
-    "subject": "os",
-    "difficulty": "easy",
-    "topic": "시스템 호출",
-    "prompt": "사용자 프로그램이 운영체제 서비스를 요청하는 대표적인 경로는?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "주석 추가",
-        "explanation": "실행되지 않는 문서다."
-      },
-      {
-        "id": "c0",
-        "text": "시스템 호출",
-        "explanation": "파일 접근 등 특권 서비스는 정의된 시스템 호출 경로를 통해 요청한다."
-      },
-      {
-        "id": "c1",
-        "text": "일반 변수 이름 변경",
-        "explanation": "커널 서비스를 요청하지 않는다."
-      },
-      {
-        "id": "c2",
-        "text": "모니터 밝기만 조절",
-        "explanation": "요청 경로의 일반적인 정의가 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "파일 접근 등 특권 서비스는 정의된 시스템 호출 경로를 통해 요청한다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-005",
-    "subject": "os",
-    "difficulty": "easy",
-    "topic": "사용자 모드",
-    "prompt": "사용자 모드와 커널 모드를 구분하는 주된 목적은?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "모든 프로그램을 같은 언어로 제한한다",
-        "explanation": "언어 종류를 제한하는 기능이 아니다."
-      },
-      {
-        "id": "c3",
-        "text": "메모리를 영구 저장한다",
-        "explanation": "권한 모드가 영속성을 제공하지 않는다."
-      },
-      {
-        "id": "c0",
-        "text": "특권 자원 접근을 통제한다",
-        "explanation": "응용 프로그램이 보호된 자원을 임의로 조작하지 못하도록 한다."
-      },
-      {
-        "id": "c1",
-        "text": "색상을 다르게 표시한다",
-        "explanation": "보호 모드의 본질이 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "응용 프로그램이 보호된 자원을 임의로 조작하지 못하도록 한다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-006",
-    "subject": "os",
-    "difficulty": "easy",
-    "topic": "가상메모리",
-    "prompt": "가상메모리가 제공하는 중요한 기능은?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "RAM을 물리적으로 무한히 늘림",
-        "explanation": "하드웨어 용량은 유한하다."
-      },
-      {
-        "id": "c2",
-        "text": "모든 메모리 접근을 네트워크로 전송",
-        "explanation": "주소 변환은 네트워크 전송을 요구하지 않는다."
-      },
-      {
-        "id": "c3",
-        "text": "파일 이름을 자동 암호화",
-        "explanation": "가상 주소의 핵심 역할이 아니다."
-      },
-      {
-        "id": "c0",
-        "text": "프로세스별 주소 공간과 주소 변환",
-        "explanation": "프로그램의 주소를 물리 메모리에 매핑하고 보호할 수 있다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "프로그램의 주소를 물리 메모리에 매핑하고 보호할 수 있다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-007",
-    "subject": "os",
-    "difficulty": "easy",
-    "topic": "페이징",
-    "prompt": "페이징에서 가상 주소 공간을 나누는 고정 크기 단위는?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "페이지",
-        "explanation": "페이지를 물리 프레임에 매핑해 관리한다."
-      },
-      {
-        "id": "c1",
-        "text": "포트",
-        "explanation": "네트워크 통신 식별자다."
-      },
-      {
-        "id": "c2",
-        "text": "패킷",
-        "explanation": "네트워크 전송 단위다."
-      },
-      {
-        "id": "c3",
-        "text": "클래스",
-        "explanation": "언어의 타입 구성 요소다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "페이지를 물리 프레임에 매핑해 관리한다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-008",
+    "id": "os-v2-008",
     "subject": "os",
     "difficulty": "easy",
     "topic": "뮤텍스",
-    "prompt": "공유 변수의 임계 구역에 한 번에 하나의 스레드만 들어오게 하는 도구는?",
+    "prompt": "두 스레드가 공유 목록을 수정하는 구간에 동시에 진입하지 못하게 하려 한다. 가장 직접적인 도구는?",
     "choices": [
       {
+        "id": "c2",
+        "text": "스레드별 지역 변수",
+        "explanation": "지역 변수는 공유를 줄일 수 있지만, 이미 공유하는 목록의 동시 수정을 막아 주지는 않는다."
+      },
+      {
         "id": "c3",
-        "text": "화면 해상도",
-        "explanation": "임계 구역 진입과 무관하다."
+        "text": "일반 정수형 상태 플래그",
+        "explanation": "일반 변수의 확인과 변경은 하나의 원자 연산이 아니다. 두 스레드가 동시에 비어 있다고 판단할 수 있다."
       },
       {
         "id": "c0",
         "text": "뮤텍스",
-        "explanation": "상호 배제를 통해 임계 구역을 보호한다."
+        "explanation": "수정 전에 같은 뮤텍스를 획득하고 수정 후 해제하면 해당 구간의 상호 배제를 구성할 수 있다."
       },
       {
         "id": "c1",
-        "text": "일반 정수 변수만",
-        "explanation": "원자적 동기화 없이 정수만 두면 배제가 보장되지 않는다."
-      },
-      {
-        "id": "c2",
-        "text": "DNS 레코드",
-        "explanation": "동기화 도구가 아니다."
+        "text": "조건 변수",
+        "explanation": "조건 변수는 어떤 조건이 만족될 때까지 기다리는 도구다. 공유 상태의 상호 배제에는 보통 별도의 뮤텍스를 함께 쓴다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "상호 배제를 통해 임계 구역을 보호한다.",
+    "explanation": "수정 전에 같은 뮤텍스를 획득하고 수정 후 해제하면 해당 구간의 상호 배제를 구성할 수 있다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: threads-locks",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-009",
+    "id": "os-v2-009",
     "subject": "os",
     "difficulty": "easy",
     "topic": "경쟁 상태",
-    "prompt": "동기화 없는 공유 상태 연산에서 실행 순서에 따라 결과가 바뀌는 문제는?",
+    "prompt": "두 스레드가 같은 카운터를 읽고 1을 더해 저장한다. 실행 순서에 따라 최종 값이 달라지는 현상은?",
     "choices": [
       {
-        "id": "c2",
-        "text": "엔디언",
-        "explanation": "바이트 순서 규칙이다."
-      },
-      {
         "id": "c3",
-        "text": "패킷 압축",
-        "explanation": "네트워크 데이터 표현과 관련된다."
+        "text": "문맥 교환",
+        "explanation": "문맥 교환은 실행 대상을 바꾸는 동작이다. 그 자체가 잘못된 결과를 뜻하지는 않는다."
       },
       {
         "id": "c0",
         "text": "경쟁 상태",
-        "explanation": "여러 실행 흐름의 타이밍이 결과에 영향을 주는 상황이다."
+        "explanation": "공유 상태를 다루는 실행 순서가 결과에 영향을 주는 상황이다. 읽기·수정·저장을 보호하지 않으면 증가가 유실될 수 있다."
       },
       {
         "id": "c1",
-        "text": "정규화",
-        "explanation": "관계형 데이터 설계 개념이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "여러 실행 흐름의 타이밍이 결과에 영향을 주는 상황이다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-010",
-    "subject": "os",
-    "difficulty": "easy",
-    "topic": "블로킹",
-    "prompt": "블로킹 I/O 호출이 대기 중일 때 해당 스레드는 보통?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "다음 명령을 반드시 즉시 실행한다",
-        "explanation": "블로킹의 의미와 다르다."
+        "text": "교착 상태",
+        "explanation": "교착 상태는 작업들이 서로 보유한 자원을 기다려 진행하지 못하는 현상이다. 여기서는 작업이 끝나도 결과가 달라진다."
       },
       {
         "id": "c2",
-        "text": "항상 CPU를 100% 사용한다",
-        "explanation": "대기 상태에서는 스케줄러가 다른 작업을 실행할 수 있다."
-      },
-      {
-        "id": "c3",
-        "text": "영구 삭제된다",
-        "explanation": "대기와 스레드 종료는 다르다."
-      },
-      {
-        "id": "c0",
-        "text": "작업 완료를 기다리며 실행을 멈출 수 있다",
-        "explanation": "블로킹은 호출이 완료될 때까지 진행하지 못하는 의미다."
+        "text": "기아 상태",
+        "explanation": "기아는 특정 작업이 자원을 계속 배정받지 못하는 현상이다. 카운터 갱신 유실과는 원인이 다르다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "블로킹은 호출이 완료될 때까지 진행하지 못하는 의미다.",
+    "explanation": "공유 상태를 다루는 실행 순서가 결과에 영향을 주는 상황이다. 읽기·수정·저장을 보호하지 않으면 증가가 유실될 수 있다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: threads-intro",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-011",
+    "id": "os-v2-011",
     "subject": "os",
     "difficulty": "medium",
     "topic": "라운드 로빈",
-    "prompt": "라운드 로빈에서 타임 슬라이스를 지나치게 짧게 잡으면 증가할 수 있는 비용은?",
+    "prompt": "다른 조건은 그대로 두고 라운드 로빈의 타임 슬라이스만 매우 짧게 했다. 증가하기 쉬운 비용은?",
     "choices": [
       {
-        "id": "c0",
-        "text": "문맥 교환 비용",
-        "explanation": "스레드 전환이 잦아지면 유용한 작업 대비 관리 비용이 커진다."
-      },
-      {
         "id": "c1",
-        "text": "파일 저장 용량만",
-        "explanation": "슬라이스 길이의 직접적인 비용이 아니다."
+        "text": "작업 하나의 CPU 요구량",
+        "explanation": "프로그램이 본래 수행해야 하는 계산량이 타임 슬라이스 변경만으로 늘어나는 것은 아니다."
       },
       {
         "id": "c2",
-        "text": "프로그램 코드의 줄 수",
-        "explanation": "실행 정책이 소스 길이를 바꾸지 않는다."
+        "text": "실행 파일의 디스크 크기",
+        "explanation": "스케줄링 간격은 실행 파일의 코드나 크기를 변경하지 않는다."
       },
       {
         "id": "c3",
-        "text": "CPU의 물리적 코어 수",
-        "explanation": "코어 수는 정책에 의해 늘지 않는다."
+        "text": "물리 메모리의 페이지 크기",
+        "explanation": "페이지 크기는 주소 변환 구조의 설정이다. 타임 슬라이스와 별개다."
+      },
+      {
+        "id": "c0",
+        "text": "문맥 교환의 누적 비용",
+        "explanation": "짧은 시간마다 실행 대상을 바꾸면 저장·복원과 캐시 영향 등 전환 비용이 전체 실행에서 차지하는 비중이 커질 수 있다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "스레드 전환이 잦아지면 유용한 작업 대비 관리 비용이 커진다.",
+    "explanation": "짧은 시간마다 실행 대상을 바꾸면 저장·복원과 캐시 영향 등 전환 비용이 전체 실행에서 차지하는 비중이 커질 수 있다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: cpu-sched",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-012",
-    "subject": "os",
-    "difficulty": "medium",
-    "topic": "기아",
-    "prompt": "낮은 우선순위 작업이 계속 밀려 실행되지 못하는 현상은?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "인터럽트 마스킹의 동의어",
-        "explanation": "실행 기회를 받지 못함과 인터럽트 제어는 다르다."
-      },
-      {
-        "id": "c0",
-        "text": "기아",
-        "explanation": "다른 작업에 의해 자원을 계속 배정받지 못하는 문제다."
-      },
-      {
-        "id": "c1",
-        "text": "원자성",
-        "explanation": "작업 전체가 반영되는 성질이다."
-      },
-      {
-        "id": "c2",
-        "text": "지역성",
-        "explanation": "주소 접근 패턴의 성질이다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "다른 작업에 의해 자원을 계속 배정받지 못하는 문제다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-013",
+    "id": "os-v2-013",
     "subject": "os",
     "difficulty": "medium",
     "topic": "세마포어",
-    "prompt": "동시에 최대 N개 작업이 자원을 사용하도록 제어할 때 적합한 기본 도구는?",
+    "prompt": "DB 연결 3개를 여러 스레드가 함께 쓴다. 연결 사용 중인 스레드를 최대 3개로 제한할 도구는?",
     "choices": [
       {
-        "id": "c2",
-        "text": "프로그램 카운터",
-        "explanation": "현재 실행 위치를 나타낸다."
-      },
-      {
         "id": "c3",
-        "text": "항상 부울 플래그 하나",
-        "explanation": "동기화 없는 플래그로 N개 허용을 보장할 수 없다."
+        "text": "스레드마다 별도로 둔 뮤텍스",
+        "explanation": "서로 다른 뮤텍스는 스레드 사이를 조율하지 못한다. 공유 자원의 한도를 공동으로 관리해야 한다."
       },
       {
         "id": "c0",
-        "text": "카운팅 세마포어",
-        "explanation": "허용 수를 카운터로 관리해 제한된 동시 접근을 제어한다."
+        "text": "초기값 3인 세마포어",
+        "explanation": "사용 전에 감소시키고 사용 후 반환하면 동시에 사용할 수 있는 자원 수를 표현할 수 있다. 반환 누락을 막아야 한다."
       },
       {
         "id": "c1",
-        "text": "파일 확장자",
-        "explanation": "자원 허용 수를 관리하지 않는다."
+        "text": "초기값 1인 세마포어",
+        "explanation": "한 번에 하나만 허용하므로 연결 3개를 동시에 활용하려는 요구보다 제한적이다."
+      },
+      {
+        "id": "c2",
+        "text": "공유 카운터의 일반 증가 연산",
+        "explanation": "카운터의 검사와 변경이 동기화되지 않으면 여러 스레드가 동시에 한도 이내라고 판단할 수 있다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "허용 수를 카운터로 관리해 제한된 동시 접근을 제어한다.",
+    "explanation": "사용 전에 감소시키고 사용 후 반환하면 동시에 사용할 수 있는 자원 수를 표현할 수 있다. 반환 누락을 막아야 한다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: threads-sema",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-sema.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-014",
-    "subject": "os",
-    "difficulty": "medium",
-    "topic": "조건 변수",
-    "prompt": "조건 변수에서 wait하기 전에 일반적으로 필요한 것은?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "반드시 프로그램 종료",
-        "explanation": "대기와 종료는 다르다."
-      },
-      {
-        "id": "c2",
-        "text": "공유 상태를 보호 없이 삭제",
-        "explanation": "조건을 안전하게 확인할 수 없다."
-      },
-      {
-        "id": "c3",
-        "text": "락을 영구 유지하며 바쁜 대기",
-        "explanation": "wait는 락을 놓고 기다리는 기능을 제공한다."
-      },
-      {
-        "id": "c0",
-        "text": "뮤텍스로 보호된 조건 확인",
-        "explanation": "조건 상태와 대기 등록의 관계를 보호해야 깨우기 누락을 방지할 수 있다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "조건 상태와 대기 등록의 관계를 보호해야 깨우기 누락을 방지할 수 있다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-015",
-    "subject": "os",
-    "difficulty": "medium",
-    "topic": "교착 조건",
-    "prompt": "교착 상태의 필요 조건 중 하나는?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "순환 대기",
-        "explanation": "상호 배제·점유 대기·비선점·순환 대기가 함께 성립할 때 교착이 가능하다."
-      },
-      {
-        "id": "c1",
-        "text": "모든 락이 즉시 해제됨",
-        "explanation": "대기 순환을 깨는 상황이다."
-      },
-      {
-        "id": "c2",
-        "text": "어떤 공유 자원도 없음",
-        "explanation": "자원 대기 구조가 생기지 않는다."
-      },
-      {
-        "id": "c3",
-        "text": "모든 작업이 종료됨",
-        "explanation": "종료된 작업은 서로 기다리지 않는다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "상호 배제·점유 대기·비선점·순환 대기가 함께 성립할 때 교착이 가능하다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-016",
+    "id": "os-v2-016",
     "subject": "os",
     "difficulty": "medium",
     "topic": "락 순서",
-    "prompt": "두 락을 사용하는 모든 스레드가 같은 순서로 획득하게 하는 목적은?",
+    "prompt": "모든 스레드가 락 A를 얻은 뒤 락 B를 얻도록 통일했다. 직접 끊으려는 교착 조건은?",
     "choices": [
       {
+        "id": "c2",
+        "text": "점유하며 대기",
+        "explanation": "A를 보유한 채 B를 기다리는 상황은 여전히 가능하다. 락 순서는 그 대기의 순환을 막는다."
+      },
+      {
         "id": "c3",
-        "text": "소스 코드를 암호화한다",
-        "explanation": "락 순서의 효과가 아니다."
+        "text": "비선점",
+        "explanation": "락을 강제로 빼앗는 정책을 추가한 것이 아니다. 소유자가 해제한다는 조건은 그대로일 수 있다."
       },
       {
         "id": "c0",
-        "text": "락 간 순환 대기를 방지한다",
-        "explanation": "일관된 전체 순서는 서로 역순으로 기다리는 구조를 막는다."
+        "text": "순환 대기",
+        "explanation": "일관된 전역 순서로 락을 획득하면 A를 기다리며 B를 가진 작업과 그 반대 작업이 고리를 만드는 일을 방지할 수 있다."
       },
       {
         "id": "c1",
-        "text": "경쟁 상태를 자동으로 모두 제거한다",
-        "explanation": "락으로 보호하는 범위도 올바르게 정해야 한다."
-      },
-      {
-        "id": "c2",
-        "text": "메모리 사용량을 0으로 만든다",
-        "explanation": "락 순서와 메모리 크기는 별개다."
+        "text": "상호 배제",
+        "explanation": "락으로 한 번에 한 스레드만 자원을 쓰는 성질은 유지된다. 순서를 정해도 상호 배제가 사라지지는 않는다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "일관된 전체 순서는 서로 역순으로 기다리는 구조를 막는다.",
+    "explanation": "일관된 전역 순서로 락을 획득하면 A를 기다리며 B를 가진 작업과 그 반대 작업이 고리를 만드는 일을 방지할 수 있다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: threads-bugs",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-bugs.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-017",
-    "subject": "os",
-    "difficulty": "medium",
-    "topic": "페이지 폴트",
-    "prompt": "유효한 가상 페이지가 현재 물리 메모리에 없어 접근할 때 가능한 동작은?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "항상 데이터 손상",
-        "explanation": "폴트 처리 자체가 손상을 뜻하지 않는다."
-      },
-      {
-        "id": "c3",
-        "text": "DNS 조회만 수행",
-        "explanation": "가상메모리 페이지를 준비하지 못한다."
-      },
-      {
-        "id": "c0",
-        "text": "페이지 폴트 처리로 페이지를 준비한다",
-        "explanation": "운영체제가 유효성을 확인하고 필요한 페이지를 가져와 매핑한다."
-      },
-      {
-        "id": "c1",
-        "text": "항상 프로세스 종료",
-        "explanation": "합법적인 demand paging도 페이지 폴트를 일으킨다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "운영체제가 유효성을 확인하고 필요한 페이지를 가져와 매핑한다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-018",
+    "id": "os-v2-018",
     "subject": "os",
     "difficulty": "medium",
     "topic": "LRU",
-    "prompt": "LRU 교체 정책이 제거하려는 페이지는?",
+    "prompt": "페이지 접근 순서가 A, B, C, A였다. 세 페이지가 메모리에 있고 LRU로 하나를 교체한다면?",
     "choices": [
       {
+        "id": "c0",
+        "text": "B",
+        "explanation": "마지막 사용 시점이 B, C, A 순으로 오래됐다. LRU는 가장 오래 참조되지 않은 B를 교체한다."
+      },
+      {
         "id": "c1",
-        "text": "가장 최근 사용한 페이지",
-        "explanation": "MRU에 가까운 기준이다."
+        "text": "A",
+        "explanation": "A는 처음 들어왔지만 마지막에도 사용됐다. 먼저 들어온 페이지를 고르는 FIFO와 구분한다."
       },
       {
         "id": "c2",
-        "text": "항상 가장 큰 주소",
-        "explanation": "주소 크기는 LRU 기준이 아니다."
+        "text": "C",
+        "explanation": "C는 B보다 나중에 사용됐으므로 LRU의 첫 교체 대상이 아니다."
       },
       {
         "id": "c3",
-        "text": "무조건 첫 페이지",
-        "explanation": "사용 이력을 반영하지 않는다."
-      },
-      {
-        "id": "c0",
-        "text": "가장 오랫동안 사용되지 않은 페이지",
-        "explanation": "최근 사용 시점을 근거로 재사용 가능성을 추정한다."
+        "text": "A와 B 중 무작위 선택",
+        "explanation": "LRU는 마지막 접근 시점을 기준으로 한다. 이 접근 순서에서는 후보가 하나로 정해진다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "최근 사용 시점을 근거로 재사용 가능성을 추정한다.",
+    "explanation": "마지막 사용 시점이 B, C, A 순으로 오래됐다. LRU는 가장 오래 참조되지 않은 B를 교체한다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: vm-beyondphys-policy",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys-policy.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-019",
+    "id": "os-v2-019",
     "subject": "os",
     "difficulty": "medium",
     "topic": "Copy-on-write",
-    "prompt": "fork 후 copy-on-write가 미루는 작업은?",
+    "prompt": "fork 직후 부모와 자식이 같은 물리 페이지를 읽는다. copy-on-write가 페이지 복사를 보통 미루는 시점은?",
     "choices": [
       {
-        "id": "c0",
-        "text": "실제 쓰기 전까지의 페이지 복사",
-        "explanation": "처음에는 페이지를 공유하고 수정 시 필요한 복사를 수행한다."
-      },
-      {
         "id": "c1",
-        "text": "모든 읽기 연산",
-        "explanation": "읽기는 공유 페이지에서 가능하다."
+        "text": "한쪽이 해당 페이지를 읽는 시점",
+        "explanation": "읽기만으로는 두 프로세스의 데이터가 달라지지 않으므로 복사를 미루는 목적에 맞지 않는다."
       },
       {
         "id": "c2",
-        "text": "자식 프로세스 생성 자체",
-        "explanation": "프로세스는 이미 생성된다."
+        "text": "자식 프로세스가 종료되는 시점",
+        "explanation": "쓰기 분리가 필요한 상황을 종료 때까지 미룰 수는 없다. 부모와 자식의 독립된 메모리 의미를 유지해야 한다."
       },
       {
         "id": "c3",
-        "text": "파일 이름 조회",
-        "explanation": "페이지 복사 지연과 다르다."
+        "text": "부모가 자식의 종료를 기다리는 시점",
+        "explanation": "wait 계열 호출은 자식 상태를 기다리는 동작이다. 페이지의 쓰기 분리 시점을 결정하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "한쪽이 해당 페이지에 쓰는 시점",
+        "explanation": "처음에는 읽기 전용으로 공유하다가 쓰기가 발생하면 필요한 복사를 수행해 각 프로세스의 변경을 분리한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "처음에는 페이지를 공유하고 수정 시 필요한 복사를 수행한다.",
+    "explanation": "처음에는 읽기 전용으로 공유하다가 쓰기가 발생하면 필요한 복사를 수행해 각 프로세스의 변경을 분리한다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: vm-beyondphys",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys.pdf"
+      },
+      {
+        "title": "Linux man-pages: fork와 copy-on-write",
+        "url": "https://man7.org/linux/man-pages/man2/fork.2.html"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-020",
-    "subject": "os",
-    "difficulty": "medium",
-    "topic": "파일 디스크립터",
-    "prompt": "Unix 계열 파일 디스크립터의 역할은?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "반드시 RAM의 물리 주소",
-        "explanation": "커널 자원 참조이며 물리 주소가 아니다."
-      },
-      {
-        "id": "c0",
-        "text": "프로세스가 열린 파일 등 I/O 자원을 참조하는 번호",
-        "explanation": "정수 핸들을 통해 커널의 열린 자원에 접근한다."
-      },
-      {
-        "id": "c1",
-        "text": "디스크 전체 용량",
-        "explanation": "자원 참조 번호와 용량은 다르다."
-      },
-      {
-        "id": "c2",
-        "text": "전역적으로 영구 동일한 파일 이름",
-        "explanation": "프로세스와 열린 상태에 관련되며 영구 경로가 아니다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "정수 핸들을 통해 커널의 열린 자원에 접근한다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-021",
+    "id": "os-v2-021",
     "subject": "os",
     "difficulty": "hard",
     "topic": "조건 재검사",
-    "prompt": "조건 변수 wait에서 깨어난 뒤 if 대신 while로 조건을 다시 검사하는 이유는?",
+    "prompt": "조건 변수에서 깨어난 소비자가 큐를 다시 확인했더니 비어 있었다. wait를 while 안에 두는 이유는?",
     "choices": [
       {
-        "id": "c2",
-        "text": "while이 락을 자동 생성해서",
-        "explanation": "반복문이 동기화 객체를 만들지 않는다."
-      },
-      {
         "id": "c3",
-        "text": "스레드가 항상 같은 순서로 깨어나서",
-        "explanation": "그런 순서를 일반적으로 보장하지 않는다."
+        "text": "while이 뮤텍스를 대신 제공해서",
+        "explanation": "while은 반복 조건을 검사할 뿐이다. 공유 상태를 보호할 뮤텍스는 별도로 필요하다."
       },
       {
         "id": "c0",
-        "text": "조건이 여전히 참인지 다시 확인해야 한다",
-        "explanation": "다른 스레드의 개입과 허위 깨우기로 조건이 다시 거짓일 수 있다."
+        "text": "깨어남이 조건 충족을 보장하지 않아서",
+        "explanation": "허위 깨어남이 있거나 다른 소비자가 먼저 데이터를 가져갈 수 있다. 뮤텍스를 다시 얻은 뒤 조건을 재검사해야 한다."
       },
       {
         "id": "c1",
-        "text": "wait가 반드시 오류라서",
-        "explanation": "정상 깨우기에서도 재확인이 필요하다."
+        "text": "wait가 뮤텍스를 다시 얻지 않아서",
+        "explanation": "일반적인 조건 변수 wait는 반환 전에 뮤텍스를 다시 획득한다. 재검사의 이유는 조건 자체가 달라질 수 있기 때문이다."
+      },
+      {
+        "id": "c2",
+        "text": "signal이 큐 항목을 자동 예약해서",
+        "explanation": "signal은 특정 큐 항목의 소유권을 넘기는 연산이 아니다. 깨어난 뒤 공유 상태를 확인해야 한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "다른 스레드의 개입과 허위 깨우기로 조건이 다시 거짓일 수 있다.",
+    "explanation": "허위 깨어남이 있거나 다른 소비자가 먼저 데이터를 가져갈 수 있다. 뮤텍스를 다시 얻은 뒤 조건을 재검사해야 한다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: threads-cv",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-cv.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-022",
-    "subject": "os",
-    "difficulty": "hard",
-    "topic": "Lost update",
-    "prompt": "초기 x=0이다. 두 스레드가 각각 x를 읽고 1을 더해 쓴다. 둘 다 0을 읽었다면 최종 x는?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "2",
-        "explanation": "두 증가가 직렬화됐을 때의 결과다."
-      },
-      {
-        "id": "c2",
-        "text": "-1",
-        "explanation": "주어진 연산에서 음수를 쓰지 않는다."
-      },
-      {
-        "id": "c3",
-        "text": "항상 교착",
-        "explanation": "락이 없으므로 이 예는 lost update 문제다."
-      },
-      {
-        "id": "c0",
-        "text": "1",
-        "explanation": "두 스레드 모두 1을 써서 증가 한 번이 사라진다. 읽기·덧셈·쓰기를 함께 보호해야 한다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "두 스레드 모두 1을 써서 증가 한 번이 사라진다. 읽기·덧셈·쓰기를 함께 보호해야 한다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-023",
-    "subject": "os",
-    "difficulty": "hard",
-    "topic": "Livelock",
-    "prompt": "두 작업이 서로 양보하며 상태를 계속 바꾸지만 진행하지 못한다. 해당 현상은?",
-    "choices": [
-      {
-        "id": "c0",
-        "text": "라이브락",
-        "explanation": "실행은 지속되지만 유용한 진전이 없는 상태다."
-      },
-      {
-        "id": "c1",
-        "text": "단순 블로킹 대기",
-        "explanation": "정지해 기다리는 상태와 구분된다."
-      },
-      {
-        "id": "c2",
-        "text": "정상 완료",
-        "explanation": "요구한 작업의 진전이 없다."
-      },
-      {
-        "id": "c3",
-        "text": "컴파일 실패",
-        "explanation": "실행 중 상호작용 문제다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "실행은 지속되지만 유용한 진전이 없는 상태다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-024",
+    "id": "os-v2-024",
     "subject": "os",
     "difficulty": "hard",
     "topic": "우선순위 역전",
-    "prompt": "높은 우선순위 작업이 낮은 우선순위 작업의 락을 기다리며 중간 작업에 지연된다. 완화 기법은?",
+    "prompt": "낮은 우선순위 L이 가진 락을 높은 우선순위 H가 기다린다. 중간 우선순위 M 때문에 L이 실행되지 못할 때 완화 기법은?",
     "choices": [
       {
+        "id": "c2",
+        "text": "M에 H의 우선순위를 임시 상속",
+        "explanation": "락을 해제해야 하는 작업은 L이다. M을 더 먼저 실행시키면 L의 지연이 계속될 수 있다."
+      },
+      {
         "id": "c3",
-        "text": "모든 메모리를 복제",
-        "explanation": "락 보유자의 실행 지연을 직접 해결하지 않는다."
+        "text": "H가 락을 얻을 때까지 바쁜 대기",
+        "explanation": "높은 우선순위의 바쁜 대기는 낮은 L의 실행을 더 방해할 수 있다. 락 소유자의 진행이 필요하다."
       },
       {
         "id": "c0",
-        "text": "우선순위 상속",
-        "explanation": "락 보유자의 우선순위를 기다리는 작업 수준으로 올려 지연을 줄일 수 있다."
+        "text": "L에 H의 우선순위를 임시 상속",
+        "explanation": "L이 필요한 작업을 끝내고 락을 풀도록 우선순위를 일시적으로 높인다. H가 대기하는 원인을 제거하는 데 초점을 둔다."
       },
       {
         "id": "c1",
-        "text": "높은 작업을 삭제",
-        "explanation": "요구한 작업을 완료하지 못한다."
-      },
-      {
-        "id": "c2",
-        "text": "락 순서만 뒤집기",
-        "explanation": "스케줄링 우선순위 역전의 일반 해법이 아니다."
+        "text": "H의 우선순위를 더 높게 조정",
+        "explanation": "H는 락 때문에 대기 중이다. 이미 높은 H를 더 높여도 L이 M에 밀리는 문제를 직접 해결하지 못한다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "락 보유자의 우선순위를 기다리는 작업 수준으로 올려 지연을 줄일 수 있다.",
+    "explanation": "L이 필요한 작업을 끝내고 락을 풀도록 우선순위를 일시적으로 높인다. H가 대기하는 원인을 제거하는 데 초점을 둔다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: threads-locks",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-025",
+    "id": "os-v2-025",
     "subject": "os",
     "difficulty": "hard",
     "topic": "스래싱",
-    "prompt": "페이지 폴트와 교체에 대부분 시간을 쓰는 스래싱을 완화하려면?",
+    "prompt": "여러 프로세스의 작업 집합이 RAM을 넘어서 페이지 교체가 반복된다. 스래싱 완화에 가장 직접적인 조치는?",
     "choices": [
       {
-        "id": "c2",
-        "text": "페이지 폴트 로그만 숨김",
-        "explanation": "실제 메모리 압박이 남는다."
-      },
-      {
         "id": "c3",
-        "text": "CPU 클럭만 올리면 항상 해결",
-        "explanation": "디스크와 메모리 병목이 남을 수 있다."
+        "text": "페이지 폴트 처리 우선순위만 높인다",
+        "explanation": "처리가 빨라져도 메모리가 부족한 원인은 남는다. 작업 집합과 메모리 용량의 관계를 먼저 해결해야 한다."
       },
       {
         "id": "c0",
-        "text": "동시에 활성인 작업 집합을 메모리에 맞춘다",
-        "explanation": "물리 메모리보다 큰 활성 작업 집합을 줄이는 것이 핵심이다."
+        "text": "동시에 실행할 작업 수를 줄인다",
+        "explanation": "활성 작업 집합이 메모리에 들어오도록 부하를 줄이면 반복적인 페이지 반입과 퇴출을 완화할 수 있다."
       },
       {
         "id": "c1",
-        "text": "프로세스를 무조건 더 실행",
-        "explanation": "메모리 압박을 악화할 수 있다."
+        "text": "타임 슬라이스만 더 짧게 한다",
+        "explanation": "CPU 전환 간격을 줄여도 필요한 페이지 총량은 줄지 않는다. 전환 비용이 늘 수도 있다."
+      },
+      {
+        "id": "c2",
+        "text": "실행 대기 프로세스를 더 늘린다",
+        "explanation": "동시에 필요한 메모리가 더 커지면 페이지 경쟁이 심해질 수 있다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "물리 메모리보다 큰 활성 작업 집합을 줄이는 것이 핵심이다.",
+    "explanation": "활성 작업 집합이 메모리에 들어오도록 부하를 줄이면 반복적인 페이지 반입과 퇴출을 완화할 수 있다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: vm-beyondphys-policy",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys-policy.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-026",
-    "subject": "os",
-    "difficulty": "hard",
-    "topic": "스핀락",
-    "prompt": "아주 짧은 임계 구역이고 락 보유자가 다른 코어에서 실행 중이다. 스핀락을 검토하는 이유는?",
-    "choices": [
-      {
-        "id": "c1",
-        "text": "장시간 I/O 대기에 항상 최적",
-        "explanation": "오래 CPU를 낭비할 수 있다."
-      },
-      {
-        "id": "c2",
-        "text": "스핀락이 CPU를 사용하지 않음",
-        "explanation": "상태를 반복 확인하며 CPU를 사용한다."
-      },
-      {
-        "id": "c3",
-        "text": "상호 배제가 필요 없어짐",
-        "explanation": "스핀락도 상호 배제 도구다."
-      },
-      {
-        "id": "c0",
-        "text": "짧은 대기에서는 잠들고 깨우는 비용을 피할 수 있다",
-        "explanation": "바쁜 대기는 짧고 제한된 대기일 때만 비용상 이점이 있을 수 있다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "바쁜 대기는 짧고 제한된 대기일 때만 비용상 이점이 있을 수 있다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-027",
+    "id": "os-v2-027",
     "subject": "os",
     "difficulty": "hard",
     "topic": "원자 연산",
-    "prompt": "공유 카운터의 원자적 증가를 사용해도 별도의 두 필드 불변식이 깨질 수 있는 이유는?",
+    "prompt": "재고와 예약 수가 함께 변해야 한다. 각 필드의 증가·감소를 원자 연산으로 바꾸는 것만으로 부족한 이유는?",
     "choices": [
       {
-        "id": "c0",
-        "text": "단일 연산 원자성이 여러 필드 전체 원자성을 뜻하지 않는다",
-        "explanation": "필드 사이의 관계는 더 넓은 동기화 또는 올바른 프로토콜이 필요하다."
-      },
-      {
         "id": "c1",
-        "text": "원자적 증가가 파일만 처리해서",
-        "explanation": "메모리 카운터도 원자적으로 처리할 수 있다."
+        "text": "원자 연산은 읽기만 지원한다",
+        "explanation": "원자적 증가나 비교 후 교환처럼 값을 바꾸는 연산도 있다. 문제는 여러 연산을 묶는 범위다."
       },
       {
         "id": "c2",
-        "text": "원자성이 모든 복합 연산에 자동 전파돼서",
-        "explanation": "문제의 원인이 아니라 잘못된 가정이다."
+        "text": "원자 연산은 스레드별 복사본만 바꾼다",
+        "explanation": "공유 원자 객체를 갱신할 수 있다. 공유 가능 여부와 복합 갱신의 원자성은 다르다."
       },
       {
         "id": "c3",
-        "text": "필드가 읽기 전용이라서",
-        "explanation": "여기서는 변경되는 공유 상태를 다룬다."
+        "text": "원자 연산마다 자동 롤백이 발생한다",
+        "explanation": "원자 연산이 여러 필드의 변경을 트랜잭션처럼 자동 취소하지는 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "두 연산 사이의 상태가 노출된다",
+        "explanation": "개별 연산의 원자성은 여러 필드에 걸친 불변식의 원자성을 보장하지 않는다. 두 변경을 하나로 보호할 설계가 필요하다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "필드 사이의 관계는 더 넓은 동기화 또는 올바른 프로토콜이 필요하다.",
+    "explanation": "개별 연산의 원자성은 여러 필드에 걸친 불변식의 원자성을 보장하지 않는다. 두 변경을 하나로 보호할 설계가 필요하다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: threads-intro",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   },
   {
-    "id": "os-028",
-    "subject": "os",
-    "difficulty": "hard",
-    "topic": "저널링",
-    "prompt": "파일 시스템 저널링이 충돌 복구를 돕는 방법은?",
-    "choices": [
-      {
-        "id": "c3",
-        "text": "읽기 연산을 모두 금지한다",
-        "explanation": "복구를 위한 기록과 읽기 금지는 다르다."
-      },
-      {
-        "id": "c0",
-        "text": "변경 기록을 이용해 불완전한 갱신을 정리한다",
-        "explanation": "갱신 의도를 기록해 일관된 상태로 복구할 수 있도록 한다."
-      },
-      {
-        "id": "c1",
-        "text": "모든 응용 데이터의 최신 보존을 무조건 보장",
-        "explanation": "저널링 종류와 동기화 정책에 따라 보장 범위가 다르다."
-      },
-      {
-        "id": "c2",
-        "text": "디스크 오류 자체를 없앤다",
-        "explanation": "장애를 없애는 대신 복구를 돕는다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "갱신 의도를 기록해 일관된 상태로 복구할 수 있도록 한다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-029",
-    "subject": "os",
-    "difficulty": "hard",
-    "topic": "메모리 매핑 I/O",
-    "prompt": "같은 메모리 매핑 영역을 두 프로세스가 수정한다. 별도로 고려할 것은?",
-    "choices": [
-      {
-        "id": "c2",
-        "text": "서로 다른 주소이므로 공유 불가능",
-        "explanation": "매핑 주소가 달라도 같은 저장 내용을 공유할 수 있다."
-      },
-      {
-        "id": "c3",
-        "text": "컴파일 언어를 같게 만들면 해결",
-        "explanation": "언어 일치가 동기화 프로토콜을 대신하지 않는다."
-      },
-      {
-        "id": "c0",
-        "text": "공유 상태의 동기화",
-        "explanation": "매핑은 공유 접근 경로를 만들지만 복합 갱신의 원자성을 보장하지 않는다."
-      },
-      {
-        "id": "c1",
-        "text": "자동으로 모든 트랜잭션이 직렬화됨",
-        "explanation": "메모리 매핑만으로 보장되지 않는다."
-      }
-    ],
-    "correctChoiceId": "c0",
-    "explanation": "매핑은 공유 접근 경로를 만들지만 복합 갱신의 원자성을 보장하지 않는다.",
-    "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
-    "sources": [
-      {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
-      }
-    ],
-    "review": {
-      "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
-  },
-  {
-    "id": "os-030",
+    "id": "os-v2-030",
     "subject": "os",
     "difficulty": "hard",
     "topic": "긴 락 범위",
-    "prompt": "공유 큐 락을 잡은 채 느린 네트워크 요청을 기다린다. 우선 개선할 방향은?",
+    "prompt": "공유 큐의 락을 잡은 상태에서 원격 응답을 기다린다. 다른 작업의 큐 접근 지연을 줄일 설계는?",
     "choices": [
       {
+        "id": "c0",
+        "text": "큐에서 작업을 꺼낸 뒤 락을 풀고 요청한다",
+        "explanation": "공유 상태를 보호하는 구간과 느린 외부 작업을 분리하면 다른 작업이 큐를 사용할 수 있다. 꺼낸 작업의 소유권과 결과 반영은 별도로 설계한다."
+      },
+      {
         "id": "c1",
-        "text": "큐를 보호 없이 수정",
-        "explanation": "경쟁 상태가 생길 수 있다."
+        "text": "원격 응답까지 락을 유지하되 우선순위를 높인다",
+        "explanation": "상대 서버의 지연은 로컬 우선순위로 해결되지 않는다. 대기하는 동안 큐 접근이 계속 막힌다."
       },
       {
         "id": "c2",
-        "text": "락을 영원히 유지",
-        "explanation": "다른 작업의 진행을 막는다."
+        "text": "큐에 접근할 때만 락을 생략하고 요청한다",
+        "explanation": "공유 큐의 동기화를 없애면 자료구조가 손상되거나 작업이 중복 인출될 수 있다."
       },
       {
         "id": "c3",
-        "text": "우선순위를 무조건 최고로 설정",
-        "explanation": "외부 대기와 긴 임계 구역을 해결하지 않는다."
-      },
-      {
-        "id": "c0",
-        "text": "보호할 상태만 짧게 갱신하고 외부 대기는 락 밖으로 옮긴다",
-        "explanation": "네트워크 대기 중 다른 작업까지 막는 시간을 줄이되 상태 불변식을 유지해야 한다."
+        "text": "요청 직전에 큐 전체를 매번 복제한다",
+        "explanation": "전체 복사는 큐가 클수록 비용이 늘고 작업 소유권 문제도 별도로 남는다. 보호 구간을 줄이는 것이 더 직접적이다."
       }
     ],
     "correctChoiceId": "c0",
-    "explanation": "네트워크 대기 중 다른 작업까지 막는 시간을 줄이되 상태 불변식을 유지해야 한다.",
+    "explanation": "공유 상태를 보호하는 구간과 느린 외부 작업을 분리하면 다른 작업이 큐를 사용할 수 있다. 꺼낸 작업의 소유권과 결과 반영은 별도로 설계한다.",
     "environment": "일반 운영체제 개념. 특정 구현에 의존하는 경우 문항에서 명시.",
     "sources": [
       {
-        "title": "OSTEP: 가상화·동시성·영속성",
-        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+        "title": "OSTEP: threads-locks",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf"
       }
     ],
     "review": {
       "status": "source-checked",
-      "date": "2026-10-05",
-      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
-    }
+      "date": "2026-10-16",
+      "editorialVersion": 2,
+      "method": "출처 대조; 단일 정답 조건, 오개념별 선택지, 선택지별 해설과 길이 단서 검토"
+    },
+    "active": true
   }
 ]

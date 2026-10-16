@@ -12,7 +12,7 @@ export interface Question {
   explanation: string;
   environment: string;
   sources: { title: string; url: string }[];
-  review: { status: 'source-checked'; date: string; method: string };
+  review: { status: 'source-checked'; date: string; method: string; editorialVersion?: number };
   code?: string;
   diagram?: 'queue' | 'pipeline' | 'layers';
   area?: 'rendering' | 'engine';

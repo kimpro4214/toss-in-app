@@ -18,13 +18,14 @@ for (let day = 1; day <= 14; day++) {
 }
 for (const q of interviewQuestions) {
   const oral = q.interview;
-  check(/^interview-game-client-\d{2}-[1-5]$/.test(q.id), `${q.id}: ID 형식`);
+  check(/^interview-game-client-v2-\d{2}-[1-5]$/.test(q.id), `${q.id}: ID 형식`);
   check(subjects.some(s => s.id === q.subject) && levels.includes(q.difficulty), `${q.id}: 과목·난이도`);
   check(q.prompt.length > 10 && q.environment.length > 10 && q.explanation.length > 20, `${q.id}: 퀴즈 내용`);
   check(q.choices.length === 4 && new Set(q.choices.map(c => c.id)).size === 4 && new Set(q.choices.map(c => c.text)).size === 4, `${q.id}: 선택지`);
   check(q.choices.filter(c => c.id === q.correctChoiceId).length === 1 && q.choices.every(c => c.text.length && c.explanation.length > 5), `${q.id}: 정답·오답 해설`);
   check(q.sources.length && q.sources.every(s => s.title.length && /^https:\/\//.test(s.url) && !s.url.includes('tistory.com')), `${q.id}: 기술 근거`);
   check(q.review.status === 'source-checked' && /^\d{4}-\d{2}-\d{2}$/.test(q.review.date) && q.review.method.length, `${q.id}: 검수`);
+  check(q.active === true && q.review.editorialVersion === 2, `${q.id}: 편집 검수 완료 필요`);
   check(oral?.courseId === interviewCourse.id && oral.oralPrompt.length > 10 && oral.answerOutline.length === 3 && oral.answerOutline.every(p => p.length > 5), `${q.id}: 구술 질문·핵심 3개`);
   check(oral?.followUps.length && oral.followUps.every(f => f.question.length > 5 && f.answer.length > 10), `${q.id}: 꼬리질문·답변`);
   check(/^https:\/\/yuu5666.tistory.com\/\d+$/.test(oral?.topicReference ?? ''), `${q.id}: 주제 참고`);

@@ -1,0 +1,1412 @@
+[
+  {
+    "id": "architecture-001",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "명령어",
+    "prompt": "CPU의 프로그램 카운터가 보통 보관하는 것은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "실행할 명령어의 주소",
+        "explanation": "프로그램 카운터는 명령어 흐름의 위치를 나타내며 분기 시 바뀐다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 파일 내용",
+        "explanation": "파일 데이터는 저장 장치에 있다."
+      },
+      {
+        "id": "c2",
+        "text": "전체 RAM 크기",
+        "explanation": "메모리 용량과 명령어 위치는 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "마우스 좌표",
+        "explanation": "입력 장치 상태는 프로그램 카운터 역할이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "프로그램 카운터는 명령어 흐름의 위치를 나타내며 분기 시 바뀐다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-002",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "레지스터",
+    "prompt": "CPU가 연산에 바로 사용하는 작은 저장 공간은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "페이지 파일",
+        "explanation": "가상메모리의 보조 저장 공간이다."
+      },
+      {
+        "id": "c0",
+        "text": "레지스터",
+        "explanation": "레지스터는 CPU 연산의 피연산자와 결과 등을 보관한다."
+      },
+      {
+        "id": "c1",
+        "text": "하드디스크",
+        "explanation": "보조 저장 장치이며 CPU 내부 저장 공간이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "DNS 캐시",
+        "explanation": "네트워크 이름 조회 결과를 담는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "레지스터는 CPU 연산의 피연산자와 결과 등을 보관한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-003",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "바이트",
+    "prompt": "8비트로 구성된 1바이트가 표현할 수 있는 비트 패턴 수는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "16개",
+        "explanation": "4비트의 조합 수이다."
+      },
+      {
+        "id": "c3",
+        "text": "255개",
+        "explanation": "최대 unsigned 값은 255지만 패턴은 0을 포함해 256개다."
+      },
+      {
+        "id": "c0",
+        "text": "256개",
+        "explanation": "각 비트가 두 상태이므로 2의 8제곱은 256이다."
+      },
+      {
+        "id": "c1",
+        "text": "8개",
+        "explanation": "비트 개수와 조합 수를 혼동했다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "각 비트가 두 상태이므로 2의 8제곱은 256이다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-004",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "이진수",
+    "prompt": "이진수 1010을 십진수로 바꾸면?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "12",
+        "explanation": "8 + 4는 1100이다."
+      },
+      {
+        "id": "c2",
+        "text": "5",
+        "explanation": "0101의 값이다."
+      },
+      {
+        "id": "c3",
+        "text": "1010",
+        "explanation": "표기법이 바뀌어도 자리값을 계산해야 한다."
+      },
+      {
+        "id": "c0",
+        "text": "10",
+        "explanation": "자리값을 더하면 8 + 2 = 10이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "자리값을 더하면 8 + 2 = 10이다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-005",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "ALU",
+    "prompt": "산술 연산과 논리 연산을 수행하는 CPU 구성 요소는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "ALU",
+        "explanation": "ALU는 덧셈·비교·비트 연산 등의 연산을 담당한다."
+      },
+      {
+        "id": "c1",
+        "text": "라우터",
+        "explanation": "패킷을 전달하는 네트워크 장치다."
+      },
+      {
+        "id": "c2",
+        "text": "파일 시스템",
+        "explanation": "파일 이름과 저장 구조를 관리한다."
+      },
+      {
+        "id": "c3",
+        "text": "디스플레이",
+        "explanation": "연산 장치가 아니라 출력 장치다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "ALU는 덧셈·비교·비트 연산 등의 연산을 담당한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-006",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "RAM",
+    "prompt": "일반적인 DRAM의 성질로 맞는 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "인터넷 없이 읽을 수 없다",
+        "explanation": "로컬 메모리 접근과 인터넷 연결은 별개다."
+      },
+      {
+        "id": "c0",
+        "text": "전원이 끊기면 내용이 유지되지 않는다",
+        "explanation": "DRAM은 휘발성 메모리로 지속 저장이 필요하면 별도 장치가 필요하다."
+      },
+      {
+        "id": "c1",
+        "text": "전원 없이 영구 보존된다",
+        "explanation": "비휘발성 저장 장치의 특성이다."
+      },
+      {
+        "id": "c2",
+        "text": "항상 CPU 레지스터보다 빠르다",
+        "explanation": "레지스터는 CPU 가까이에서 직접 사용된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "DRAM은 휘발성 메모리로 지속 저장이 필요하면 별도 장치가 필요하다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-007",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "ISA",
+    "prompt": "명령어 집합 구조 ISA가 정의하는 경계는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "모든 CPU 내부 배선",
+        "explanation": "동일 ISA도 다른 내부 구현을 가질 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "서버 도메인 이름",
+        "explanation": "네트워크 이름 규칙과 무관하다."
+      },
+      {
+        "id": "c0",
+        "text": "프로그램이 사용하는 기계 명령과 실행 모델",
+        "explanation": "ISA는 명령어·레지스터 등 소프트웨어에 보이는 구조를 규정한다."
+      },
+      {
+        "id": "c1",
+        "text": "창의 색상",
+        "explanation": "사용자 인터페이스 디자인이다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "ISA는 명령어·레지스터 등 소프트웨어에 보이는 구조를 규정한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-008",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "캐시",
+    "prompt": "CPU 캐시를 두는 주된 이유는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "RAM 용량을 무한대로 만들기 위해",
+        "explanation": "캐시는 유한하고 원본 저장 공간을 대체하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "프로그램 버그를 제거하기 위해",
+        "explanation": "캐시는 논리 오류를 해결하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "모든 파일을 영구 보관하기 위해",
+        "explanation": "CPU 캐시는 영구 파일 저장소가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "자주 필요한 데이터의 접근 시간을 줄이기 위해",
+        "explanation": "CPU와 주메모리의 속도 차이를 작은 빠른 저장 공간으로 완화한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "CPU와 주메모리의 속도 차이를 작은 빠른 저장 공간으로 완화한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-009",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "주소",
+    "prompt": "바이트 주소 방식에서 연속된 4바이트가 시작 주소 100을 차지한다. 주소 범위는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "100부터 103까지",
+        "explanation": "각 바이트가 주소 하나를 사용하므로 네 주소를 차지한다."
+      },
+      {
+        "id": "c1",
+        "text": "100부터 104까지",
+        "explanation": "양 끝을 포함하면 다섯 바이트다."
+      },
+      {
+        "id": "c2",
+        "text": "100 하나만",
+        "explanation": "바이트마다 주소가 있다."
+      },
+      {
+        "id": "c3",
+        "text": "104부터 107까지",
+        "explanation": "주어진 시작 주소를 무시했다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "각 바이트가 주소 하나를 사용하므로 네 주소를 차지한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-010",
+    "subject": "architecture",
+    "difficulty": "easy",
+    "topic": "2의 보수",
+    "prompt": "8비트 2의 보수 정수의 표현 범위는?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "-256부터 255까지",
+        "explanation": "8비트로 표현할 수 있는 값 개수를 초과한다."
+      },
+      {
+        "id": "c0",
+        "text": "-128부터 127까지",
+        "explanation": "부호 있는 2의 보수는 음수 쪽에 한 값이 더 있어 이 범위를 갖는다."
+      },
+      {
+        "id": "c1",
+        "text": "0부터 255까지",
+        "explanation": "unsigned 8비트 범위다."
+      },
+      {
+        "id": "c2",
+        "text": "-127부터 127까지",
+        "explanation": "2의 보수의 최소값 -128을 빠뜨렸다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "부호 있는 2의 보수는 음수 쪽에 한 값이 더 있어 이 범위를 갖는다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-011",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "시간 지역성",
+    "prompt": "같은 변수를 짧은 시간 안에 반복해서 읽는 접근이 활용하는 성질은?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "분산 합의",
+        "explanation": "여러 노드가 결과에 동의하는 문제다."
+      },
+      {
+        "id": "c3",
+        "text": "영구 저장성",
+        "explanation": "전원 이후 데이터 유지와 관련 없다."
+      },
+      {
+        "id": "c0",
+        "text": "시간 지역성",
+        "explanation": "최근 접근한 항목을 다시 접근할 가능성이 높은 성질이다."
+      },
+      {
+        "id": "c1",
+        "text": "공간 지역성만",
+        "explanation": "주변 주소 접근이 핵심인 공간 지역성과 다르다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "최근 접근한 항목을 다시 접근할 가능성이 높은 성질이다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-012",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "공간 지역성",
+    "prompt": "행 우선으로 저장된 배열을 메모리 순서대로 순회할 때 유리한 이유는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "모든 요소가 레지스터 하나에 있다",
+        "explanation": "큰 배열 전체가 레지스터 하나에 들어가지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "알고리즘 복잡도가 항상 O(1)이 된다",
+        "explanation": "순회해야 할 요소 수는 여전히 n이다."
+      },
+      {
+        "id": "c3",
+        "text": "캐시가 영구 저장소가 된다",
+        "explanation": "접근 패턴은 휘발성을 바꾸지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "인접 데이터가 같은 캐시 라인에 들어갈 수 있다",
+        "explanation": "공간 지역성은 가까운 주소의 데이터를 곧 사용할 가능성을 말한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "공간 지역성은 가까운 주소의 데이터를 곧 사용할 가능성을 말한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-013",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "엔디언",
+    "prompt": "0x12345678을 4바이트 little-endian으로 저장하면 가장 낮은 주소의 바이트는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "0x78",
+        "explanation": "little-endian은 최하위 바이트를 낮은 주소에 둔다."
+      },
+      {
+        "id": "c1",
+        "text": "0x12",
+        "explanation": "big-endian의 낮은 주소 바이트다."
+      },
+      {
+        "id": "c2",
+        "text": "0x34",
+        "explanation": "두 번째 상위 바이트다."
+      },
+      {
+        "id": "c3",
+        "text": "0x56",
+        "explanation": "little-endian에서는 두 번째 주소에 놓인다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "little-endian은 최하위 바이트를 낮은 주소에 둔다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-014",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "파이프라인",
+    "prompt": "명령어 파이프라이닝이 주로 높이려는 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "프로그램의 정답률",
+        "explanation": "파이프라이닝은 프로그램 논리를 고치지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "단위 시간당 처리하는 명령어 수",
+        "explanation": "여러 명령의 단계를 겹쳐 처리해 처리량을 높인다."
+      },
+      {
+        "id": "c1",
+        "text": "각 명령의 지연을 항상 0으로 만들기",
+        "explanation": "파이프라인 단계의 지연은 남는다."
+      },
+      {
+        "id": "c2",
+        "text": "디스크의 저장 용량",
+        "explanation": "CPU 처리 방식은 디스크 크기를 바꾸지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "여러 명령의 단계를 겹쳐 처리해 처리량을 높인다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-015",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "데이터 해저드",
+    "prompt": "뒤 명령이 앞 명령의 아직 준비되지 않은 결과를 필요로 한다. 무엇을 고려해야 하나?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "파일 이름 충돌",
+        "explanation": "CPU 명령 결과의 의존성과 무관하다."
+      },
+      {
+        "id": "c3",
+        "text": "화면 주사율만",
+        "explanation": "연산 결과가 준비되는 순서를 해결하지 못한다."
+      },
+      {
+        "id": "c0",
+        "text": "데이터 의존성에 따른 해저드",
+        "explanation": "포워딩이나 정지 등으로 의존성이 맞도록 실행해야 한다."
+      },
+      {
+        "id": "c1",
+        "text": "DNS 만료",
+        "explanation": "네트워크 이름 캐시 문제다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "포워딩이나 정지 등으로 의존성이 맞도록 실행해야 한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-016",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "CPI",
+    "prompt": "클럭 2 GHz에서 명령 10억 개를 평균 CPI 2로 실행한다. 실행 시간은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "0.25초",
+        "explanation": "평균 CPI를 곱하지 않은 계산이다."
+      },
+      {
+        "id": "c2",
+        "text": "2초",
+        "explanation": "명령 수·CPI·클럭을 함께 계산해야 한다."
+      },
+      {
+        "id": "c3",
+        "text": "4초",
+        "explanation": "20억을 20억으로 나눈 값이 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "1초",
+        "explanation": "필요한 20억 사이클을 초당 20억 사이클로 나누면 1초다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "필요한 20억 사이클을 초당 20억 사이클로 나누면 1초다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-017",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "평균 접근 시간",
+    "prompt": "캐시 히트 1ns, 미스 확률 10%, 추가 미스 비용 100ns일 때 평균 접근 시간은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "11ns",
+        "explanation": "히트 시간 + 미스 확률 × 추가 비용 = 1 + 0.1 × 100이다."
+      },
+      {
+        "id": "c1",
+        "text": "1ns",
+        "explanation": "미스 비용을 무시했다."
+      },
+      {
+        "id": "c2",
+        "text": "10ns",
+        "explanation": "히트 시간 1ns를 빠뜨렸다."
+      },
+      {
+        "id": "c3",
+        "text": "101ns",
+        "explanation": "모든 접근이 미스라고 계산했다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "히트 시간 + 미스 확률 × 추가 비용 = 1 + 0.1 × 100이다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-018",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "TLB",
+    "prompt": "TLB가 주로 캐시하는 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "CPU 명령의 소스 코드",
+        "explanation": "주소 변환과 원본 코드 저장은 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "가상 주소에서 물리 주소로의 변환 정보",
+        "explanation": "주소 변환을 빠르게 하기 위한 캐시다."
+      },
+      {
+        "id": "c1",
+        "text": "파일의 모든 바이트",
+        "explanation": "파일 데이터 캐시와 구분된다."
+      },
+      {
+        "id": "c2",
+        "text": "HTTP 응답 코드",
+        "explanation": "네트워크 응답 캐시가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "주소 변환을 빠르게 하기 위한 캐시다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-019",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "메모리 정렬",
+    "prompt": "32비트 필드의 정렬 조건이 4바이트라면 정렬된 시작 주소는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "오직 주소 0",
+        "explanation": "다른 4의 배수 주소도 정렬된다."
+      },
+      {
+        "id": "c3",
+        "text": "주소가 소수여야 한다",
+        "explanation": "정렬 조건과 소수 여부는 무관하다."
+      },
+      {
+        "id": "c0",
+        "text": "4의 배수 주소",
+        "explanation": "4바이트 정렬은 주소가 4로 나누어떨어지는 조건이다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 홀수 주소",
+        "explanation": "4의 배수는 홀수가 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "4바이트 정렬은 주소가 4로 나누어떨어지는 조건이다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-020",
+    "subject": "architecture",
+    "difficulty": "medium",
+    "topic": "SIMD",
+    "prompt": "여러 배열 요소에 같은 덧셈을 병렬 적용하는 SIMD의 특징은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "각 요소마다 별도 운영체제가 필요하다",
+        "explanation": "벡터 연산에 운영체제 여러 개가 필요하지 않다."
+      },
+      {
+        "id": "c2",
+        "text": "분기 많은 모든 코드를 반드시 가속한다",
+        "explanation": "제어 흐름과 데이터 배치에 따라 효과가 다르다."
+      },
+      {
+        "id": "c3",
+        "text": "순회 요소 수를 제거한다",
+        "explanation": "필요한 데이터를 처리하는 일은 남는다."
+      },
+      {
+        "id": "c0",
+        "text": "하나의 명령이 여러 데이터 요소를 처리한다",
+        "explanation": "SIMD는 같은 연산을 여러 데이터 lane에 적용한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "SIMD는 같은 연산을 여러 데이터 lane에 적용한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-021",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "Amdahl",
+    "prompt": "실행 시간의 80%만 병렬화 가능할 때 코어 수를 무한히 늘린 이상적 최대 가속은?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "5배",
+        "explanation": "직렬 20%가 남으므로 상한은 1 / 0.2 = 5이다."
+      },
+      {
+        "id": "c1",
+        "text": "무한 배",
+        "explanation": "직렬 구간이 사라지지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "1.25배",
+        "explanation": "1 / 0.8은 직렬 병목 상한 계산이 아니다."
+      },
+      {
+        "id": "c3",
+        "text": "80배",
+        "explanation": "비율을 가속 배수로 직접 바꿀 수 없다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "직렬 20%가 남으므로 상한은 1 / 0.2 = 5이다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-022",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "False sharing",
+    "prompt": "서로 다른 코어가 같은 캐시 라인의 서로 다른 카운터를 계속 수정한다. 가능한 병목은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "코어가 영구 고장남",
+        "explanation": "성능 간섭과 하드웨어 고장은 다르다."
+      },
+      {
+        "id": "c0",
+        "text": "false sharing에 따른 캐시 라인 소유권 이동",
+        "explanation": "논리적으로 분리된 변수라도 일관성 단위인 라인을 공유하면 서로 간섭할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "두 변수의 값이 항상 동일해짐",
+        "explanation": "일관성은 값이 같아지는 기능이 아니다."
+      },
+      {
+        "id": "c2",
+        "text": "파일 시스템 교착",
+        "explanation": "공유 캐시 라인 쓰기의 직접 원인이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "논리적으로 분리된 변수라도 일관성 단위인 라인을 공유하면 서로 간섭할 수 있다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-023",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "캐시 일관성",
+    "prompt": "캐시 일관성이 주로 해결하는 문제는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "응용 코드에 락이 불필요함",
+        "explanation": "복합 연산의 원자성까지 보장하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "디스크 백업이 자동 생성됨",
+        "explanation": "코어 캐시의 문제와 무관하다."
+      },
+      {
+        "id": "c0",
+        "text": "여러 코어가 같은 메모리 위치의 값을 일관되게 보도록 하는 것",
+        "explanation": "같은 주소의 복사본과 쓰기 전파를 관리한다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 주소의 모든 연산이 전역 순서로 실행됨",
+        "explanation": "캐시 일관성과 전체 메모리 순서 모델은 구분된다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "같은 주소의 복사본과 쓰기 전파를 관리한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-024",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "쓰기 정책",
+    "prompt": "write-back 캐시에서 dirty 라인을 내보낼 때 필요한 동작은?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "수정 데이터를 무조건 버린다",
+        "explanation": "버리면 프로그램의 쓰기가 사라진다."
+      },
+      {
+        "id": "c2",
+        "text": "DNS 서버에 보낸다",
+        "explanation": "CPU 메모리 계층과 무관하다."
+      },
+      {
+        "id": "c3",
+        "text": "CPU 레지스터를 모두 초기화한다",
+        "explanation": "dirty 라인 반영에 전체 레지스터 초기화는 필요 없다."
+      },
+      {
+        "id": "c0",
+        "text": "수정된 데이터를 하위 메모리 계층에 반영한다",
+        "explanation": "dirty 상태는 하위 계층과 다른 수정 내용이 있음을 나타낸다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "dirty 상태는 하위 계층과 다른 수정 내용이 있음을 나타낸다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-025",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "분기 예측",
+    "prompt": "깊은 파이프라인에서 분기 예측 실패가 비싼 이유는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "잘못된 경로의 작업을 버리고 올바른 경로를 다시 채워야 한다",
+        "explanation": "이미 투기 실행한 작업의 취소와 재시작이 처리량에 영향을 준다."
+      },
+      {
+        "id": "c1",
+        "text": "RAM이 항상 손상되기 때문",
+        "explanation": "복구 가능한 실행 비용이며 메모리 손상을 뜻하지 않는다."
+      },
+      {
+        "id": "c2",
+        "text": "ISA가 매번 바뀌기 때문",
+        "explanation": "명령어 집합은 분기마다 바뀌지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "명령어가 영구 삭제되기 때문",
+        "explanation": "프로그램 명령은 계속 존재한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "이미 투기 실행한 작업의 취소와 재시작이 처리량에 영향을 준다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-026",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "Roofline",
+    "prompt": "계산 능력은 충분하지만 연산당 메모리 이동량이 크고 메모리 대역폭이 포화다. 먼저 볼 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "코어를 무한히 늘리기",
+        "explanation": "공유 대역폭이 이미 포화라면 해결을 보장하지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "데이터 재사용과 이동량 감소",
+        "explanation": "메모리 병목에서는 계산 명령을 추가하기보다 데이터 이동을 줄이는 것이 중요하다."
+      },
+      {
+        "id": "c1",
+        "text": "클럭만 무조건 올리기",
+        "explanation": "대역폭 병목이 그대로면 가속에 한계가 있다."
+      },
+      {
+        "id": "c2",
+        "text": "정확성을 포기하기",
+        "explanation": "정확성을 버리는 것은 성능 분석의 필수 조건이 아니다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "메모리 병목에서는 계산 명령을 추가하기보다 데이터 이동을 줄이는 것이 중요하다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-027",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "NUMA",
+    "prompt": "NUMA 시스템에서 스레드와 가까운 노드에 데이터를 배치하려는 이유는?",
+    "choices": [
+      {
+        "id": "c2",
+        "text": "락의 필요성을 없애기 위해",
+        "explanation": "데이터 지역성이 동기화를 대체하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "디스크 용량을 늘리기 위해",
+        "explanation": "NUMA는 메모리 접근 구조다."
+      },
+      {
+        "id": "c0",
+        "text": "원격 노드 메모리 접근 비용을 줄이기 위해",
+        "explanation": "메모리 위치와 실행 코어의 관계가 지연·대역폭에 영향을 준다."
+      },
+      {
+        "id": "c1",
+        "text": "모든 주소를 같게 만들기 위해",
+        "explanation": "메모리 배치는 주소의 동일성을 뜻하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "메모리 위치와 실행 코어의 관계가 지연·대역폭에 영향을 준다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-028",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "캐시 용량",
+    "prompt": "작업 집합이 캐시 용량을 크게 넘고 반복 접근한다. 주로 증가할 수 있는 미스는?",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "오직 최초 접근 미스",
+        "explanation": "반복 접근에서도 용량 부족에 의한 미스가 난다."
+      },
+      {
+        "id": "c2",
+        "text": "반드시 충돌 미스만",
+        "explanation": "완전 연관 캐시에서도 용량 미스는 발생할 수 있다."
+      },
+      {
+        "id": "c3",
+        "text": "페이지 파일 이름 미스",
+        "explanation": "캐시 미스 분류가 아니다."
+      },
+      {
+        "id": "c0",
+        "text": "용량 미스",
+        "explanation": "필요한 데이터가 캐시에 모두 머물 수 없어 다시 가져와야 한다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "필요한 데이터가 캐시에 모두 머물 수 없어 다시 가져와야 한다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-029",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "가상 주소와 캐시",
+    "prompt": "가상 주소가 다른 두 매핑이 같은 물리 페이지를 가리킨다. 가상 인덱스 캐시 설계에서 고려할 문제는?",
+    "choices": [
+      {
+        "id": "c0",
+        "text": "동일 데이터의 alias에 따른 일관성 관리",
+        "explanation": "다른 가상 주소가 같은 물리 데이터를 가리킬 때 중복 캐시 복사본 관리가 필요할 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "물리 페이지가 두 개라는 보장",
+        "explanation": "같은 물리 페이지라는 조건과 모순된다."
+      },
+      {
+        "id": "c2",
+        "text": "파일 압축만",
+        "explanation": "캐시 주소 alias를 해결하지 않는다."
+      },
+      {
+        "id": "c3",
+        "text": "ISA가 없는 상태",
+        "explanation": "주소 alias가 ISA 자체를 없애지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "다른 가상 주소가 같은 물리 데이터를 가리킬 때 중복 캐시 복사본 관리가 필요할 수 있다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  },
+  {
+    "id": "architecture-030",
+    "subject": "architecture",
+    "difficulty": "hard",
+    "topic": "성능 측정",
+    "prompt": "CPI가 개선됐지만 명령 수가 두 배가 된 최적화를 판단할 때 필요한 것은?",
+    "choices": [
+      {
+        "id": "c3",
+        "text": "파일 이름 비교",
+        "explanation": "실행 성능을 나타내지 않는다."
+      },
+      {
+        "id": "c0",
+        "text": "명령 수·CPI·클럭을 함께 반영한 실행 시간",
+        "explanation": "한 지표만 개선되어도 전체 시간은 느려질 수 있다."
+      },
+      {
+        "id": "c1",
+        "text": "CPI만 보고 성공 판정",
+        "explanation": "명령 수 변화가 무시된다."
+      },
+      {
+        "id": "c2",
+        "text": "코드 줄 수만 비교",
+        "explanation": "소스 줄 수와 실행 비용은 일치하지 않는다."
+      }
+    ],
+    "correctChoiceId": "c0",
+    "explanation": "한 지표만 개선되어도 전체 시간은 느려질 수 있다.",
+    "environment": "명시하지 않은 경우 일반적인 바이트 주소 방식의 컴퓨터. 크기 계산에서 1 KiB = 1024 B.",
+    "sources": [
+      {
+        "title": "MIT Computation Structures 강의 색인",
+        "url": "https://computationstructures.org/lectures/pindex.html"
+      },
+      {
+        "title": "OSTEP: 주소 공간·주소 변환",
+        "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      }
+    ],
+    "review": {
+      "status": "source-checked",
+      "date": "2026-10-05",
+      "method": "직접 작성한 정답·오답을 원자료의 개념·적용 조건과 대조"
+    }
+  }
+]
