@@ -99,7 +99,8 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 # Part 2. Apps in Toss App & Game Rules
 
 ## 1. Project Structure & Technology
-- Keep each application or game in an independent project directory with its own package manifest, lockfile, runtime assets, and Toss configuration. The current CS app lives in `apps/cs-daily-5`.
+- Keep every application and game under `apps/<app-or-game-slug>/`, including new projects. Each directory must have its own package manifest, lockfile, runtime assets, and Toss configuration. For example, use `apps/cs-daily-5` and `apps/today-pages`; do not place app projects at the repository root or in a separate `games/` directory.
+- Use the primary `toss-game` checkout for local development, so the physical app path is `<primary-checkout>/apps/<app-or-game-slug>/`. Do not create or use a Git worktree unless the user explicitly requests one. Preserve other apps' uncommitted changes when switching app branches, and stage only files within the authorized scope.
 - Follow the existing project's technology and style. The CS app uses React, TypeScript, Vite, and TDS; choose game technology according to the actual gameplay requirements.
 - Extract shared code only after multiple projects actually need it. Avoid speculative frameworks and dependencies.
 - Check current official Apps in Toss documentation and installed SDK types before adding platform integrations. Keep configuration and compatible dependency versions consistent with that project's SDK; do not upgrade unrelated dependencies.

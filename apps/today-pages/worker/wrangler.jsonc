@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "today-pages-search",
+  "main": "index.ts",
+  "compatibility_date": "2026-10-16",
+  "observability": { "enabled": false },
+  "vars": { "ALLOWED_ORIGINS": "http://127.0.0.1:5176" },
+  "ratelimits": [
+    { "name": "SEARCH_LIMITER", "namespace_id": "10916", "simple": { "limit": 120, "period": 60 } }
+  ]
+}
