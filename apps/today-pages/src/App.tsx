@@ -7,6 +7,7 @@ import { backupJSON, parseBackup, StateSession } from './storage';
 import { closeApp, createStore, native, openSource, saveFile, setupNavigation, track, type EventName } from './platform';
 import { searchBooks } from './search';
 import { cardPNG } from './card';
+import { BannerAd } from './BannerAd';
 import type { Book, BookResult, ReadingRound, State } from './types';
 
 type View = { type: 'today' | 'library' | 'calendar' | 'add' | 'settings' } | { type: 'detail' | 'complete'; roundId: string };
@@ -173,6 +174,7 @@ export function App() {
       {view.type === 'settings' && <Settings key={attempt} state={state} busy={busy} commit={commit} confirm={confirm} perform={perform} exportBackup={exportBackup} setNotice={setNotice} go={go}/>}
       {'roundId' in view && !round && <Empty title="이 책의 기록을 찾을 수 없어요."><Button onClick={() => go({ type: 'library' })}>서재로 가기</Button></Empty>}
     </main>
+    {(view.type === 'today' || view.type === 'library' || view.type === 'calendar') && <BannerAd/>}
     <nav className="bottom-nav" aria-label="주 메뉴"><button disabled={busy} aria-current={view.type === 'today' ? 'page' : undefined} onClick={() => go({ type: 'today' })}><span aria-hidden="true">⌂</span>오늘</button><button disabled={busy} aria-current={view.type === 'library' || 'roundId' in view ? 'page' : undefined} onClick={() => go({ type: 'library' })}><span><BookIcon/></span>내 서재</button><button disabled={busy} aria-current={view.type === 'calendar' ? 'page' : undefined} onClick={() => go({ type: 'calendar' })}><span><CalendarIcon/></span>달력</button><button disabled={busy} aria-current={view.type === 'add' ? 'page' : undefined} onClick={() => go({ type: 'add' })}><span aria-hidden="true">＋</span>책 추가</button></nav>
     <ConfirmDialog open={!!dialog} title={dialog?.title} description={dialog?.description} onClose={() => { if (!busy) setDialog(undefined); }} closeOnBackEvent={false} cancelButton={<Button size="medium" variant="weak" disabled={busy} onClick={() => setDialog(undefined)}>취소</Button>} confirmButton={<Button size="medium" disabled={busy} onClick={() => { const action = dialog?.action; setDialog(undefined); void action?.(); }}>{dialog?.label}</Button>}/>
   </div>;

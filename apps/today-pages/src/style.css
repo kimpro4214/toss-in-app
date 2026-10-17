@@ -12,6 +12,8 @@ h1 { font-size: clamp(30px, 8vw, 38px); line-height: 1.45; letter-spacing: -1.5p
 h2 { font-size: 18px; font-weight: 600; letter-spacing: -.4px; }
 small { font-size: 13px; }
 .shell { max-width: 520px; margin: 0 auto; min-height: 100dvh; padding: var(--safe-top) 24px calc(108px + var(--safe-bottom)); }
+.banner-ad { width: 100%; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e5e3d8; }
+.banner-ad-slot { width: 100%; }
 .topbar { height: 60px; display: flex; align-items: center; justify-content: space-between; }
 .wordmark { background: none; border: 0; padding: 8px 0; font-size: 19px; font-weight: 700; letter-spacing: -.9px; display: flex; align-items: center; gap: 7px; min-height: 44px; }
 .brand-dot { height: 7px; width: 7px; border-radius: 50%; background: #70906a; margin-top: -11px; }
